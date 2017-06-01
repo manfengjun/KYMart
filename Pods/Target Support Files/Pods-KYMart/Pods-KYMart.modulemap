@@ -1,0 +1,6 @@
+framework module Pods_KYMart {
+  umbrella header "Pods-KYMart-umbrella.h"
+
+  export *
+  module * { export * }
+}
