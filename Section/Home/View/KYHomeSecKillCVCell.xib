@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kYHomeSecKillCVCell" id="gTV-IL-0wX" customClass="KYHomeSecKillCVCell" customModule="KYMart" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="172" height="277"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="172" height="277"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="goods_thumb_1_400_400.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YZe-lh-A7t">
+                        <rect key="frame" x="10" y="0.0" width="152" height="152"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="YZe-lh-A7t" secondAttribute="height" multiplier="1:1" id="3Y2-oD-v59"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="847天 13时 4分 20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHt-OW-MhO">
+                        <rect key="frame" x="10" y="132" width="152" height="20"/>
+                        <color key="backgroundColor" red="0.19215686274509802" green="0.19607843137254902" blue="0.20000000000000001" alpha="0.40000000000000002" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="evR-sk-H9i"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple iPhone 6S Plus 16G 玫瑰金" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjh-8A-p1r">
+                        <rect key="frame" x="10" y="162" width="152" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="GGx-qP-3ly"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 423.00元" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU6-eN-lEt">
+                        <rect key="frame" x="10" y="212" width="75" height="65"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                        <color key="textColor" red="0.90588235294117647" green="0.12156862745098039" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-Oj-PNC">
+                        <rect key="frame" x="137" y="232" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="So9-EZ-Ysw"/>
+                            <constraint firstAttribute="width" secondItem="M5U-Oj-PNC" secondAttribute="height" multiplier="1:1" id="pXL-Y0-myv"/>
+                        </constraints>
+                        <state key="normal" image="home_cart"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="YZe-lh-A7t" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Bq-If-kmx"/>
+                <constraint firstItem="vU6-eN-lEt" firstAttribute="top" secondItem="Rjh-8A-p1r" secondAttribute="bottom" constant="10" id="Dqg-Gn-E9k"/>
+                <constraint firstItem="vU6-eN-lEt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Kc0-zP-flR"/>
+                <constraint firstItem="YZe-lh-A7t" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Tqz-OT-8aN"/>
+                <constraint firstItem="iHt-OW-MhO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="X1p-GM-nLh"/>
+                <constraint firstAttribute="trailing" secondItem="M5U-Oj-PNC" secondAttribute="trailing" constant="10" id="YeE-1i-2Xg"/>
+                <constraint firstItem="Rjh-8A-p1r" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="auL-rm-Eoo"/>
+                <constraint firstItem="iHt-OW-MhO" firstAttribute="bottom" secondItem="YZe-lh-A7t" secondAttribute="bottom" id="eKZ-qh-bsR"/>
+                <constraint firstAttribute="trailing" secondItem="Rjh-8A-p1r" secondAttribute="trailing" constant="10" id="kLs-sg-xZD"/>
+                <constraint firstAttribute="trailing" secondItem="YZe-lh-A7t" secondAttribute="trailing" constant="10" id="mSO-WN-SLX"/>
+                <constraint firstItem="Rjh-8A-p1r" firstAttribute="top" secondItem="iHt-OW-MhO" secondAttribute="bottom" constant="10" id="q5i-nY-qC5"/>
+                <constraint firstAttribute="trailing" secondItem="iHt-OW-MhO" secondAttribute="trailing" constant="10" id="s1h-J0-vnB"/>
+                <constraint firstItem="M5U-Oj-PNC" firstAttribute="centerY" secondItem="vU6-eN-lEt" secondAttribute="centerY" id="sqS-Ma-yQ2"/>
+                <constraint firstAttribute="bottom" secondItem="vU6-eN-lEt" secondAttribute="bottom" id="t1O-6u-RXO"/>
+            </constraints>
+            <size key="customSize" width="172" height="277"/>
+            <point key="canvasLocation" x="-179" y="138.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="goods_thumb_1_400_400.jpeg" width="400" height="400"/>
+        <image name="home_cart" width="29" height="29"/>
+    </resources>
+</document>
