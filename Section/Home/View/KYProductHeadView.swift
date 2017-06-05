@@ -1,19 +1,19 @@
 //
-//  KYHomeFootView.swift
+//  KYProductHeadView.swift
 //  KYMart
 //
-//  Created by Jun on 2017/6/4.
+//  Created by Jun on 2017/6/5.
 //  Copyright © 2017年 JUN. All rights reserved.
 //
 
 import UIKit
 
-class KYHomeFootView: UICollectionReusableView {
+class KYProductHeadView: UICollectionReusableView {
 
     @IBOutlet var contentView: UICollectionReusableView!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView = Bundle.main.loadNibNamed("KYHomeFootView", owner: self, options: nil)?.first as! UICollectionReusableView
+        contentView = Bundle.main.loadNibNamed("KYProductHeadView", owner: self, options: nil)?.first as! UICollectionReusableView
         contentView.frame = self.bounds
         addSubview(contentView)
         awakeFromNib()
@@ -24,8 +24,7 @@ class KYHomeFootView: UICollectionReusableView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
-        backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
+        // Initialization code
     }
     
 }

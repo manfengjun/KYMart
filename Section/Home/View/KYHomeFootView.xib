@@ -26,19 +26,9 @@
                         <constraint firstAttribute="height" constant="0.5" id="f3R-tf-n8i"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oNZ-EJ-e3c">
-                    <rect key="frame" x="0.0" y="49.5" width="320" height="0.5"/>
-                    <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="0.5" id="8G8-lx-CuG"/>
-                    </constraints>
-                </view>
             </subviews>
-            <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="oNZ-EJ-e3c" secondAttribute="bottom" id="0Qp-QE-ml6"/>
-                <constraint firstAttribute="trailing" secondItem="oNZ-EJ-e3c" secondAttribute="trailing" id="G22-de-pkU"/>
-                <constraint firstItem="oNZ-EJ-e3c" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="SUm-PE-hQu"/>
                 <constraint firstItem="ddw-Ta-avz" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="iS2-lh-wFy"/>
                 <constraint firstItem="ddw-Ta-avz" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="j1O-ES-45y"/>
                 <constraint firstAttribute="trailing" secondItem="ddw-Ta-avz" secondAttribute="trailing" id="snW-PB-J7G"/>

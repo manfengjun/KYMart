@@ -56,13 +56,17 @@ extension KYHomeLayout{
         self.attrsArray?.append(headattr)
         /// cell
         let count = self.collectionView?.numberOfItems(inSection: section)
+        let result = SCREEN_WIDTH.truncatingRemainder(dividingBy: 4)
         for i in 0..<count! {
             let indexPath = NSIndexPath(item: i, section: section)
             let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
-            let width = (self.collectionView?.frame.size.width)! / 4
+            var width:CGFloat = (SCREEN_WIDTH - result)/4
             let height:CGFloat = SCREEN_WIDTH/4 - 20 + 30
             let x = i > 3 ? width * CGFloat(i - 4) : width * CGFloat(i)
             let y = i > 3 ? headH + height : headH
+            if i == 3 || i == 7 {
+                width = width + result
+            }
             attrs.frame = CGRect(x: x, y: y, width: width, height: height)
             self.attrsArray?.append(attrs)
         }
@@ -103,23 +107,24 @@ extension KYHomeLayout{
     }
     /// 商品滚动列表
     func setupProductListSection(section:Int) {
-//        let supplementaryViewIndexPath = IndexPath(row: 0, section: section)
-//        let headattr = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with: supplementaryViewIndexPath)
-//        let headH:CGFloat = 60
-//        headattr.frame = CGRect(x: 0, y: startY, width: (self.collectionView?.frame.size.width)!, height: headH)
-//        self.attrsArray?.append(headattr)
+        let supplementaryViewIndexPath = IndexPath(row: 0, section: section)
+        let headattr = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, with: supplementaryViewIndexPath)
+        let headH:CGFloat = 40
+        headattr.frame = CGRect(x: 0, y: startY, width: (self.collectionView?.frame.size.width)!, height: headH)
+        self.attrsArray?.append(headattr)
+        startY = startY + headH
         
         let count = self.collectionView?.numberOfItems(inSection: section)
         for i in 0..<count! {
             let indexPath = NSIndexPath(item: i, section: section)
             let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
-            let width = ((self.collectionView?.frame.size.width)! - 10) / 2 - 0.01
-            let height:CGFloat = 100
+            let width = (SCREEN_WIDTH - 10) / 2
+            let height:CGFloat = (SCREEN_WIDTH - 10)/2 + 80
             let x = (i%2 == 0) ? 0 : width + 10
             let y = startY
             attrs.frame = CGRect(x: x, y: y, width: width, height: height)
             self.attrsArray?.append(attrs)
-            startY = (i%2 == 0) ? startY : startY + height
+            startY = (i%2 == 0) ? startY : startY + height + 10
         }
         
     }

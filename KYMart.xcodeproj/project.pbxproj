@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7F421A4FD87650F1917A05B4 /* Pods_KYMart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */; };
+		BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */; };
+		BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */; };
+		BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E391EE58033002358C1 /* KYProductHeadView.swift */; };
+		BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */; };
+		BF335E3F1EE595A9002358C1 /* FJSectionRowHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E3D1EE595A9002358C1 /* FJSectionRowHeadView.swift */; };
+		BF335E401EE595A9002358C1 /* FJSectionRowHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E3E1EE595A9002358C1 /* FJSectionRowHeadView.xib */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
 		BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FA1EE3A1EC004A0FF7 /* TAAnimatedDotView.m */; };
 		BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FC1EE3A1EC004A0FF7 /* TADotView.m */; };
@@ -87,6 +93,12 @@
 		01CB4B724B5560F7C7F4E1F7 /* Pods-KYMart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.debug.xcconfig"; sourceTree = "<group>"; };
 		73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYMart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9F43A844CFA121A5EE4CB5 /* Pods-KYMart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.release.xcconfig"; sourceTree = "<group>"; };
+		BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductCVCell.swift; sourceTree = "<group>"; };
+		BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductCVCell.xib; sourceTree = "<group>"; };
+		BF335E391EE58033002358C1 /* KYProductHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductHeadView.swift; sourceTree = "<group>"; };
+		BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductHeadView.xib; sourceTree = "<group>"; };
+		BF335E3D1EE595A9002358C1 /* FJSectionRowHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionRowHeadView.swift; sourceTree = "<group>"; };
+		BF335E3E1EE595A9002358C1 /* FJSectionRowHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FJSectionRowHeadView.xib; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		BF8902F91EE3A1EC004A0FF7 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -302,8 +314,12 @@
 				BF8903571EE41D46004A0FF7 /* KYHomeSallHeadView.xib */,
 				BF8903621EE42EB5004A0FF7 /* KYProductScrollCVCell.swift */,
 				BF8903631EE42EB5004A0FF7 /* KYProductScrollCVCell.xib */,
+				BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */,
+				BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */,
 				BF89036C1EE44915004A0FF7 /* KYHomeFootView.swift */,
 				BF89036D1EE44915004A0FF7 /* KYHomeFootView.xib */,
+				BF335E391EE58033002358C1 /* KYProductHeadView.swift */,
+				BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,6 +410,8 @@
 				BFC6790A1EE5624D00545C2C /* FJSectionTitleCVCellCell.xib */,
 				BFC6790B1EE5624D00545C2C /* FJSectionHeadView.swift */,
 				BFC6790C1EE5624D00545C2C /* FJSectionHeadView.xib */,
+				BF335E3D1EE595A9002358C1 /* FJSectionRowHeadView.swift */,
+				BF335E3E1EE595A9002358C1 /* FJSectionRowHeadView.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -689,8 +707,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */,
 				BF8903651EE42EB5004A0FF7 /* KYProductScrollCVCell.xib in Resources */,
 				BFC679101EE5624D00545C2C /* FJLeftMenuTVCell.xib in Resources */,
+				BF335E401EE595A9002358C1 /* FJSectionRowHeadView.xib in Resources */,
 				BFC0173E1EDF9875005D66B0 /* LaunchScreen.storyboard in Resources */,
 				BF8903451EE3CBDC004A0FF7 /* KYHomeMenuCVCell.xib in Resources */,
 				BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */,
@@ -700,6 +720,7 @@
 				BFC679141EE5624D00545C2C /* FJSectionHeadView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
 				BF8903591EE41D47004A0FF7 /* KYHomeSallHeadView.xib in Resources */,
+				BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */,
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
 				BFC679121EE5624D00545C2C /* FJSectionTitleCVCellCell.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
@@ -782,6 +803,8 @@
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
+				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
+				BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */,
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
@@ -799,6 +822,7 @@
 				BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */,
 				BFC679131EE5624D00545C2C /* FJSectionHeadView.swift in Sources */,
 				BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */,
+				BF335E3F1EE595A9002358C1 /* FJSectionRowHeadView.swift in Sources */,
 				BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */,
 				BF8903311EE3AAEC004A0FF7 /* Common.swift in Sources */,
 				BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */,

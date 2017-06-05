@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYProductHeadView" customModule="KYMart" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="U6b-Vx-4bR" id="aas-xN-ZIV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="kYProductHeadView" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="猜你喜欢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOm-tg-eEd">
+                    <rect key="frame" x="128" y="16" width="65" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="2VY-9i-mB8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TKQ-cB-R4h">
+                    <rect key="frame" x="58" y="25" width="60" height="1"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Hq3-oR-gIL"/>
+                        <constraint firstAttribute="width" constant="60" id="v1P-Zg-4qV"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrJ-TH-U9U">
+                    <rect key="frame" x="203" y="24.5" width="60" height="1"/>
+                    <color key="backgroundColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Ffq-dh-kK4"/>
+                        <constraint firstAttribute="width" constant="60" id="SKZ-lw-QWf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="OOm-tg-eEd" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="0kT-hh-3mb"/>
+                <constraint firstItem="OOm-tg-eEd" firstAttribute="centerY" secondItem="TKQ-cB-R4h" secondAttribute="centerY" id="C6x-kB-O1Y"/>
+                <constraint firstItem="OOm-tg-eEd" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="OVq-Ua-w8k"/>
+                <constraint firstItem="UrJ-TH-U9U" firstAttribute="leading" secondItem="OOm-tg-eEd" secondAttribute="trailing" constant="10" id="UYT-G4-ckq"/>
+                <constraint firstItem="UrJ-TH-U9U" firstAttribute="centerY" secondItem="OOm-tg-eEd" secondAttribute="centerY" id="UxJ-So-c3T"/>
+                <constraint firstItem="OOm-tg-eEd" firstAttribute="leading" secondItem="TKQ-cB-R4h" secondAttribute="trailing" constant="10" id="mz4-7x-qcr"/>
+            </constraints>
+            <point key="canvasLocation" x="-346" y="88"/>
+        </collectionReusableView>
+    </objects>
+</document>

@@ -9,6 +9,8 @@
 import UIKit
 fileprivate let LeftMenuTVCellIdentifier = "fJLeftMenuTVCell"
 fileprivate let FJSectionTitleCVCellIdentifier = "fJSectionTitleCVCellCell"
+fileprivate let FJSectionRowHeadViewIdentifier = "fJSectionRowHeadView"
+
 class FJSectionController: UIViewController {
 
     fileprivate lazy var tableView : UITableView = {
@@ -22,17 +24,19 @@ class FJSectionController: UIViewController {
         return tableView
     }()
     fileprivate lazy var headView : FJSectionHeadView = {
-        let headView = FJSectionHeadView(frame: CGRect(x: SCREEN_WIDTH/4 + 5, y: 64 + 5, width: SCREEN_WIDTH*3/4 - 10, height: (SCREEN_WIDTH*3/4 - 10) * 0.4))
+        let headView = FJSectionHeadView(frame: CGRect(x: SCREEN_WIDTH/4 + 5, y: 5, width: SCREEN_WIDTH*3/4 - 10, height: (SCREEN_WIDTH*3/4 - 10) * 0.4))
         return headView
     }()
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: SCREEN_WIDTH/4, y: 64 + (SCREEN_WIDTH*3/4 - 10) * 0.4, width: SCREEN_WIDTH - SCREEN_WIDTH/4, height: SCREEN_HEIGHT), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: SCREEN_WIDTH/4, y: (SCREEN_WIDTH*3/4 - 10) * 0.4, width: SCREEN_WIDTH - SCREEN_WIDTH/4, height: SCREEN_HEIGHT), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(UINib(nibName: "FJSectionTitleCVCellCell", bundle: nil), forCellWithReuseIdentifier: FJSectionTitleCVCellIdentifier)
+        collectionView.register(FJSectionRowHeadView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: FJSectionRowHeadViewIdentifier)
+
         collectionView.delegate = self
     
         collectionView.dataSource = self
@@ -73,7 +77,7 @@ extension FJSectionController:UICollectionViewDelegate,UICollectionViewDataSourc
         return 10
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 2.5
@@ -89,6 +93,18 @@ extension FJSectionController:UICollectionViewDelegate,UICollectionViewDataSourc
         return CGSize(width: (SCREEN_WIDTH*3/4 - 20)/3, height: 30)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(5, 5, 0, 5)
+        return UIEdgeInsetsMake(0, 5, 5, 5)
     }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var resableview = UICollectionReusableView()
+        if kind == UICollectionElementKindSectionHeader {
+            let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: FJSectionRowHeadViewIdentifier, for: indexPath) as! FJSectionRowHeadView
+            resableview = view
+        }
+        return resableview
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: SCREEN_WIDTH, height: 40)
+    }
+    
 }

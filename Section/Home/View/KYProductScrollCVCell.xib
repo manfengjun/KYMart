@@ -29,6 +29,7 @@
                     </pageControl>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="IVJ-8r-9dC" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0YN-Mx-k4K"/>
                 <constraint firstAttribute="bottom" secondItem="IVJ-8r-9dC" secondAttribute="bottom" id="0Zb-OG-zDA"/>
