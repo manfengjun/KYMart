@@ -56,6 +56,14 @@
 		BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017CB1EDF9BD6005D66B0 /* XHToast.swift */; };
 		BFC018151EDF9C06005D66B0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018141EDF9C06005D66B0 /* libsqlite3.0.tbd */; };
 		BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018161EDF9C3D005D66B0 /* libz.tbd */; };
+		BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFC679051EE5624D00545C2C /* logo.jpg */; };
+		BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679061EE5624D00545C2C /* FJSectionController.swift */; };
+		BFC6790F1EE5624D00545C2C /* FJLeftMenuTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679071EE5624D00545C2C /* FJLeftMenuTVCell.swift */; };
+		BFC679101EE5624D00545C2C /* FJLeftMenuTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC679081EE5624D00545C2C /* FJLeftMenuTVCell.xib */; };
+		BFC679111EE5624D00545C2C /* FJSectionTitleCVCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679091EE5624D00545C2C /* FJSectionTitleCVCellCell.swift */; };
+		BFC679121EE5624D00545C2C /* FJSectionTitleCVCellCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC6790A1EE5624D00545C2C /* FJSectionTitleCVCellCell.xib */; };
+		BFC679131EE5624D00545C2C /* FJSectionHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6790B1EE5624D00545C2C /* FJSectionHeadView.swift */; };
+		BFC679141EE5624D00545C2C /* FJSectionHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC6790C1EE5624D00545C2C /* FJSectionHeadView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +153,14 @@
 		BFC017CB1EDF9BD6005D66B0 /* XHToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHToast.swift; sourceTree = "<group>"; };
 		BFC018141EDF9C06005D66B0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		BFC018161EDF9C3D005D66B0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BFC679051EE5624D00545C2C /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
+		BFC679061EE5624D00545C2C /* FJSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionController.swift; sourceTree = "<group>"; };
+		BFC679071EE5624D00545C2C /* FJLeftMenuTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJLeftMenuTVCell.swift; sourceTree = "<group>"; };
+		BFC679081EE5624D00545C2C /* FJLeftMenuTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FJLeftMenuTVCell.xib; sourceTree = "<group>"; };
+		BFC679091EE5624D00545C2C /* FJSectionTitleCVCellCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionTitleCVCellCell.swift; sourceTree = "<group>"; };
+		BFC6790A1EE5624D00545C2C /* FJSectionTitleCVCellCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FJSectionTitleCVCellCell.xib; sourceTree = "<group>"; };
+		BFC6790B1EE5624D00545C2C /* FJSectionHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionHeadView.swift; sourceTree = "<group>"; };
+		BFC6790C1EE5624D00545C2C /* FJSectionHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FJSectionHeadView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -370,6 +386,14 @@
 		BF89031D1EE3A3D0004A0FF7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BFC679051EE5624D00545C2C /* logo.jpg */,
+				BFC679061EE5624D00545C2C /* FJSectionController.swift */,
+				BFC679071EE5624D00545C2C /* FJLeftMenuTVCell.swift */,
+				BFC679081EE5624D00545C2C /* FJLeftMenuTVCell.xib */,
+				BFC679091EE5624D00545C2C /* FJSectionTitleCVCellCell.swift */,
+				BFC6790A1EE5624D00545C2C /* FJSectionTitleCVCellCell.xib */,
+				BFC6790B1EE5624D00545C2C /* FJSectionHeadView.swift */,
+				BFC6790C1EE5624D00545C2C /* FJSectionHeadView.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -666,16 +690,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF8903651EE42EB5004A0FF7 /* KYProductScrollCVCell.xib in Resources */,
+				BFC679101EE5624D00545C2C /* FJLeftMenuTVCell.xib in Resources */,
 				BFC0173E1EDF9875005D66B0 /* LaunchScreen.storyboard in Resources */,
 				BF8903451EE3CBDC004A0FF7 /* KYHomeMenuCVCell.xib in Resources */,
 				BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */,
 				BF8903371EE3B055004A0FF7 /* 2.jpg in Resources */,
 				BFC0173B1EDF9875005D66B0 /* Assets.xcassets in Resources */,
 				BF8903511EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib in Resources */,
+				BFC679141EE5624D00545C2C /* FJSectionHeadView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
 				BF8903591EE41D47004A0FF7 /* KYHomeSallHeadView.xib in Resources */,
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
+				BFC679121EE5624D00545C2C /* FJSectionTitleCVCellCell.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
+				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BF89036F1EE44915004A0FF7 /* KYHomeFootView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -750,6 +778,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
+				BFC679111EE5624D00545C2C /* FJSectionTitleCVCellCell.swift in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
@@ -768,13 +797,16 @@
 				BF89030B1EE3A1EC004A0FF7 /* UIView+SDExtension.m in Sources */,
 				BF8903081EE3A1EC004A0FF7 /* TAPageControl.m in Sources */,
 				BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */,
+				BFC679131EE5624D00545C2C /* FJSectionHeadView.swift in Sources */,
 				BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */,
+				BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */,
 				BF8903311EE3AAEC004A0FF7 /* Common.swift in Sources */,
 				BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */,
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
 				BF8903481EE3CE80004A0FF7 /* KYHomeHeadView.swift in Sources */,
 				BF89034B1EE3D672004A0FF7 /* KYHomeLayout.swift in Sources */,
+				BFC6790F1EE5624D00545C2C /* FJLeftMenuTVCell.swift in Sources */,
 				BF89032F1EE3A520004A0FF7 /* KYHomeViewController.swift in Sources */,
 				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
