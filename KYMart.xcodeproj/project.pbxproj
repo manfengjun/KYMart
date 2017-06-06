@@ -80,6 +80,10 @@
 		BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018161EDF9C3D005D66B0 /* libz.tbd */; };
 		BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFC679051EE5624D00545C2C /* logo.jpg */; };
 		BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679061EE5624D00545C2C /* FJSectionController.swift */; };
+		BFEC27841EE6D467000C505A /* KYProductListHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC27831EE6D467000C505A /* KYProductListHeadView.swift */; };
+		BFEC27891EE6F0CA000C505A /* KYProductMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEC27871EE6F0CA000C505A /* KYProductMenuView.swift */; };
+		BFEC278A1EE6F0CA000C505A /* KYProductMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEC27881EE6F0CA000C505A /* KYProductMenuView.xib */; };
+		BFEC278C1EE6F161000C505A /* KYProductListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFEC278B1EE6F161000C505A /* KYProductListHeadView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +197,10 @@
 		BFC018161EDF9C3D005D66B0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BFC679051EE5624D00545C2C /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		BFC679061EE5624D00545C2C /* FJSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionController.swift; sourceTree = "<group>"; };
+		BFEC27831EE6D467000C505A /* KYProductListHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductListHeadView.swift; sourceTree = "<group>"; };
+		BFEC27871EE6F0CA000C505A /* KYProductMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductMenuView.swift; sourceTree = "<group>"; };
+		BFEC27881EE6F0CA000C505A /* KYProductMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductMenuView.xib; sourceTree = "<group>"; };
+		BFEC278B1EE6F161000C505A /* KYProductListHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductListHeadView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,6 +560,10 @@
 			children = (
 				BFB6D0E11EE69DD700F2C61F /* KYProductListCVCell.swift */,
 				BFB6D0E21EE69DD700F2C61F /* KYProductListCVCell.xib */,
+				BFEC27831EE6D467000C505A /* KYProductListHeadView.swift */,
+				BFEC278B1EE6F161000C505A /* KYProductListHeadView.xib */,
+				BFEC27871EE6F0CA000C505A /* KYProductMenuView.swift */,
+				BFEC27881EE6F0CA000C505A /* KYProductMenuView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -819,7 +831,9 @@
 			files = (
 				BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */,
 				BF8903651EE42EB5004A0FF7 /* KYProductScrollCVCell.xib in Resources */,
+				BFEC278A1EE6F0CA000C505A /* KYProductMenuView.xib in Resources */,
 				BFB6D0E41EE69DD700F2C61F /* KYProductListCVCell.xib in Resources */,
+				BFEC278C1EE6F161000C505A /* KYProductListHeadView.xib in Resources */,
 				BFB6D0D51EE6965300F2C61F /* FJSectionTitleCVCellCell.xib in Resources */,
 				BFB6D0CF1EE6965300F2C61F /* FJLeftMenuTVCell.xib in Resources */,
 				BFB6D0D31EE6965300F2C61F /* FJSectionRowHeadView.xib in Resources */,
@@ -911,6 +925,7 @@
 			files = (
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
+				BFEC27891EE6F0CA000C505A /* KYProductMenuView.swift in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
@@ -938,6 +953,7 @@
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
 				BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */,
 				BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */,
+				BFEC27841EE6D467000C505A /* KYProductListHeadView.swift in Sources */,
 				BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */,
 				BF8903311EE3AAEC004A0FF7 /* Common.swift in Sources */,
 				BFB6D0CE1EE6965300F2C61F /* FJLeftMenuTVCell.swift in Sources */,

@@ -50,6 +50,13 @@ class KYProductListViewController: UIViewController {
         return collectionView
     }()
     
+    fileprivate lazy var headView : KYProductMenuView = {
+        let headView = KYProductMenuView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 40))
+//        headView.completionSignal?.observeValues({ (index) in
+//            
+//        })
+        return headView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -57,6 +64,7 @@ class KYProductListViewController: UIViewController {
     func setupUI() {
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
+        view.addSubview(headView)
         collectionView.mj_header = header
         collectionView.mj_footer = footer
     }
@@ -135,6 +143,7 @@ extension KYProductListViewController:UICollectionViewDelegate,UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYProductListCVCellIdentifier, for: indexPath) as! KYProductListCVCell
+        cell.model = dataArray[indexPath.row] as? Goods_list
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
