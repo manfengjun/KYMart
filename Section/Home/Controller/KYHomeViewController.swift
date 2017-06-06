@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 private let KYHomeMenuIdentifier = "kYHomeMenuCVCell"
 private let KYProductScrollIdentifier = "kYProductScrollCVCell"
 private let KYHomeHeadViewIdentifier = "kYHomeHeadView"
@@ -17,8 +18,54 @@ private let KYPoductHeadViewIdentifier = "kYProductHeadView"
 
 private let headerIdentifier = "header"
 class KYHomeViewController: UIViewController {
-    
-    var titleArray:[String] = ["全部分类","店铺街","品牌街","优惠活动","团购","我的订单","购物车","个人中心"]
+    var sectionCount:Int = 0
+    var scrollSectionTitles:[String] = []
+    var scrollSectionData:NSMutableArray = NSMutableArray()
+    var productArray:[Good] = []
+    var homepagemodel:KYHomeModel? {
+        didSet {
+            if let array = self.homepagemodel?.promotion_goods {
+                if array.count > 0 {
+                    self.sectionCount += 1
+                    self.scrollSectionTitles.append("促销商品")
+                    self.scrollSectionData.add(array)
+                }
+            }
+            if let array = self.homepagemodel?.high_quality_goods {
+                if array.count > 0 {
+                    self.sectionCount += 1
+                    self.scrollSectionTitles.append("精品推荐")
+                    self.scrollSectionData.add(array)
+                }
+            }
+            if let array = self.homepagemodel?.flash_sale_goods {
+                if array.count > 0 {
+                    self.sectionCount += 1
+                    self.scrollSectionTitles.append("抢购")
+                    self.scrollSectionData.add(array)
+                }
+            }
+            if let array = self.homepagemodel?.new_goods {
+                if array.count > 0 {
+                    self.sectionCount += 1
+                    self.scrollSectionTitles.append("新品上市")
+                    self.scrollSectionData.add(array)
+                }
+            }
+            if let array = self.homepagemodel?.hot_goods {
+                if array.count > 0 {
+                    self.sectionCount += 1
+                    self.scrollSectionTitles.append("热销商品")
+                    self.scrollSectionData.add(array)
+                }
+            }
+            self.sectionCount += 2
+
+        }
+    }
+    var titleArray:[String] = ["店铺街","品牌街","我的订单","个人中心"]
+    //刷新页数
+    var page = 1
     /// 列表
     fileprivate lazy var collectionView : UICollectionView = {
         let homeLayout = KYHomeLayout()
@@ -37,6 +84,12 @@ class KYHomeViewController: UIViewController {
 
         return collectionView
     }()
+    /// 上拉加载
+    fileprivate lazy var footer:MJRefreshAutoNormalFooter = {
+        let footer = MJRefreshAutoNormalFooter()
+        footer.setRefreshingTarget(self, refreshingAction: #selector(KYHomeViewController.footerRefresh))
+        return footer
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -45,31 +98,86 @@ class KYHomeViewController: UIViewController {
     
     /// 初始化UI
     func setupUI() {
-//        automaticallyAdjustsScrollViewInsets = false
+        automaticallyAdjustsScrollViewInsets = true
         view.addSubview(collectionView)
-
+        collectionView.mj_footer = footer
+        dataHomeRequest()
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 
-// MARK: ------ SDCycleScrollViewDelegate
+// MARK: - 数据请求
+extension KYHomeViewController {
+    /// 促销、热门、推荐、轮播等
+    func dataHomeRequest() {
+        SJBRequestModel.pull_fetchHomePageData { (response, status) in
+            if status == 1{
+                
+                self.dataProductRequest()
+                self.homepagemodel = response as? KYHomeModel
+            }
+        }
+    }
+    
+    /// 猜我喜欢
+    func dataProductRequest() {
+        SJBRequestModel.pull_fetchFavoriteProductData(page: self.page) { (response, status) in
+            self.collectionView.mj_footer.endRefreshing()
+            if status == 1{
+//                var currentArray = NSMutableArray()
+//                currentArray = self.productArray as! NSMutableArray
+                if response.count == 0 {
+                    XHToast.showBottomWithText("没有更多数据")
+                    self.page -= 1
+
+                    return
+                }
+                if self.productArray.count > 0 {
+                    //去重
+                    for item in response as! Array<Good> {
+                        let predicate = NSPredicate(format: "goods_id = %@", String(item.goods_id))
+                        let array = self.productArray as! NSMutableArray
+                        let result = array.filtered(using: predicate)
+                        if result.count <= 0{
+                            self.productArray.append(item)
+                        }
+                    }
+                }
+                else{
+                    self.productArray = response as! [Good]
+                }
+                self.collectionView.reloadData()
+                
+            }
+        }
+    }
+    
+    /// 上拉加载
+    func footerRefresh() {
+        page += 1
+        dataProductRequest()
+    }
+
+}
+// MARK: ------ 轮播图片
 extension KYHomeViewController:SDCycleScrollViewDelegate{
 
 }
+
+// MARK: - 数据列表
 extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return sectionCount
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 8
+            return 4
         }
-        if section == 4 {
-            return 20
+        else if section == sectionCount - 1 {
+            return productArray.count
         }
         return 1
     }
@@ -80,13 +188,15 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
             cell.menuIV.image = UIImage(named: "home_menu_\(indexPath.row + 1)")
             return cell
         }
-        else if indexPath.section == 4 {
+        if indexPath.section == sectionCount - 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYPoductIdentifier, for: indexPath) as! KYProductCVCell
+            cell.good = productArray[indexPath.row]
             return cell
         }
         else
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYProductScrollIdentifier, for: indexPath) as! KYProductScrollCVCell
+            cell.models = scrollSectionData[indexPath.section - 1] as? [Good]
             return cell
         }
         
@@ -96,21 +206,25 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
         if kind == UICollectionElementKindSectionHeader {
             if indexPath.section == 0 {
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KYHomeHeadViewIdentifier, for: indexPath) as! KYHomeHeadView
-                view.images = ["1.jpg","2.jpg"]
+                if let images = homepagemodel?.ad {
+                    view.images = images
+                }
                 resableview = view
             }
-            else if indexPath.section == 4 {
+            else if indexPath.section == sectionCount - 1 {
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KYPoductHeadViewIdentifier, for: indexPath) as! KYProductHeadView
                 resableview = view
             }
             else {
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KYHomeSallHeadViewIdentifier, for: indexPath) as! KYHomeSallHeadView
+                view.titleL.text = scrollSectionTitles[indexPath.section - 1]
                 resableview = view
             }
             
         }
         else
         {
+            
             let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: KYHomeFootViewIdentifier, for: indexPath) as! KYHomeFootView
             resableview = view
 

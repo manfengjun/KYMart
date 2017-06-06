@@ -12,6 +12,13 @@ class FJLeftMenuTVCell: UITableViewCell {
 
     @IBOutlet weak var indicateView: UIView!
     @IBOutlet weak var titleL: UILabel!
+    var model:FJSectionModel?{
+        didSet {
+            if let text = model?.mobile_name{
+                titleL.text = text
+            }
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()

@@ -5,7 +5,6 @@
 //  Created by Jun on 2017/6/4.
 //  Copyright © 2017年 JUN. All rights reserved.
 //
-
 import UIKit
 
 class KYHomeLayout: UICollectionViewLayout {
@@ -15,7 +14,7 @@ class KYHomeLayout: UICollectionViewLayout {
         return array
     }()
     override var collectionViewContentSize: CGSize {
-//        let attrs = self.attrsArray?.last
+        //        let attrs = self.attrsArray?.last
         return CGSize(width: CGFloat(0), height: startY)
     }
     /**
@@ -31,17 +30,24 @@ class KYHomeLayout: UICollectionViewLayout {
         super.prepare()
         attrsArray?.removeAll()
         
+        if collectionView?.numberOfSections == 0 {
+            return
+        }
         setupMenuSection(section: 0)
-        for i in 1..<4 {
+        for i in 1..<(collectionView?.numberOfSections)! - 1{
             setupSalesPromotionSection(section: i)
         }
-        setupProductListSection(section: 4)
+//        setupMenuSection(section: 0)
+//        for i in 1..<4 {
+//            setupSalesPromotionSection(section: i)
+//        }
+        setupProductListSection(section: (collectionView?.numberOfSections)! - 1)
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return self.attrsArray
     }
-
+    
 }
 extension KYHomeLayout{
     
@@ -57,6 +63,11 @@ extension KYHomeLayout{
         /// cell
         let count = self.collectionView?.numberOfItems(inSection: section)
         let result = SCREEN_WIDTH.truncatingRemainder(dividingBy: 4)
+        if count == 0 {
+            startY = headH
+            setupFootView(section: 0)
+            return
+        }
         for i in 0..<count! {
             let indexPath = NSIndexPath(item: i, section: section)
             let attrs = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
@@ -70,7 +81,8 @@ extension KYHomeLayout{
             attrs.frame = CGRect(x: x, y: y, width: width, height: height)
             self.attrsArray?.append(attrs)
         }
-        startY = headH + 2*(SCREEN_WIDTH/4 - 20 + 30)
+        let row = (count! - count!%4)/4
+        startY = headH + CGFloat(row)*(SCREEN_WIDTH/4 - 20 + 30)
         setupFootView(section: 0)
     }
     
@@ -91,12 +103,12 @@ extension KYHomeLayout{
         self.attrsArray?.append(attrs)
         startY = startY + headH + SCREEN_WIDTH/3 + 100
         setupFootView(section: section)
-
+        
     }
     
     /// 底部
     ///
-    /// - Parameter section: <#section description#>
+    /// - Parameter section: section description
     func setupFootView(section:Int) {
         let supplementaryViewIndexPath = IndexPath(row: 0, section: section)
         let headattr = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, with: supplementaryViewIndexPath)
@@ -124,8 +136,9 @@ extension KYHomeLayout{
             let y = startY
             attrs.frame = CGRect(x: x, y: y, width: width, height: height)
             self.attrsArray?.append(attrs)
-            startY = (i%2 == 0) ? startY : startY + height + 10
+            startY = (i%2 == 0 && i != count! - 1) ? startY : startY + height + 10
         }
+        
         
     }
 }

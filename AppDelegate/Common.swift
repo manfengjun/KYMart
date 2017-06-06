@@ -26,3 +26,13 @@ let imgPath = "http://m.hnlysjb.com"
 
 /// NavigationBar颜色
 let BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#E71F19")
+
+
+/// 图片链接
+///
+/// - Parameter goods_id: goods_id description
+/// - Returns: return value description
+func imageUrl(goods_id:Int) -> URL {
+    let url = URL(string: "http://test.kymart.cn/index.php?m=api&c=goods&a=goodsThumImages&goods_id=\(goods_id))&width=400&height=400")
+    return url!
+}

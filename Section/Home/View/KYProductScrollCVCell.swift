@@ -12,6 +12,15 @@ private let KYHomeSecKillIdentifier = "kYHomeSecKillCVCell"
 class KYProductScrollCVCell: UICollectionViewCell {
 
     @IBOutlet weak var pageControl: UIPageControl!
+    var models:[Good]?{
+        didSet {
+            if let array = models {
+                pageControl.numberOfPages = (array.count%3 == 0) ? array.count/3 : (array.count - array.count%3)/3
+ 
+            }
+            collectionView.reloadData()
+        }
+    }
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = HorizontalPageFlowlayout(rowCount: 1, itemCountPerRow: 3)
         layout?.setColumnSpacing(0, rowSpacing: 0, edgeInsets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
@@ -41,10 +50,16 @@ extension KYProductScrollCVCell:UICollectionViewDelegate,UICollectionViewDataSou
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        if let array = models {
+            return array.count
+        }
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYHomeSecKillIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYHomeSecKillIdentifier, for: indexPath) as! KYHomeSecKillCVCell
+        if let array = models {
+            cell.good = array[indexPath.row]
+        }
         return cell
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

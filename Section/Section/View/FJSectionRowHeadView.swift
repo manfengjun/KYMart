@@ -11,6 +11,14 @@ import UIKit
 class FJSectionRowHeadView: UICollectionReusableView {
 
     @IBOutlet var contentView: UICollectionReusableView!
+    @IBOutlet weak var titleL: UILabel!
+    var model:FJSubSectionModel?{
+        didSet {
+            if let text = model?.mobile_name{
+                titleL.text = text
+            }
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView = Bundle.main.loadNibNamed("FJSectionRowHeadView", owner: self, options: nil)?.first as! UICollectionReusableView

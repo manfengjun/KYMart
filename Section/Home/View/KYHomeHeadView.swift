@@ -12,9 +12,15 @@ class KYHomeHeadView: UICollectionReusableView {
 
     @IBOutlet weak var searchView: UIView!
     @IBOutlet var contentView: UICollectionReusableView!
-    var images:[String]?{
-        didSet{
-            sdcircleView.localizationImageNamesGroup = images
+    var images:[Ad]?{
+        didSet {
+            var urls:[String] = []
+            for model in images! {
+                if let url = model.ad_code {
+                    urls.append(url)
+                }
+            }
+            sdcircleView.imageURLStringsGroup = urls
         }
     }
     fileprivate lazy var sdcircleView : SDCycleScrollView = {
@@ -44,6 +50,7 @@ class KYHomeHeadView: UICollectionReusableView {
         searchView.layer.borderWidth = 0.5
         addSubview(sdcircleView)
     }
+    
     
 }
 extension KYHomeHeadView:SDCycleScrollViewDelegate{

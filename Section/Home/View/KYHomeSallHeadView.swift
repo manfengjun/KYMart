@@ -11,6 +11,7 @@ import UIKit
 class KYHomeSallHeadView: UICollectionReusableView {
 
     @IBOutlet var contentView: UICollectionReusableView!
+    @IBOutlet weak var titleL: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView = Bundle.main.loadNibNamed("KYHomeSallHeadView", owner: self, options: nil)?.first as! UICollectionReusableView
