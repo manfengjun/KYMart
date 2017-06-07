@@ -83,6 +83,9 @@
 		BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018161EDF9C3D005D66B0 /* libz.tbd */; };
 		BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFC679051EE5624D00545C2C /* logo.jpg */; };
 		BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679061EE5624D00545C2C /* FJSectionController.swift */; };
+		BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */; };
+		BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */; };
+		BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +202,9 @@
 		BFC018161EDF9C3D005D66B0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BFC679051EE5624D00545C2C /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		BFC679061EE5624D00545C2C /* FJSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionController.swift; sourceTree = "<group>"; };
+		BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailHomeViewController.swift; sourceTree = "<group>"; };
+		BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYProductPropertyView.swift; path = Section/Product/Detail/Controller/KYProductPropertyView.swift; sourceTree = SOURCE_ROOT; };
+		BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KYProductPropertyView.xib; path = Section/Product/Detail/Controller/KYProductPropertyView.xib; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -510,6 +516,7 @@
 			isa = PBXGroup;
 			children = (
 				BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */,
+				BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -524,6 +531,8 @@
 		BFB6D0DA1EE69D1A00F2C61F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */,
+				BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -654,6 +663,7 @@
 		BFC017641EDF9AB1005D66B0 /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				BFFE0E611EE834F000621CB0 /* Login */,
 				BF89030C1EE3A3D0004A0FF7 /* Cart */,
 				BF8903101EE3A3D0004A0FF7 /* Home */,
 				BF8903141EE3A3D0004A0FF7 /* Main */,
@@ -704,6 +714,37 @@
 				BFC017CB1EDF9BD6005D66B0 /* XHToast.swift */,
 			);
 			path = XHToastSwift;
+			sourceTree = "<group>";
+		};
+		BFFE0E611EE834F000621CB0 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BFFE0E621EE834F000621CB0 /* Controller */,
+				BFFE0E631EE834F000621CB0 /* Model */,
+				BFFE0E641EE834F000621CB0 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BFFE0E621EE834F000621CB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFFE0E631EE834F000621CB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFFE0E641EE834F000621CB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FD97331C6EF265EAAD8A6C44 /* Pods */ = {
@@ -839,6 +880,7 @@
 				BF9B74B91EE7830800322E2C /* KYProductMenuView.xib in Resources */,
 				BFC0173B1EDF9875005D66B0 /* Assets.xcassets in Resources */,
 				BF8903511EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib in Resources */,
+				BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
 				BF8903591EE41D47004A0FF7 /* KYHomeSallHeadView.xib in Resources */,
 				BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */,
@@ -958,7 +1000,9 @@
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
 				BF8903481EE3CE80004A0FF7 /* KYHomeHeadView.swift in Sources */,
+				BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */,
 				BF89034B1EE3D672004A0FF7 /* KYHomeLayout.swift in Sources */,
+				BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */,
 				BFB6D0E01EE69D4200F2C61F /* KYProductListViewController.swift in Sources */,
 				BF89032F1EE3A520004A0FF7 /* KYHomeViewController.swift in Sources */,
 				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,

@@ -32,8 +32,8 @@ class KYProductListCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.white
-        numberView.layer.borderColor = UIColor.hexStringColor(hex: "#ddd9da").cgColor
-        numberView.layer.borderWidth = 0.5
+//        numberView.layer.borderColor = UIColor.hexStringColor(hex: "#ddd9da").cgColor
+//        numberView.layer.borderWidth = 0.5
         // Initialization code
     }
 

@@ -89,17 +89,20 @@ class KYProductListViewController: UIViewController {
                     break
                 case 4:
                     if let str = model.orderby_price {
-                        self.url = str
+                        let array = str.components(separatedBy: "/")
+                        self.url = str.replacingOccurrences(of: array.last!, with: "asc")
                     }
                     break
                 case 5:
                     if let str = model.orderby_price {
-                        self.url = str
+                        let array = str.components(separatedBy: "/")
+                        self.url = str.replacingOccurrences(of: array.last!, with: "asc")
                     }
                     break
                 case 6:
                     if let str = model.orderby_price {
-                        self.url = str
+                        let array = str.components(separatedBy: "/")
+                        self.url = str.replacingOccurrences(of: array.last!, with: "desc")
                     }
                     break
                 default:
@@ -113,6 +116,7 @@ class KYProductListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+
     }
     func setupUI() {
         setBackButtonInNav()
@@ -201,7 +205,7 @@ extension KYProductListViewController:UICollectionViewDelegate,UICollectionViewD
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (SCREEN_WIDTH - 30)/2, height: (SCREEN_WIDTH - 30)/2 + 96)
+        return CGSize(width: (SCREEN_WIDTH - 30)/2, height: (SCREEN_WIDTH - 30)/2 + 66)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 10
