@@ -10,6 +10,8 @@ import UIKit
 
 class SJBRequestUrl: NSObject {
     static let basePath = "http://test.kymart.cn/index.php?"
+    static let baseHref = "http://test.kymart.cn"
+
     /// access_token
     ///
     /// - Returns: return value description
@@ -60,14 +62,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Parameter id: id description
     /// - Returns: return value description
-    class func returnProductLisyUrl(id:Int, orderby:String?, orderdesc:String?, page:Int) -> String {
-        var url = "\(basePath)m=Api&c=Goods&a=goodsList&id=\(id)&p=\(page)"
-        if let str = orderby {
-            url = url.appending("&orderby=\(str)")
-        }
-        if let str = orderdesc {
-            url = url.appending("&orderdesc=\(str)")
-        }
-        return "\(basePath)m=Api&c=Goods&a=goodsList&id=\(id)&p=\(page)"
+    class func returnProductLisyUrl(id:Int, url:String, page:Int) -> String {
+        return "\(baseHref)\(url)/p/\(page)"
     }
 }

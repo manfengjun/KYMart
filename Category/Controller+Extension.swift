@@ -8,6 +8,21 @@
 
 import UIKit
 extension UIViewController{
+    /// 导航栏返回按钮
+    ///
+    /// - Parameters:
+    ///   - imageUrl: imageUrl description
+    ///   - action: action description
+    func setBackButtonInNav() {
+        let image = UIImage(named: "nav_back.png")
+        let backBtn = UIButton(type: UIButtonType.custom)
+        backBtn.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        backBtn.addTarget(self, action: #selector(goback), for: UIControlEvents.touchUpInside)
+        backBtn.setImage(image, for: UIControlState.normal)
+        let item = UIBarButtonItem(customView: backBtn)
+        navigationItem.leftBarButtonItem = item
+    }
+
     /// 导航栏左侧按钮
     ///
     /// - Parameters:

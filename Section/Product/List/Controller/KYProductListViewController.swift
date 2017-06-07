@@ -12,8 +12,20 @@ fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
 class KYProductListViewController: UIViewController {
 
+    /// 默认热门排序
+    var url:String? {
+        didSet {
+            page = 1
+            dataRequest()
+        }
+    }
+    
+    /// 当前选中
+    var currentIndex = 0
     var id:Int? {
         didSet {
+            page = 1
+            url = "/index.php/api/Goods/goodsList/id/\(id!)/sort/is_new/sort_asc/desc"
             dataRequest()
         }
     }
@@ -41,7 +53,7 @@ class KYProductListViewController: UIViewController {
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(UINib(nibName: "KYProductListCVCell", bundle: nil), forCellWithReuseIdentifier: KYProductListCVCellIdentifier)
@@ -52,9 +64,50 @@ class KYProductListViewController: UIViewController {
     
     fileprivate lazy var headView : KYProductMenuView = {
         let headView = KYProductMenuView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 40))
-//        headView.completionSignal?.observeValues({ (index) in
-//            
-//        })
+        headView.completionSignal?.observeValues({ (index) in
+            if let model = self.productListModel {
+                if self.currentIndex == index{
+                    return
+                }
+                self.currentIndex = index
+                switch index {
+                case 1:
+                    if let str = model.orderby_is_new {
+                        self.url = str
+                    }
+                    break
+                case 2:
+                    if let str = model.orderby_sales_sum {
+                        self.url = str
+                    }
+                    break
+                case 3:
+                    if let str = model.orderby_comment_count {
+                        self.url = str
+                    }
+
+                    break
+                case 4:
+                    if let str = model.orderby_price {
+                        self.url = str
+                    }
+                    break
+                case 5:
+                    if let str = model.orderby_price {
+                        self.url = str
+                    }
+                    break
+                case 6:
+                    if let str = model.orderby_price {
+                        self.url = str
+                    }
+                    break
+                default:
+                    break
+                }
+            }
+
+        })
         return headView
     }()
     override func viewDidLoad() {
@@ -62,6 +115,7 @@ class KYProductListViewController: UIViewController {
         setupUI()
     }
     func setupUI() {
+        setBackButtonInNav()
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         view.addSubview(headView)
@@ -82,7 +136,7 @@ class KYProductListViewController: UIViewController {
     
     /// 请求数据
     func dataRequest() {
-        SJBRequestModel.pull_fetchProductListData(id: id!, page: page, orderby: nil, orderdesc: nil) { (response, status) in
+        SJBRequestModel.pull_fetchProductListData(id: id!, page: page, url:url!) { (response, status) in
             self.collectionView.mj_header.endRefreshing()
 
             if status == 1 {
@@ -147,15 +201,21 @@ extension KYProductListViewController:UICollectionViewDelegate,UICollectionViewD
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (SCREEN_WIDTH - 15)/2, height: (SCREEN_WIDTH - 15)/2 + 96)
+        return CGSize(width: (SCREEN_WIDTH - 30)/2, height: (SCREEN_WIDTH - 30)/2 + 96)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
+        return UIEdgeInsetsMake(10, 10, 10, 10)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = KYProductDetailViewController()
+        self.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 }

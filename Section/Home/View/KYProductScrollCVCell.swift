@@ -15,7 +15,7 @@ class KYProductScrollCVCell: UICollectionViewCell {
     var models:[Good]?{
         didSet {
             if let array = models {
-                pageControl.numberOfPages = (array.count%3 == 0) ? array.count/3 : (array.count - array.count%3)/3
+                pageControl.numberOfPages = (array.count%3 == 0) ? array.count/3 : (array.count - array.count%3)/3 + 1
  
             }
             collectionView.reloadData()

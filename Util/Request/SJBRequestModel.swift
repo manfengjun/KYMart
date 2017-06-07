@@ -121,8 +121,8 @@ class SJBRequestModel: NSObject {
         }
     }
     
-    class func pull_fetchProductListData(id:Int, page:Int, orderby:String?, orderdesc:String?, completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnProductLisyUrl(id: id, orderby: orderby, orderdesc: orderdesc, page: page)) { (response, status) in
+    class func pull_fetchProductListData(id:Int, page:Int, url:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnProductLisyUrl(id: id, url: url, page: page )) { (response, status) in
             self.dataToModel(type: .ProductList, response: response, status: status, completion: completion)
         }
     }

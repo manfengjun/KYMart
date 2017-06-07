@@ -7,5 +7,6 @@ target 'KYMart' do
     pod 'YYModel', '~> 1.0.4'
     pod 'YYCache', '~> 1.0.4'
     pod 'SDWebImage', '~> 4.0.0'
+    pod 'HMSegmentedControl', '~> 1.5.3'
 end
 

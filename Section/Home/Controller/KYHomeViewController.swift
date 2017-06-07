@@ -98,6 +98,7 @@ class KYHomeViewController: UIViewController {
     
     /// 初始化UI
     func setupUI() {
+        navigationController?.navigationBar.barTintColor = HOME_BAR_TINTCOLOR
         automaticallyAdjustsScrollViewInsets = true
         view.addSubview(collectionView)
         collectionView.mj_footer = footer

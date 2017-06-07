@@ -16,6 +16,8 @@ class BaseNavViewController: UINavigationController {
         navigationBar.barTintColor = BAR_TINTCOLOR
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.systemFont(ofSize: 17)]
+//        navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+//        navigationBar.shadowImage = UIImage()
     }
 
     override func didReceiveMemoryWarning() {
