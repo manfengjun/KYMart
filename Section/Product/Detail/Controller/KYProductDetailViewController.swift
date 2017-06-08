@@ -46,7 +46,6 @@ class KYProductDetailViewController: UIViewController {
         scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
-        scrollView.isUserInteractionEnabled = true
 
         return scrollView
         

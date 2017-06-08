@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,7 +37,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="+">
-                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.90588235289999997" green="0.1215686275" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJB-Ll-D6B">
@@ -61,23 +61,33 @@
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <state key="normal" title="-">
-                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.90588235289999997" green="0.1215686275" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LC-Ia-xjt">
+                            <rect key="frame" x="25.5" y="0.0" width="49" height="25"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                            <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="ex6-YC-Yoc" secondAttribute="bottom" id="3am-md-oPq"/>
                         <constraint firstAttribute="bottom" secondItem="GnJ-1N-8i2" secondAttribute="bottom" id="7CQ-hS-Xdv"/>
                         <constraint firstItem="JZn-Qr-6F0" firstAttribute="top" secondItem="4Ke-ZO-TsZ" secondAttribute="top" id="BNH-Qv-wWC"/>
+                        <constraint firstItem="JZn-Qr-6F0" firstAttribute="leading" secondItem="8LC-Ia-xjt" secondAttribute="trailing" id="DgU-wU-hyb"/>
+                        <constraint firstItem="8LC-Ia-xjt" firstAttribute="top" secondItem="4Ke-ZO-TsZ" secondAttribute="top" id="OHK-Gi-PhZ"/>
                         <constraint firstItem="GnJ-1N-8i2" firstAttribute="top" secondItem="4Ke-ZO-TsZ" secondAttribute="top" id="QJS-yL-53b"/>
                         <constraint firstItem="ex6-YC-Yoc" firstAttribute="leading" secondItem="4Ke-ZO-TsZ" secondAttribute="leading" id="Uwh-Yn-ddw"/>
                         <constraint firstItem="hJB-Ll-D6B" firstAttribute="top" secondItem="4Ke-ZO-TsZ" secondAttribute="top" id="YKs-B8-2Iw"/>
                         <constraint firstItem="GnJ-1N-8i2" firstAttribute="leading" secondItem="JZn-Qr-6F0" secondAttribute="trailing" id="cnh-wQ-6vm"/>
                         <constraint firstAttribute="trailing" secondItem="GnJ-1N-8i2" secondAttribute="trailing" id="iM3-X9-28h"/>
+                        <constraint firstItem="8LC-Ia-xjt" firstAttribute="leading" secondItem="hJB-Ll-D6B" secondAttribute="trailing" id="kf2-7E-gYY"/>
                         <constraint firstAttribute="bottom" secondItem="JZn-Qr-6F0" secondAttribute="bottom" id="lo2-bT-a8q"/>
                         <constraint firstAttribute="width" constant="100" id="nv6-M5-yh6"/>
                         <constraint firstAttribute="height" constant="25" id="oPN-b3-X8H"/>
+                        <constraint firstAttribute="bottom" secondItem="8LC-Ia-xjt" secondAttribute="bottom" id="uXu-mE-NrK"/>
                         <constraint firstAttribute="bottom" secondItem="hJB-Ll-D6B" secondAttribute="bottom" id="vw0-LQ-6sf"/>
                         <constraint firstItem="ex6-YC-Yoc" firstAttribute="top" secondItem="4Ke-ZO-TsZ" secondAttribute="top" id="vzh-Jv-WsN"/>
                         <constraint firstItem="hJB-Ll-D6B" firstAttribute="leading" secondItem="ex6-YC-Yoc" secondAttribute="trailing" id="xld-l6-w3M"/>

@@ -27,7 +27,10 @@ class Spec_list :NSObject{
 class Goods_spec_list :NSObject{
     var spec_name: String!
     var spec_list: [Spec_list]!
-    
+    class func modelContainerPropertyGenericClass() -> NSDictionary {
+        return ["spec_list" : Spec_list.classForCoder()]
+    }
+
 }
 
 class Goods :NSObject{
@@ -82,7 +85,9 @@ class Goods :NSObject{
     var on_time: Int = 0
     var virtual_refund: Int = 0
     var is_hot: Int = 0
-    
+    class func modelContainerPropertyGenericClass() -> NSDictionary {
+        return ["goods_spec_list" : Goods_spec_list.classForCoder()]
+    }
 }
 
 class Gallery :NSObject{
@@ -100,7 +105,9 @@ class Activity :NSObject{
     var prom_start_time: Int = 0
     var prom_price: Int = 0
     var prom_end_time: Int = 0
-
+    class func modelContainerPropertyGenericClass() -> NSDictionary {
+        return ["data" : Data.classForCoder()]
+    }
 }
 
 class Spec_goods_price :NSObject{

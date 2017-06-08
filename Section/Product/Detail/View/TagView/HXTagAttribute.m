@@ -23,12 +23,13 @@
         UIColor *selectedBackgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0];
         
         _borderWidth = 0.5f;
-        _borderColor = normalColor;
+        _borderColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
         _cornerRadius = 2.0;
         _normalBackgroundColor = normalBackgroundColor;
-        _selectedBackgroundColor = selectedBackgroundColor;
+        _selectedBackgroundColor = [UIColor colorWithRed:231/255.0 green:31/255.0 blue:25/255.0 alpha:1.0];
+        _selectedTextColor = [UIColor whiteColor];
         _titleSize = 14;
-        _textColor = normalColor;
+        _textColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
         _keyColor = [UIColor redColor];
         _tagSpace = 20;
     }

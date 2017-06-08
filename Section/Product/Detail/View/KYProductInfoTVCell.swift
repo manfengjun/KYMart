@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import ReactiveCocoa
-import ReactiveSwift
-import Result
 class KYProductInfoTVCell: UITableViewCell {
 
     @IBOutlet weak var scrollCircleView: SDCycleScrollView!
@@ -21,7 +18,8 @@ class KYProductInfoTVCell: UITableViewCell {
     @IBOutlet weak var buyCount: UILabel!
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var selectView: UIView!
-    var completionSignal:Signal<Int, NoError>?
+    //闭包类型
+    var replyColsure:((Int)->())?
 
     var model:KYGoodInfoModel?{
         didSet {
@@ -57,18 +55,30 @@ class KYProductInfoTVCell: UITableViewCell {
         super.awakeFromNib()
         shareView.isUserInteractionEnabled = true
         selectView.isUserInteractionEnabled = true
-        let shareTap = UITapGestureRecognizer()
+        let shareTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
         shareView.addGestureRecognizer(shareTap)
-        let shareSignal = shareTap.reactive.stateChanged.map { (guesture) -> Int in
-            return 1
-        }
-        let selectTap = UITapGestureRecognizer()
+//        let shareSignal = shareTap.reactive.stateChanged.map { (guesture) -> Int in
+//            return 1
+//        }
+        let selectTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
         selectView.addGestureRecognizer(selectTap)
-        let selectSignal = selectTap.reactive.stateChanged.map { (guesture) -> Int in
-            return 2
-        }
-        completionSignal = Signal.merge([shareSignal,selectSignal])
+//        let selectSignal = selectTap.reactive.stateChanged.map { (guesture) -> Int in
+//            return 2
+//        }
         
+    }
+    func tapAction(guesture:UITapGestureRecognizer) {
+        if (guesture.view?.isEqual(shareView))! {
+            if let colsure = replyColsure {
+                colsure(1)
+            }
+        }
+        else
+        {
+            if let colsure = replyColsure {
+                colsure(2)
+            }
+        }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

@@ -47,6 +47,8 @@
 		BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B74B61EE782FC00322E2C /* KYProductMenuView.swift */; };
 		BF9B74B91EE7830800322E2C /* KYProductMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9B74B81EE7830800322E2C /* KYProductMenuView.xib */; };
 		BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */; };
+		BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */; };
+		BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */; };
 		BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6D0AC1EE63C1600F2C61F /* SJBRequest.swift */; };
 		BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6D0AD1EE63C1600F2C61F /* SJBRequestModel.swift */; };
 		BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6D0AE1EE63C1600F2C61F /* SJBRequestUrl.swift */; };
@@ -167,6 +169,8 @@
 		BF9B74B61EE782FC00322E2C /* KYProductMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductMenuView.swift; sourceTree = "<group>"; };
 		BF9B74B81EE7830800322E2C /* KYProductMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductMenuView.xib; sourceTree = "<group>"; };
 		BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailViewController.swift; sourceTree = "<group>"; };
+		BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPropertyHeadView.swift; sourceTree = "<group>"; };
+		BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYPropertyHeadView.xib; sourceTree = "<group>"; };
 		BFB6D0AC1EE63C1600F2C61F /* SJBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRequest.swift; sourceTree = "<group>"; };
 		BFB6D0AD1EE63C1600F2C61F /* SJBRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRequestModel.swift; sourceTree = "<group>"; };
 		BFB6D0AE1EE63C1600F2C61F /* SJBRequestUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRequestUrl.swift; sourceTree = "<group>"; };
@@ -562,6 +566,8 @@
 				BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */,
 				BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */,
 				BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */,
+				BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */,
+				BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */,
 				BFDCB40E1EE912070040A09B /* KYProductInfoTVCell.swift */,
 				BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */,
 			);
@@ -935,6 +941,7 @@
 				BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */,
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
 				BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */,
+				BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BFB6D0D11EE6965300F2C61F /* FJSectionHeadView.xib in Resources */,
@@ -1019,6 +1026,7 @@
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
 				BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */,
+				BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */,
 				BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */,
 				BFB6D0E31EE69DD700F2C61F /* KYProductListCVCell.swift in Sources */,
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,

@@ -1,20 +1,19 @@
 //
-//  KYPropertyFootView.swift
+//  KYPropertyHeadView.swift
 //  KYMart
 //
-//  Created by jun on 2017/6/8.
+//  Created by Jun on 2017/6/8.
 //  Copyright © 2017年 JUN. All rights reserved.
 //
 
 import UIKit
 
-class KYPropertyFootView: UIView {
+class KYPropertyHeadView: UIView {
 
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var buyCountView: UIView!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView = Bundle.main.loadNibNamed("KYPropertyFootView", owner: self, options: nil)?.first as! UIView
+        contentView = Bundle.main.loadNibNamed("KYPropertyHeadView", owner: self, options: nil)?.first as! UIView
         contentView.frame = self.bounds
         addSubview(contentView)
         awakeFromNib()
@@ -25,9 +24,6 @@ class KYPropertyFootView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        buyCountView.layer.masksToBounds = true
-        buyCountView.layer.cornerRadius = 5.0
-        buyCountView.layer.borderWidth = 0.5
-        buyCountView.layer.borderColor = UIColor.hexStringColor(hex: "#666666").cgColor
     }
+
 }

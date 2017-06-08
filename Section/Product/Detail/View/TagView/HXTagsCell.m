@@ -83,6 +83,7 @@ static NSString * const reuseIdentifier = @"HXTagCollectionViewCellId";
     
     if ([self.selectedTags containsObject:self.tags[indexPath.item]]) {
         cell.backgroundColor = _tagAttribute.selectedBackgroundColor;
+        cell.titleLabel.textColor = _tagAttribute.selectedTextColor;
     }
     
     return cell;
@@ -91,9 +92,10 @@ static NSString * const reuseIdentifier = @"HXTagCollectionViewCellId";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HXTagCollectionViewCell *cell = (HXTagCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    
     if ([self.selectedTags containsObject:self.tags[indexPath.item]]) {
         cell.backgroundColor = _tagAttribute.normalBackgroundColor;
+        cell.titleLabel.textColor = _tagAttribute.textColor;
+        
         [self.selectedTags removeObject:self.tags[indexPath.item]];
     }
     else {
