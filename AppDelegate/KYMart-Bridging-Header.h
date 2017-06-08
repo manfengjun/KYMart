@@ -10,3 +10,5 @@
 #import "XLPlainFlowLayout.h"
 #import "HorizontalPageFlowlayout.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "HXTagsCell.h"
+#import "HXTagAttribute.h"

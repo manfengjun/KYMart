@@ -7,10 +7,9 @@
 //
 
 import UIKit
-
+let basePath = "http://test.kymart.cn/index.php?"
+let baseHref = "http://test.kymart.cn"
 class SJBRequestUrl: NSObject {
-    static let basePath = "http://test.kymart.cn/index.php?"
-    static let baseHref = "http://test.kymart.cn"
 
     /// access_token
     ///
@@ -65,4 +64,12 @@ class SJBRequestUrl: NSObject {
     class func returnProductLisyUrl(id:Int, url:String, page:Int) -> String {
         return "\(baseHref)\(url)/p/\(page)"
     }
+    
+    /// 获取商品详情
+    ///
+    /// - Returns: return value description
+    class func returnProductInfoUrl() -> String {
+        return "\(basePath)m=api&c=goods&a=goodsInfo"
+    }
+
 }

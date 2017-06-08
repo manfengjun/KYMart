@@ -20,7 +20,7 @@ let FONT_SIZE = 12
 /// 字体
 let FONT_NAME = "Microsoft YaHei"
 
-let imgPath = "http://m.hnlysjb.com"
+let imgPath = "http://test.kymart.cn"
 
 
 
@@ -33,6 +33,6 @@ let HOME_BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#E71F19")
 /// - Parameter goods_id: goods_id description
 /// - Returns: return value description
 func imageUrl(goods_id:Int) -> URL {
-    let url = URL(string: "http://test.kymart.cn/index.php?m=api&c=goods&a=goodsThumImages&goods_id=\(goods_id))&width=400&height=400")
+    let url = URL(string: "\(baseHref)/index.php?m=api&c=goods&a=goodsThumImages&goods_id=\(goods_id))&width=400&height=400")
     return url!
 }

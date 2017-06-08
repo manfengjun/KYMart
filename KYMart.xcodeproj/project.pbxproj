@@ -83,6 +83,16 @@
 		BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018161EDF9C3D005D66B0 /* libz.tbd */; };
 		BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFC679051EE5624D00545C2C /* logo.jpg */; };
 		BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679061EE5624D00545C2C /* FJSectionController.swift */; };
+		BFDCB4071EE8F3730040A09B /* HXTagAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB3FE1EE8F3730040A09B /* HXTagAttribute.m */; };
+		BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4001EE8F3730040A09B /* HXTagCollectionViewCell.m */; };
+		BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4021EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m */; };
+		BFDCB40A1EE8F3730040A09B /* HXTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4041EE8F3730040A09B /* HXTagsCell.m */; };
+		BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4061EE8F3730040A09B /* HXTagsView.m */; };
+		BFDCB40D1EE905BD0040A09B /* KYGoodInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB40C1EE905BD0040A09B /* KYGoodInfoModel.swift */; };
+		BFDCB4101EE912070040A09B /* KYProductInfoTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB40E1EE912070040A09B /* KYProductInfoTVCell.swift */; };
+		BFDCB4111EE912070040A09B /* KYProductInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */; };
+		BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */; };
+		BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */; };
 		BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */; };
 		BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */; };
 		BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */; };
@@ -202,6 +212,21 @@
 		BFC018161EDF9C3D005D66B0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		BFC679051EE5624D00545C2C /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		BFC679061EE5624D00545C2C /* FJSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionController.swift; sourceTree = "<group>"; };
+		BFDCB3FD1EE8F3730040A09B /* HXTagAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTagAttribute.h; sourceTree = "<group>"; };
+		BFDCB3FE1EE8F3730040A09B /* HXTagAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTagAttribute.m; sourceTree = "<group>"; };
+		BFDCB3FF1EE8F3730040A09B /* HXTagCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTagCollectionViewCell.h; sourceTree = "<group>"; };
+		BFDCB4001EE8F3730040A09B /* HXTagCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTagCollectionViewCell.m; sourceTree = "<group>"; };
+		BFDCB4011EE8F3730040A09B /* HXTagCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTagCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		BFDCB4021EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTagCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		BFDCB4031EE8F3730040A09B /* HXTagsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTagsCell.h; sourceTree = "<group>"; };
+		BFDCB4041EE8F3730040A09B /* HXTagsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTagsCell.m; sourceTree = "<group>"; };
+		BFDCB4051EE8F3730040A09B /* HXTagsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HXTagsView.h; sourceTree = "<group>"; };
+		BFDCB4061EE8F3730040A09B /* HXTagsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HXTagsView.m; sourceTree = "<group>"; };
+		BFDCB40C1EE905BD0040A09B /* KYGoodInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYGoodInfoModel.swift; sourceTree = "<group>"; };
+		BFDCB40E1EE912070040A09B /* KYProductInfoTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductInfoTVCell.swift; sourceTree = "<group>"; };
+		BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductInfoTVCell.xib; sourceTree = "<group>"; };
+		BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPropertyFootView.swift; sourceTree = "<group>"; };
+		BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYPropertyFootView.xib; sourceTree = "<group>"; };
 		BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailHomeViewController.swift; sourceTree = "<group>"; };
 		BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYProductPropertyView.swift; path = Section/Product/Detail/Controller/KYProductPropertyView.swift; sourceTree = SOURCE_ROOT; };
 		BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KYProductPropertyView.xib; path = Section/Product/Detail/Controller/KYProductPropertyView.xib; sourceTree = SOURCE_ROOT; };
@@ -524,6 +549,7 @@
 		BFB6D0D91EE69D1A00F2C61F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFDCB40C1EE905BD0040A09B /* KYGoodInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -531,8 +557,13 @@
 		BFB6D0DA1EE69D1A00F2C61F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFDCB3FC1EE8F3730040A09B /* TagView */,
 				BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */,
 				BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */,
+				BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */,
+				BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */,
+				BFDCB40E1EE912070040A09B /* KYProductInfoTVCell.swift */,
+				BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,6 +747,23 @@
 			path = XHToastSwift;
 			sourceTree = "<group>";
 		};
+		BFDCB3FC1EE8F3730040A09B /* TagView */ = {
+			isa = PBXGroup;
+			children = (
+				BFDCB3FD1EE8F3730040A09B /* HXTagAttribute.h */,
+				BFDCB3FE1EE8F3730040A09B /* HXTagAttribute.m */,
+				BFDCB3FF1EE8F3730040A09B /* HXTagCollectionViewCell.h */,
+				BFDCB4001EE8F3730040A09B /* HXTagCollectionViewCell.m */,
+				BFDCB4011EE8F3730040A09B /* HXTagCollectionViewFlowLayout.h */,
+				BFDCB4021EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m */,
+				BFDCB4031EE8F3730040A09B /* HXTagsCell.h */,
+				BFDCB4041EE8F3730040A09B /* HXTagsCell.m */,
+				BFDCB4051EE8F3730040A09B /* HXTagsView.h */,
+				BFDCB4061EE8F3730040A09B /* HXTagsView.m */,
+			);
+			path = TagView;
+			sourceTree = "<group>";
+		};
 		BFFE0E611EE834F000621CB0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -882,9 +930,11 @@
 				BF8903511EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib in Resources */,
 				BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
+				BFDCB4111EE912070040A09B /* KYProductInfoTVCell.xib in Resources */,
 				BF8903591EE41D47004A0FF7 /* KYHomeSallHeadView.xib in Resources */,
 				BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */,
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
+				BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BFB6D0D11EE6965300F2C61F /* FJSectionHeadView.xib in Resources */,
@@ -964,13 +1014,16 @@
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
+				BFDCB4101EE912070040A09B /* KYProductInfoTVCell.swift in Sources */,
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
 				BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */,
+				BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */,
 				BFB6D0E31EE69DD700F2C61F /* KYProductListCVCell.swift in Sources */,
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
+				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
@@ -982,13 +1035,16 @@
 				BFB6D0D21EE6965300F2C61F /* FJSectionRowHeadView.swift in Sources */,
 				BF8903581EE41D47004A0FF7 /* KYHomeSallHeadView.swift in Sources */,
 				BF89030A1EE3A1EC004A0FF7 /* SDCycleScrollView.m in Sources */,
+				BFDCB4071EE8F3730040A09B /* HXTagAttribute.m in Sources */,
 				BF8903441EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift in Sources */,
 				BF89036B1EE43288004A0FF7 /* HorizontalPageFlowlayout.m in Sources */,
 				BFC017FD1EDF9BD6005D66B0 /* Reachability.m in Sources */,
 				BFC017BF1EDF9B95005D66B0 /* AppDelegate.swift in Sources */,
 				BF89036E1EE44915004A0FF7 /* KYHomeFootView.swift in Sources */,
+				BFDCB40A1EE8F3730040A09B /* HXTagsCell.m in Sources */,
 				BF89030B1EE3A1EC004A0FF7 /* UIView+SDExtension.m in Sources */,
 				BF8903081EE3A1EC004A0FF7 /* TAPageControl.m in Sources */,
+				BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */,
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
 				BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */,
 				BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */,
@@ -998,6 +1054,7 @@
 				BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */,
 				BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */,
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
+				BFDCB40D1EE905BD0040A09B /* KYGoodInfoModel.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
 				BF8903481EE3CE80004A0FF7 /* KYHomeHeadView.swift in Sources */,
 				BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */,
@@ -1009,6 +1066,7 @@
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */,
+				BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */,
 				BFB6D0D01EE6965300F2C61F /* FJSectionHeadView.swift in Sources */,
 				BF8903551EE4176D004A0FF7 /* View+Extension.swift in Sources */,
 				BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */,

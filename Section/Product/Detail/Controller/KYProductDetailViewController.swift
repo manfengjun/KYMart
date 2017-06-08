@@ -11,23 +11,23 @@ import HMSegmentedControl
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
 class KYProductDetailViewController: UIViewController {
-    /// 商品详情属性
-    fileprivate lazy var collectionView : UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.register(UINib(nibName: "KYProductListCVCell", bundle: nil), forCellWithReuseIdentifier: KYProductListCVCellIdentifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        return collectionView
-    }()
+//    /// 商品详情属性
+//    fileprivate lazy var collectionView : UICollectionView = {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .vertical
+//        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
+//        collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
+//        collectionView.showsVerticalScrollIndicator = false
+//        collectionView.register(UINib(nibName: "KYProductListCVCell", bundle: nil), forCellWithReuseIdentifier: KYProductListCVCellIdentifier)
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
+//        return collectionView
+//    }()
 
     /// 新闻滚动菜单
     fileprivate lazy var segmentControl : HMSegmentedControl = {
         let segmentControl = HMSegmentedControl(frame: CGRect(x: 100, y: 20, width: SCREEN_WIDTH/2, height: 44))
-        segmentControl.sectionTitles = ["商品","详情","评价"]
+        segmentControl.sectionTitles = ["商品","详情"]
         segmentControl.backgroundColor = UIColor.clear
         segmentControl.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.gray,NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
         segmentControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName:UIColor.hexStringColor(hex: "#F85959"),NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
@@ -43,7 +43,11 @@ class KYProductDetailViewController: UIViewController {
     }()
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
-        scrollView.contentSize = CGSize(width: 3*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
+        scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
+        scrollView.isPagingEnabled = true
+        scrollView.bounces = false
+        scrollView.isUserInteractionEnabled = true
+
         return scrollView
         
     }()
@@ -52,8 +56,20 @@ class KYProductDetailViewController: UIViewController {
         setBackButtonInNav()
         view.backgroundColor = UIColor.white
         view.addSubview(scrollView)
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(KYProductDetailViewController.ceshi))
+//        scrollView.addGestureRecognizer(tap)
+        setupUI()
         // Do any additional setup after loading the view.
     }
+    
+    func setupUI() {
+        let productInfoVC = KYProductDetailHomeViewController()
+        productInfoVC.view.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
+        scrollView.addSubview(productInfoVC.view)
+        
+        addChildViewController(productInfoVC)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.view.addSubview(segmentControl)

@@ -13,6 +13,7 @@ enum ModelType {
     case Section//一级分类
     case SubSection//二三级分类
     case ProductList//商品列表
+    case ProductInfo//商品详情
 }
 class SJBRequestModel: NSObject {
     class func dataToModel(type:ModelType, response:AnyObject, status:Int, completion:(AnyObject,Int)-> Void) {
@@ -26,6 +27,12 @@ class SJBRequestModel: NSObject {
                 break
             case .ProductList:
                 let temmodel = KYProductListModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .ProductInfo:
+                let temmodel = KYGoodInfoModel.yy_model(with: response as! [AnyHashable : Any])
                 if let model = temmodel {
                     completion(model,status)
                 }
@@ -121,10 +128,29 @@ class SJBRequestModel: NSObject {
         }
     }
     
+    /// 获取商品列表
+    ///
+    /// - Parameters:
+    ///   - id: id description
+    ///   - page: page description
+    ///   - url: url description
+    ///   - completion: completion description
     class func pull_fetchProductListData(id:Int, page:Int, url:String, completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Get(url: SJBRequestUrl.returnProductLisyUrl(id: id, url: url, page: page )) { (response, status) in
             self.dataToModel(type: .ProductList, response: response, status: status, completion: completion)
         }
     }
 
+    
+    /// 获取商品详情
+    ///
+    /// - Parameters:
+    ///   - id: id description
+    ///   - completion: completion description
+    class func pull_fetchProductInfoData(id:Int, completion:@escaping (AnyObject,Int) -> Void) {
+        let params = ["id":String(id)]
+        SJBRequest.Post(url: SJBRequestUrl.returnProductInfoUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .ProductInfo, response: response, status: status, completion: completion)
+        }
+    }
 }
