@@ -13,6 +13,7 @@ class SingleManager: NSObject {
     static let instance = SingleManager()
     /// 登录token
     var access_token:String?
-    /// 菜单数据源
+    /// 购买对象
+    var productBuyInfoModel:KYProductBuyInfoModel?
 
 }

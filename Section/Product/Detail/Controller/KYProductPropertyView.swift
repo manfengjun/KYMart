@@ -15,23 +15,28 @@ class KYProductPropertyView: UIView {
     @IBOutlet weak var productIV: UIImageView!
     @IBOutlet weak var priceL: UILabel!
     @IBOutlet weak var productNumL: UILabel!
+    
+    /// 是否已加载数据
     var isLoadData:Bool = false
-    var currentTags:NSMutableArray = NSMutableArray()
+    
+    /// 当前选择的标签
+//    var currentTags:NSMutableArray = NSMutableArray()
+    
+    /// 当前的采购数量
+//    var currentCount:String = "0"
+    
+    /// 数据源
     var model:KYGoodInfoModel?{
         didSet {
             if !isLoadData {
                 if let id = model?.goods.goods_id {
-                    productIV.layer.masksToBounds = true
-                    productIV.layer.cornerRadius = 5.0
-                    productIV.layer.borderColor = UIColor.hexStringColor(hex: "#DEDEDE", alpha: 0.6).cgColor
-                    productIV.layer.borderWidth = 0.5
                     productIV.sd_setImage(with: imageUrl(goods_id: id), placeholderImage: nil)
                 }
                 
                 if let text = model?.goods.goods_sn {
                     productNumL.text = "商品编号：\(text)"
                 }
-                if let text = model?.goods.shop_price {
+                if let text = SingleManager.instance.productBuyInfoModel?.good_buy_price {
                     priceL.text = "¥\(text)"
                 }
                 tableView.reloadData()
@@ -39,6 +44,8 @@ class KYProductPropertyView: UIView {
             }
         }
     }
+    
+    /// 布局文件
     fileprivate lazy var layout : HXTagCollectionViewFlowLayout = {
         let layout = HXTagCollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.vertical
@@ -54,8 +61,13 @@ class KYProductPropertyView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = footView
+        footView.completion = {(count) in
+            SingleManager.instance.productBuyInfoModel?.good_buy_count = count
+        }
         awakeFromNib()
     }
+    
+    /// 底部选择数量
     fileprivate lazy var footView : KYPropertyFootView = {
         let footView = KYPropertyFootView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 40))
         return footView
@@ -65,6 +77,12 @@ class KYProductPropertyView: UIView {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
+        // 圆角和边框
+        productIV.layer.masksToBounds = true
+        productIV.layer.cornerRadius = 5.0
+        productIV.layer.borderColor = UIColor.hexStringColor(hex: "#DEDEDE", alpha: 0.6).cgColor
+        productIV.layer.borderWidth = 0.5
+
     }
 
 }
@@ -82,51 +100,33 @@ extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: KYPropertyTVCellIdentifier, for: indexPath) as! HXTagCustomeCell
         cell.layout = layout
         if let goods_spec_list =  model?.goods.goods_spec_list[indexPath.section]{
+            // 属性数组传值
             cell.goods_spec_list = goods_spec_list
             cell.sectionIndex = indexPath.section
-            self.currentTags.add(goods_spec_list.spec_list[0])
+            // 点击选中
+            cell.completion = {(selectTags,currentIndex) in
+                SingleManager.instance.productBuyInfoModel?.good_Buy_Propertys[currentIndex].good_buy_spec_list = selectTags[0]
 
-        }
-        cell.completion = {(selectTags,currentIndex) in
-            self.currentTags.replaceObject(at: currentIndex, with: selectTags[0])
-            var key:String = ""
-            let resultArray = self.currentTags.sortedArray(options: .stable, usingComparator: { (object1, object2) -> ComparisonResult in
-                let spec_list1 = object1 as! Spec_list
-                let spec_list2 = object2 as! Spec_list
-
-                if spec_list1.item_id > spec_list2.item_id{
-                    return ComparisonResult.orderedDescending
+                print(SingleManager.instance.productBuyInfoModel?.good_Buy_Propertys[0].yy_modelToJSONString() ?? "")
+                SingleManager.instance.productBuyInfoModel?.calculatePrice()
+                if let text =  SingleManager.instance.productBuyInfoModel?.good_buy_price{
+                    self.priceL.text = "¥\(text)"
                 }
-                if spec_list1.item_id > spec_list2.item_id{
-                    return ComparisonResult.orderedAscending
-                }
-                return ComparisonResult.orderedSame
-            })
-            for item in resultArray {
-                let spec_list = item as! Spec_list
-                key = key.appending("_\(spec_list.item_id)")
+                //通知
+                NotificationCenter.default.post(name:SelectProductProperty, object: nil)
             }
-            let str = NSString(string: key).substring(from: 1)
-            let predicate = NSPredicate(format: "key = %@", str)
-            let array = self.model?.spec_goods_price as! NSMutableArray
-            let result = array.filtered(using: predicate)
-            if result.count > 0{
-//                print((result[0] as! Spec_goods_price).yy_modelToJSONString() ?? "")
-                let spec_goods_price = result[0] as! Spec_goods_price
-                if let text = spec_goods_price.price {
-                        self.priceL.text = "¥\(text)"
 
-                }
-            }
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let goods_spec_list = model?.goods.goods_spec_list[indexPath.item]
 
         let height = HXTagCustomeCell.getCellHeight(tags: (goods_spec_list?.spec_list)!, layout: layout, width: tableView.frame.size.width)
         return height
     }
+     // 头部视图
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let goods_spec_list = model?.goods.goods_spec_list[section]
         let view = KYPropertyHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 25))
@@ -136,6 +136,7 @@ extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    // 去除头部悬停
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let sectionHeaderH:CGFloat = 30
         if tableView.contentOffset.y < sectionHeaderH && tableView.contentOffset.y > 0 {

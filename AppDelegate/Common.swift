@@ -37,3 +37,8 @@ func imageUrl(goods_id:Int) -> URL {
     let url = URL(string: "\(baseHref)/index.php?m=api&c=goods&a=goodsThumImages&goods_id=\(goods_id))&width=400&height=400")
     return url!
 }
+
+
+
+/// 通知名称
+let SelectProductProperty = NSNotification.Name(rawValue: "SelectProductProperty")

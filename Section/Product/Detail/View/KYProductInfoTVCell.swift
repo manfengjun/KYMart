@@ -33,7 +33,7 @@ class KYProductInfoTVCell: UITableViewCell {
             if let text = model?.goods.goods_name {
                 productInfoL.text = text
             }
-            if let shopPricetext = model?.goods.shop_price {
+            if let shopPricetext = SingleManager.instance.productBuyInfoModel?.good_buy_price {
                 shopPriceL.text = "￥\(shopPricetext)"
                 if let marketPricetext = model?.goods.market_price {
                     marketPriceL.text = "价格：￥\(marketPricetext)"
@@ -57,15 +57,17 @@ class KYProductInfoTVCell: UITableViewCell {
         selectView.isUserInteractionEnabled = true
         let shareTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
         shareView.addGestureRecognizer(shareTap)
-//        let shareSignal = shareTap.reactive.stateChanged.map { (guesture) -> Int in
-//            return 1
-//        }
         let selectTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
         selectView.addGestureRecognizer(selectTap)
-//        let selectSignal = selectTap.reactive.stateChanged.map { (guesture) -> Int in
-//            return 2
-//        }
+        //接受通知监听
+        NotificationCenter.default.addObserver(self, selector:#selector(selectProperty),name: SelectProductProperty, object: nil)
         
+    }
+    //通知处理函数
+    func selectProperty(){
+        if let text =  SingleManager.instance.productBuyInfoModel?.good_buy_price{
+            shopPriceL.text = "¥\(text)"
+        }
     }
     func tapAction(guesture:UITapGestureRecognizer) {
         if (guesture.view?.isEqual(shareView))! {
