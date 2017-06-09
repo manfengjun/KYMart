@@ -23,8 +23,8 @@
         UIColor *selectedBackgroundColor = [UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1.0];
         
         _borderWidth = 0.5f;
-        _borderColor = [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0];
-        _cornerRadius = 2.0;
+        _borderColor = [UIColor colorWithRed:222/255.0 green:222/255.0 blue:222/255.0 alpha:0.6];
+        _cornerRadius = 3.0;
         _normalBackgroundColor = normalBackgroundColor;
         _selectedBackgroundColor = [UIColor colorWithRed:231/255.0 green:31/255.0 blue:25/255.0 alpha:1.0];
         _selectedTextColor = [UIColor whiteColor];

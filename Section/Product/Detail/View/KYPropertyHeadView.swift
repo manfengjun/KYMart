@@ -11,6 +11,7 @@ import UIKit
 class KYPropertyHeadView: UIView {
 
     @IBOutlet var contentView: UIView!
+    @IBOutlet weak var titleL: UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView = Bundle.main.loadNibNamed("KYPropertyHeadView", owner: self, options: nil)?.first as! UIView

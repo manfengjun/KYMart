@@ -25,7 +25,8 @@ let imgPath = "http://test.kymart.cn"
 
 
 /// NavigationBar颜色
-let BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#F4F4F4")
+let BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#E71F19")
+//UIColor.hexStringColor(hex: "#F4F4F4")
 let HOME_BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#E71F19")
 
 /// 图片链接

@@ -49,6 +49,12 @@
 		BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */; };
 		BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */; };
 		BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */; };
+		BFB5C8381EEA26F800BFFDE5 /* HXTagCustomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C8371EEA26F800BFFDE5 /* HXTagCustomeCell.swift */; };
+		BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C8411EEA625E00BFFDE5 /* SJBForgetViewController.swift */; };
+		BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C8421EEA625E00BFFDE5 /* SJBLoginViewController.swift */; };
+		BFB5C8491EEA625E00BFFDE5 /* SJBRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C8431EEA625E00BFFDE5 /* SJBRegisterViewController.swift */; };
+		BFB5C84A1EEA625E00BFFDE5 /* SJBResetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C8441EEA625E00BFFDE5 /* SJBResetPassViewController.swift */; };
+		BFB5C84C1EEA661F00BFFDE5 /* SJBCountDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */; };
 		BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6D0AC1EE63C1600F2C61F /* SJBRequest.swift */; };
 		BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6D0AD1EE63C1600F2C61F /* SJBRequestModel.swift */; };
 		BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB6D0AE1EE63C1600F2C61F /* SJBRequestUrl.swift */; };
@@ -171,6 +177,12 @@
 		BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailViewController.swift; sourceTree = "<group>"; };
 		BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPropertyHeadView.swift; sourceTree = "<group>"; };
 		BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYPropertyHeadView.xib; sourceTree = "<group>"; };
+		BFB5C8371EEA26F800BFFDE5 /* HXTagCustomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HXTagCustomeCell.swift; path = TagView/HXTagCustomeCell.swift; sourceTree = "<group>"; };
+		BFB5C8411EEA625E00BFFDE5 /* SJBForgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBForgetViewController.swift; sourceTree = "<group>"; };
+		BFB5C8421EEA625E00BFFDE5 /* SJBLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBLoginViewController.swift; sourceTree = "<group>"; };
+		BFB5C8431EEA625E00BFFDE5 /* SJBRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRegisterViewController.swift; sourceTree = "<group>"; };
+		BFB5C8441EEA625E00BFFDE5 /* SJBResetPassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBResetPassViewController.swift; sourceTree = "<group>"; };
+		BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBCountDown.swift; sourceTree = "<group>"; };
 		BFB6D0AC1EE63C1600F2C61F /* SJBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRequest.swift; sourceTree = "<group>"; };
 		BFB6D0AD1EE63C1600F2C61F /* SJBRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRequestModel.swift; sourceTree = "<group>"; };
 		BFB6D0AE1EE63C1600F2C61F /* SJBRequestUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SJBRequestUrl.swift; sourceTree = "<group>"; };
@@ -204,7 +216,7 @@
 		BFC017661EDF9AC1005D66B0 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Controller+Extension.swift"; sourceTree = "<group>"; };
 		BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Extension.swift"; sourceTree = "<group>"; };
-		BFC017691EDF9AC1005D66B0 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BFC017691EDF9AC1005D66B0 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "../../../Category/String+Extension.swift"; sourceTree = "<group>"; };
 		BFC017BE1EDF9B95005D66B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC017C31EDF9BCB005D66B0 /* KYMart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KYMart-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFC017C41EDF9BCB005D66B0 /* CeshiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeshiViewController.h; sourceTree = "<group>"; };
@@ -497,6 +509,7 @@
 		BF8903381EE3B856004A0FF7 /* XLPlainFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
+				BFC017691EDF9AC1005D66B0 /* String+Extension.swift */,
 				BF8903391EE3B856004A0FF7 /* XLPlainFlowLayout.h */,
 				BF89033A1EE3B856004A0FF7 /* XLPlainFlowLayout.m */,
 			);
@@ -510,6 +523,41 @@
 				BF89036A1EE43288004A0FF7 /* HorizontalPageFlowlayout.m */,
 			);
 			path = HorizontalPageFlowLayout;
+			sourceTree = "<group>";
+		};
+		BFB5C83F1EEA625E00BFFDE5 /* LogAndReg */ = {
+			isa = PBXGroup;
+			children = (
+				BFB5C8401EEA625E00BFFDE5 /* Controller */,
+				BFB5C8451EEA625E00BFFDE5 /* Model */,
+				BFB5C8461EEA625E00BFFDE5 /* View */,
+			);
+			path = LogAndReg;
+			sourceTree = "<group>";
+		};
+		BFB5C8401EEA625E00BFFDE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFB5C8411EEA625E00BFFDE5 /* SJBForgetViewController.swift */,
+				BFB5C8421EEA625E00BFFDE5 /* SJBLoginViewController.swift */,
+				BFB5C8431EEA625E00BFFDE5 /* SJBRegisterViewController.swift */,
+				BFB5C8441EEA625E00BFFDE5 /* SJBResetPassViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFB5C8451EEA625E00BFFDE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BFB5C8461EEA625E00BFFDE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BFB6D0AB1EE63C1600F2C61F /* Request */ = {
@@ -562,6 +610,7 @@
 			isa = PBXGroup;
 			children = (
 				BFDCB3FC1EE8F3730040A09B /* TagView */,
+				BFB5C8371EEA26F800BFFDE5 /* HXTagCustomeCell.swift */,
 				BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */,
 				BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */,
 				BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */,
@@ -682,6 +731,7 @@
 		BFC017621EDF9AB1005D66B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
 				BFB6D0AB1EE63C1600F2C61F /* Request */,
 			);
 			path = Util;
@@ -700,7 +750,7 @@
 		BFC017641EDF9AB1005D66B0 /* Section */ = {
 			isa = PBXGroup;
 			children = (
-				BFFE0E611EE834F000621CB0 /* Login */,
+				BFB5C83F1EEA625E00BFFDE5 /* LogAndReg */,
 				BF89030C1EE3A3D0004A0FF7 /* Cart */,
 				BF8903101EE3A3D0004A0FF7 /* Home */,
 				BF8903141EE3A3D0004A0FF7 /* Main */,
@@ -717,7 +767,6 @@
 				BFC017661EDF9AC1005D66B0 /* Color+Extension.swift */,
 				BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */,
 				BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */,
-				BFC017691EDF9AC1005D66B0 /* String+Extension.swift */,
 				BF8903541EE4176D004A0FF7 /* View+Extension.swift */,
 			);
 			path = Category;
@@ -768,37 +817,6 @@
 				BFDCB4061EE8F3730040A09B /* HXTagsView.m */,
 			);
 			path = TagView;
-			sourceTree = "<group>";
-		};
-		BFFE0E611EE834F000621CB0 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				BFFE0E621EE834F000621CB0 /* Controller */,
-				BFFE0E631EE834F000621CB0 /* Model */,
-				BFFE0E641EE834F000621CB0 /* View */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		BFFE0E621EE834F000621CB0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		BFFE0E631EE834F000621CB0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BFFE0E641EE834F000621CB0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		FD97331C6EF265EAAD8A6C44 /* Pods */ = {
@@ -1021,16 +1039,19 @@
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
+				BFB5C8381EEA26F800BFFDE5 /* HXTagCustomeCell.swift in Sources */,
 				BFDCB4101EE912070040A09B /* KYProductInfoTVCell.swift in Sources */,
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
 				BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */,
 				BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */,
+				BFB5C84C1EEA661F00BFFDE5 /* SJBCountDown.swift in Sources */,
 				BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */,
 				BFB6D0E31EE69DD700F2C61F /* KYProductListCVCell.swift in Sources */,
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
+				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
@@ -1045,12 +1066,14 @@
 				BF89030A1EE3A1EC004A0FF7 /* SDCycleScrollView.m in Sources */,
 				BFDCB4071EE8F3730040A09B /* HXTagAttribute.m in Sources */,
 				BF8903441EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift in Sources */,
+				BFB5C8491EEA625E00BFFDE5 /* SJBRegisterViewController.swift in Sources */,
 				BF89036B1EE43288004A0FF7 /* HorizontalPageFlowlayout.m in Sources */,
 				BFC017FD1EDF9BD6005D66B0 /* Reachability.m in Sources */,
 				BFC017BF1EDF9B95005D66B0 /* AppDelegate.swift in Sources */,
 				BF89036E1EE44915004A0FF7 /* KYHomeFootView.swift in Sources */,
 				BFDCB40A1EE8F3730040A09B /* HXTagsCell.m in Sources */,
 				BF89030B1EE3A1EC004A0FF7 /* UIView+SDExtension.m in Sources */,
+				BFB5C84A1EEA625E00BFFDE5 /* SJBResetPassViewController.swift in Sources */,
 				BF8903081EE3A1EC004A0FF7 /* TAPageControl.m in Sources */,
 				BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */,
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
@@ -1073,6 +1096,7 @@
 				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
+				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */,
 				BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */,
 				BFB6D0D01EE6965300F2C61F /* FJSectionHeadView.swift in Sources */,
@@ -1232,6 +1256,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
@@ -1252,6 +1277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",

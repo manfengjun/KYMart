@@ -8,5 +8,6 @@ target 'KYMart' do
     pod 'YYCache', '~> 1.0.4'
     pod 'SDWebImage', '~> 4.0.0'
     pod 'HMSegmentedControl', '~> 1.5.3'
+    pod 'IQKeyboardManagerSwift', '~> 4.0.9'
 end
 

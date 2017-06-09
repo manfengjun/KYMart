@@ -91,10 +91,11 @@ extension KYProductDetailHomeViewController:UITableViewDelegate,UITableViewDataS
         cell.model = productInfoModel
         cell.replyColsure = {(index) in
             if index == 2 {
-                self.selectBgView.addSubview(self.propertyView)
-                self.propertyView.model = self.productInfoModel
-                UIApplication.shared.keyWindow?.addSubview(self.selectBgView)
-                
+                UIView.animate(withDuration: 0.2, animations: { 
+                    self.selectBgView.addSubview(self.propertyView)
+                    self.propertyView.model = self.productInfoModel
+                    UIApplication.shared.keyWindow?.addSubview(self.selectBgView)
+                })
             }
         }
         return cell

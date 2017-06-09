@@ -160,7 +160,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mj8-dn-Ncf">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mj8-dn-Ncf">
                                 <rect key="frame" x="290.5" y="10.5" width="19.5" height="19.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mj8-dn-Ncf" secondAttribute="height" multiplier="1:1" id="xKQ-yQ-V90"/>

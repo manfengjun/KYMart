@@ -34,4 +34,5 @@
  *  @param width        计算的最大范围
  */
 + (CGFloat)getCellHeightWithTags:(NSArray *)tags layout:(HXTagCollectionViewFlowLayout *)layout tagAttribute:(HXTagAttribute *)tagAttribute width:(CGFloat)width;
+
 @end
