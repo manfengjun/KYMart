@@ -29,6 +29,8 @@ let BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#E71F19")
 //UIColor.hexStringColor(hex: "#F4F4F4")
 let HOME_BAR_TINTCOLOR = UIColor.hexStringColor(hex: "#E71F19")
 
+
+
 /// 图片链接
 ///
 /// - Parameter goods_id: goods_id description
@@ -42,3 +44,11 @@ func imageUrl(goods_id:Int) -> URL {
 
 /// 通知名称
 let SelectProductProperty = NSNotification.Name(rawValue: "SelectProductProperty")
+
+
+/// 回调闭包
+/// 返回Int
+typealias ResultClosure = (_ number: Int)->()
+
+/// 属性选择回调
+typealias PropertyClosure = ([Spec_list],Int)->()

@@ -23,7 +23,8 @@ class HXTagCustomeCell: UITableViewCell {
     /// 样式
     var tagAttribute:HXTagAttribute = HXTagAttribute()
     /// 闭包回调传值
-    var completion:(([Spec_list],Int)->())?
+    var PropertyResultClosure: PropertyClosure?     // 闭包
+
     
     /// 数据源
     var goods_spec_list:Goods_spec_list?{
@@ -169,9 +170,13 @@ extension HXTagCustomeCell:UICollectionViewDelegate,UICollectionViewDataSource,U
             selectedTags.append(spec_list!)
             collectionView.reloadData()
         }
-        if (completion != nil) {
-            //回调数据
-            completion!(selectedTags,sectionIndex!)
-        }
+        self.PropertyResultClosure?(selectedTags,sectionIndex!)
+
+    }
+    /**
+     加减按钮的响应闭包回调
+     */
+    func propertyResult(_ finished: @escaping PropertyClosure) {
+        PropertyResultClosure = finished
     }
 }

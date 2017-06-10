@@ -61,15 +61,19 @@ class KYProductPropertyView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = footView
-        footView.completion = {(count) in
-            SingleManager.instance.productBuyInfoModel?.good_buy_count = count
-        }
         awakeFromNib()
     }
     
     /// 底部选择数量
     fileprivate lazy var footView : KYPropertyFootView = {
         let footView = KYPropertyFootView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 40))
+        footView.countResult({ (count) in
+            SingleManager.instance.productBuyInfoModel?.good_buy_count = count
+            //刷新数据
+            SingleManager.instance.productBuyInfoModel?.reloadData()
+            //通知
+            NotificationCenter.default.post(name:SelectProductProperty, object: nil)
+        })
         return footView
     }()
     required init?(coder aDecoder: NSCoder) {
@@ -104,18 +108,21 @@ extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
             cell.goods_spec_list = goods_spec_list
             cell.sectionIndex = indexPath.section
             // 点击选中
-            cell.completion = {(selectTags,currentIndex) in
-                SingleManager.instance.productBuyInfoModel?.good_Buy_Propertys[currentIndex].good_buy_spec_list = selectTags[0]
-
-                print(SingleManager.instance.productBuyInfoModel?.good_Buy_Propertys[0].yy_modelToJSONString() ?? "")
-                SingleManager.instance.productBuyInfoModel?.calculatePrice()
+            cell.propertyResult({ (selectTags, currentIndex) in
+                SingleManager.instance.productBuyInfoModel?.good_buy_propertys[currentIndex].good_buy_spec_list = selectTags[0]
+                
+                print(SingleManager.instance.productBuyInfoModel?.good_buy_propertys[0].yy_modelToJSONString() ?? "")
+                //刷新数据
+                SingleManager.instance.productBuyInfoModel?.reloadData()
+                
+                /// 刷新库存
+                self.footView.reloadMaxValue()
                 if let text =  SingleManager.instance.productBuyInfoModel?.good_buy_price{
                     self.priceL.text = "¥\(text)"
                 }
                 //通知
                 NotificationCenter.default.post(name:SelectProductProperty, object: nil)
-            }
-
+            })
         }
         return cell
     }

@@ -11,18 +11,7 @@ import HMSegmentedControl
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
 class KYProductDetailViewController: UIViewController {
-//    /// 商品详情属性
-//    fileprivate lazy var collectionView : UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .vertical
-//        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
-//        collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
-//        collectionView.showsVerticalScrollIndicator = false
-//        collectionView.register(UINib(nibName: "KYProductListCVCell", bundle: nil), forCellWithReuseIdentifier: KYProductListCVCellIdentifier)
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
-//        return collectionView
-//    }()
+
 
     /// 新闻滚动菜单
     fileprivate lazy var segmentControl : HMSegmentedControl = {
@@ -50,6 +39,16 @@ class KYProductDetailViewController: UIViewController {
         return scrollView
         
     }()
+    var id:Int?{
+        didSet{
+            productInfoVC.id = id
+        }
+    }
+    fileprivate lazy var productInfoVC:KYProductDetailHomeViewController = {
+        let productInfoVC = KYProductDetailHomeViewController()
+        productInfoVC.view.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+        return productInfoVC
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButtonInNav()
@@ -62,10 +61,7 @@ class KYProductDetailViewController: UIViewController {
     }
     
     func setupUI() {
-        let productInfoVC = KYProductDetailHomeViewController()
-        productInfoVC.view.frame = CGRect(x: 0, y: 0, width: scrollView.frame.width, height: scrollView.frame.height)
         scrollView.addSubview(productInfoVC.view)
-        
         addChildViewController(productInfoVC)
     }
     

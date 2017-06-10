@@ -9,5 +9,6 @@ target 'KYMart' do
     pod 'SDWebImage', '~> 4.0.0'
     pod 'HMSegmentedControl', '~> 1.5.3'
     pod 'IQKeyboardManagerSwift', '~> 4.0.9'
+    pod 'PPNumberButtonSwift', '~> 0.2.0'
 end
 

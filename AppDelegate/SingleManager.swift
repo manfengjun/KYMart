@@ -15,5 +15,5 @@ class SingleManager: NSObject {
     var access_token:String?
     /// 购买对象
     var productBuyInfoModel:KYProductBuyInfoModel?
-
+    
 }

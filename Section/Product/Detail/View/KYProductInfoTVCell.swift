@@ -18,6 +18,7 @@ class KYProductInfoTVCell: UITableViewCell {
     @IBOutlet weak var buyCount: UILabel!
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var selectView: UIView!
+    @IBOutlet weak var selectL: UILabel!
     //闭包类型
     var replyColsure:((Int)->())?
 
@@ -33,8 +34,10 @@ class KYProductInfoTVCell: UITableViewCell {
             if let text = model?.goods.goods_name {
                 productInfoL.text = text
             }
-            if let shopPricetext = SingleManager.instance.productBuyInfoModel?.good_buy_price {
-                shopPriceL.text = "￥\(shopPricetext)"
+            if let text = SingleManager.instance.productBuyInfoModel?.good_buy_price {
+                shopPriceL.text = "￥\(text)"
+            }
+            if let shopPricetext = model?.goods.shop_price {
                 if let marketPricetext = model?.goods.market_price {
                     marketPriceL.text = "价格：￥\(marketPricetext)"
                     let shopprice = NSString(string: shopPricetext).floatValue
@@ -48,13 +51,17 @@ class KYProductInfoTVCell: UITableViewCell {
             if let text = model?.goods.sales_sum {
                 buyCount.text = "\(text)人已付款"
             }
-            
+            if let text = SingleManager.instance.productBuyInfoModel?.good_select_info {
+                selectL.text = text
+            }
         }
     }
     override func awakeFromNib() {
         super.awakeFromNib()
         shareView.isUserInteractionEnabled = true
         selectView.isUserInteractionEnabled = true
+        scrollCircleView.currentPageDotColor = BAR_TINTCOLOR
+        scrollCircleView.pageDotColor = UIColor.hexStringColor(hex: "#666666")
         let shareTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
         shareView.addGestureRecognizer(shareTap)
         let selectTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
@@ -67,6 +74,9 @@ class KYProductInfoTVCell: UITableViewCell {
     func selectProperty(){
         if let text =  SingleManager.instance.productBuyInfoModel?.good_buy_price{
             shopPriceL.text = "¥\(text)"
+        }
+        if let text = SingleManager.instance.productBuyInfoModel?.good_select_info {
+            selectL.text = text
         }
     }
     func tapAction(guesture:UITapGestureRecognizer) {

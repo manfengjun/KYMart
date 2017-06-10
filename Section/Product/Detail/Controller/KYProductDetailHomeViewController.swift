@@ -60,30 +60,27 @@ class KYProductDetailHomeViewController: UIViewController {
         SingleManager.instance.productBuyInfoModel?.good_buy_count = 1
         SingleManager.instance.productBuyInfoModel?.good_buy_price = productInfoModel?.goods.shop_price
         SingleManager.instance.productBuyInfoModel?.spec_goods_prices = productInfoModel?.spec_goods_price
-        SingleManager.instance.productBuyInfoModel?.good_Buy_Propertys = []
+        SingleManager.instance.productBuyInfoModel?.good_buy_propertys = []
         for item in (productInfoModel?.goods.goods_spec_list)! {
             let good_Buy_Property = Good_Buy_Property()
             good_Buy_Property.good_buy_spec_name = item.spec_name
             if let array = item.spec_list {
                 if array.count > 0 {
                     good_Buy_Property.good_buy_spec_list = array[0]
-                    SingleManager.instance.productBuyInfoModel?.good_Buy_Propertys.append(good_Buy_Property)
+                    SingleManager.instance.productBuyInfoModel?.good_buy_propertys.append(good_Buy_Property)
                 }
             }
         }
-        SingleManager.instance.productBuyInfoModel?.calculatePrice()
+        //刷新数据
+        SingleManager.instance.productBuyInfoModel?.reloadData()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        id = 1
         view.addSubview(tableView)
-        //接受通知监听
-        NotificationCenter.default.addObserver(self, selector:#selector(selectProperty),name: SelectProductProperty, object: nil)
+        
     }
-    //通知处理函数
-    func selectProperty(){
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -135,11 +132,13 @@ extension KYProductDetailHomeViewController:UITableViewDelegate,UITableViewDataS
         cell.model = productInfoModel
         cell.replyColsure = {(index) in
             if index == 2 {
-                UIView.animate(withDuration: 0.2, animations: { 
-                    self.selectBgView.addSubview(self.propertyView)
-                    self.propertyView.model = self.productInfoModel
-                    UIApplication.shared.keyWindow?.addSubview(self.selectBgView)
-                })
+                if (self.productInfoModel?.goods.goods_spec_list.isEmpty)! {
+                    return
+                }
+                self.selectBgView.addSubview(self.propertyView)
+                self.propertyView.model = self.productInfoModel
+                UIApplication.shared.keyWindow?.addSubview(self.selectBgView)
+                
             }
         }
         return cell
