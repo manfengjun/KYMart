@@ -4,13 +4,18 @@
 
 //MD5
 #import <CommonCrypto/CommonCrypto.h>
+
 #import "YYCache/YYCache.h"
 #import "YYModel/YYModel.h"
 #import "SDCycleScrollView.h"
-#import "XLPlainFlowLayout.h"
+//集合视图分页
 #import "HorizontalPageFlowlayout.h"
+
 #import <SDWebImage/UIImageView+WebCache.h>
 //#import "HXTagsCell.h"
+//标签视图
 #import "HXTagAttribute.h"
 #import "HXTagCollectionViewFlowLayout.h"
 #import "HXTagCollectionViewCell.h"
+//保存UUID
+#import "SSKeychain.h"

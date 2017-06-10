@@ -26,7 +26,7 @@ class SJBRequest: NSObject {
                     else
                     {
                         XHToast.showBottomWithText("请求数据失败！")
-                        completion("error" as AnyObject,status as! Int)
+                        completion(responseDic["msh"] as AnyObject,status as! Int)
                     }
 
                 }
@@ -54,8 +54,8 @@ class SJBRequest: NSObject {
                     }
                     else
                     {
-                        XHToast.showBottomWithText("请求数据失败！")
-                        completion("error" as AnyObject,status as! Int)
+                        
+                        completion(responseDic["msg"] as AnyObject,status as! Int)
                     }
                     
                 }

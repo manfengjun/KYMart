@@ -14,6 +14,8 @@ enum ModelType {
     case SubSection//二三级分类
     case ProductList//商品列表
     case ProductInfo//商品详情
+    case VerifyCode//验证码
+    case Login
 }
 class SJBRequestModel: NSObject {
     class func dataToModel(type:ModelType, response:AnyObject, status:Int, completion:(AnyObject,Int)-> Void) {
@@ -37,13 +39,24 @@ class SJBRequestModel: NSObject {
                     completion(model,status)
                 }
                 break
+            case .VerifyCode:
+                let text = response as! String
+                SingleManager.instance.verify_code = text
+                completion(text as AnyObject,status)
+                break
+            case .Login:
+                let temmodel = KYLoginInfoModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
             default:
                 break
             }
         }
         else
         {
-            completion("error" as AnyObject,status)
+            completion(response as AnyObject,status)
         }
     }
     class func dataArrayToModel(type:ModelType, response:AnyObject,  status:Int, completion:(AnyObject,Int)-> Void) {
@@ -84,10 +97,10 @@ class SJBRequestModel: NSObject {
         }
         else
         {
-            completion("error" as AnyObject,status)
+            completion(response as AnyObject,status)
         }
     }
-    
+    // MARK: ------------------ Pull
     /// 首页数据
     ///
     /// - Parameter completion: completion description
@@ -151,6 +164,27 @@ class SJBRequestModel: NSObject {
         let params = ["id":String(id)]
         SJBRequest.Post(url: SJBRequestUrl.returnProductInfoUrl(), params: params) { (response, status) in
             self.dataToModel(type: .ProductInfo, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 获取验证码
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchVerifyCodeData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnVerifyCodeUrl()) { (response, status) in
+            self.dataToModel(type: .VerifyCode, response: response, status: status, completion: completion)
+        }
+    }
+    // MARK: ------------------ Push
+    
+    /// 登录
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchLoginData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnLoginUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .Login, response: response, status: status, completion: completion)
         }
     }
 }

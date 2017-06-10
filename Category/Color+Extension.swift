@@ -89,4 +89,19 @@ extension UIColor{
         
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: alpha)
     }
+    
+    /// 随机颜色
+    ///
+    /// - Returns: return value description
+    class func randomColor(alpha:CGFloat) -> UIColor {
+        /**
+         *  RGB 随机颜色
+         */
+        let red = CGFloat(arc4random_uniform(255))/CGFloat(255.0)
+        let green = CGFloat( arc4random_uniform(255))/CGFloat(255.0)
+        let blue = CGFloat(arc4random_uniform(255))/CGFloat(255.0)
+        
+        let color = UIColor(red:red, green:green, blue:blue , alpha: alpha)
+        return color
+    }
 }

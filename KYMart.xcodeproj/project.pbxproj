@@ -102,6 +102,11 @@
 		BFDCB4111EE912070040A09B /* KYProductInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */; };
 		BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */; };
 		BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */; };
+		BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60341EEBC43F00885737 /* KYCodeView.swift */; };
+		BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60361EEBD2C000885737 /* DemoViewController.swift */; };
+		BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA603A1EEBDF9300885737 /* SSKeychain.m */; };
+		BFEA603E1EEBDF9300885737 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA603C1EEBDF9300885737 /* SSKeychainQuery.m */; };
+		BFEA60441EEBE63700885737 /* KYLoginInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60431EEBE63700885737 /* KYLoginInfoModel.swift */; };
 		BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */; };
 		BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */; };
 		BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */; };
@@ -245,6 +250,13 @@
 		BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductInfoTVCell.xib; sourceTree = "<group>"; };
 		BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPropertyFootView.swift; sourceTree = "<group>"; };
 		BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYPropertyFootView.xib; sourceTree = "<group>"; };
+		BFEA60341EEBC43F00885737 /* KYCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCodeView.swift; sourceTree = "<group>"; };
+		BFEA60361EEBD2C000885737 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		BFEA60391EEBDF9300885737 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		BFEA603A1EEBDF9300885737 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		BFEA603B1EEBDF9300885737 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		BFEA603C1EEBDF9300885737 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		BFEA60431EEBE63700885737 /* KYLoginInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYLoginInfoModel.swift; sourceTree = "<group>"; };
 		BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailHomeViewController.swift; sourceTree = "<group>"; };
 		BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYProductPropertyView.swift; path = Section/Product/Detail/Controller/KYProductPropertyView.swift; sourceTree = SOURCE_ROOT; };
 		BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KYProductPropertyView.xib; path = Section/Product/Detail/Controller/KYProductPropertyView.xib; sourceTree = SOURCE_ROOT; };
@@ -551,6 +563,7 @@
 		BFB5C8451EEA625E00BFFDE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BFEA60431EEBE63700885737 /* KYLoginInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -558,6 +571,7 @@
 		BFB5C8461EEA625E00BFFDE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFEA60341EEBC43F00885737 /* KYCodeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -734,8 +748,9 @@
 		BFC017621EDF9AB1005D66B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
+				BFEA60381EEBDF9300885737 /* KeychainItemWraper */,
 				BFB6D0AB1EE63C1600F2C61F /* Request */,
+				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -781,6 +796,7 @@
 				BFC017BE1EDF9B95005D66B0 /* AppDelegate.swift */,
 				BF8903301EE3AAEC004A0FF7 /* Common.swift */,
 				BF8903321EE3AAF5004A0FF7 /* SingleManager.swift */,
+				BFEA60361EEBD2C000885737 /* DemoViewController.swift */,
 				BFC017C41EDF9BCB005D66B0 /* CeshiViewController.h */,
 				BFC017C51EDF9BCB005D66B0 /* CeshiViewController.m */,
 				BFC017C31EDF9BCB005D66B0 /* KYMart-Bridging-Header.h */,
@@ -820,6 +836,17 @@
 				BFDCB4061EE8F3730040A09B /* HXTagsView.m */,
 			);
 			path = TagView;
+			sourceTree = "<group>";
+		};
+		BFEA60381EEBDF9300885737 /* KeychainItemWraper */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA60391EEBDF9300885737 /* SSKeychain.h */,
+				BFEA603A1EEBDF9300885737 /* SSKeychain.m */,
+				BFEA603B1EEBDF9300885737 /* SSKeychainQuery.h */,
+				BFEA603C1EEBDF9300885737 /* SSKeychainQuery.m */,
+			);
+			path = KeychainItemWraper;
 			sourceTree = "<group>";
 		};
 		FD97331C6EF265EAAD8A6C44 /* Pods */ = {
@@ -1040,6 +1067,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
+				BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
 				BFB5C8381EEA26F800BFFDE5 /* HXTagCustomeCell.swift in Sources */,
@@ -1066,6 +1094,7 @@
 				BF89032D1EE3A4FD004A0FF7 /* BaseNavViewController.swift in Sources */,
 				BFB6D0E61EE6ADBC00F2C61F /* KYProductListModel.swift in Sources */,
 				BFB6D0D21EE6965300F2C61F /* FJSectionRowHeadView.swift in Sources */,
+				BFEA603E1EEBDF9300885737 /* SSKeychainQuery.m in Sources */,
 				BF8903581EE41D47004A0FF7 /* KYHomeSallHeadView.swift in Sources */,
 				BF89030A1EE3A1EC004A0FF7 /* SDCycleScrollView.m in Sources */,
 				BFDCB4071EE8F3730040A09B /* HXTagAttribute.m in Sources */,
@@ -1078,6 +1107,8 @@
 				BFDCB40A1EE8F3730040A09B /* HXTagsCell.m in Sources */,
 				BF89030B1EE3A1EC004A0FF7 /* UIView+SDExtension.m in Sources */,
 				BFB5C84A1EEA625E00BFFDE5 /* SJBResetPassViewController.swift in Sources */,
+				BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */,
+				BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */,
 				BF8903081EE3A1EC004A0FF7 /* TAPageControl.m in Sources */,
 				BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */,
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
@@ -1091,6 +1122,7 @@
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
 				BFDCB40D1EE905BD0040A09B /* KYGoodInfoModel.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
+				BFEA60441EEBE63700885737 /* KYLoginInfoModel.swift in Sources */,
 				BF8903481EE3CE80004A0FF7 /* KYHomeHeadView.swift in Sources */,
 				BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */,
 				BF89034B1EE3D672004A0FF7 /* KYHomeLayout.swift in Sources */,

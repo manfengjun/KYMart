@@ -46,6 +46,31 @@ class SJBLoginViewController: UIViewController {
         menuView.layer.masksToBounds = true
         menuView.layer.cornerRadius = 5
     }
+    func loginHandle() {
+        SJBRequestModel.pull_fetchVerifyCodeData { (response, status) in
+            if status == 1 {
+                let verifycode = response as! String
+                let account = self.accountT.text
+                let password = self.passwordT.text
+                let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode]
+                SJBRequestModel.push_fetchLoginData(params: params, completion: { (response, status) in
+                    if status == 1{
+                        self.Toast(content: "登陆成功")
+
+                    }
+                    else
+                    {
+                        self.Toast(content: response as! String)
+                    }
+                })
+            }
+            else
+            {
+                self.Toast(content: "未知错误")
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,7 +81,7 @@ class SJBLoginViewController: UIViewController {
 // MARK: - 响应事件
 extension SJBLoginViewController{
     @IBAction func loginAction(_ sender: UIButton) {
-        
+        loginHandle()
     }
     @IBAction func regAction(_ sender: UITapGestureRecognizer) {
         self.performSegue(withIdentifier: "L_register_SegueID", sender: sender)
@@ -79,7 +104,7 @@ extension SJBLoginViewController
     func validated() {
         let accountSignal = accountT.reactive.continuousTextValues.map { (text) -> Bool in
             if let str = text {
-                return self.PhoneNumberIsValidated(text: str)
+                return self.ContentIsValidated(text: str)
             }
             return false
         }

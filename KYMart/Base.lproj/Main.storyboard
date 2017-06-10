@@ -189,7 +189,7 @@
         <!--Login View Controller-->
         <scene sceneID="381-Aj-OlV">
             <objects>
-                <viewController storyboardIdentifier="loginVC" id="QVy-dd-MVO" customClass="SJBLoginViewController" customModule="HNLYSJB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="QVy-dd-MVO" customClass="SJBLoginViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C4x-p9-nHK"/>
                         <viewControllerLayoutGuide type="bottom" id="Z2O-Kg-zqx"/>
@@ -199,9 +199,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCp-or-hEx">
-                                <rect key="frame" x="20" y="40" width="335" height="81"/>
+                                <rect key="frame" x="20" y="84" width="335" height="81"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3AX-Nj-GEh">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号或邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3AX-Nj-GEh">
                                         <rect key="frame" x="36" y="0.0" width="289" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="m3n-5i-um9"/>
@@ -260,7 +260,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Q-yz-tW4">
-                                <rect key="frame" x="20" y="141" width="335" height="40"/>
+                                <rect key="frame" x="20" y="185" width="335" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="EA2-Qs-AKO"/>
@@ -274,7 +274,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnC-nW-XRD">
-                                <rect key="frame" x="20" y="201" width="335" height="81"/>
+                                <rect key="frame" x="20" y="245" width="335" height="81"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBF-d8-FiJ">
                                         <rect key="frame" x="10" y="40" width="315" height="1"/>
@@ -385,7 +385,7 @@
         <!--Register View Controller-->
         <scene sceneID="eG4-6m-YX5">
             <objects>
-                <viewController storyboardIdentifier="regVC" id="tP1-53-v7y" customClass="SJBRegisterViewController" customModule="HNLYSJB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="regVC" id="tP1-53-v7y" customClass="SJBRegisterViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BZj-2x-q2j"/>
                         <viewControllerLayoutGuide type="bottom" id="GwG-rK-HLB"/>
@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOD-ae-4po">
-                                <rect key="frame" x="20" y="40" width="335" height="161.5"/>
+                                <rect key="frame" x="20" y="84" width="335" height="161.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0zR-ke-nqk">
                                         <rect key="frame" x="36" y="0.0" width="179" height="40"/>
@@ -532,7 +532,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qqj-Tf-ahV">
-                                <rect key="frame" x="20" y="221.5" width="335" height="40"/>
+                                <rect key="frame" x="20" y="265.5" width="335" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g30-iD-hdB"/>
@@ -574,7 +574,7 @@
         <!--Forget View Controller-->
         <scene sceneID="TKv-MU-94L">
             <objects>
-                <viewController storyboardIdentifier="forgetVC" id="FD5-Kx-TB9" customClass="SJBForgetViewController" customModule="HNLYSJB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="forgetVC" id="FD5-Kx-TB9" customClass="SJBForgetViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jpc-xu-qnC"/>
                         <viewControllerLayoutGuide type="bottom" id="h8X-29-Npe"/>
@@ -584,7 +584,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CNx-SZ-olI">
-                                <rect key="frame" x="20" y="40" width="335" height="161.5"/>
+                                <rect key="frame" x="20" y="84" width="335" height="161.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efS-so-ES6">
                                         <rect key="frame" x="36" y="0.0" width="179" height="40"/>
@@ -721,7 +721,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUX-NN-XTX">
-                                <rect key="frame" x="20" y="221.5" width="335" height="40"/>
+                                <rect key="frame" x="20" y="265.5" width="335" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="i3w-yZ-lfr"/>
@@ -760,7 +760,7 @@
         <!--Reset Pass View Controller-->
         <scene sceneID="rs4-jJ-T6w">
             <objects>
-                <viewController storyboardIdentifier="resetPassVC" id="us2-jm-dcT" customClass="SJBResetPassViewController" customModule="HNLYSJB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resetPassVC" id="us2-jm-dcT" customClass="SJBResetPassViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eJN-0d-0pJ"/>
                         <viewControllerLayoutGuide type="bottom" id="cXg-Tu-B6f"/>
@@ -770,7 +770,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wch-ZZ-37O">
-                                <rect key="frame" x="20" y="40" width="335" height="161.5"/>
+                                <rect key="frame" x="20" y="84" width="335" height="161.5"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p38-Qo-VLh">
                                         <rect key="frame" x="36" y="0.0" width="179" height="40"/>
@@ -907,7 +907,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Afx-gr-ei4">
-                                <rect key="frame" x="20" y="221.5" width="335" height="40"/>
+                                <rect key="frame" x="20" y="265.5" width="335" height="40"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gFF-A7-UcG"/>
@@ -949,10 +949,10 @@
         <image name="circle_green" width="23" height="23"/>
         <image name="find_gray" width="23" height="23"/>
         <image name="find_green" width="23" height="23"/>
-        <image name="login_account" width="16" height="16"/>
-        <image name="login_pass" width="16" height="16"/>
-        <image name="login_right" width="16" height="16"/>
-        <image name="login_security" width="16" height="16"/>
+        <image name="login_account" width="29" height="29"/>
+        <image name="login_pass" width="29" height="29"/>
+        <image name="login_right" width="29" height="29"/>
+        <image name="login_security" width="29" height="29"/>
         <image name="mine_gray" width="23" height="23"/>
         <image name="mine_green" width="23" height="23"/>
         <image name="school_gray" width="23" height="23"/>

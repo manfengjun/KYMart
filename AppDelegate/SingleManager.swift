@@ -11,9 +11,29 @@ import UIKit
 class SingleManager: NSObject {
     /// 单例
     static let instance = SingleManager()
+    
+    /// 验证码
+    var verify_code:String?
     /// 登录token
     var access_token:String?
     /// 购买对象
     var productBuyInfoModel:KYProductBuyInfoModel?
     
+    /// 获取UUID
+    ///
+    /// - Returns: return value description
+    class func getUUID() -> String {
+        var retriveuuid = SSKeychain.password(forService: "kymart.key", account: "uuid")
+        if let text = retriveuuid {
+            retriveuuid = text
+        }
+        else
+        {
+            let uuidRef = CFUUIDCreate(kCFAllocatorDefault)
+            let strRef = CFUUIDCreateString(kCFAllocatorDefault, uuidRef)
+            retriveuuid = (strRef! as String).replacingOccurrences(of: "-", with: "")
+            SSKeychain.setPassword(retriveuuid, forService: "kymart.key", account: "uuid")
+        }
+        return retriveuuid!
+    }
 }

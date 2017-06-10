@@ -10,21 +10,14 @@ import UIKit
 let basePath = "http://test.kymart.cn/index.php?"
 let baseHref = "http://test.kymart.cn"
 class SJBRequestUrl: NSObject {
-
+    
     /// access_token
     ///
     /// - Returns: return value description
     class func access_token() -> String {
         return SingleManager.instance.access_token!
     }
-    
-    /// 菜单Url
-    ///
-    /// - Returns: return value description
-    class func returnMenuUrl() -> String {
-        return ""
-    }
-    
+    // MARK: ------ 首页
     /// 首页
     ///
     /// - Returns: return value description
@@ -40,6 +33,7 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=Index&a=favourite&p=\(page)"
     }
     
+    // MARK: ------ 菜单
     /// 获取一级分类列表
     ///
     /// - Parameter page: page description
@@ -56,7 +50,7 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=goods&a=goodsSecAndThirdCategoryList&parent_id=\(parent_id)"
     }
     
-    
+    // MARK: ------ 商品
     /// 获取商品列表
     ///
     /// - Parameter id: id description
@@ -71,5 +65,19 @@ class SJBRequestUrl: NSObject {
     class func returnProductInfoUrl() -> String {
         return "\(basePath)m=api&c=goods&a=goodsInfo"
     }
-
+    
+    // MARK: ------ 登录
+    /// 登录
+    ///
+    /// - Returns: return value description
+    class func returnLoginUrl() -> String {
+        return "\(basePath)m=Api&c=User&a=login"
+    }
+    
+    /// 获取验证码
+    ///
+    /// - Returns: return value description
+    class func returnVerifyCodeUrl() -> String {
+        return "\(basePath)m=api&c=User&a=verify"
+    }
 }
