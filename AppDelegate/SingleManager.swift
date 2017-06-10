@@ -18,7 +18,10 @@ class SingleManager: NSObject {
     var access_token:String?
     /// 购买对象
     var productBuyInfoModel:KYProductBuyInfoModel?
-    
+    /// 登录对象
+    var loginInfo:KYLoginInfoModel?
+    /// 是否登录
+    var isLogin:Bool = false
     /// 获取UUID
     ///
     /// - Returns: return value description

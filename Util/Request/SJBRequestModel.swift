@@ -187,4 +187,10 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .Login, response: response, status: status, completion: completion)
         }
     }
+    
+    class func push_fetchRegData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnRegisterUrl(), params: params) { (response, status) in
+//            self.dataToModel(type: .Login, response: response, status: status, completion: completion)
+        }
+    }
 }

@@ -66,6 +66,13 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=goods&a=goodsInfo"
     }
     
+    /// 商品内容页
+    ///
+    /// - Returns: return value description
+    class func returnProductContentUrl(id:Int) -> String {
+        return "\(basePath)m=api&c=goods&a=goodsContent&id=\(id)"
+    }
+    
     // MARK: ------ 登录
     /// 登录
     ///
@@ -78,6 +85,13 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func returnVerifyCodeUrl() -> String {
-        return "\(basePath)m=api&c=User&a=verify"
+        return "\(basePath)m=api&c=User&a=verify&unique_id=\(SingleManager.getUUID())"
+    }
+    
+    /// 注册
+    ///
+    /// - Returns: return value description
+    class func returnRegisterUrl() -> String {
+        return "\(basePath)m=Api&c=User&a=reg"
     }
 }

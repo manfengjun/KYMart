@@ -18,14 +18,14 @@ class KYProductDetailViewController: UIViewController {
         let segmentControl = HMSegmentedControl(frame: CGRect(x: 100, y: 20, width: SCREEN_WIDTH/2, height: 44))
         segmentControl.sectionTitles = ["商品","详情"]
         segmentControl.backgroundColor = UIColor.clear
-        segmentControl.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.gray,NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
-        segmentControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName:UIColor.hexStringColor(hex: "#F85959"),NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
-        segmentControl.selectionIndicatorColor = UIColor.hexStringColor(hex: "#F85959")
+        segmentControl.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.hexStringColor(hex: "#666666"),NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
+        segmentControl.selectedTitleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.systemFont(ofSize: 12)]
+        segmentControl.selectionIndicatorColor = UIColor.white
         segmentControl.selectionStyle = HMSegmentedControlSelectionStyle.fullWidthStripe
         segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocation.down
         segmentControl.selectionIndicatorHeight = 2
         segmentControl.indexChangeBlock = {(index) in
-            
+            self.scrollView.contentOffset = CGPoint(x: SCREEN_WIDTH*CGFloat(index), y: 0)
         }
         segmentControl.selectedSegmentIndex = 0
         return segmentControl
@@ -35,19 +35,25 @@ class KYProductDetailViewController: UIViewController {
         scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
-
+        scrollView.delegate = self
         return scrollView
         
     }()
     var id:Int?{
         didSet{
             productInfoVC.id = id
+            productContentVC.id = id
         }
     }
     fileprivate lazy var productInfoVC:KYProductDetailHomeViewController = {
         let productInfoVC = KYProductDetailHomeViewController()
         productInfoVC.view.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
         return productInfoVC
+    }()
+    fileprivate lazy var productContentVC:KYProductContentViewController = {
+        let productContentVC = KYProductContentViewController()
+        productContentVC.view.frame = CGRect(x: SCREEN_WIDTH, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+        return productContentVC
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +69,8 @@ class KYProductDetailViewController: UIViewController {
     func setupUI() {
         scrollView.addSubview(productInfoVC.view)
         addChildViewController(productInfoVC)
+        scrollView.addSubview(productContentVC.view)
+        addChildViewController(productContentVC)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,16 +86,11 @@ class KYProductDetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+}
+extension KYProductDetailViewController:UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let index = scrollView.contentOffset.x/SCREEN_WIDTH
+        segmentControl.setSelectedSegmentIndex(UInt(index), animated: true)
     }
-    */
-
 }

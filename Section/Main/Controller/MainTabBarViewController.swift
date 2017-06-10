@@ -12,7 +12,7 @@ class MainTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -32,4 +32,25 @@ class MainTabBarViewController: UITabBarController {
     }
     */
 
+}
+extension MainTabBarViewController:UITabBarControllerDelegate{
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController.tabBarItem.title == "购物车" {
+            if SingleManager.instance.isLogin {
+                return true
+            }
+            else{
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+                loginVC.hidesBottomBarWhenPushed = true
+                let nav = tabBarController.selectedViewController as! UINavigationController
+                nav.pushViewController(loginVC, animated: true)
+                return false
+            }
+        }
+        else{
+            return true
+        }
+    }
 }

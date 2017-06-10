@@ -52,14 +52,17 @@ class SJBLoginViewController: UIViewController {
                 let verifycode = response as! String
                 let account = self.accountT.text
                 let password = self.passwordT.text
-                let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode]
+                let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":""]
                 SJBRequestModel.push_fetchLoginData(params: params, completion: { (response, status) in
                     if status == 1{
+                        SingleManager.instance.loginInfo = response as? KYLoginInfoModel
+                        SingleManager.instance.isLogin = true
                         self.Toast(content: "登陆成功")
 
                     }
                     else
                     {
+                        
                         self.Toast(content: response as! String)
                     }
                 })
@@ -71,6 +74,9 @@ class SJBLoginViewController: UIViewController {
         }
     }
     
+    @IBAction func forgetAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -87,12 +93,15 @@ extension SJBLoginViewController{
         self.performSegue(withIdentifier: "L_register_SegueID", sender: sender)
         
     }
-    @IBAction func forgetAction(_ sender: UITapGestureRecognizer) {
-        self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
-        
-    }
+//    @IBAction func forgetAction(_ sender: UITapGestureRecognizer) {
+//        self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
+//        
+//    }
     override func goback() {
-        dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let cartVC = storyboard.instantiateViewController(withIdentifier: "cartVC")
+        self.tabBarController?.selectedViewController = cartVC;
+//        dismiss(animated: true, completion: nil)
     }
 }
 
