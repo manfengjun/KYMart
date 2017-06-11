@@ -14,17 +14,23 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var productIV: UIImageView!
     @IBOutlet weak var productInfoL: UILabel!
     @IBOutlet weak var productPriceL: UILabel!
-    @IBOutlet weak var selectBtn: PPNumberButton!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBOutlet weak var selectView: UIView!
+    
+    fileprivate lazy var selectBtn:PPNumberButton = {
+        let selectBtn = PPNumberButton(frame: CGRect(x: 0, y: 0, width: 80, height: 20))
         selectBtn.shakeAnimation = true
         selectBtn._minValue = 1
-        selectBtn.maxValue = (SingleManager.instance.productBuyInfoModel?.good_buy_store_count)!
+        selectBtn.maxValue = 100
         selectBtn.borderColor(UIColor.hexStringColor(hex: "#666666"))
         selectBtn.numberResult { (number) in
             
         }
-        // Initialization code
+        return selectBtn
+    }()
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        selectView.addSubview(selectBtn)
+                // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

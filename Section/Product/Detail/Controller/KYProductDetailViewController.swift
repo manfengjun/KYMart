@@ -30,9 +30,11 @@ class KYProductDetailViewController: UIViewController {
         segmentControl.selectedSegmentIndex = 0
         return segmentControl
     }()
+    
+    /// 滚动视图
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
-        scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
+        scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64 - 50)
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
         scrollView.delegate = self
@@ -45,15 +47,23 @@ class KYProductDetailViewController: UIViewController {
             productContentVC.id = id
         }
     }
+    
+    /// 详情
     fileprivate lazy var productInfoVC:KYProductDetailHomeViewController = {
         let productInfoVC = KYProductDetailHomeViewController()
         productInfoVC.view.frame = CGRect(x: 0, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
         return productInfoVC
     }()
+    
+    /// 内容
     fileprivate lazy var productContentVC:KYProductContentViewController = {
         let productContentVC = KYProductContentViewController()
         productContentVC.view.frame = CGRect(x: SCREEN_WIDTH, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
         return productContentVC
+    }()
+    fileprivate lazy var buyView:KYProductDetailBuyView = {
+        let buyView = KYProductDetailBuyView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - 50, width: SCREEN_WIDTH, height: 50))
+        return buyView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,11 +86,15 @@ class KYProductDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.view.addSubview(segmentControl)
+        UIApplication.shared.keyWindow?.addSubview(buyView)
+
 
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         segmentControl.removeFromSuperview()
+        buyView.removeFromSuperview()
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

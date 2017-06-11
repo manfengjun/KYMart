@@ -35,28 +35,35 @@ class MainTabBarViewController: UITabBarController {
 }
 extension MainTabBarViewController:UITabBarControllerDelegate{
     
-//    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-//        if viewController.tabBarItem.title == "购物车" || viewController.tabBarItem.title == "我的" {
-//            if SingleManager.instance.isLogin {
-//                return true
-//            }
-//            else{
-//                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//                let loginNav = storyboard.instantiateViewController(withIdentifier: "loginNav") as! BaseNavViewController
-//                let loginVC = loginNav.viewControllers[0] as! SJBLoginViewController
-//                loginVC.loginResult({ (isLogin) in
-//                    if isLogin {
-//                        self.selectedIndex = 2
-//                    }
-//                })
-//                loginVC.hidesBottomBarWhenPushed = true
-//                self.present(loginNav, animated: true, completion: nil)
-////                nav.pushViewController(loginVC, animated: true)
-//                return false
-//            }
-//        }
-//        else{
-//            return true
-//        }
-//    }
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController.tabBarItem.title == "购物车" || viewController.tabBarItem.title == "我的" {
+            if SingleManager.instance.isLogin {
+                return true
+            }
+            else{
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let loginNav = storyboard.instantiateViewController(withIdentifier: "loginNav") as! BaseNavViewController
+                let loginVC = loginNav.viewControllers[0] as! SJBLoginViewController
+                loginVC.loginResult({ (isLogin) in
+                    if isLogin {
+                        if viewController.tabBarItem.title == "购物车"{
+                           self.selectedIndex = 2
+                        }
+                        else
+                        {
+                            self.selectedIndex = 3
+                        }
+                        
+                    }
+                })
+                loginVC.hidesBottomBarWhenPushed = true
+                self.present(loginNav, animated: true, completion: nil)
+//                nav.pushViewController(loginVC, animated: true)
+                return false
+            }
+        }
+        else{
+            return true
+        }
+    }
 }

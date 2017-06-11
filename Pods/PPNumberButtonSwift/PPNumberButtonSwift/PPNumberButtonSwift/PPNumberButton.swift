@@ -288,10 +288,10 @@ public extension PPNumberButton {
         decreaseBtn.layer.borderWidth = 0.5;
         increaseBtn.layer.borderWidth = 0.5;
     }
+
     
     //注意:加减号按钮的标题和背景图片只能设置其中一个,若全部设置,则以最后设置的类型为准
-    
-    /**
+        /**
      设置加/减按钮的标题
      
      - parameter decreaseTitle: 减按钮标题

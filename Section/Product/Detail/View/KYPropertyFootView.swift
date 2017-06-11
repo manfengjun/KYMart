@@ -30,7 +30,7 @@ class KYPropertyFootView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         numberButton.shakeAnimation = true
-        numberButton._minValue = 1
+        numberButton.minValue = 1
         numberButton.maxValue = (SingleManager.instance.productBuyInfoModel?.good_buy_store_count)!
         numberButton.borderColor(UIColor.hexStringColor(hex: "#666666"))
         numberButton.numberResult { (number) in

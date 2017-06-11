@@ -21,7 +21,7 @@ class KYProductContentViewController: UIViewController {
     }
     /// 详情展示WebView
     fileprivate lazy var webView : WKWebView = {
-        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
+        let webView = WKWebView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64 - 50))
         webView.uiDelegate = self
         webView.navigationDelegate = self
         webView.scrollView.isScrollEnabled = true

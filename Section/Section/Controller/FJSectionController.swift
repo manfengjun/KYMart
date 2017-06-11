@@ -36,7 +36,7 @@ class FJSectionController: UIViewController {
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: SCREEN_WIDTH/4, y: (SCREEN_WIDTH*3/4 - 10) * 0.4, width: SCREEN_WIDTH - SCREEN_WIDTH/4, height: SCREEN_HEIGHT - 113 - (SCREEN_WIDTH*3/4 - 10) * 0.4), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: SCREEN_WIDTH/4, y: 5, width: SCREEN_WIDTH - SCREEN_WIDTH/4, height: SCREEN_HEIGHT - 113), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
@@ -80,8 +80,9 @@ class FJSectionController: UIViewController {
         // Do any additional setup after loading the view.
     }
     func setupUI() {
+        self.navigationItem.title = "分类"
         view.addSubview(tableView)
-        view.addSubview(headView)
+//        view.addSubview(headView)
         view.addSubview(collectionView)
         view.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
     }
@@ -190,9 +191,11 @@ extension FJSectionController:UICollectionViewDelegate,UICollectionViewDataSourc
         let array = model?.sub_category
         let submodel = array?[indexPath.row]
         listVC.id = submodel?.id
-        self.hidesBottomBarWhenPushed = true
+        listVC.backResult {
+            self.tabBarController?.tabBar.isHidden = false
+        }
         self.navigationController?.pushViewController(listVC, animated: true)
-        self.hidesBottomBarWhenPushed = false
+
     }
     
 }

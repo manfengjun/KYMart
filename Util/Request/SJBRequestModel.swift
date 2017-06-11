@@ -20,6 +20,7 @@ enum ModelType {
     case Register//注册
     case ForgetVerifyCode//重置密码验证码
     case Forget//重置密码
+    case CartList//购物车列表
     
 }
 class SJBRequestModel: NSObject {
@@ -64,6 +65,9 @@ class SJBRequestModel: NSObject {
                 if let model = temmodel {
                     completion(model,status)
                 }
+                break
+            case .Forget:
+                completion(response,status)
                 break
             default:
                 break
@@ -182,6 +186,9 @@ class SJBRequestModel: NSObject {
         }
     }
     
+    
+    // MARK: ------------------ Push
+    
     /// 获取验证码
     ///
     /// - Parameter completion: completion description
@@ -190,7 +197,6 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .VerifyCode, response: response, status: status, completion: completion)
         }
     }
-    // MARK: ------------------ Push
     
     /// 登录
     ///
@@ -248,4 +254,14 @@ class SJBRequestModel: NSObject {
         }
     }
 
+    /// 购物车商品列表
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchCartProductData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnCartUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .CartList, response: response, status: status, completion: completion)
+        }
+    }
 }

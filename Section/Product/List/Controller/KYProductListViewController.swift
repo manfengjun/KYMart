@@ -11,7 +11,8 @@ import MJRefresh
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
 class KYProductListViewController: UIViewController {
-
+    /// 闭包回调传值
+    var BackResultClosure: BackClosure?     // 闭包
     /// 默认热门排序
     var url:String? {
         didSet {
@@ -37,13 +38,13 @@ class KYProductListViewController: UIViewController {
     }()
     //刷新页数
     var page = 1
-    /// 上拉刷新
+    /// 下拉刷新
     fileprivate lazy var header:MJRefreshNormalHeader = {
         let header = MJRefreshNormalHeader()
         header.setRefreshingTarget(self, refreshingAction: #selector(KYProductListViewController.headerRefresh))
         return header
     }()
-    /// 下拉加载
+    /// 上拉加载
     fileprivate lazy var footer:MJRefreshAutoNormalFooter = {
         let footer = MJRefreshAutoNormalFooter()
         footer.setRefreshingTarget(self, refreshingAction: #selector(KYProductListViewController.footerRefresh))
@@ -118,13 +119,27 @@ class KYProductListViewController: UIViewController {
         setupUI()
 
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+    }
     func setupUI() {
-        setBackButtonInNav()
+        setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(back))
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
         view.addSubview(headView)
         collectionView.mj_header = header
         collectionView.mj_footer = footer
+    }
+    func back() {
+        self.navigationController?.popViewController(animated: true)
+        BackResultClosure?()
+    }
+    /**
+      返回回调
+     */
+    func backResult(_ finished: @escaping BackClosure) {
+        BackResultClosure = finished
     }
     // 下拉加载
     func headerRefresh() {
@@ -220,8 +235,6 @@ extension KYProductListViewController:UICollectionViewDelegate,UICollectionViewD
         let detailVC = KYProductDetailViewController()
         let model = dataArray[indexPath.row] as? Goods_list
         detailVC.id = model?.goods_id
-        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
-        self.hidesBottomBarWhenPushed = false
     }
 }
