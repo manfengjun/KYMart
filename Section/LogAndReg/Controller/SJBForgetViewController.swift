@@ -49,6 +49,45 @@ class SJBForgetViewController: UIViewController {
         textView.layer.cornerRadius = 5
         setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(goback))
     }
+    func forgetCodeHandle() {
+        let account = self.phoneT.text
+        SJBRequestModel.push_fetchForgetVerifyCodeData(phone: account!, completion: { (response, status) in
+            if status == 1{
+                let countDown = SJBCountDown(button: self.verCodeBtn)
+                countDown.isCounting = true
+                
+            }
+
+        })
+    }
+    func forgetHandle() {
+        let verifycode = SingleManager.instance.verify_code
+        let account = self.phoneT.text
+        let card = self.cardT.text
+        let password = self.passwordT.text
+        let params = ["mobile":account!,"password":password!,"check_code":card!,"unique_id":SingleManager.getUUID(),"capache":verifycode!]
+        SJBRequestModel.pull_fetchVerifyCodeData { (response, status) in
+            self.verCodeBtn.isUserInteractionEnabled = true
+            if status == 1 {
+                let verifycode = response as! String
+                SingleManager.instance.verify_code = verifycode
+                SJBRequestModel.push_fetchForgetData(params: params, completion: { (response, status) in
+                    if status == 1{
+                        self.Toast(content: "重置密码成功")
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    else
+                    {
+                        
+                        
+                    }
+                })
+            }
+        }
+
+        
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,7 +97,7 @@ class SJBForgetViewController: UIViewController {
 // MARK: - 响应事件
 extension SJBForgetViewController{
     func back() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

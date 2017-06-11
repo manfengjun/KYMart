@@ -57,7 +57,7 @@ class SJBResetPassViewController: BaseViewController {
 // MARK: - 响应事件
 extension SJBResetPassViewController{
     func back() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

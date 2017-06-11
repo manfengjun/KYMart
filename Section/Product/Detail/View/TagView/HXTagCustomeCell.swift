@@ -174,7 +174,7 @@ extension HXTagCustomeCell:UICollectionViewDelegate,UICollectionViewDataSource,U
 
     }
     /**
-     加减按钮的响应闭包回调
+     属性选择闭包回调
      */
     func propertyResult(_ finished: @escaping PropertyClosure) {
         PropertyResultClosure = finished

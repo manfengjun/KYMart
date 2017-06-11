@@ -25,20 +25,20 @@ class SJBRequest: NSObject {
                     }
                     else
                     {
-                        XHToast.showBottomWithText("请求数据失败！")
+                        XHToast.showBottomWithText("请求失败！")
                         completion(responseDic["msh"] as AnyObject,status as! Int)
                     }
 
                 }
                 else
                 {
-                    XHToast.showBottomWithText("请求数据失败！")
+                    XHToast.showBottomWithText("请求失败！")
                     completion("error" as AnyObject,500)
                 }
             }
             else
             {
-                XHToast.showBottomWithText("请求数据失败！")
+                XHToast.showBottomWithText("请求失败！")
                 completion("error" as AnyObject,500)
             }
         }
@@ -61,13 +61,13 @@ class SJBRequest: NSObject {
                 }
                 else
                 {
-                    XHToast.showBottomWithText("请求数据失败！")
+                    XHToast.showBottomWithText("请求失败！")
                     completion("error" as AnyObject,500)
                 }
             }
             else
             {
-                XHToast.showBottomWithText("请求数据失败！")
+                XHToast.showBottomWithText("请求失败！")
                 completion("error" as AnyObject,500)
             }
         }

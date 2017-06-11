@@ -88,10 +88,38 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=User&a=verify&unique_id=\(SingleManager.getUUID())"
     }
     
+    /// 发送注册短信验证码
+    ///
+    /// - Returns: return value description
+    class func returnRegVerifyCodeUrl(phone:String,code:String) -> String {
+        return "\(basePath)m=Home&c=Api&a=send_validate_code&scene=1&type=mobile&mobile=\(phone)&capache=\(code)&unique_id=\(SingleManager.getUUID())"
+    }
+    
     /// 注册
     ///
+    /// - Parameters:
+    ///   - phone: phone description
+    ///   - code: code description
     /// - Returns: return value description
     class func returnRegisterUrl() -> String {
         return "\(basePath)m=Api&c=User&a=reg"
     }
+    
+    /// 发送重置密码验证码
+    ///
+    /// - Parameters:
+    ///   - phone: phone description
+    /// - Returns: return value description
+    class func returnRegVerifyCodeUrl(phone:String) -> String {
+        return "\(basePath)m=Home&c=Api&a=send_validate_code&scene=2&type=mobile&mobile=\(phone)&unique_id=\(SingleManager.getUUID())"
+    }
+    
+    /// 重置密码
+    ///
+    /// - Returns: return value description
+    class func returnForgetUrl() -> String {
+        return "\(basePath)m=api&c=user&a=forgetPassword"
+    }
+
+
 }

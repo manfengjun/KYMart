@@ -19,6 +19,8 @@ class SJBLoginViewController: UIViewController {
     @IBOutlet weak var accountT: UITextField!
     @IBOutlet weak var passwordT: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    /// 闭包回调传值
+    var LoginResultClosure: LoginClosure?     // 闭包
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         IQKeyboardManager.sharedManager().enable = true
@@ -58,25 +60,31 @@ class SJBLoginViewController: UIViewController {
                         SingleManager.instance.loginInfo = response as? KYLoginInfoModel
                         SingleManager.instance.isLogin = true
                         self.Toast(content: "登陆成功")
-
+                        self.dismiss(animated: true, completion: nil)
+                        self.LoginResultClosure?(true)
                     }
                     else
                     {
                         
                         self.Toast(content: response as! String)
+                        self.LoginResultClosure?(false)
                     }
                 })
             }
             else
             {
                 self.Toast(content: "未知错误")
+                self.LoginResultClosure?(false)
             }
         }
     }
-    
-    @IBAction func forgetAction(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
+    /**
+     登录响应闭包回调
+     */
+    func loginResult(_ finished: @escaping LoginClosure) {
+        LoginResultClosure = finished
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -93,15 +101,12 @@ extension SJBLoginViewController{
         self.performSegue(withIdentifier: "L_register_SegueID", sender: sender)
         
     }
-//    @IBAction func forgetAction(_ sender: UITapGestureRecognizer) {
-//        self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
-//        
-//    }
+    @IBAction func forgetAction(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
+        
+    }
     override func goback() {
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let cartVC = storyboard.instantiateViewController(withIdentifier: "cartVC")
-        self.tabBarController?.selectedViewController = cartVC;
-//        dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 

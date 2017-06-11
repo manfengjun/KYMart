@@ -109,6 +109,8 @@
 		BFEA60441EEBE63700885737 /* KYLoginInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60431EEBE63700885737 /* KYLoginInfoModel.swift */; };
 		BFF05C7B1EEC2A9A00D18D43 /* KYProductContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF05C7A1EEC2A9A00D18D43 /* KYProductContentViewController.swift */; };
 		BFF05C7D1EEC384800D18D43 /* KYCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF05C7C1EEC384800D18D43 /* KYCartViewController.swift */; };
+		BFF9594D1EED167000C799CD /* CartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9594B1EED167000C799CD /* CartTVCell.swift */; };
+		BFF9594E1EED167000C799CD /* CartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF9594C1EED167000C799CD /* CartTVCell.xib */; };
 		BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */; };
 		BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */; };
 		BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */; };
@@ -261,6 +263,8 @@
 		BFEA60431EEBE63700885737 /* KYLoginInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYLoginInfoModel.swift; sourceTree = "<group>"; };
 		BFF05C7A1EEC2A9A00D18D43 /* KYProductContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductContentViewController.swift; sourceTree = "<group>"; };
 		BFF05C7C1EEC384800D18D43 /* KYCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCartViewController.swift; sourceTree = "<group>"; };
+		BFF9594B1EED167000C799CD /* CartTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTVCell.swift; sourceTree = "<group>"; };
+		BFF9594C1EED167000C799CD /* CartTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTVCell.xib; sourceTree = "<group>"; };
 		BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailHomeViewController.swift; sourceTree = "<group>"; };
 		BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYProductPropertyView.swift; path = Section/Product/Detail/Controller/KYProductPropertyView.swift; sourceTree = SOURCE_ROOT; };
 		BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KYProductPropertyView.xib; path = Section/Product/Detail/Controller/KYProductPropertyView.xib; sourceTree = SOURCE_ROOT; };
@@ -361,6 +365,8 @@
 		BF89030F1EE3A3D0004A0FF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFF9594B1EED167000C799CD /* CartTVCell.swift */,
+				BFF9594C1EED167000C799CD /* CartTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -978,6 +984,7 @@
 				BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */,
 				BF8903651EE42EB5004A0FF7 /* KYProductScrollCVCell.xib in Resources */,
 				BFB6D0E41EE69DD700F2C61F /* KYProductListCVCell.xib in Resources */,
+				BFF9594E1EED167000C799CD /* CartTVCell.xib in Resources */,
 				BFB6D0D51EE6965300F2C61F /* FJSectionTitleCVCellCell.xib in Resources */,
 				BFB6D0CF1EE6965300F2C61F /* FJLeftMenuTVCell.xib in Resources */,
 				BFB6D0D31EE6965300F2C61F /* FJSectionRowHeadView.xib in Resources */,
@@ -1075,6 +1082,7 @@
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
 				BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
+				BFF9594D1EED167000C799CD /* CartTVCell.swift in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
 				BFB5C8381EEA26F800BFFDE5 /* HXTagCustomeCell.swift in Sources */,
 				BFDCB4101EE912070040A09B /* KYProductInfoTVCell.swift in Sources */,

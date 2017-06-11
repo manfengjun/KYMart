@@ -36,8 +36,8 @@ class SJBRegisterViewController: UIViewController {
         setupUI()
         validated()
         verCodeBtn.reactive.controlEvents(.touchUpInside).observeValues { (button) in
-            let countDown = SJBCountDown(button: button)
-            countDown.isCounting = true
+            button.isUserInteractionEnabled = false
+            self.regCodeHandle()
         }
     }
     func setupUI() {
@@ -47,13 +47,46 @@ class SJBRegisterViewController: UIViewController {
         
         textView.layer.masksToBounds = true
         textView.layer.cornerRadius = 5
-        if isReg {
-            setLeftButtonInNav(imageUrl: "nav_del.png", action: #selector(back))
+        setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(back))
+
+    }
+    func regCodeHandle() {
+        SJBRequestModel.pull_fetchVerifyCodeData { (response, status) in
+            self.verCodeBtn.isUserInteractionEnabled = true
+            if status == 1 {
+                let verifycode = response as! String
+                SingleManager.instance.verify_code = verifycode
+                let account = self.phoneT.text
+                SJBRequestModel.push_fetchRegVerifyCodeData(phone: account!, code: verifycode, completion: { (response, status) in
+                    if status == 1{
+                        let countDown = SJBCountDown(button: self.verCodeBtn)
+                        countDown.isCounting = true
+
+                    }
+                    
+                })
+            }
         }
-        else
-        {
-            setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(goback))
-        }
+    }
+    func regHandle() {
+        let verifycode = SingleManager.instance.verify_code
+        let account = self.phoneT.text
+        let card = self.cardT.text
+        let password = self.passwordT.text
+        let password2 = self.repassT.text
+        let params = ["username":account!,"password":password!,"password2":password2!,"code":card!,"unique_id":SingleManager.getUUID(),"capache":verifycode!,"push_id":""]
+        SJBRequestModel.push_fetchRegisterData(params: params, completion: { (response, status) in
+            if status == 1{
+                self.Toast(content: "注册成功")
+                //注册成功
+                self.navigationController?.popViewController(animated: true)
+            }
+            else
+            {
+                
+                
+            }
+        })
 
     }
     override func didReceiveMemoryWarning() {
@@ -64,10 +97,15 @@ class SJBRegisterViewController: UIViewController {
 // MARK: - 响应事件
 extension SJBRegisterViewController{
     func back() {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func regAction(_ sender: UIButton) {
-        
+        if passwordT.text == repassT.text {
+            regHandle()
+        }
+        else{
+            Toast(content: "两次输入密码不一致")
+        }
     }
 }
 // MARK: - 业务逻辑

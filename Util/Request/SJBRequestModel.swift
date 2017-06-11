@@ -16,6 +16,11 @@ enum ModelType {
     case ProductInfo//商品详情
     case VerifyCode//验证码
     case Login
+    case RegVerifyCode//注册短信验证码
+    case Register//注册
+    case ForgetVerifyCode//重置密码验证码
+    case Forget//重置密码
+    
 }
 class SJBRequestModel: NSObject {
     class func dataToModel(type:ModelType, response:AnyObject, status:Int, completion:(AnyObject,Int)-> Void) {
@@ -45,6 +50,16 @@ class SJBRequestModel: NSObject {
                 completion(text as AnyObject,status)
                 break
             case .Login:
+                let temmodel = KYLoginInfoModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .RegVerifyCode:
+                completion("success" as AnyObject,status)
+
+                break
+            case .Register:
                 let temmodel = KYLoginInfoModel.yy_model(with: response as! [AnyHashable : Any])
                 if let model = temmodel {
                     completion(model,status)
@@ -188,9 +203,49 @@ class SJBRequestModel: NSObject {
         }
     }
     
-    class func push_fetchRegData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Post(url: SJBRequestUrl.returnRegisterUrl(), params: params) { (response, status) in
-//            self.dataToModel(type: .Login, response: response, status: status, completion: completion)
+    /// 注册验证码
+    ///
+    /// - Parameters:
+    ///   - phone: phone description
+    ///   - code: code description
+    ///   - completion: completion description
+    class func push_fetchRegVerifyCodeData(phone:String,code:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url:  SJBRequestUrl.returnRegVerifyCodeUrl(phone: phone, code: code)) { (response, status) in
+            self.dataToModel(type: .RegVerifyCode, response: response, status: status, completion: completion)
         }
     }
+    
+    /// 注册
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchRegisterData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnRegisterUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .Register, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 获取重置密码验证码
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchForgetVerifyCodeData(phone:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url:  SJBRequestUrl.returnRegVerifyCodeUrl(phone: phone)) { (response, status) in
+            self.dataToModel(type: .ForgetVerifyCode, response: response, status: status, completion: completion)
+        }
+    }
+
+    /// 重置密码
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchForgetData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnForgetUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .Forget, response: response, status: status, completion: completion)
+        }
+    }
+
 }

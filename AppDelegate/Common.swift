@@ -52,3 +52,5 @@ typealias ResultClosure = (_ number: Int)->()
 
 /// 属性选择回调
 typealias PropertyClosure = ([Spec_list],Int)->()
+/// 登录成功回调
+typealias LoginClosure = (Bool)->()
