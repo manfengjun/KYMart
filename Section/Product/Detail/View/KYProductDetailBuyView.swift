@@ -24,6 +24,7 @@ class KYProductDetailBuyView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
     @IBAction func buyAction(_ sender: UIButton) {
         ButtonResultClosure?(sender.tag)
     }

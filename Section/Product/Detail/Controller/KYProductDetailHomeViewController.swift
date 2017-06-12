@@ -72,6 +72,7 @@ class KYProductDetailHomeViewController: UIViewController {
         }
         //刷新数据
         SingleManager.instance.productBuyInfoModel?.reloadData()
+        
     }
     
     override func viewDidLoad() {

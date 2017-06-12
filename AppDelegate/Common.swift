@@ -46,6 +46,7 @@ func imageUrl(goods_id:Int) -> URL {
 let SelectProductProperty = NSNotification.Name(rawValue: "SelectProductProperty")
 
 
+
 /// 回调闭包
 /// 返回Int
 typealias ResultClosure = (_ number: Int)->()

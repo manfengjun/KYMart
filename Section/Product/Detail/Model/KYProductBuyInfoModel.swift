@@ -16,6 +16,7 @@ class KYProductBuyInfoModel: NSObject {
     var good_buy_propertys: [Good_Buy_Property]!//属性数组
     var spec_goods_prices:[Spec_goods_price]!// 价格数组
     var good_select_info:String!// 已选
+    var isCanBuy:Bool = true
     /// 排序
     func sortByItem_id() -> [Good_Buy_Property]{
         /// 按ID排序
@@ -80,6 +81,8 @@ class KYProductBuyInfoModel: NSObject {
         calculatePrice(propertys: propertys)
         // 拼接选择的信息
         createGoodSelectInfo(propertys: propertys)
+        isCanBuy = (good_buy_store_count >= good_buy_count)
+        isCanBuy = !(good_buy_store_count == 0)
     }
 }
 class Good_Buy_Property: NSObject {
