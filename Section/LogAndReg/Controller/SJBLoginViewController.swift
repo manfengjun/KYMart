@@ -10,6 +10,7 @@ import UIKit
 import ReactiveCocoa
 import ReactiveSwift
 import Result
+import YYCache
 import IQKeyboardManagerSwift
 
 class SJBLoginViewController: UIViewController {
@@ -62,6 +63,9 @@ class SJBLoginViewController: UIViewController {
                         self.Toast(content: "登陆成功")
                         self.dismiss(animated: true, completion: nil)
                         self.LoginResultClosure?(true)
+                        let cache = YYCache(name: "KYMart")
+                        cache?.setObject(SingleManager.instance.loginInfo, forKey: "loginInfo")
+
                     }
                     else
                     {

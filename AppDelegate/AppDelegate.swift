@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YYCache
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
@@ -23,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 //        let rootVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
 //        window?.rootViewController = rootVC
+        let cache = YYCache(name: "KYMart")
+        if let data = cache?.object(forKey: "loginInfo")
+        {
+            /// 本地
+            SingleManager.instance.loginInfo = data as? KYLoginInfoModel
+            SingleManager.instance.isLogin = true
+        }
+
         setupIQKeyboardManager()
 
         return true

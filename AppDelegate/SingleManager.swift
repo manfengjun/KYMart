@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import YYCache
 class SingleManager: NSObject {
     /// 单例
     static let instance = SingleManager()

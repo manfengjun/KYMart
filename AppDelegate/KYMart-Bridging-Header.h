@@ -5,7 +5,6 @@
 //MD5
 #import <CommonCrypto/CommonCrypto.h>
 
-#import "YYCache/YYCache.h"
 #import "YYModel/YYModel.h"
 #import "SDCycleScrollView.h"
 //集合视图分页

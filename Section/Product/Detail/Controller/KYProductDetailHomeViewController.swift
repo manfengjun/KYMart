@@ -58,8 +58,6 @@ class KYProductDetailHomeViewController: UIViewController {
     func setupProductBuyInfoModel() {
         SingleManager.instance.productBuyInfoModel = KYProductBuyInfoModel()
         SingleManager.instance.productBuyInfoModel?.good_buy_id = productInfoModel?.goods.goods_id
-        SingleManager.instance.productBuyInfoModel?.good_buy_count = 1
-        SingleManager.instance.productBuyInfoModel?.good_buy_price = productInfoModel?.goods.shop_price
         SingleManager.instance.productBuyInfoModel?.spec_goods_prices = productInfoModel?.spec_goods_price
         SingleManager.instance.productBuyInfoModel?.good_buy_propertys = []
         for item in (productInfoModel?.goods.goods_spec_list)! {
@@ -133,9 +131,9 @@ extension KYProductDetailHomeViewController:UITableViewDelegate,UITableViewDataS
         cell.model = productInfoModel
         cell.replyColsure = {(index) in
             if index == 2 {
-                if (self.productInfoModel?.goods.goods_spec_list.isEmpty)! {
-                    return
-                }
+//                if (self.productInfoModel?.goods.goods_spec_list.isEmpty)! {
+//                    return
+//                }
                 self.selectBgView.addSubview(self.propertyView)
                 self.propertyView.model = self.productInfoModel
                 UIApplication.shared.keyWindow?.addSubview(self.selectBgView)

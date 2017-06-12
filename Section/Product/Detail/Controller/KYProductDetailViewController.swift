@@ -68,50 +68,50 @@ class KYProductDetailViewController: UIViewController {
         buyView.buttonResult({ (index) in
             if index == 1{
                 //加入购物车
-                let goods_id = SingleManager.instance.productBuyInfoModel?.good_buy_id
-                let goods_num = SingleManager.instance.productBuyInfoModel?.good_buy_count
-                var goods_spec = NSMutableArray()
-                if let array = SingleManager.instance.productBuyInfoModel?.good_buy_propertys
-                {
-                    if array.count > 0{
-                        for item in array{
-                            goods_spec.add("\(item.good_buy_spec_list.item_id)")
+                if SingleManager.instance.isLogin {
+                    let goods_id = SingleManager.instance.productBuyInfoModel?.good_buy_id
+                    let goods_num = SingleManager.instance.productBuyInfoModel?.good_buy_count
+                    var goods_spec = NSMutableArray()
+                    if let array = SingleManager.instance.productBuyInfoModel?.good_buy_propertys
+                    {
+                        if array.count > 0{
+                            for item in array{
+                                goods_spec.add("\(item.good_buy_spec_list.item_id)")
+                            }
+                            let params = ["goods_num": String(goods_num!), "goods_spec": goods_spec, "goods_id": String(goods_id!)] as [String : Any]
+                            print(params)
+                            self.addCart(params: params as [String : AnyObject])
                         }
+                        else{
+                            let params = ["goods_num": String(goods_num!), "goods_id": String(goods_id!)] as [String : Any]
+                            self.addCart(params: params as [String : AnyObject])
+                        }
+                        
                     }
-                    
+
                 }
-                let params = ["goods_num": "1", "goods_spec": goods_spec.yy_modelToJSONString(), "goods_id": "115"] as [String : Any]
-                print(params)
-//                do{
-//                    let data = try JSONSerialization.data(withJSONObject: goods_spec, options: JSONSerialization.WritingOptions.prettyPrinted)
-//                    let jsonStr = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-//                    if let text = jsonStr{
-//                        let params = ["goods_num": "1", "goods_spec": text.replacingOccurrences(of: " ", with: "") , "goods_id": "115"] as [String : Any]
-//                        
-////                        SJBRequestModel.push_fetchAddCartProductData(params: params as [String : AnyObject], completion: { (response, status) in
-////                            if status == 1{
-////                                
-////                            }
-////                        })
-//                    }
-//                    else
-//                    {
-//                        self.Toast(content: "添加失败")
-//                    }
-//                }catch{
-//                    print(error.localizedDescription)
-//                    self.Toast(content: "添加失败")
-//                }
-                
+                else
+                {
+                    self.Toast(content: "请先登录")
+                }
             }else{
                 //立即购买
             }
         })
         return buyView
     }()
+    func addCart(params:[String:AnyObject]) {
+        SJBRequestModel.push_fetchAddCartProductData(params: params as [String : AnyObject], completion: { (response, status) in
+            if status == 1{
+                
+            }
+        })
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButtonInNav()
+
+        
         view.backgroundColor = UIColor.white
         view.addSubview(scrollView)
 //        let tap = UITapGestureRecognizer(target: self, action: #selector(KYProductDetailViewController.ceshi))

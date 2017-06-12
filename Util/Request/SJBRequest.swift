@@ -44,7 +44,7 @@ class SJBRequest: NSObject {
         }
     }
     class func Post(url:String, params:[String:AnyObject]?, completion:@escaping (AnyObject,Int) -> Void) {
-        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             if let JSON = response.result.value {
                 let responseDic = JSON as! NSDictionary
                 if let status = responseDic["status"] {

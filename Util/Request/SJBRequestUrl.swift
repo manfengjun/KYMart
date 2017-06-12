@@ -78,7 +78,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func returnAddCartUrl() -> String {
-        return "\(basePath)m=Api&c=Cart&a=addCart&unique_id=\(access_token())"
+        return "\(basePath)m=Api&c=Cart&a=addCart&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
     // MARK: ------ 登录
     /// 登录
