@@ -21,6 +21,7 @@ enum ModelType {
     case ForgetVerifyCode//重置密码验证码
     case Forget//重置密码
     case CartList//购物车列表
+    case AddCart//添加购物车
     
 }
 class SJBRequestModel: NSObject {
@@ -181,14 +182,10 @@ class SJBRequestModel: NSObject {
     ///   - completion: completion description
     class func pull_fetchProductInfoData(id:Int, completion:@escaping (AnyObject,Int) -> Void) {
         let params = ["id":String(id)]
-        SJBRequest.Post(url: SJBRequestUrl.returnProductInfoUrl(), params: params) { (response, status) in
+        SJBRequest.Post(url: SJBRequestUrl.returnProductInfoUrl(), params: params as [String : AnyObject]) { (response, status) in
             self.dataToModel(type: .ProductInfo, response: response, status: status, completion: completion)
         }
     }
-    
-    
-    // MARK: ------------------ Push
-    
     /// 获取验证码
     ///
     /// - Parameter completion: completion description
@@ -198,12 +195,14 @@ class SJBRequestModel: NSObject {
         }
     }
     
+    // MARK: ------------------ Push
+    
     /// 登录
     ///
     /// - Parameters:
     ///   - params: params description
     ///   - completion: completion description
-    class func push_fetchLoginData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+    class func push_fetchLoginData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url: SJBRequestUrl.returnLoginUrl(), params: params) { (response, status) in
             self.dataToModel(type: .Login, response: response, status: status, completion: completion)
         }
@@ -226,7 +225,7 @@ class SJBRequestModel: NSObject {
     /// - Parameters:
     ///   - params: params description
     ///   - completion: completion description
-    class func push_fetchRegisterData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+    class func push_fetchRegisterData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url: SJBRequestUrl.returnRegisterUrl(), params: params) { (response, status) in
             self.dataToModel(type: .Register, response: response, status: status, completion: completion)
         }
@@ -248,18 +247,29 @@ class SJBRequestModel: NSObject {
     /// - Parameters:
     ///   - params: params description
     ///   - completion: completion description
-    class func push_fetchForgetData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+    class func push_fetchForgetData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url: SJBRequestUrl.returnForgetUrl(), params: params) { (response, status) in
             self.dataToModel(type: .Forget, response: response, status: status, completion: completion)
         }
     }
-
+    
+    /// 添加购物车
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchAddCartProductData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnAddCartUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .AddCart, response: response, status: status, completion: completion)
+        }
+    }
+    
     /// 购物车商品列表
     ///
     /// - Parameters:
     ///   - params: params description
     ///   - completion: completion description
-    class func push_fetchCartProductData(params:[String:String], completion:@escaping (AnyObject,Int) -> Void) {
+    class func push_fetchCartProductData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url: SJBRequestUrl.returnCartUrl(), params: params) { (response, status) in
             self.dataToModel(type: .CartList, response: response, status: status, completion: completion)
         }

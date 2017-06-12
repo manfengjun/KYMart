@@ -75,7 +75,7 @@ class SJBRegisterViewController: UIViewController {
         let password = self.passwordT.text
         let password2 = self.repassT.text
         let params = ["username":account!,"password":password!,"password2":password2!,"code":card!,"unique_id":SingleManager.getUUID(),"capache":verifycode!,"push_id":""]
-        SJBRequestModel.push_fetchRegisterData(params: params, completion: { (response, status) in
+        SJBRequestModel.push_fetchRegisterData(params: params as [String : AnyObject], completion: { (response, status) in
             if status == 1{
                 self.Toast(content: "注册成功")
                 //注册成功

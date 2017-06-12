@@ -55,7 +55,7 @@ class SJBLoginViewController: UIViewController {
                 let account = self.accountT.text
                 let password = self.passwordT.text
                 let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":""]
-                SJBRequestModel.push_fetchLoginData(params: params, completion: { (response, status) in
+                SJBRequestModel.push_fetchLoginData(params: params as [String : AnyObject], completion: { (response, status) in
                     if status == 1{
                         SingleManager.instance.loginInfo = response as? KYLoginInfoModel
                         SingleManager.instance.isLogin = true

@@ -57,6 +57,7 @@ class KYProductDetailHomeViewController: UIViewController {
     /// 初始化购买对象
     func setupProductBuyInfoModel() {
         SingleManager.instance.productBuyInfoModel = KYProductBuyInfoModel()
+        SingleManager.instance.productBuyInfoModel?.good_buy_id = productInfoModel?.goods.goods_id
         SingleManager.instance.productBuyInfoModel?.good_buy_count = 1
         SingleManager.instance.productBuyInfoModel?.good_buy_price = productInfoModel?.goods.shop_price
         SingleManager.instance.productBuyInfoModel?.spec_goods_prices = productInfoModel?.spec_goods_price

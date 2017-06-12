@@ -15,7 +15,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func access_token() -> String {
-        return SingleManager.instance.access_token!
+        return (SingleManager.instance.loginInfo?.token)!
     }
     // MARK: ------ 首页
     /// 首页
@@ -72,7 +72,14 @@ class SJBRequestUrl: NSObject {
     class func returnProductContentUrl(id:Int) -> String {
         return "\(basePath)m=api&c=goods&a=goodsContent&id=\(id)"
     }
+    // MARK: ------ 购物车
     
+    /// 添加购物车
+    ///
+    /// - Returns: return value description
+    class func returnAddCartUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=addCart&unique_id=\(access_token())"
+    }
     // MARK: ------ 登录
     /// 登录
     ///

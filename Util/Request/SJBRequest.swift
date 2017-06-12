@@ -26,7 +26,7 @@ class SJBRequest: NSObject {
                     else
                     {
                         XHToast.showBottomWithText("请求失败！")
-                        completion(responseDic["msh"] as AnyObject,status as! Int)
+                        completion(responseDic["msg"] as AnyObject,status as! Int)
                     }
 
                 }
@@ -43,9 +43,8 @@ class SJBRequest: NSObject {
             }
         }
     }
-    class func Post(url:String, params:[String:String]?, completion:@escaping (AnyObject,Int) -> Void) {
-        
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+    class func Post(url:String, params:[String:AnyObject]?, completion:@escaping (AnyObject,Int) -> Void) {
+        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.httpBody, headers: nil).responseJSON { (response) in
             if let JSON = response.result.value {
                 let responseDic = JSON as! NSDictionary
                 if let status = responseDic["status"] {

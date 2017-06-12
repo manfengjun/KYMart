@@ -34,8 +34,7 @@ class SJBForgetViewController: UIViewController {
         setupUI()
         validated()
         verCodeBtn.reactive.controlEvents(.touchUpInside).observeValues { (button) in
-            let countDown = SJBCountDown(button: button)
-            countDown.isCounting = true
+            self.forgetCodeHandle()
         }
         // Do any additional setup after loading the view.
     }
@@ -71,7 +70,7 @@ class SJBForgetViewController: UIViewController {
             if status == 1 {
                 let verifycode = response as! String
                 SingleManager.instance.verify_code = verifycode
-                SJBRequestModel.push_fetchForgetData(params: params, completion: { (response, status) in
+                SJBRequestModel.push_fetchForgetData(params: params as [String : AnyObject], completion: { (response, status) in
                     if status == 1{
                         self.Toast(content: "重置密码成功")
                         self.navigationController?.popViewController(animated: true)
@@ -96,6 +95,14 @@ class SJBForgetViewController: UIViewController {
 }
 // MARK: - 响应事件
 extension SJBForgetViewController{
+    @IBAction func forgetAction(_ sender: UIButton) {
+        if passwordT.text == repassT.text {
+            forgetHandle()
+        }
+        else{
+            Toast(content: "两次输入密码不一致")
+        }
+    }
     func back() {
         self.navigationController?.popViewController(animated: true)
     }

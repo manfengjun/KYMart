@@ -9,6 +9,7 @@
 import UIKit
 
 class KYProductBuyInfoModel: NSObject {
+    var good_buy_id: Int? //购买ID
     var good_buy_count: Int = 0//购买数量
     var good_buy_store_count: Int = 0//当前价格库存
     var good_buy_price: String!//购买价格（单价）
@@ -74,6 +75,7 @@ class KYProductBuyInfoModel: NSObject {
         
         // 排序
         let propertys = sortByItem_id()
+        good_buy_propertys = propertys
         // 算价
         calculatePrice(propertys: propertys)
         // 拼接选择的信息
