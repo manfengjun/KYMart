@@ -60,16 +60,15 @@ class SJBForgetViewController: UIViewController {
         })
     }
     func forgetHandle() {
-        let verifycode = SingleManager.instance.verify_code
         let account = self.phoneT.text
         let card = self.cardT.text
         let password = self.passwordT.text
-        let params = ["mobile":account!,"password":password!,"check_code":card!,"unique_id":SingleManager.getUUID(),"capache":verifycode!]
         SJBRequestModel.pull_fetchVerifyCodeData { (response, status) in
             self.verCodeBtn.isUserInteractionEnabled = true
             if status == 1 {
                 let verifycode = response as! String
                 SingleManager.instance.verify_code = verifycode
+                let params = ["mobile":account!,"password":password!,"check_code":card!,"unique_id":SingleManager.getUUID(),"capache":verifycode]
                 SJBRequestModel.push_fetchForgetData(params: params as [String : AnyObject], completion: { (response, status) in
                     if status == 1{
                         self.Toast(content: "重置密码成功")

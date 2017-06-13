@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="426" height="115"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="426" height="114.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="426" height="115"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2R7-TD-kFa">
@@ -61,6 +61,9 @@
                             <constraint firstAttribute="width" constant="20" id="DlU-kd-0X0"/>
                         </constraints>
                         <state key="normal" image="cart_del"/>
+                        <connections>
+                            <action selector="delAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cbc-wv-jIh"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qy1-ft-noj">
                         <rect key="frame" x="143.5" y="84" width="80" height="20"/>
@@ -121,7 +124,7 @@
                 <outlet property="selectBtn" destination="1HM-yx-h2H" id="sIv-We-TPA"/>
                 <outlet property="selectView" destination="qy1-ft-noj" id="1li-Ob-yc9"/>
             </connections>
-            <point key="canvasLocation" x="-19" y="7.5"/>
+            <point key="canvasLocation" x="-464" y="152"/>
         </tableViewCell>
     </objects>
     <resources>

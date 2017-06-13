@@ -15,7 +15,10 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func access_token() -> String {
-        return (SingleManager.instance.loginInfo?.token)!
+        if let token = SingleManager.instance.loginInfo?.token{
+            return token
+        }
+        return ""
     }
     // MARK: ------ 首页
     /// 首页
@@ -80,6 +83,20 @@ class SJBRequestUrl: NSObject {
     class func returnAddCartUrl() -> String {
         return "\(basePath)m=Api&c=Cart&a=addCart&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
+    
+    /// 购物车列表
+    ///
+    /// - Returns: return value description
+    class func returnCartListUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=cartList"
+    }
+    
+    /// 购物车删除
+    ///
+    /// - Returns: return value description
+    class func returnDelCartUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=delCart"
+    }
     // MARK: ------ 登录
     /// 登录
     ///
@@ -129,19 +146,7 @@ class SJBRequestUrl: NSObject {
     }
 
     
-    /// 购物车
-    ///
-    /// - Returns: return value description
-    class func returnCartUrl() -> String {
-        return "\(basePath)m=Api&c=Cart&a=cartList"
-    }
-    
-    /// 购物车列表
-    ///
-    /// - Returns: return value description
-    class func returnCartListUrl() -> String {
-        return "\(basePath)m=Api&c=Cart&a=cartList"
-    }
-    
 
+    
+    
 }

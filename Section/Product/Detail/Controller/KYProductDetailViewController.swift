@@ -109,6 +109,10 @@ class KYProductDetailViewController: UIViewController {
             if status == 1{
                 self.Toast(content: "添加成功！")
             }
+            else
+            {
+                self.Toast(content: "添加失败")
+            }
         })
     }
     override func viewDidLoad() {

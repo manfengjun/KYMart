@@ -22,6 +22,7 @@ enum ModelType {
     case Forget//重置密码
     case CartList//购物车列表
     case AddCart//添加购物车
+    case DelCart//删除购物车商品
     
 }
 class SJBRequestModel: NSObject {
@@ -61,6 +62,10 @@ class SJBRequestModel: NSObject {
                 completion("success" as AnyObject,status)
 
                 break
+            case .ForgetVerifyCode:
+                completion("success" as AnyObject,status)
+                
+                break
             case .Register:
                 let temmodel = KYLoginInfoModel.yy_model(with: response as! [AnyHashable : Any])
                 if let model = temmodel {
@@ -79,6 +84,10 @@ class SJBRequestModel: NSObject {
             case .AddCart:
                 completion(response,status)
                 break
+            case .DelCart:
+                completion(response,status)
+                break
+
             default:
                 break
             }
@@ -281,6 +290,17 @@ class SJBRequestModel: NSObject {
     class func push_fetchCartProductData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url: SJBRequestUrl.returnCartListUrl(), params: params) { (response, status) in
             self.dataToModel(type: .CartList, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 删除购物车商品
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchCartDelData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnDelCartUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .DelCart, response: response, status: status, completion: completion)
         }
     }
 }

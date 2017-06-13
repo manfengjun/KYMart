@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYCartFootView" customModule="KYMart" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="vKF-wG-Hni"/>
+                <outlet property="selectAllBtn" destination="FPp-ew-cKo" id="z6D-In-YbO"/>
+                <outlet property="totalPrice" destination="CCQ-Eq-Y7H" id="VPf-V4-dvM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,6 +29,9 @@
                         <constraint firstAttribute="width" constant="20" id="kut-Ou-XV0"/>
                     </constraints>
                     <state key="normal" title="Button" image="cart_select_no"/>
+                    <connections>
+                        <action selector="selectAllAction:" destination="-1" eventType="touchUpInside" id="Cxz-aP-qsP"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTk-04-Jgy">
                     <rect key="frame" x="40" y="17" width="29" height="17"/>

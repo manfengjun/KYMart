@@ -98,6 +98,10 @@ extension KYProductDetailHomeViewController{
             if status == 1 {
                 self.productInfoModel = response as? KYGoodInfoModel
             }
+            else
+            {
+               self.Toast(content: "请求数据失败！")
+            }
         }
     }
 }

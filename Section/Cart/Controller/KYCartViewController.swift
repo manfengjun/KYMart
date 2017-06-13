@@ -11,10 +11,33 @@ fileprivate let CartTVCellIdentifier = "cartTVCell"
 
 class KYCartViewController: UIViewController {
     var CountResultClosure: ResultClosure?     // 闭包
-
+    
+    /// 是否全选
+    var isSelectAll = false
     /// 底部按钮
     fileprivate lazy var bottomView:KYCartFootView = {
         let bottomView = KYCartFootView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - 50 - 49, width: SCREEN_WIDTH, height: 50))
+        bottomView.selectAllResult({
+            self.isSelectAll = self.isSelectAll ? false : true
+            bottomView.selectAllBtn.setImage(self.isSelectAll ? UIImage(named: "cart_select_yes") : UIImage(named: "cart_select_no"), for: .normal)
+            let cart_form_datas = NSMutableArray()
+            if let array = self.cartListModel?.storeList {
+                for storeList in array {
+                    for cartList in storeList.cartList {
+                        let cart_form_data = KYCartFormModel()
+                        cartList.selected = self.isSelectAll ? "1" : "0"
+                        cart_form_data.cartID = cartList.id
+                        cart_form_data.goodsNum = cartList.goods_num
+                        cart_form_data.storeCount = cartList.store_count
+                        cart_form_data.selected = cartList.selected
+                        cart_form_datas.add(cart_form_data)
+                    }
+                    
+                }
+                self.dataRequest(cart_form_datas: cart_form_datas)
+            }
+
+        })
         return bottomView
     }()
     /// 列表
@@ -34,6 +57,8 @@ class KYCartViewController: UIViewController {
     /// 列表数据
     var cartListModel:KYCartListModel?{
         didSet {
+            bottomView.cartListModel = cartListModel
+
             tableView.reloadData()
         }
     }
@@ -47,7 +72,7 @@ class KYCartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.shared.keyWindow?.addSubview(bottomView)
-        dataRequest()
+        dataRequest(cart_form_datas: nil)
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -75,10 +100,23 @@ class KYCartViewController: UIViewController {
 
 }
 extension KYCartViewController{
-    func dataRequest() {
-        let params = [ "user_id":SingleManager.instance.loginInfo?.user_id!, "unique_id":SingleManager.getUUID(), "token":SingleManager.instance.loginInfo?.token]
+    func dataRequest(cart_form_datas:NSMutableArray?) {
+        
+        let user_id = SingleManager.instance.loginInfo?.user_id
+        let unique_id = SingleManager.getUUID()
+        let token = SingleManager.instance.loginInfo?.token
+        var params:[String:String]?
+        if cart_form_datas != nil && (cart_form_datas?.count)! > 0 {
+            let jsonStr = cart_form_datas?.yy_modelToJSONString()
+            params = [ "user_id":user_id!, "unique_id":unique_id, "token":token!,"cart_form_data":jsonStr!]
 
-        SJBRequestModel.push_fetchCartProductData(params: params as [String : AnyObject]) { (response, status) in
+        }
+        else
+        {
+            params = [ "user_id":user_id!, "unique_id":unique_id, "token":token!]
+
+        }
+        SJBRequestModel.push_fetchCartProductData(params: params! as [String : AnyObject]) { (response, status) in
             if status == 1{
                 self.cartListModel = response as? KYCartListModel
             }
@@ -105,7 +143,35 @@ extension KYCartViewController:UITableViewDelegate,UITableViewDataSource{
         if let storelist = cartListModel?.storeList {
             if let array = storelist[indexPath.section].cartList {
                 cell.model = array[indexPath.row]
-                cell.cartChangeResult({ (model) in
+                cell.cartChangeResult({ (response,index) in
+                    if index == 2{
+                        if let id = response{
+                            let unique_id = SingleManager.getUUID()
+                            let token = SingleManager.instance.loginInfo?.token
+                            let params = ["ids":id,"token":token!,"unique_id":unique_id] as [String : AnyObject]
+                            print(params)
+                            SJBRequestModel.push_fetchCartDelData(params: params) { (response, status) in
+                                if status == 1{
+                                    self.Toast(content: "删除成功！")
+                                    dataRequest(cart_form_datas: nil)
+                                }
+                                else {
+                                    self.Toast(content:response as! String)
+                                }
+                            }                        }
+                        
+                    }
+                    else
+                    {
+                        if response != nil{
+                            if let temModel = response{
+                                let cart_form_datas = NSMutableArray()
+                                cart_form_datas.add(temModel)
+                                self.dataRequest(cart_form_datas: cart_form_datas)
+                            }
+                        }
+                        
+                    }
                     
                 })
             }

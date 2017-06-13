@@ -29,7 +29,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             /// 本地
             SingleManager.instance.loginInfo = data as? KYLoginInfoModel
-            SingleManager.instance.isLogin = true
+
+            SJBRequestModel.pull_fetchVerifyCodeData { (response, status) in
+                if status == 1 {
+                    let verifycode = response as! String
+                    let account = SingleManager.instance.loginInfo?.mobile
+                    let password = SingleManager.instance.loginInfo?.password
+                    let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":""]
+                    SJBRequestModel.push_fetchLoginData(params: params as [String : AnyObject], completion: { (response, status) in
+                        if status == 1{
+                            SingleManager.instance.loginInfo = response as? KYLoginInfoModel
+                            SingleManager.instance.isLogin = true
+                            let cache = YYCache(name: "KYMart")
+                            cache?.setObject(SingleManager.instance.loginInfo, forKey: "loginInfo")
+                            
+                        }
+                    })
+                }
+            }
+
         }
 
         setupIQKeyboardManager()

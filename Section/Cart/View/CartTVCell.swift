@@ -28,7 +28,7 @@ class CartTVCell: UITableViewCell {
         selectNumBtn.borderColor(UIColor.hexStringColor(hex: "#666666"))
         selectNumBtn.numberResult { (number) in
             self.cartForm?.goodsNum = number
-            self.CartChangeClosure?(self.cartForm!)
+            self.CartChangeClosure?(self.cartForm!,1)
         }
         return selectNumBtn
     }()
@@ -66,10 +66,16 @@ class CartTVCell: UITableViewCell {
     
     @IBAction func selectAction(_ sender: UIButton) {
         btnSelected = btnSelected ? false : true
+        selectBtn.setImage(btnSelected ? UIImage(named: "cart_select_yes") : UIImage(named: "cart_select_no"), for: .normal)
         self.cartForm?.selected = btnSelected ? "1" : "0"
-        self.CartChangeClosure?(self.cartForm!)
+        self.CartChangeClosure?(self.cartForm!,1)
 
     }
+    @IBAction func delAction(_ sender: UIButton) {
+        self.CartChangeClosure?(model?.id as AnyObject,2)
+
+    }
+    
     /**
      属性选择闭包回调
      */
