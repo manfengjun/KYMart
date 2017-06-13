@@ -60,6 +60,9 @@ class KYProductDetailHomeViewController: UIViewController {
         SingleManager.instance.productBuyInfoModel?.good_buy_id = productInfoModel?.goods.goods_id
         SingleManager.instance.productBuyInfoModel?.spec_goods_prices = productInfoModel?.spec_goods_price
         SingleManager.instance.productBuyInfoModel?.good_buy_propertys = []
+        if let text =  productInfoModel?.goods.store_count{
+            SingleManager.instance.productBuyInfoModel?.good_buy_store_count = text
+        }
         for item in (productInfoModel?.goods.goods_spec_list)! {
             let good_Buy_Property = Good_Buy_Property()
             good_Buy_Property.good_buy_spec_name = item.spec_name

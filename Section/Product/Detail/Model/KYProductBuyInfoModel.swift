@@ -10,7 +10,7 @@ import UIKit
 
 class KYProductBuyInfoModel: NSObject {
     var good_buy_id: Int? //购买ID
-    var good_buy_count: Int = 0//购买数量
+    var good_buy_count: Int = 1//购买数量
     var good_buy_store_count: Int = 0//当前价格库存
     var good_buy_price: String!//购买价格（单价）
     var good_buy_propertys: [Good_Buy_Property]!//属性数组

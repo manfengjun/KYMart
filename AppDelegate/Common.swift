@@ -57,3 +57,5 @@ typealias PropertyClosure = ([Spec_list],Int)->()
 typealias LoginClosure = (Bool)->()
 /// 返回回调
 typealias BackClosure = ()->()
+/// 更改购物车回调
+typealias CartChangeClosure = (KYCartFormModel)->()

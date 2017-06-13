@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,16 +40,16 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆电信手机" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olw-6y-wc1">
-                        <rect key="frame" x="143.5" y="10.5" width="150" height="17"/>
+                        <rect key="frame" x="143.5" y="10.5" width="150" height="14.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="hje-iJ-vXk"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥60.00元" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-SO-GIW">
-                        <rect key="frame" x="351" y="10" width="65" height="18"/>
+                        <rect key="frame" x="351" y="9" width="65" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.90588235289999997" green="0.1215686275" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -84,6 +84,9 @@
                             <constraint firstAttribute="height" constant="20" id="rar-fH-NMY"/>
                         </constraints>
                         <state key="normal" image="cart_select_no"/>
+                        <connections>
+                            <action selector="selectAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wUJ-z8-8aR"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -115,6 +118,7 @@
                 <outlet property="productIV" destination="eOJ-Bs-MgZ" id="hIQ-7P-2DH"/>
                 <outlet property="productInfoL" destination="Olw-6y-wc1" id="h5O-aT-5Qe"/>
                 <outlet property="productPriceL" destination="XKG-SO-GIW" id="NzI-Xd-2NY"/>
+                <outlet property="selectBtn" destination="1HM-yx-h2H" id="sIv-We-TPA"/>
                 <outlet property="selectView" destination="qy1-ft-noj" id="1li-Ob-yc9"/>
             </connections>
             <point key="canvasLocation" x="-19" y="7.5"/>

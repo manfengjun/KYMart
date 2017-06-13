@@ -232,4 +232,10 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
         }
         return resableview
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let detailVC = KYProductDetailViewController()
+//        let model = dataArray[indexPath.row] as? Goods_list
+//        detailVC.id = model?.goods_id
+//        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

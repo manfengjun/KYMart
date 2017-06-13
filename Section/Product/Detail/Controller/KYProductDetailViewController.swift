@@ -107,7 +107,7 @@ class KYProductDetailViewController: UIViewController {
     func addCart(params:[String:AnyObject]) {
         SJBRequestModel.push_fetchAddCartProductData(params: params as [String : AnyObject], completion: { (response, status) in
             if status == 1{
-                
+                self.Toast(content: "添加成功！")
             }
         })
     }

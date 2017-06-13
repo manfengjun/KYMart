@@ -44,11 +44,16 @@ class StoreList :NSObject{
     var id: Int = 0
     var name: String!
     var cartList: [CartList]!
+    class func modelContainerPropertyGenericClass() -> NSDictionary {
+        return ["cartList" : CartList.classForCoder()]
+    }
     
 }
 
 class KYCartListModel :NSObject{
     var total_price: Total_price!
     var storeList: [StoreList]!
-    
+    class func modelContainerPropertyGenericClass() -> NSDictionary {
+        return ["storeList" : StoreList.classForCoder()]
+    }
 }

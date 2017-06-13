@@ -135,7 +135,13 @@ class SJBRequestUrl: NSObject {
     class func returnCartUrl() -> String {
         return "\(basePath)m=Api&c=Cart&a=cartList"
     }
-
+    
+    /// 购物车列表
+    ///
+    /// - Returns: return value description
+    class func returnCartListUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=cartList"
+    }
     
 
 }

@@ -70,6 +70,15 @@ class SJBRequestModel: NSObject {
             case .Forget:
                 completion(response,status)
                 break
+            case .CartList:
+                let temmodel = KYCartListModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .AddCart:
+                completion(response,status)
+                break
             default:
                 break
             }
@@ -270,7 +279,7 @@ class SJBRequestModel: NSObject {
     ///   - params: params description
     ///   - completion: completion description
     class func push_fetchCartProductData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Post(url: SJBRequestUrl.returnCartUrl(), params: params) { (response, status) in
+        SJBRequest.Post(url: SJBRequestUrl.returnCartListUrl(), params: params) { (response, status) in
             self.dataToModel(type: .CartList, response: response, status: status, completion: completion)
         }
     }
