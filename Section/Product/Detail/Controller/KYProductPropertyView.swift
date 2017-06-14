@@ -89,6 +89,16 @@ class KYProductPropertyView: UIView {
 
     }
 
+    @IBAction func addCartAction(_ sender: UIButton) {
+        //加入购物车
+        if SingleManager.instance.isLogin {
+            CartUtil.addCart()
+        }
+        else
+        {
+            self.Toast(content: "请先登录")
+        }
+    }
 }
 extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {

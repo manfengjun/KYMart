@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     SJBRequestModel.push_fetchLoginData(params: params as [String : AnyObject], completion: { (response, status) in
                         if status == 1{
                             SingleManager.instance.loginInfo = response as? KYLoginInfoModel
+                            SingleManager.instance.loginInfo?.password = password
                             SingleManager.instance.isLogin = true
                             let cache = YYCache(name: "KYMart")
                             cache?.setObject(SingleManager.instance.loginInfo, forKey: "loginInfo")

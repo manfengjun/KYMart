@@ -12,6 +12,8 @@ private let KYHomeSecKillIdentifier = "kYHomeSecKillCVCell"
 class KYProductScrollCVCell: UICollectionViewCell {
 
     @IBOutlet weak var pageControl: UIPageControl!
+    /// 闭包回调传值
+    var SelectClosure: BackClosure?     // 闭包
     var models:[Good]?{
         didSet {
             if let array = models {
@@ -38,6 +40,12 @@ class KYProductScrollCVCell: UICollectionViewCell {
         collectionView.showsHorizontalScrollIndicator = false
         return collectionView
     }()
+    /**
+     属性选择闭包回调
+     */
+    func selectResult(_ finished: @escaping BackClosure) {
+        SelectClosure = finished
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         addSubview(collectionView)
@@ -61,6 +69,9 @@ extension KYProductScrollCVCell:UICollectionViewDelegate,UICollectionViewDataSou
             cell.good = array[indexPath.row]
         }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        SelectClosure?()
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index = collectionView.contentOffset.x/SCREEN_WIDTH

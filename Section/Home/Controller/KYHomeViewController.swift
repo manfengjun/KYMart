@@ -197,7 +197,14 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
         else
         {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYProductScrollIdentifier, for: indexPath) as! KYProductScrollCVCell
-            cell.models = scrollSectionData[indexPath.section - 1] as? [Good]
+            let models = scrollSectionData[indexPath.section - 1] as? [Good]
+            cell.models = models
+            cell.selectResult({ 
+                let detailVC = KYProductDetailViewController()
+                let model = models?[indexPath.row]
+                detailVC.id = model?.goods_id
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            })
             return cell
         }
         
@@ -233,6 +240,13 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
         return resableview
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == sectionCount - 1 {
+            let detailVC = KYProductDetailViewController()
+            let model = productArray[indexPath.row]
+            detailVC.id = model.goods_id
+            self.navigationController?.pushViewController(detailVC, animated: true)
+
+        }
 //        let detailVC = KYProductDetailViewController()
 //        let model = dataArray[indexPath.row] as? Goods_list
 //        detailVC.id = model?.goods_id

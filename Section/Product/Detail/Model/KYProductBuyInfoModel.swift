@@ -76,7 +76,6 @@ class KYProductBuyInfoModel: NSObject {
         
         // 排序
         let propertys = sortByItem_id()
-        good_buy_propertys = propertys
         // 算价
         calculatePrice(propertys: propertys)
         // 拼接选择的信息

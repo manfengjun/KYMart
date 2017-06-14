@@ -59,6 +59,7 @@ class SJBLoginViewController: UIViewController {
                 SJBRequestModel.push_fetchLoginData(params: params as [String : AnyObject], completion: { (response, status) in
                     if status == 1{
                         SingleManager.instance.loginInfo = response as? KYLoginInfoModel
+                        SingleManager.instance.loginInfo?.password = password
                         SingleManager.instance.isLogin = true
                         self.Toast(content: "登陆成功")
                         self.dismiss(animated: true, completion: nil)

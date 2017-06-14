@@ -17,9 +17,22 @@ extension NSObject{
     /// 信息提示
     ///
     /// - Parameter content: content description
+    class func Toast(content:String) {
+        XHToast.showBottomWithText(content, duration: 1)
+    }
+    /// 信息提示
+    ///
+    /// - Parameter content: content description
     func Toast(content:String,duration:CGFloat) {
         XHToast.showBottomWithText(content, duration: duration)
-    }}
+    }
+    /// 信息提示
+    ///
+    /// - Parameter content: content description
+    class func Toast(content:String,duration:CGFloat) {
+        XHToast.showBottomWithText(content, duration: duration)
+    }
+}
 // MARK: ------ 输入合法性验证
 extension NSObject{
     enum ValidatedType {

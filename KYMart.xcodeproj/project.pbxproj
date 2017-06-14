@@ -102,6 +102,9 @@
 		BFDCB4111EE912070040A09B /* KYProductInfoTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */; };
 		BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */; };
 		BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */; };
+		BFE46DF11EF0DEDD00F65FED /* CartUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE46DF01EF0DEDD00F65FED /* CartUtil.swift */; };
+		BFE46DF31EF11C9300F65FED /* KYMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */; };
+		BFE46DF51EF11DDB00F65FED /* KYMineTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE46DF41EF11DDB00F65FED /* KYMineTVCell.swift */; };
 		BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60341EEBC43F00885737 /* KYCodeView.swift */; };
 		BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60361EEBD2C000885737 /* DemoViewController.swift */; };
 		BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA603A1EEBDF9300885737 /* SSKeychain.m */; };
@@ -260,6 +263,9 @@
 		BFDCB40F1EE912070040A09B /* KYProductInfoTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductInfoTVCell.xib; sourceTree = "<group>"; };
 		BFDCB4121EE951AC0040A09B /* KYPropertyFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPropertyFootView.swift; sourceTree = "<group>"; };
 		BFDCB4141EE951EA0040A09B /* KYPropertyFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYPropertyFootView.xib; sourceTree = "<group>"; };
+		BFE46DF01EF0DEDD00F65FED /* CartUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartUtil.swift; sourceTree = "<group>"; };
+		BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMineViewController.swift; sourceTree = "<group>"; };
+		BFE46DF41EF11DDB00F65FED /* KYMineTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMineTVCell.swift; sourceTree = "<group>"; };
 		BFEA60341EEBC43F00885737 /* KYCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCodeView.swift; sourceTree = "<group>"; };
 		BFEA60361EEBD2C000885737 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BFEA60391EEBDF9300885737 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -486,6 +492,7 @@
 		BF8903191EE3A3D0004A0FF7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -500,6 +507,7 @@
 		BF89031B1EE3A3D0004A0FF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BFE46DF41EF11DDB00F65FED /* KYMineTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -638,6 +646,7 @@
 				BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */,
 				BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */,
 				BFF05C7A1EEC2A9A00D18D43 /* KYProductContentViewController.swift */,
+				BFE46DF01EF0DEDD00F65FED /* CartUtil.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1134,6 +1143,7 @@
 				BFF959581EED833700C799CD /* KYCartFootView.swift in Sources */,
 				BFEA603E1EEBDF9300885737 /* SSKeychainQuery.m in Sources */,
 				BF8903581EE41D47004A0FF7 /* KYHomeSallHeadView.swift in Sources */,
+				BFE46DF31EF11C9300F65FED /* KYMineViewController.swift in Sources */,
 				BF89030A1EE3A1EC004A0FF7 /* SDCycleScrollView.m in Sources */,
 				BFDCB4071EE8F3730040A09B /* HXTagAttribute.m in Sources */,
 				BF8903441EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift in Sources */,
@@ -1151,6 +1161,7 @@
 				BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */,
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
 				BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */,
+				BFE46DF51EF11DDB00F65FED /* KYMineTVCell.swift in Sources */,
 				BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */,
 				BFF959541EED775A00C799CD /* KYProductDetailBuyView.swift in Sources */,
 				BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */,
@@ -1162,6 +1173,7 @@
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
 				BFDCB40D1EE905BD0040A09B /* KYGoodInfoModel.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
+				BFE46DF11EF0DEDD00F65FED /* CartUtil.swift in Sources */,
 				BFEA60441EEBE63700885737 /* KYLoginInfoModel.swift in Sources */,
 				BF8903481EE3CE80004A0FF7 /* KYHomeHeadView.swift in Sources */,
 				BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */,

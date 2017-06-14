@@ -73,26 +73,7 @@ class KYProductDetailViewController: UIViewController {
             if index == 1{
                 //加入购物车
                 if SingleManager.instance.isLogin {
-                    let goods_id = SingleManager.instance.productBuyInfoModel?.good_buy_id
-                    let goods_num = SingleManager.instance.productBuyInfoModel?.good_buy_count
-                    var goods_spec = NSMutableArray()
-                    if let array = SingleManager.instance.productBuyInfoModel?.good_buy_propertys
-                    {
-                        if array.count > 0{
-                            for item in array{
-                                goods_spec.add("\(item.good_buy_spec_list.item_id)")
-                            }
-                            let params = ["goods_num": String(goods_num!), "goods_spec": goods_spec, "goods_id": String(goods_id!)] as [String : Any]
-                            print(params)
-                            self.addCart(params: params as [String : AnyObject])
-                        }
-                        else{
-                            let params = ["goods_num": String(goods_num!), "goods_id": String(goods_id!)] as [String : Any]
-                            self.addCart(params: params as [String : AnyObject])
-                        }
-                        
-                    }
-
+                    CartUtil.addCart()
                 }
                 else
                 {
@@ -104,17 +85,7 @@ class KYProductDetailViewController: UIViewController {
         })
         return buyView
     }()
-    func addCart(params:[String:AnyObject]) {
-        SJBRequestModel.push_fetchAddCartProductData(params: params as [String : AnyObject], completion: { (response, status) in
-            if status == 1{
-                self.Toast(content: "添加成功！")
-            }
-            else
-            {
-                self.Toast(content: "添加失败")
-            }
-        })
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButtonInNav()
