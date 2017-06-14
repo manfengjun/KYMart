@@ -10,6 +10,9 @@ import UIKit
 
 class KYMineTVCell: UITableViewCell {
 
+    @IBOutlet weak var titleL: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var cellIV: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

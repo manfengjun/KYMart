@@ -90,6 +90,10 @@ class KYProductPropertyView: UIView {
     }
 
     @IBAction func addCartAction(_ sender: UIButton) {
+        if !(SingleManager.instance.productBuyInfoModel?.isCanBuy)! {
+            self.Toast(content: "库存不够")
+            return
+        }
         //加入购物车
         if SingleManager.instance.isLogin {
             CartUtil.addCart()

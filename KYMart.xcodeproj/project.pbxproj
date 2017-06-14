@@ -105,6 +105,9 @@
 		BFE46DF11EF0DEDD00F65FED /* CartUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE46DF01EF0DEDD00F65FED /* CartUtil.swift */; };
 		BFE46DF31EF11C9300F65FED /* KYMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */; };
 		BFE46DF51EF11DDB00F65FED /* KYMineTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE46DF41EF11DDB00F65FED /* KYMineTVCell.swift */; };
+		BFE46DF91EF12D2400F65FED /* com_info_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DF81EF12D2400F65FED /* com_info_bg.png */; };
+		BFE46DFB1EF12D7600F65FED /* celan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DFA1EF12D7600F65FED /* celan.jpg */; };
+		BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DFC1EF12DEA00F65FED /* user.jpg */; };
 		BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60341EEBC43F00885737 /* KYCodeView.swift */; };
 		BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60361EEBD2C000885737 /* DemoViewController.swift */; };
 		BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA603A1EEBDF9300885737 /* SSKeychain.m */; };
@@ -266,6 +269,9 @@
 		BFE46DF01EF0DEDD00F65FED /* CartUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartUtil.swift; sourceTree = "<group>"; };
 		BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMineViewController.swift; sourceTree = "<group>"; };
 		BFE46DF41EF11DDB00F65FED /* KYMineTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMineTVCell.swift; sourceTree = "<group>"; };
+		BFE46DF81EF12D2400F65FED /* com_info_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com_info_bg.png; sourceTree = "<group>"; };
+		BFE46DFA1EF12D7600F65FED /* celan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = celan.jpg; sourceTree = "<group>"; };
+		BFE46DFC1EF12DEA00F65FED /* user.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user.jpg; sourceTree = "<group>"; };
 		BFEA60341EEBC43F00885737 /* KYCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCodeView.swift; sourceTree = "<group>"; };
 		BFEA60361EEBD2C000885737 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BFEA60391EEBDF9300885737 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -777,6 +783,9 @@
 		BFC017611EDF9AB1005D66B0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BFE46DFC1EF12DEA00F65FED /* user.jpg */,
+				BFE46DFA1EF12D7600F65FED /* celan.jpg */,
+				BFE46DF81EF12D2400F65FED /* com_info_bg.png */,
 				BF8903341EE3B055004A0FF7 /* 1.jpg */,
 				BF8903351EE3B055004A0FF7 /* 2.jpg */,
 				BF8903521EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg */,
@@ -1023,6 +1032,8 @@
 				BF9B74B91EE7830800322E2C /* KYProductMenuView.xib in Resources */,
 				BFC0173B1EDF9875005D66B0 /* Assets.xcassets in Resources */,
 				BF8903511EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib in Resources */,
+				BFE46DFB1EF12D7600F65FED /* celan.jpg in Resources */,
+				BFE46DF91EF12D2400F65FED /* com_info_bg.png in Resources */,
 				BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
 				BFDCB4111EE912070040A09B /* KYProductInfoTVCell.xib in Resources */,
@@ -1034,6 +1045,7 @@
 				BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
+				BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */,
 				BFB6D0D11EE6965300F2C61F /* FJSectionHeadView.xib in Resources */,
 				BF89036F1EE44915004A0FF7 /* KYHomeFootView.xib in Resources */,
 			);
