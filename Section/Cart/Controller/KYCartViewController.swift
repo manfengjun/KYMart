@@ -153,7 +153,7 @@ extension KYCartViewController:UITableViewDelegate,UITableViewDataSource{
                             SJBRequestModel.push_fetchCartDelData(params: params) { (response, status) in
                                 if status == 1{
                                     self.Toast(content: "删除成功！")
-                                    dataRequest(cart_form_datas: nil)
+                                    self.dataRequest(cart_form_datas: nil)
                                 }
                                 else {
                                     self.Toast(content:response as! String)

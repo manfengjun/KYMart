@@ -13,6 +13,7 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        self.tabBar.tintColor = BAR_TINTCOLOR
         // Do any additional setup after loading the view.
     }
 
