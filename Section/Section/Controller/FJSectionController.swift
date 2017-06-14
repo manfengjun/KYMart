@@ -23,6 +23,7 @@ class FJSectionController: UIViewController {
         tableView.backgroundColor = UIColor.white
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.bounces = false
         return tableView
     }()
     

@@ -14,12 +14,20 @@ class KYMineViewController: UIViewController {
     @IBOutlet weak var portraitBgV: UIView!
     @IBOutlet weak var portraitIV: UIImageView!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var nameL: UILabel!
+    @IBOutlet weak var recommendL: UILabel!
+    var userInfoModel:KYUserInfoModel?{
+        didSet {
+            tableView.reloadData()
+        }
+    }
     fileprivate var titleData:NSMutableDictionary = ["0":["余额","分享奖金"],"1":["全部订单","账户明细","奖金明细"],"2":["收货地址","设置"]]
     fileprivate var imageData:NSMutableDictionary = ["0":["mine_1.png","mine_2.png"],"1":["mine_3.png","mine_4.png","mine_5.png"],"2":["mine_6.png","mine_7.png"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        dataRequest()
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -34,6 +42,15 @@ class KYMineViewController: UIViewController {
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
 
     }
+    func dataRequest() {
+        SJBRequestModel.pull_fetchUserInfoData { (response, status) in
+            if status == 1{
+                self.userInfoModel = response as? KYUserInfoModel
+                
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

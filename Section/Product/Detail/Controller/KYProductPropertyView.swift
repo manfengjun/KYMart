@@ -106,7 +106,7 @@ class KYProductPropertyView: UIView {
 }
 extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        if let array = model?.goods.goods_spec_list {
+        if let array = model?.goods_spec_list {
             return array.count
         }
         return 0
@@ -117,7 +117,7 @@ extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KYPropertyTVCellIdentifier, for: indexPath) as! HXTagCustomeCell
         cell.layout = layout
-        if let goods_spec_list =  model?.goods.goods_spec_list[indexPath.section]{
+        if let goods_spec_list =  model?.goods_spec_list[indexPath.section]{
             // 属性数组传值
             cell.goods_spec_list = goods_spec_list
             cell.sectionIndex = indexPath.section
@@ -142,14 +142,14 @@ extension KYProductPropertyView:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let goods_spec_list = model?.goods.goods_spec_list[indexPath.item]
+        let goods_spec_list = model?.goods_spec_list[indexPath.item]
 
         let height = HXTagCustomeCell.getCellHeight(tags: (goods_spec_list?.spec_list)!, layout: layout, width: tableView.frame.size.width)
         return height
     }
      // 头部视图
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let goods_spec_list = model?.goods.goods_spec_list[section]
+        let goods_spec_list = model?.goods_spec_list[section]
         let view = KYPropertyHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 25))
         view.titleL.text = goods_spec_list?.spec_name
         return view

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -265,8 +265,10 @@
                     <navigationItem key="navigationItem" id="aXS-NC-CAg"/>
                     <connections>
                         <outlet property="headView" destination="IuZ-Go-s3O" id="R0K-ag-pHt"/>
+                        <outlet property="nameL" destination="652-g8-zJy" id="KCn-HF-X3o"/>
                         <outlet property="portraitBgV" destination="IfG-GE-pfS" id="ZtD-10-uQv"/>
                         <outlet property="portraitIV" destination="vYX-a2-bIL" id="gKl-gt-Sz4"/>
+                        <outlet property="recommendL" destination="gIV-H4-fjo" id="bXc-oJ-rG7"/>
                         <outlet property="tableView" destination="QIT-Z8-3mR" id="AOd-7e-hPg"/>
                         <segue destination="igw-55-8lp" kind="show" id="WcA-u4-TuJ"/>
                         <segue destination="us2-jm-dcT" kind="show" id="ZWr-hR-e1U"/>

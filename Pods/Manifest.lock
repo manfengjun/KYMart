@@ -12,6 +12,7 @@ PODS:
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
+  - STPickerView (2.1)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
 
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - PPNumberButtonSwift (~> 0.2.0)
   - ReactiveCocoa (~> 5.0.3)
   - SDWebImage (~> 4.0.0)
+  - STPickerView (~> 2.1)
   - YYCache (~> 1.0.4)
   - YYModel (~> 1.0.4)
 
@@ -36,9 +38,10 @@ SPEC CHECKSUMS:
   ReactiveSwift: 2489549e3231a6ff68ec99f3d320bb264f10ba0a
   Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  STPickerView: 9bfbb827de31d4807424454296ade35a85c21f9e
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: f40bacf7a76a95bdb5c28d403cf6d027c8b023f6
+PODFILE CHECKSUM: 7e2b00398767e487451d2c7ecf1ff1dc6b963daa
 
 COCOAPODS: 1.2.1

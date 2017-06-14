@@ -10,5 +10,6 @@ target 'KYMart' do
     pod 'HMSegmentedControl', '~> 1.5.3'
     pod 'IQKeyboardManagerSwift', '~> 4.0.9'
     pod 'PPNumberButtonSwift', '~> 0.2.0'
+    pod 'STPickerView', '~> 2.1'
 end
 

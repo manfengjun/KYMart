@@ -9,6 +9,8 @@
 import UIKit
 let basePath = "http://test.kymart.cn/index.php?"
 let baseHref = "http://test.kymart.cn"
+let imgPath = "http://test.kymart.cn"
+
 class SJBRequestUrl: NSObject {
     
     /// access_token
@@ -19,6 +21,13 @@ class SJBRequestUrl: NSObject {
             return token
         }
         return ""
+    }
+    
+    /// unique_id
+    ///
+    /// - Returns: return value description
+    class func unique_id() -> String {
+        return SingleManager.getUUID()
     }
     // MARK: ------ 首页
     /// 首页
@@ -145,7 +154,12 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=user&a=forgetPassword"
     }
 
-    
+    /// 获取用户信息
+    ///
+    /// - Returns: return value description
+    class func returnUserInfoUrl() -> String {
+        return "\(basePath)m=api&c=user&a=userInfo&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
 
     
     

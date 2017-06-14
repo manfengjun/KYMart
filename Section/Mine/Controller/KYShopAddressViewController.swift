@@ -1,20 +1,18 @@
 //
-//  DemoViewController.swift
+//  KYShopAddressViewController.swift
 //  KYMart
 //
-//  Created by jun on 2017/6/10.
+//  Created by Jun on 2017/6/14.
 //  Copyright © 2017年 JUN. All rights reserved.
 //
 
 import UIKit
-class DemoViewController: UIViewController {
+
+class KYShopAddressViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let popCodeView = KYCodeView(frame: CGRect(x: 10, y: 100, width: 120, height: 50))
-        popCodeView.textSize = 25
-        popCodeView.textColor = BAR_TINTCOLOR
-        view.addSubview(popCodeView)
+
         // Do any additional setup after loading the view.
     }
 

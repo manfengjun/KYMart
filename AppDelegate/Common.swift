@@ -20,7 +20,6 @@ let FONT_SIZE = 12
 /// 字体
 let FONT_NAME = "Microsoft YaHei"
 
-let imgPath = "http://test.kymart.cn"
 
 
 

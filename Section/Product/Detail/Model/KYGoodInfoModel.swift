@@ -58,7 +58,7 @@ class Goods :NSObject{
     var virtual_limit: Int = 0
     var is_on_sale: Int = 0
     var goods_state: Int = 0
-    var goods_spec_list: [Goods_spec_list]!
+
     var goods_sn: String!
     var goods_type: Int = 0
     var sku: String!
@@ -85,9 +85,7 @@ class Goods :NSObject{
     var on_time: Int = 0
     var virtual_refund: Int = 0
     var is_hot: Int = 0
-    class func modelContainerPropertyGenericClass() -> NSDictionary {
-        return ["goods_spec_list" : Goods_spec_list.classForCoder()]
-    }
+    
 }
 
 class Gallery :NSObject{
@@ -235,8 +233,9 @@ class KYGoodInfoModel :NSObject{
     var comment: [Comment]!
     var statistics: Statistics!
     var store: Store!
+    var goods_spec_list: [Goods_spec_list]!
     class func modelContainerPropertyGenericClass() -> NSDictionary {
-        return ["recommend_goods" : Recommend_goods.classForCoder(),"gallery" : Gallery.classForCoder(),"activity" : Activity.classForCoder(),"spec_goods_price" : Spec_goods_price.classForCoder(),"comment" : Comment.classForCoder()]
+        return ["goods_spec_list" : Goods_spec_list.classForCoder(),"recommend_goods" : Recommend_goods.classForCoder(),"gallery" : Gallery.classForCoder(),"activity" : Activity.classForCoder(),"spec_goods_price" : Spec_goods_price.classForCoder(),"comment" : Comment.classForCoder()]
     }
 
 }

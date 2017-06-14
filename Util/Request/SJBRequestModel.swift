@@ -23,6 +23,7 @@ enum ModelType {
     case CartList//购物车列表
     case AddCart//添加购物车
     case DelCart//删除购物车商品
+    case UserInfo//用户信息
     
 }
 class SJBRequestModel: NSObject {
@@ -86,6 +87,12 @@ class SJBRequestModel: NSObject {
                 break
             case .DelCart:
                 completion(response,status)
+                break
+            case .UserInfo:
+                let temmodel = KYUserInfoModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
                 break
 
             default:
@@ -213,6 +220,14 @@ class SJBRequestModel: NSObject {
         }
     }
     
+    /// 获取用户信息
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchUserInfoData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnUserInfoUrl()) { (response, status) in
+            self.dataToModel(type: .UserInfo, response: response, status: status, completion: completion)
+        }
+    }
     // MARK: ------------------ Push
     
     /// 登录
@@ -303,4 +318,5 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .DelCart, response: response, status: status, completion: completion)
         }
     }
+    
 }

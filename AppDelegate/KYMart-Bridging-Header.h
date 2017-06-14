@@ -18,3 +18,5 @@
 #import "HXTagCollectionViewCell.h"
 //保存UUID
 #import "SSKeychain.h"
+
+#import <STPickerView/STPickerView.h>

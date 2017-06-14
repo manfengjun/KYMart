@@ -59,19 +59,26 @@ class KYProductDetailHomeViewController: UIViewController {
         SingleManager.instance.productBuyInfoModel = KYProductBuyInfoModel()
         SingleManager.instance.productBuyInfoModel?.good_buy_id = productInfoModel?.goods.goods_id
         SingleManager.instance.productBuyInfoModel?.spec_goods_prices = productInfoModel?.spec_goods_price
+        SingleManager.instance.productBuyInfoModel?.good_buy_price = productInfoModel?.goods.shop_price
+        if let text = productInfoModel?.goods.store_count {
+            SingleManager.instance.productBuyInfoModel?.good_buy_store_count = text
+        }
         SingleManager.instance.productBuyInfoModel?.good_buy_propertys = []
         if let text =  productInfoModel?.goods.store_count{
             SingleManager.instance.productBuyInfoModel?.good_buy_store_count = text
         }
-        for item in (productInfoModel?.goods.goods_spec_list)! {
-            let good_Buy_Property = Good_Buy_Property()
-            good_Buy_Property.good_buy_spec_name = item.spec_name
-            if let array = item.spec_list {
-                if array.count > 0 {
-                    good_Buy_Property.good_buy_spec_list = array[0]
-                    SingleManager.instance.productBuyInfoModel?.good_buy_propertys.append(good_Buy_Property)
+        if let array = productInfoModel?.goods_spec_list {
+            for item in array {
+                let good_Buy_Property = Good_Buy_Property()
+                good_Buy_Property.good_buy_spec_name = item.spec_name
+                if let array = item.spec_list {
+                    if array.count > 0 {
+                        good_Buy_Property.good_buy_spec_list = array[0]
+                        SingleManager.instance.productBuyInfoModel?.good_buy_propertys.append(good_Buy_Property)
+                    }
                 }
             }
+            
         }
         //刷新数据
         SingleManager.instance.productBuyInfoModel?.reloadData()
