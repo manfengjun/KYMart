@@ -13,6 +13,7 @@
 		BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */; };
 		BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E391EE58033002358C1 /* KYProductHeadView.swift */; };
 		BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */; };
+		BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */; };
 		BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
 		BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FA1EE3A1EC004A0FF7 /* TAAnimatedDotView.m */; };
@@ -159,6 +160,7 @@
 		BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductCVCell.xib; sourceTree = "<group>"; };
 		BF335E391EE58033002358C1 /* KYProductHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductHeadView.swift; sourceTree = "<group>"; };
 		BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductHeadView.xib; sourceTree = "<group>"; };
+		BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddAddressViewController.swift; sourceTree = "<group>"; };
 		BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductBuyInfoModel.swift; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
@@ -510,6 +512,7 @@
 			children = (
 				BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */,
 				BFBAB4771EF17C3A0038B95E /* KYShopAddressViewController.swift */,
+				BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1161,6 +1164,7 @@
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
+				BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,

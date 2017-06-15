@@ -25,6 +25,7 @@ class KYShopAddressViewController: BaseViewController {
     fileprivate lazy var addBtn : UIButton = {
         let addBtn = UIButton(type: .custom)
         addBtn.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 40, width: SCREEN_WIDTH, height: 40)
+        addBtn.addTarget(self, action: #selector(addAddress), for: .touchUpInside)
         addBtn.setTitle("添加新地址", for: .normal)
         addBtn.setTitleColor(UIColor.white, for: .normal)
         addBtn.backgroundColor = BAR_TINTCOLOR
@@ -39,6 +40,8 @@ class KYShopAddressViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        UIApplication.shared.keyWindow?.addSubview(addBtn)
+
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -48,7 +51,11 @@ class KYShopAddressViewController: BaseViewController {
         setBackButtonInNav()
         navigationItem.title = "地址管理"
         view.addSubview(tableView)
-        UIApplication.shared.keyWindow?.addSubview(addBtn)
+    }
+    func addAddress() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let addAddressVC = storyboard.instantiateViewController(withIdentifier: "addAddressVC")
+        navigationController?.pushViewController(addAddressVC, animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -78,6 +85,7 @@ extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: KYShopAddressTVCellIdentifier, for: indexPath)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
