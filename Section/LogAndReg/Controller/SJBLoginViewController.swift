@@ -13,7 +13,7 @@ import Result
 import YYCache
 import IQKeyboardManagerSwift
 
-class SJBLoginViewController: UIViewController {
+class SJBLoginViewController: BaseViewController {
 
     @IBOutlet weak var textView: UIView!
     @IBOutlet weak var menuView: UIView!

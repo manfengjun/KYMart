@@ -10,7 +10,7 @@ import UIKit
 import HMSegmentedControl
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
-class KYProductDetailViewController: UIViewController {
+class KYProductDetailViewController: BaseViewController {
 
 
     /// 新闻滚动菜单

@@ -12,7 +12,7 @@ import ReactiveSwift
 import Result
 import IQKeyboardManagerSwift
 
-class SJBRegisterViewController: UIViewController {
+class SJBRegisterViewController: BaseViewController {
 
     @IBOutlet weak var textView: UIView!
     @IBOutlet weak var phoneT: UITextField!

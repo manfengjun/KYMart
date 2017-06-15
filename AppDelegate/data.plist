@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>mine</key>
+	<string>{&quot;0&quot;:[{&quot;title&quot;:&quot;全部订单&quot;,&quot;image&quot;:&quot;mine_3.png&quot;}],&quot;1&quot;:[{&quot;title&quot;:&quot;消费记录&quot;,&quot;image&quot;:&quot;mine_4.png&quot;},{&quot;title&quot;:&quot;充值明细&quot;,&quot;image&quot;:&quot;mine_5.png&quot;},{&quot;title&quot;:&quot;奖金记录&quot;,&quot;image&quot;:&quot;mine_4.png&quot;},{&quot;title&quot;:&quot;提现记录&quot;,&quot;image&quot;:&quot;mine_5.png&quot;}],&quot;2&quot;:[{&quot;title&quot;:&quot;收货地址&quot;,&quot;image&quot;:&quot;mine_6.png&quot;},{&quot;title&quot;:&quot;分享好友&quot;,&quot;image&quot;:&quot;mine_7.png&quot;},{&quot;title&quot;:&quot;二维码&quot;,&quot;image&quot;:&quot;mine_6.png&quot;},{&quot;title&quot;:&quot;设置&quot;,&quot;image&quot;:&quot;mine_7.png&quot;}]}</string>
+</dict>
+</plist>

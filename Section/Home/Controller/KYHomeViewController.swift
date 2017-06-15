@@ -175,7 +175,7 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 0
+            return 4
         }
         else if section == sectionCount - 1 {
             return productArray.count

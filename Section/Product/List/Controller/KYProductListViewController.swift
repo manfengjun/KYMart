@@ -10,9 +10,7 @@ import UIKit
 import MJRefresh
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
-class KYProductListViewController: UIViewController {
-    /// 闭包回调传值
-    var BackResultClosure: BackClosure?     // 闭包
+class KYProductListViewController: BaseViewController {
     /// 默认热门排序
     var url:String? {
         didSet {
@@ -134,12 +132,6 @@ class KYProductListViewController: UIViewController {
     func back() {
         self.navigationController?.popViewController(animated: true)
         BackResultClosure?()
-    }
-    /**
-      返回回调
-     */
-    func backResult(_ finished: @escaping BackClosure) {
-        BackResultClosure = finished
     }
     // 下拉加载
     func headerRefresh() {

@@ -154,13 +154,20 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=user&a=forgetPassword"
     }
 
+    // MARK: ------ 个人中心
     /// 获取用户信息
     ///
     /// - Returns: return value description
     class func returnUserInfoUrl() -> String {
         return "\(basePath)m=api&c=user&a=userInfo&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
-
+    
+    /// 更改头像
+    ///
+    /// - Returns: return value description
+    class func returnChangePortraitUrl() -> String {
+        return "\(basePath)m=api&c=User&a=upload_headpic&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
     
     
 }

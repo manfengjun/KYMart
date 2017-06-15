@@ -7,15 +7,49 @@
 //
 
 import UIKit
+fileprivate let KYShopAddressTVCellIdentifier = "kYShopAddressTVCell"
 
-class KYShopAddressViewController: UIViewController {
-
+class KYShopAddressViewController: BaseViewController {
+    /// 地址列表
+    fileprivate lazy var tableView : UITableView = {
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT ), style: .plain)
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
+        tableView.register(UINib(nibName: "KYShopAddressTVCell", bundle: nil), forCellReuseIdentifier: KYShopAddressTVCellIdentifier)
+        tableView.backgroundColor = UIColor.white
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.bounces = false
+        return tableView
+    }()
+    fileprivate lazy var addBtn : UIButton = {
+        let addBtn = UIButton(type: .custom)
+        addBtn.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 40, width: SCREEN_WIDTH, height: 40)
+        addBtn.setTitle("添加新地址", for: .normal)
+        addBtn.setTitleColor(UIColor.white, for: .normal)
+        addBtn.backgroundColor = BAR_TINTCOLOR
+        return addBtn
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        addBtn.removeFromSuperview()
+    }
+    func setupUI() {
+        setBackButtonInNav()
+        navigationItem.title = "地址管理"
+        view.addSubview(tableView)
+        UIApplication.shared.keyWindow?.addSubview(addBtn)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,4 +66,19 @@ class KYShopAddressViewController: UIViewController {
     }
     */
 
+}
+extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: KYShopAddressTVCellIdentifier, for: indexPath)
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }

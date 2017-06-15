@@ -12,18 +12,22 @@ enum ModelType {
     case HomePageProduct//猜我喜欢
     case Section//一级分类
     case SubSection//二三级分类
+    
     case ProductList//商品列表
     case ProductInfo//商品详情
+    case CartList//购物车列表
+    case AddCart//添加购物车
+    case DelCart//删除购物车商品
+    
     case VerifyCode//验证码
-    case Login
+    case Login//登录
     case RegVerifyCode//注册短信验证码
     case Register//注册
     case ForgetVerifyCode//重置密码验证码
     case Forget//重置密码
-    case CartList//购物车列表
-    case AddCart//添加购物车
-    case DelCart//删除购物车商品
+    
     case UserInfo//用户信息
+    case ChangePortrait//修改头像
     
 }
 class SJBRequestModel: NSObject {
@@ -319,4 +323,16 @@ class SJBRequestModel: NSObject {
         }
     }
     
+    
+    /// 更换头像
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchChangePortraitData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnChangePortraitUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .ChangePortrait, response: response, status: status, completion: completion)
+        }
+    }
+
 }

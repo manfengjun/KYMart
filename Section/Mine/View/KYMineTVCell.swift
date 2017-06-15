@@ -13,6 +13,8 @@ class KYMineTVCell: UITableViewCell {
     @IBOutlet weak var titleL: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var cellIV: UIImageView!
+    @IBOutlet weak var rightOffset: NSLayoutConstraint!
+    @IBOutlet weak var rightIV: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

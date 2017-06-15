@@ -11,5 +11,7 @@ target 'KYMart' do
     pod 'IQKeyboardManagerSwift', '~> 4.0.9'
     pod 'PPNumberButtonSwift', '~> 0.2.0'
     pod 'STPickerView', '~> 2.1'
+    pod 'TZImagePickerController', '~> 1.7.9'
+
 end
 

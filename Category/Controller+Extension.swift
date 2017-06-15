@@ -7,7 +7,7 @@
 //
 
 import UIKit
-extension UIViewController{
+extension BaseViewController{
     /// 导航栏返回按钮
     ///
     /// - Parameters:
@@ -52,15 +52,5 @@ extension UIViewController{
         navigationItem.rightBarButtonItem = item
     }
     
-    /// 返回
-    func goback() {
-        if let nav = self.navigationController {
-            nav.popViewController(animated: true)
-        }
-        else
-        {
-            dismiss(animated: true, completion: nil)
-        }
-    }
-
+    
 }

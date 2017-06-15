@@ -12,7 +12,7 @@ import ReactiveSwift
 import Result
 import IQKeyboardManagerSwift
 
-class SJBForgetViewController: UIViewController {
+class SJBForgetViewController: BaseViewController {
     @IBOutlet weak var textView: UIView!
     @IBOutlet weak var phoneT: UITextField!
     @IBOutlet weak var cardT: UITextField!
