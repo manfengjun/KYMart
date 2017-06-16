@@ -16,6 +16,7 @@
 #import "HXTagAttribute.h"
 #import "HXTagCollectionViewFlowLayout.h"
 #import "HXTagCollectionViewCell.h"
+#import "HXTagsView.h"
 //保存UUID
 #import "SSKeychain.h"
 // 地址选择器

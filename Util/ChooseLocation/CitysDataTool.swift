@@ -12,9 +12,17 @@ class CitysDataTool: NSObject {
     /// 单例
     static let instance = CitysDataTool()
     
-    func requestData() {
-        
-    }
+//    func queryAllProvince(completion:@escaping (AnyObject,Int) -> Void) {
+//        SJBRequestModel.pull_fetchAddressSection(level: 1, parent_id: 0) { (response, status) in
+//            if status == 1{
+//                completion(response,status)
+//            }
+//            else
+//            {
+//                completion("error",status)
+//            }
+//        }
+//    }
 //    func queryAllProvince() {
 //        SJBRequestModel.pull_fetchAddressSection(level: 1, parent_id: 0) { (response, status) in
 //            if status == 0  {

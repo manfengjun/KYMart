@@ -10,6 +10,6 @@ extension Reactive where Base: UIDatePicker {
 
 	/// A signal of dates emitted by the date picker.
 	public var dates: Signal<Date, NoError> {
-		return mapControlEvents(.valueChanged) { $0.date }
+		return controlEvents(.valueChanged).map { $0.date }
 	}
 }

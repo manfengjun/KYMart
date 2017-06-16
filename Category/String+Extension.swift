@@ -14,10 +14,10 @@ extension String {
     /// 自适应宽度
     ///
     /// - Parameter size: size description
-    func widthForsize(size:CGSize) -> CGFloat{
-        let attrbute = [NSFontAttributeName:UIFont.systemFont(ofSize: 14)]
+    func widthForsize(size:CGSize,font:CGFloat) -> CGFloat{
+        let attrbute = [NSFontAttributeName:UIFont.systemFont(ofSize: font)]
         let nsStr = NSString(string: self)
-        return nsStr.boundingRect(with: size, options: [.usesLineFragmentOrigin,.usesFontLeading,.truncatesLastVisibleLine], attributes: attrbute, context: nil).size.height
+        return nsStr.boundingRect(with: size, options: [.usesLineFragmentOrigin,.usesFontLeading,.truncatesLastVisibleLine], attributes: attrbute, context: nil).size.width
     }
     /**
      时间戳转为时间

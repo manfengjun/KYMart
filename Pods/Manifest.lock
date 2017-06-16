@@ -4,7 +4,7 @@ PODS:
   - IQKeyboardManagerSwift (4.0.10)
   - MJRefresh (3.1.12)
   - PPNumberButtonSwift (0.2.0)
-  - ReactiveCocoa (5.0.4):
+  - ReactiveCocoa (5.0.3):
     - ReactiveSwift (~> 1.1)
   - ReactiveSwift (1.1.3):
     - Result (~> 3.2)
@@ -17,6 +17,7 @@ PODS:
   - TZImagePickerController (1.7.9)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
+  - ZHDropDownMenu (1.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -31,6 +32,7 @@ DEPENDENCIES:
   - TZImagePickerController (~> 1.7.9)
   - YYCache (~> 1.0.4)
   - YYModel (~> 1.0.4)
+  - ZHDropDownMenu
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -38,7 +40,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PPNumberButtonSwift: 322b76d594ced30aa1a4b57b1424dcc7bc5ade00
-  ReactiveCocoa: b31e754d15937811ede648fc83cd68f5de70a3d4
+  ReactiveCocoa: 066a855f613fb72f68258771095805fdb10312d2
   ReactiveSwift: f54ba12c2e799003432930fa55495315ae44f32b
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
@@ -47,7 +49,8 @@ SPEC CHECKSUMS:
   TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZHDropDownMenu: aa2917b07820b9eba3dc98066f85257017821b65
 
-PODFILE CHECKSUM: 70b5da5ea0d6baf283d7cfcd072d1463016a3a57
+PODFILE CHECKSUM: 5b56d3a8efad3d125d4b72f494584b50b3cf77a5
 
-COCOAPODS: 1.3.0.beta.1
+COCOAPODS: 1.2.1

@@ -19,8 +19,7 @@ public struct KeyboardChangeContext {
 	/// The animation curve which the system keyboard will use to animate the
 	/// change in its frame.
 	public var animationCurve: UIViewAnimationCurve {
-		let value = base[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
-		return UIViewAnimationCurve(rawValue: value.intValue)!
+		return base[UIKeyboardAnimationCurveUserInfoKey] as! UIViewAnimationCurve
 	}
 
 	/// The duration in which the system keyboard expects to animate the change in

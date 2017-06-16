@@ -13,4 +13,5 @@ class KYAddressModel: NSObject {
     var id: Int = 0
     var level: Int = 0
     var name: String!
+    var isSelected: Bool = false
 }
