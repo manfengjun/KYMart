@@ -166,8 +166,17 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func returnChangePortraitUrl() -> String {
-        return "\(basePath)m=api&c=User&a=upload_headpic&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        return "\(basePath)m=api&c=User&a=upload_headpic&token=\(access_token())"
     }
     
-    
+    /// 获取地址分级信息
+    ///
+    /// - Parameters:
+    ///   - level: level description
+    ///   - parent_id: parent_id description
+    /// - Returns: return value description
+    class func returnAddressMenuUrl(level:Int, parent_id:Int) -> String {
+        return "\(basePath)m=api&c=other&a=region&level=\(level)&parent_id=\(parent_id)"
+    }
+//    http://test.kymart.cn/index.php?m=api&c=other&a=region&level=1&parent_id=0
 }

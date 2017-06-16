@@ -16,7 +16,19 @@ extension UIView{
     func bottom() -> CGFloat {
         return self.frame.origin.y + self.frame.size.height
     }
-    
+    ///
+    ///
+    /// - Returns: return value description
+    func height() -> CGFloat {
+        return self.frame.size.height
+    }
+    ///
+    ///
+    /// - Returns: return value description
+    func width() -> CGFloat {
+        return self.frame.size.height
+    }
+
 }
 extension CGRect{
     /// 获取底部Y坐标

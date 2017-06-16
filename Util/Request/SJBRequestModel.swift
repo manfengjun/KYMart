@@ -28,6 +28,7 @@ enum ModelType {
     
     case UserInfo//用户信息
     case ChangePortrait//修改头像
+    case AddressSection//地址分级
     
 }
 class SJBRequestModel: NSObject {
@@ -139,6 +140,14 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
+            case .AddressSection:
+                for item in response as! NSArray {
+                    let temmodel = KYAddressModel.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
             default:
                 break
             }
@@ -232,6 +241,19 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .UserInfo, response: response, status: status, completion: completion)
         }
     }
+    
+    /// 地址分级
+    ///
+    /// - Parameters:
+    ///   - level: level description
+    ///   - parent_id: parent_id description
+    ///   - completion: completion description
+    class func pull_fetchAddressSection(level:Int, parent_id:Int,completion:@escaping (AnyObject,Int) -> Void){
+        SJBRequest.Get(url: SJBRequestUrl.returnAddressMenuUrl(level: level, parent_id: parent_id)) { (response, status) in
+            self.dataArrayToModel(type: .AddressSection, response: response, status: status, completion: completion)
+        }
+    }
+    
     // MARK: ------------------ Push
     
     /// 登录
@@ -329,10 +351,12 @@ class SJBRequestModel: NSObject {
     /// - Parameters:
     ///   - params: params description
     ///   - completion: completion description
-    class func push_fetchChangePortraitData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Post(url: SJBRequestUrl.returnChangePortraitUrl(), params: params) { (response, status) in
-            self.dataToModel(type: .ChangePortrait, response: response, status: status, completion: completion)
+    class func push_fetchChangePortraitData(image:UIImage, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.UpLoad(url: SJBRequestUrl.returnChangePortraitUrl(), image: image) { (response, status) in
+            completion(response,status)
         }
+       
     }
+    
 
 }

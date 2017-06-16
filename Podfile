@@ -12,6 +12,6 @@ target 'KYMart' do
     pod 'PPNumberButtonSwift', '~> 0.2.0'
     pod 'STPickerView', '~> 2.1'
     pod 'TZImagePickerController', '~> 1.7.9'
-
+    pod 'SVProgressHUD', '~> 2.1.2'
 end
 

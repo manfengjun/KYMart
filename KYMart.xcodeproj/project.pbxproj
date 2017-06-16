@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		7F421A4FD87650F1917A05B4 /* Pods_KYMart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */; };
 		BF173A9D1EF261400031AF06 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF173A9C1EF261400031AF06 /* data.plist */; };
+		BF24EB9F1EF39FB70099FEDF /* AddressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB961EF39FB70099FEDF /* AddressItem.m */; };
+		BF24EBA01EF39FB70099FEDF /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB991EF39FB70099FEDF /* AddressTableViewCell.m */; };
+		BF24EBA11EF39FB70099FEDF /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF24EB9A1EF39FB70099FEDF /* AddressTableViewCell.xib */; };
+		BF24EBA21EF39FB70099FEDF /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB9C1EF39FB70099FEDF /* AddressView.m */; };
+		BF24EBA31EF39FB70099FEDF /* ChooseLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB9E1EF39FB70099FEDF /* ChooseLocationView.m */; };
+		BF24EBA61EF3A0100099FEDF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBA51EF3A0100099FEDF /* UIView+Frame.m */; };
+		BF24EBA91EF3A2E00099FEDF /* CitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBA81EF3A2E00099FEDF /* CitiesDataTool.m */; };
+		BF24EBAB1EF3BC570099FEDF /* KYAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */; };
+		BF24EBAF1EF3CC670099FEDF /* CitysDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBAE1EF3CC670099FEDF /* CitysDataTool.swift */; };
+		BF24EBB11EF3D0290099FEDF /* ChooseAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBB01EF3D0290099FEDF /* ChooseAddressView.swift */; };
 		BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */; };
 		BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */; };
 		BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E391EE58033002358C1 /* KYProductHeadView.swift */; };
@@ -156,6 +166,22 @@
 		73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYMart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9F43A844CFA121A5EE4CB5 /* Pods-KYMart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.release.xcconfig"; sourceTree = "<group>"; };
 		BF173A9C1EF261400031AF06 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		BF24EB951EF39FB70099FEDF /* AddressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressItem.h; sourceTree = "<group>"; };
+		BF24EB961EF39FB70099FEDF /* AddressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressItem.m; sourceTree = "<group>"; };
+		BF24EB981EF39FB70099FEDF /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
+		BF24EB991EF39FB70099FEDF /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
+		BF24EB9A1EF39FB70099FEDF /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		BF24EB9B1EF39FB70099FEDF /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
+		BF24EB9C1EF39FB70099FEDF /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
+		BF24EB9D1EF39FB70099FEDF /* ChooseLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLocationView.h; sourceTree = "<group>"; };
+		BF24EB9E1EF39FB70099FEDF /* ChooseLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLocationView.m; sourceTree = "<group>"; };
+		BF24EBA41EF3A0100099FEDF /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		BF24EBA51EF3A0100099FEDF /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		BF24EBA71EF3A2E00099FEDF /* CitiesDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDataTool.h; sourceTree = "<group>"; };
+		BF24EBA81EF3A2E00099FEDF /* CitiesDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesDataTool.m; sourceTree = "<group>"; };
+		BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddressModel.swift; sourceTree = "<group>"; };
+		BF24EBAE1EF3CC670099FEDF /* CitysDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitysDataTool.swift; sourceTree = "<group>"; };
+		BF24EBB01EF3D0290099FEDF /* ChooseAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAddressView.swift; sourceTree = "<group>"; };
 		BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductCVCell.swift; sourceTree = "<group>"; };
 		BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductCVCell.xib; sourceTree = "<group>"; };
 		BF335E391EE58033002358C1 /* KYProductHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductHeadView.swift; sourceTree = "<group>"; };
@@ -251,7 +277,7 @@
 		BFC017661EDF9AC1005D66B0 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Controller+Extension.swift"; sourceTree = "<group>"; };
 		BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Extension.swift"; sourceTree = "<group>"; };
-		BFC017691EDF9AC1005D66B0 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "../../../Category/String+Extension.swift"; sourceTree = "<group>"; };
+		BFC017691EDF9AC1005D66B0 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		BFC017BE1EDF9B95005D66B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC017C31EDF9BCB005D66B0 /* KYMart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KYMart-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFC017C41EDF9BCB005D66B0 /* CeshiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeshiViewController.h; sourceTree = "<group>"; };
@@ -342,6 +368,44 @@
 				73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF24EB931EF39FB70099FEDF /* ChooseLocation */ = {
+			isa = PBXGroup;
+			children = (
+				BF24EBAE1EF3CC670099FEDF /* CitysDataTool.swift */,
+				BF24EBA71EF3A2E00099FEDF /* CitiesDataTool.h */,
+				BF24EBA81EF3A2E00099FEDF /* CitiesDataTool.m */,
+				BF24EB941EF39FB70099FEDF /* Model */,
+				BF24EB971EF39FB70099FEDF /* View */,
+			);
+			path = ChooseLocation;
+			sourceTree = "<group>";
+		};
+		BF24EB941EF39FB70099FEDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF24EB951EF39FB70099FEDF /* AddressItem.h */,
+				BF24EB961EF39FB70099FEDF /* AddressItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF24EB971EF39FB70099FEDF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF24EBA41EF3A0100099FEDF /* UIView+Frame.h */,
+				BF24EBA51EF3A0100099FEDF /* UIView+Frame.m */,
+				BF24EB981EF39FB70099FEDF /* AddressTableViewCell.h */,
+				BF24EB991EF39FB70099FEDF /* AddressTableViewCell.m */,
+				BF24EB9A1EF39FB70099FEDF /* AddressTableViewCell.xib */,
+				BF24EB9B1EF39FB70099FEDF /* AddressView.h */,
+				BF24EB9C1EF39FB70099FEDF /* AddressView.m */,
+				BF24EB9D1EF39FB70099FEDF /* ChooseLocationView.h */,
+				BF24EB9E1EF39FB70099FEDF /* ChooseLocationView.m */,
+				BF24EBB01EF3D0290099FEDF /* ChooseAddressView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BF8902F51EE3A1EC004A0FF7 /* SDCycleScrollView */ = {
@@ -521,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				BFBAB4751EF161DA0038B95E /* KYUserInfoModel.swift */,
+				BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -581,7 +646,6 @@
 		BF8903381EE3B856004A0FF7 /* XLPlainFlowLayout */ = {
 			isa = PBXGroup;
 			children = (
-				BFC017691EDF9AC1005D66B0 /* String+Extension.swift */,
 				BF8903391EE3B856004A0FF7 /* XLPlainFlowLayout.h */,
 				BF89033A1EE3B856004A0FF7 /* XLPlainFlowLayout.m */,
 			);
@@ -813,6 +877,7 @@
 		BFC017621EDF9AB1005D66B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BF24EB931EF39FB70099FEDF /* ChooseLocation */,
 				BFEA60381EEBDF9300885737 /* KeychainItemWraper */,
 				BFB6D0AB1EE63C1600F2C61F /* Request */,
 				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
@@ -851,6 +916,7 @@
 				BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */,
 				BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */,
 				BF8903541EE4176D004A0FF7 /* View+Extension.swift */,
+				BFC017691EDF9AC1005D66B0 /* String+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1063,6 +1129,7 @@
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
 				BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */,
 				BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */,
+				BF24EBA11EF39FB70099FEDF /* AddressTableViewCell.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */,
@@ -1157,21 +1224,27 @@
 				BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */,
 				BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */,
 				BFB6D0E31EE69DD700F2C61F /* KYProductListCVCell.swift in Sources */,
+				BF24EBA91EF3A2E00099FEDF /* CitiesDataTool.m in Sources */,
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,
 				BFF05C7B1EEC2A9A00D18D43 /* KYProductContentViewController.swift in Sources */,
+				BF24EBB11EF3D0290099FEDF /* ChooseAddressView.swift in Sources */,
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
+				BF24EBA61EF3A0100099FEDF /* UIView+Frame.m in Sources */,
 				BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */,
+				BF24EBA31EF39FB70099FEDF /* ChooseLocationView.m in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
+				BF24EBA01EF39FB70099FEDF /* AddressTableViewCell.m in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
 				BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */,
 				BF89032B1EE3A4F1004A0FF7 /* BaseViewController.swift in Sources */,
 				BF89032D1EE3A4FD004A0FF7 /* BaseNavViewController.swift in Sources */,
 				BFB6D0E61EE6ADBC00F2C61F /* KYProductListModel.swift in Sources */,
+				BF24EBA21EF39FB70099FEDF /* AddressView.m in Sources */,
 				BFB6D0D21EE6965300F2C61F /* FJSectionRowHeadView.swift in Sources */,
 				BFF959501EED660300C799CD /* KYCartListModel.swift in Sources */,
 				BFF959581EED833700C799CD /* KYCartFootView.swift in Sources */,
@@ -1183,6 +1256,7 @@
 				BF8903441EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift in Sources */,
 				BFB5C8491EEA625E00BFFDE5 /* SJBRegisterViewController.swift in Sources */,
 				BF89036B1EE43288004A0FF7 /* HorizontalPageFlowlayout.m in Sources */,
+				BF24EBAB1EF3BC570099FEDF /* KYAddressModel.swift in Sources */,
 				BFC017FD1EDF9BD6005D66B0 /* Reachability.m in Sources */,
 				BFC017BF1EDF9B95005D66B0 /* AppDelegate.swift in Sources */,
 				BF89036E1EE44915004A0FF7 /* KYHomeFootView.swift in Sources */,
@@ -1225,6 +1299,8 @@
 				BFB6D0D01EE6965300F2C61F /* FJSectionHeadView.swift in Sources */,
 				BFBAB4761EF161DA0038B95E /* KYUserInfoModel.swift in Sources */,
 				BF8903551EE4176D004A0FF7 /* View+Extension.swift in Sources */,
+				BF24EBAF1EF3CC670099FEDF /* CitysDataTool.swift in Sources */,
+				BF24EB9F1EF39FB70099FEDF /* AddressItem.m in Sources */,
 				BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */,
 				BFB6D0B71EE6918A00F2C61F /* FJSubSectionModel.swift in Sources */,
 			);

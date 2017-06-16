@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.backgroundColor = UIColor.white
 //        window?.makeKeyAndVisible()
-//        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//        let rootVC = storyboard.instantiateViewController(withIdentifier: "loginVC")
+////        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let rootVC = DemoViewController()
 //        window?.rootViewController = rootVC
         let cache = YYCache(name: "KYMart")
         if let data = cache?.object(forKey: "loginInfo")

@@ -11,13 +11,14 @@ class DemoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let popCodeView = KYCodeView(frame: CGRect(x: 10, y: 100, width: 120, height: 50))
-        popCodeView.textSize = 25
-        popCodeView.textColor = BAR_TINTCOLOR
-        view.addSubview(popCodeView)
+        view.addSubview(chooseview)
         // Do any additional setup after loading the view.
     }
-
+    fileprivate lazy var chooseview : ChooseAddressView = {
+        let chooseview = ChooseAddressView(frame: CGRect(x: 0, y: SCREEN_HEIGHT-SCREEN_WIDTH*0.6-81, width: SCREEN_WIDTH, height: SCREEN_WIDTH*0.6+81))
+        return chooseview
+    }()
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

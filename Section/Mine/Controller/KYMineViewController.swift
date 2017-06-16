@@ -102,6 +102,7 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
         imagePicker?.allowCrop = true
         imagePicker?.needCircleCrop = true
         imagePicker?.title = "选择图片"
+        imagePicker?.allowPickingOriginalPhoto = true
         imagePicker?.cropRect = CGRect(x: SCREEN_WIDTH/2 - 100, y: SCREEN_HEIGHT/2 - 100, width: 200, height: 200)
         imagePicker?.didFinishPickingPhotosHandle = {(photos,assets,isSelectOriginalPhoto) -> Void in
             if isSelectOriginalPhoto {
@@ -109,18 +110,29 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
                 // 你可以通过一个asset获得原图，通过这个方法：[[TZImageManager manager] getOriginalPhotoWithAsset:completion:]
                 if let array = assets {
                     TZImageManager.default().getOriginalPhoto(withAsset: array[0], completion: { (image, info) in
-                        self.portraitIV.image = image
+                        if let temImage = image{
+                            self.uploadImage(image: temImage)
+
+                        }
                     })
                 }
             }
             else{
                 //非原图
                 if let array = photos{
-                    self.portraitIV.image = array[0]
+                    self.uploadImage(image: array[0])
                 }
             }
         }
         self.present(imagePicker!, animated: true, completion: nil)
+    }
+    func uploadImage(image:UIImage) {
+        SJBRequestModel.push_fetchChangePortraitData(image: image) { (response, status) in
+            if status == 1 {
+                self.Toast(content: "上传成功！")
+                self.portraitIV.image = image
+            }
+        }
     }
 }
 extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
