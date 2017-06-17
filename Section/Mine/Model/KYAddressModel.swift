@@ -9,9 +9,17 @@
 import UIKit
 
 class KYAddressModel: NSObject {
-    var parent_id: Int = 0
-    var id: Int = 0
-    var level: Int = 0
-    var name: String!
-    var isSelected: Bool = false
+    var consignee: String!
+    var mobile: String!
+    var province: Int = 0
+    var user_id: Int = 0
+    var zipcode: String!
+    var address_id: Int = 0
+    var twon: Int = 0
+    var address: String!
+    var city: Int = 0
+    var district: Int = 0
+    var is_default: Int = 0
+    var email: String!
+    var country: Int = 0
 }

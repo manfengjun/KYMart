@@ -13,6 +13,7 @@ extension NSObject{
 }
 class SJBRequest: NSObject {
     class func Get(url:String, completion:@escaping (AnyObject,Int) -> Void) {
+        print("Get请求 ------ \(url)")
         Alamofire.request(url).responseJSON { response in
             //            print(response.request ?? "request")  // original URL request
             //            print(response.response ?? "response") // HTTP URL response
@@ -51,6 +52,8 @@ class SJBRequest: NSObject {
         }
     }
     class func Post(url:String, params:[String:AnyObject]?, completion:@escaping (AnyObject,Int) -> Void) {
+        print("Post请求 ------ \(url)     Params: \(String(describing: params))")
+
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
             ///101 token失效
             if let JSON = response.result.value {

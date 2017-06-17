@@ -22,6 +22,7 @@ class KYShopAddressViewController: BaseViewController {
         tableView.bounces = false
         return tableView
     }()
+    /// 添加按钮
     fileprivate lazy var addBtn : UIButton = {
         let addBtn = UIButton(type: .custom)
         addBtn.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 40, width: SCREEN_WIDTH, height: 40)
@@ -31,9 +32,11 @@ class KYShopAddressViewController: BaseViewController {
         addBtn.backgroundColor = BAR_TINTCOLOR
         return addBtn
     }()
+    
+    /// 数据源
+    fileprivate var dataArray : [KYAddressModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         
         // Do any additional setup after loading the view.
     }
@@ -41,17 +44,31 @@ class KYShopAddressViewController: BaseViewController {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
         UIApplication.shared.keyWindow?.addSubview(addBtn)
+        setupUI()
+        dataRequest()
 
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         addBtn.removeFromSuperview()
     }
+    
+    /// 初始化UI
     func setupUI() {
         setBackButtonInNav()
         navigationItem.title = "地址管理"
         view.addSubview(tableView)
     }
+    
+    /// 数据请求
+    func dataRequest() {
+        SJBRequestModel.pull_fetchAddressListData { (response, status) in
+            self.dataArray = response as! [KYAddressModel]
+            self.tableView.reloadData()
+        }
+    }
+    
+    /// 添加地址
     func addAddress() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let addAddressVC = storyboard.instantiateViewController(withIdentifier: "addAddressVC")
@@ -79,10 +96,11 @@ extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dataArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: KYShopAddressTVCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: KYShopAddressTVCellIdentifier, for: indexPath) as! KYShopAddressTVCell
+        cell.model = dataArray[indexPath.row]
         return cell
     }
     

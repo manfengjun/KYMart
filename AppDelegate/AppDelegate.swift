@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 ////        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
 //        let rootVC = DemoViewController()
 //        window?.rootViewController = rootVC
+        CitiesDataTool.sharedManager().requestGetData()
         let cache = YYCache(name: "KYMart")
         if let data = cache?.object(forKey: "loginInfo")
         {

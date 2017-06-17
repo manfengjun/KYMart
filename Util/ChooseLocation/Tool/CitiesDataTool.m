@@ -115,20 +115,7 @@ static CitiesDataTool *shareInstance = nil;
     if ([self isTableOK]) {
         return;
     }
-    
-    NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"json"];
-    NSData *data=[NSData dataWithContentsOfFile:jsonPath];
-    NSError *error;
-    NSArray * jsonObjectArray =[NSJSONSerialization JSONObjectWithData:data
-                                                  options:kNilOptions
-                                                    error:&error];
-    
-    for (NSDictionary * dict in jsonObjectArray) {
-        AddressItem * item = [[AddressItem alloc] initWithDict:dict];
-        [self.dataArray addObject:item];
-    }
-    if(self.dataArray.count > 0  && [self createTable]){
-    
+    if ([self createTable]) {
         [self insertRecords];
     }
 }
@@ -143,30 +130,6 @@ static CitiesDataTool *shareInstance = nil;
         BOOL isRollBack = NO;
         @try
         {
-//            for (AddressItem * item in self.dataArray) {
-//                
-//                if (item.level.intValue == 3 && [item.name isEqualToString:@"市辖区"]) {
-//                    continue;
-//                }
-//                
-////                NSString *insertSql= [NSString stringWithFormat:
-////                                      @"INSERT INTO %@ ('code','sheng','di','xian','name', 'level') VALUES ('%@','%@','%@','%@','%@','%@')",
-////                                      locationTabbleName,item.code, item.sheng,item.di,item.xian ,item.name, item.level];
-//                NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tp_region" ofType:@"sql"];
-//                NSError *error;
-//                NSString *sql = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
-//
-//                BOOL a = [self.fmdb executeUpdate:sql];
-//                if (!a)
-//                {
-//                    NSLog(@"插入地址信息数据失败");
-//                }
-//                else
-//                {
-//                    NSLog(@"批量插入地址信息数据成功！");
-//                    
-//                }
-//            }
             NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tp_region" ofType:@"sql"];
             NSError *error;
             NSString *sql = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
@@ -181,11 +144,6 @@ static CitiesDataTool *shareInstance = nil;
                 NSLog(@"批量插入地址信息数据成功！");
                 
             }
-
-//            NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tp_region" ofType:@"sql"];
-//            NSError *error;
-//            NSString *sql = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:&error];
-//            [self.fmdb executeUpdate:sql];
             NSDate *endTime = [NSDate date];
             NSTimeInterval a = [endTime timeIntervalSince1970] - [startTime timeIntervalSince1970];
             NSLog(@"使用事务地址信息用时%.3f秒",a);
@@ -301,100 +259,22 @@ static CitiesDataTool *shareInstance = nil;
     }
     return nil;
 }
-////根据areaCode, 查询地址
-//- (NSString *)queryAllRecordWithAreaCode:(NSString *) areaCode
-//
-//{
-//    if ([self.fmdb  open]) {
-//        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE  `code` = %@"  , locationTabbleName,areaCode];
-//        FMResultSet *result = [self.fmdb  executeQuery:sql];
-//        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-//        //'code','sheng','di','xian','name', 'level'
-//        while ([result next]) {
-//            AddressItem *model = [[AddressItem alloc] init];
-//            model.id = [result stringForColumn:@"id"];
-//            model.parent_id = [result stringForColumn:@"parent_id"];
-//            model.name = [result stringForColumn:@"name"];
-//            model.level = [result stringForColumn:@"level"];
-//            [array addObject:model];
-//        }
-//        [self.fmdb close];
-//        if (array.count > 0) {
-//            AddressItem * model = array.firstObject;
-//            return model.name;
-//        }
-//    }
-//    return nil;
-//}
-//
-//根据areaLevel级别，省ID 查询 市
-- (NSMutableArray *)queryAllRecordWithSheng:(NSString *) sheng
-
+- (NSMutableArray *)queryDataWith:(NSInteger)id
 {
     if ([self.fmdb  open]) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE `level` = 2 AND  `parent_id` = %@"  , locationTabbleName,sheng];
+        NSString *sql = [NSString stringWithFormat:@"SELECT name FROM %@ WHERE `id` = %ld ", locationTabbleName,(long)id];
         FMResultSet *result = [self.fmdb  executeQuery:sql];
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
         //'code','sheng','di','xian','name', 'level'
         while ([result next]) {
-            AddressItem *model = [[AddressItem alloc] init];
-            model.id = [result stringForColumn:@"id"];
-            model.parent_id = [result stringForColumn:@"parent_id"];
-            model.name = [result stringForColumn:@"name"];
-            model.level = [result stringForColumn:@"level"];
-            [array addObject:model];
+            NSString *name = [result stringForColumn:@"name"];
+            [array addObject:name];
         }
         [self.fmdb close];
         return array;
     }
     return nil;
 }
-
-//根据areaLevel级别,省ID(sheng)  ,查询 市
-- (NSMutableArray *)queryAllRecordWithShengID:(NSString *) sheng{
-    
-    if ([self.fmdb  open]) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE `level` = 2 AND  `parent_id` = %@ "  , locationTabbleName,sheng];
-        FMResultSet *result = [self.fmdb  executeQuery:sql];
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        while ([result next]) {
-            AddressItem *model = [[AddressItem alloc] init];
-            model.id = [result stringForColumn:@"id"];
-            model.parent_id = [result stringForColumn:@"parent_id"];
-            model.name = [result stringForColumn:@"name"];
-            model.level = [result stringForColumn:@"level"];
-            [array addObject:model];
-        }
-        [self.fmdb close];
-        return array;
-    }
-    return nil;
-    
-}
-
-
-//根据areaLevel级别,省ID(sheng) , 市ID(di) ,查询 县
-- (NSMutableArray *)queryAllRecordWithShengID:(NSString *) sheng cityID:(NSString *)di{
-    
-    if ([self.fmdb  open]) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE `level` = 3 AND  `parent_id` = %@  AND `di` = '%@'"  , locationTabbleName,sheng,di];
-        FMResultSet *result = [self.fmdb  executeQuery:sql];
-        NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
-        while ([result next]) {
-            AddressItem *model = [[AddressItem alloc] init];
-            model.id = [result stringForColumn:@"id"];
-            model.parent_id = [result stringForColumn:@"parent_id"];
-            model.name = [result stringForColumn:@"name"];
-            model.level = [result stringForColumn:@"level"];
-            [array addObject:model];
-        }
-        [self.fmdb close];
-        return array;
-    }
-    return nil;
-
-}
-
 - (NSMutableArray *)dataArray{
     
     if (_dataArray == nil) {

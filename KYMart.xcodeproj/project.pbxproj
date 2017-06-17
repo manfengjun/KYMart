@@ -9,16 +9,21 @@
 /* Begin PBXBuildFile section */
 		7F421A4FD87650F1917A05B4 /* Pods_KYMart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */; };
 		BF173A9D1EF261400031AF06 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF173A9C1EF261400031AF06 /* data.plist */; };
-		BF24EB9F1EF39FB70099FEDF /* AddressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB961EF39FB70099FEDF /* AddressItem.m */; };
-		BF24EBA01EF39FB70099FEDF /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB991EF39FB70099FEDF /* AddressTableViewCell.m */; };
-		BF24EBA11EF39FB70099FEDF /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF24EB9A1EF39FB70099FEDF /* AddressTableViewCell.xib */; };
-		BF24EBA21EF39FB70099FEDF /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB9C1EF39FB70099FEDF /* AddressView.m */; };
-		BF24EBA31EF39FB70099FEDF /* ChooseLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EB9E1EF39FB70099FEDF /* ChooseLocationView.m */; };
-		BF24EBA61EF3A0100099FEDF /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBA51EF3A0100099FEDF /* UIView+Frame.m */; };
-		BF24EBA91EF3A2E00099FEDF /* CitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBA81EF3A2E00099FEDF /* CitiesDataTool.m */; };
+		BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AD81EF4E8BD001538A9 /* AddressItem.m */; };
+		BF194AE21EF4E8BD001538A9 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194ADB1EF4E8BD001538A9 /* AddressTableViewCell.m */; };
+		BF194AE31EF4E8BD001538A9 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF194ADC1EF4E8BD001538A9 /* AddressTableViewCell.xib */; };
+		BF194AE41EF4E8BD001538A9 /* AddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194ADE1EF4E8BD001538A9 /* AddressView.m */; };
+		BF194AE51EF4E8BD001538A9 /* ChooseLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AE01EF4E8BD001538A9 /* ChooseLocationView.m */; };
+		BF194AF41EF4E8C4001538A9 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AE81EF4E8C4001538A9 /* FMDatabase.m */; };
+		BF194AF51EF4E8C4001538A9 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AEA1EF4E8C4001538A9 /* FMDatabaseAdditions.m */; };
+		BF194AF61EF4E8C4001538A9 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AEC1EF4E8C4001538A9 /* FMDatabasePool.m */; };
+		BF194AF71EF4E8C4001538A9 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AEE1EF4E8C4001538A9 /* FMDatabaseQueue.m */; };
+		BF194AF81EF4E8C4001538A9 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AF11EF4E8C4001538A9 /* FMResultSet.m */; };
+		BF194AF91EF4E8C4001538A9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF194AF21EF4E8C4001538A9 /* Info.plist */; };
+		BF194AFA1EF4E8C4001538A9 /* tp_region.sql in Resources */ = {isa = PBXBuildFile; fileRef = BF194AF31EF4E8C4001538A9 /* tp_region.sql */; };
+		BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AFD1EF4E8D2001538A9 /* UIView+Frame.m */; };
+		BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */; };
 		BF24EBAB1EF3BC570099FEDF /* KYAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */; };
-		BF24EBAF1EF3CC670099FEDF /* CitysDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBAE1EF3CC670099FEDF /* CitysDataTool.swift */; };
-		BF24EBB11EF3D0290099FEDF /* ChooseAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBB01EF3D0290099FEDF /* ChooseAddressView.swift */; };
 		BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */; };
 		BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */; };
 		BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E391EE58033002358C1 /* KYProductHeadView.swift */; };
@@ -166,22 +171,33 @@
 		73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYMart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9F43A844CFA121A5EE4CB5 /* Pods-KYMart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.release.xcconfig"; sourceTree = "<group>"; };
 		BF173A9C1EF261400031AF06 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
-		BF24EB951EF39FB70099FEDF /* AddressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressItem.h; sourceTree = "<group>"; };
-		BF24EB961EF39FB70099FEDF /* AddressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressItem.m; sourceTree = "<group>"; };
-		BF24EB981EF39FB70099FEDF /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
-		BF24EB991EF39FB70099FEDF /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
-		BF24EB9A1EF39FB70099FEDF /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
-		BF24EB9B1EF39FB70099FEDF /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
-		BF24EB9C1EF39FB70099FEDF /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
-		BF24EB9D1EF39FB70099FEDF /* ChooseLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLocationView.h; sourceTree = "<group>"; };
-		BF24EB9E1EF39FB70099FEDF /* ChooseLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLocationView.m; sourceTree = "<group>"; };
-		BF24EBA41EF3A0100099FEDF /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		BF24EBA51EF3A0100099FEDF /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
-		BF24EBA71EF3A2E00099FEDF /* CitiesDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDataTool.h; sourceTree = "<group>"; };
-		BF24EBA81EF3A2E00099FEDF /* CitiesDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesDataTool.m; sourceTree = "<group>"; };
+		BF194AD71EF4E8BD001538A9 /* AddressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressItem.h; sourceTree = "<group>"; };
+		BF194AD81EF4E8BD001538A9 /* AddressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressItem.m; sourceTree = "<group>"; };
+		BF194ADA1EF4E8BD001538A9 /* AddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressTableViewCell.h; sourceTree = "<group>"; };
+		BF194ADB1EF4E8BD001538A9 /* AddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressTableViewCell.m; sourceTree = "<group>"; };
+		BF194ADC1EF4E8BD001538A9 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		BF194ADD1EF4E8BD001538A9 /* AddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressView.h; sourceTree = "<group>"; };
+		BF194ADE1EF4E8BD001538A9 /* AddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressView.m; sourceTree = "<group>"; };
+		BF194ADF1EF4E8BD001538A9 /* ChooseLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseLocationView.h; sourceTree = "<group>"; };
+		BF194AE01EF4E8BD001538A9 /* ChooseLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseLocationView.m; sourceTree = "<group>"; };
+		BF194AE71EF4E8C4001538A9 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		BF194AE81EF4E8C4001538A9 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		BF194AE91EF4E8C4001538A9 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		BF194AEA1EF4E8C4001538A9 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		BF194AEB1EF4E8C4001538A9 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		BF194AEC1EF4E8C4001538A9 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		BF194AED1EF4E8C4001538A9 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		BF194AEE1EF4E8C4001538A9 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		BF194AEF1EF4E8C4001538A9 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		BF194AF01EF4E8C4001538A9 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		BF194AF11EF4E8C4001538A9 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		BF194AF21EF4E8C4001538A9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF194AF31EF4E8C4001538A9 /* tp_region.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = tp_region.sql; path = ../../Vender/fmdb/tp_region.sql; sourceTree = "<group>"; };
+		BF194AFC1EF4E8D2001538A9 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		BF194AFD1EF4E8D2001538A9 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		BF194B001EF4E9F3001538A9 /* CitiesDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDataTool.h; sourceTree = "<group>"; };
+		BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesDataTool.m; sourceTree = "<group>"; };
 		BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddressModel.swift; sourceTree = "<group>"; };
-		BF24EBAE1EF3CC670099FEDF /* CitysDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitysDataTool.swift; sourceTree = "<group>"; };
-		BF24EBB01EF3D0290099FEDF /* ChooseAddressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseAddressView.swift; sourceTree = "<group>"; };
 		BF335E351EE57CB1002358C1 /* KYProductCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductCVCell.swift; sourceTree = "<group>"; };
 		BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductCVCell.xib; sourceTree = "<group>"; };
 		BF335E391EE58033002358C1 /* KYProductHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductHeadView.swift; sourceTree = "<group>"; };
@@ -370,42 +386,76 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BF24EB931EF39FB70099FEDF /* ChooseLocation */ = {
+		BF194AD51EF4E8BD001538A9 /* ChooseLocation */ = {
 			isa = PBXGroup;
 			children = (
-				BF24EBAE1EF3CC670099FEDF /* CitysDataTool.swift */,
-				BF24EBA71EF3A2E00099FEDF /* CitiesDataTool.h */,
-				BF24EBA81EF3A2E00099FEDF /* CitiesDataTool.m */,
-				BF24EB941EF39FB70099FEDF /* Model */,
-				BF24EB971EF39FB70099FEDF /* View */,
+				BF194AF31EF4E8C4001538A9 /* tp_region.sql */,
+				BF194AFF1EF4E9F3001538A9 /* Tool */,
+				BF194AFB1EF4E8D2001538A9 /* Category */,
+				BF194AD61EF4E8BD001538A9 /* Model */,
+				BF194AD91EF4E8BD001538A9 /* View */,
 			);
 			path = ChooseLocation;
 			sourceTree = "<group>";
 		};
-		BF24EB941EF39FB70099FEDF /* Model */ = {
+		BF194AD61EF4E8BD001538A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BF24EB951EF39FB70099FEDF /* AddressItem.h */,
-				BF24EB961EF39FB70099FEDF /* AddressItem.m */,
+				BF194AD71EF4E8BD001538A9 /* AddressItem.h */,
+				BF194AD81EF4E8BD001538A9 /* AddressItem.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BF24EB971EF39FB70099FEDF /* View */ = {
+		BF194AD91EF4E8BD001538A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BF24EBA41EF3A0100099FEDF /* UIView+Frame.h */,
-				BF24EBA51EF3A0100099FEDF /* UIView+Frame.m */,
-				BF24EB981EF39FB70099FEDF /* AddressTableViewCell.h */,
-				BF24EB991EF39FB70099FEDF /* AddressTableViewCell.m */,
-				BF24EB9A1EF39FB70099FEDF /* AddressTableViewCell.xib */,
-				BF24EB9B1EF39FB70099FEDF /* AddressView.h */,
-				BF24EB9C1EF39FB70099FEDF /* AddressView.m */,
-				BF24EB9D1EF39FB70099FEDF /* ChooseLocationView.h */,
-				BF24EB9E1EF39FB70099FEDF /* ChooseLocationView.m */,
-				BF24EBB01EF3D0290099FEDF /* ChooseAddressView.swift */,
+				BF194ADA1EF4E8BD001538A9 /* AddressTableViewCell.h */,
+				BF194ADB1EF4E8BD001538A9 /* AddressTableViewCell.m */,
+				BF194ADC1EF4E8BD001538A9 /* AddressTableViewCell.xib */,
+				BF194ADD1EF4E8BD001538A9 /* AddressView.h */,
+				BF194ADE1EF4E8BD001538A9 /* AddressView.m */,
+				BF194ADF1EF4E8BD001538A9 /* ChooseLocationView.h */,
+				BF194AE01EF4E8BD001538A9 /* ChooseLocationView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BF194AE61EF4E8C4001538A9 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				BF194AE71EF4E8C4001538A9 /* FMDatabase.h */,
+				BF194AE81EF4E8C4001538A9 /* FMDatabase.m */,
+				BF194AE91EF4E8C4001538A9 /* FMDatabaseAdditions.h */,
+				BF194AEA1EF4E8C4001538A9 /* FMDatabaseAdditions.m */,
+				BF194AEB1EF4E8C4001538A9 /* FMDatabasePool.h */,
+				BF194AEC1EF4E8C4001538A9 /* FMDatabasePool.m */,
+				BF194AED1EF4E8C4001538A9 /* FMDatabaseQueue.h */,
+				BF194AEE1EF4E8C4001538A9 /* FMDatabaseQueue.m */,
+				BF194AEF1EF4E8C4001538A9 /* FMDB.h */,
+				BF194AF01EF4E8C4001538A9 /* FMResultSet.h */,
+				BF194AF11EF4E8C4001538A9 /* FMResultSet.m */,
+				BF194AF21EF4E8C4001538A9 /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		BF194AFB1EF4E8D2001538A9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BF194AFC1EF4E8D2001538A9 /* UIView+Frame.h */,
+				BF194AFD1EF4E8D2001538A9 /* UIView+Frame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BF194AFF1EF4E9F3001538A9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BF194B001EF4E9F3001538A9 /* CitiesDataTool.h */,
+				BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		BF8902F51EE3A1EC004A0FF7 /* SDCycleScrollView */ = {
@@ -877,7 +927,7 @@
 		BFC017621EDF9AB1005D66B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				BF24EB931EF39FB70099FEDF /* ChooseLocation */,
+				BF194AD51EF4E8BD001538A9 /* ChooseLocation */,
 				BFEA60381EEBDF9300885737 /* KeychainItemWraper */,
 				BFB6D0AB1EE63C1600F2C61F /* Request */,
 				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
@@ -888,6 +938,7 @@
 		BFC017631EDF9AB1005D66B0 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				BF194AE61EF4E8C4001538A9 /* fmdb */,
 				BF8902F51EE3A1EC004A0FF7 /* SDCycleScrollView */,
 				BFC017C71EDF9BD6005D66B0 /* Reachability */,
 				BFC017CA1EDF9BD6005D66B0 /* XHToastSwift */,
@@ -1114,6 +1165,8 @@
 				BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */,
 				BF8903371EE3B055004A0FF7 /* 2.jpg in Resources */,
 				BF173A9D1EF261400031AF06 /* data.plist in Resources */,
+				BF194AF91EF4E8C4001538A9 /* Info.plist in Resources */,
+				BF194AFA1EF4E8C4001538A9 /* tp_region.sql in Resources */,
 				BF9B74B91EE7830800322E2C /* KYProductMenuView.xib in Resources */,
 				BFC0173B1EDF9875005D66B0 /* Assets.xcassets in Resources */,
 				BF8903511EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib in Resources */,
@@ -1129,7 +1182,7 @@
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
 				BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */,
 				BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */,
-				BF24EBA11EF39FB70099FEDF /* AddressTableViewCell.xib in Resources */,
+				BF194AE31EF4E8BD001538A9 /* AddressTableViewCell.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */,
@@ -1209,6 +1262,7 @@
 			files = (
 				BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */,
 				BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */,
+				BF194AF61EF4E8C4001538A9 /* FMDatabasePool.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BFF9594D1EED167000C799CD /* CartTVCell.swift in Sources */,
 				BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */,
@@ -1219,32 +1273,28 @@
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
 				BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */,
+				BF194AE51EF4E8BD001538A9 /* ChooseLocationView.m in Sources */,
 				BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */,
 				BFB5C84C1EEA661F00BFFDE5 /* SJBCountDown.swift in Sources */,
 				BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */,
 				BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */,
 				BFB6D0E31EE69DD700F2C61F /* KYProductListCVCell.swift in Sources */,
-				BF24EBA91EF3A2E00099FEDF /* CitiesDataTool.m in Sources */,
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,
 				BFF05C7B1EEC2A9A00D18D43 /* KYProductContentViewController.swift in Sources */,
-				BF24EBB11EF3D0290099FEDF /* ChooseAddressView.swift in Sources */,
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
+				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
 				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
-				BF24EBA61EF3A0100099FEDF /* UIView+Frame.m in Sources */,
 				BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */,
-				BF24EBA31EF39FB70099FEDF /* ChooseLocationView.m in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
-				BF24EBA01EF39FB70099FEDF /* AddressTableViewCell.m in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
 				BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */,
 				BF89032B1EE3A4F1004A0FF7 /* BaseViewController.swift in Sources */,
 				BF89032D1EE3A4FD004A0FF7 /* BaseNavViewController.swift in Sources */,
 				BFB6D0E61EE6ADBC00F2C61F /* KYProductListModel.swift in Sources */,
-				BF24EBA21EF39FB70099FEDF /* AddressView.m in Sources */,
 				BFB6D0D21EE6965300F2C61F /* FJSectionRowHeadView.swift in Sources */,
 				BFF959501EED660300C799CD /* KYCartListModel.swift in Sources */,
 				BFF959581EED833700C799CD /* KYCartFootView.swift in Sources */,
@@ -1261,7 +1311,10 @@
 				BFC017BF1EDF9B95005D66B0 /* AppDelegate.swift in Sources */,
 				BF89036E1EE44915004A0FF7 /* KYHomeFootView.swift in Sources */,
 				BFDCB40A1EE8F3730040A09B /* HXTagsCell.m in Sources */,
+				BF194AF51EF4E8C4001538A9 /* FMDatabaseAdditions.m in Sources */,
+				BF194AE21EF4E8BD001538A9 /* AddressTableViewCell.m in Sources */,
 				BF89030B1EE3A1EC004A0FF7 /* UIView+SDExtension.m in Sources */,
+				BF194AF41EF4E8C4001538A9 /* FMDatabase.m in Sources */,
 				BFB5C84A1EEA625E00BFFDE5 /* SJBResetPassViewController.swift in Sources */,
 				BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */,
 				BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */,
@@ -1275,6 +1328,7 @@
 				BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */,
 				BF8903311EE3AAEC004A0FF7 /* Common.swift in Sources */,
 				BFB6D0CE1EE6965300F2C61F /* FJLeftMenuTVCell.swift in Sources */,
+				BF194AF81EF4E8C4001538A9 /* FMResultSet.m in Sources */,
 				BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */,
 				BFF05C7D1EEC384800D18D43 /* KYCartViewController.swift in Sources */,
 				BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */,
@@ -1289,18 +1343,20 @@
 				BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */,
 				BFB6D0E01EE69D4200F2C61F /* KYProductListViewController.swift in Sources */,
 				BF89032F1EE3A520004A0FF7 /* KYHomeViewController.swift in Sources */,
+				BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */,
 				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
+				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */,
 				BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */,
 				BFBAB4781EF17C3A0038B95E /* KYShopAddressViewController.swift in Sources */,
+				BF194AF71EF4E8C4001538A9 /* FMDatabaseQueue.m in Sources */,
 				BFB6D0D01EE6965300F2C61F /* FJSectionHeadView.swift in Sources */,
 				BFBAB4761EF161DA0038B95E /* KYUserInfoModel.swift in Sources */,
 				BF8903551EE4176D004A0FF7 /* View+Extension.swift in Sources */,
-				BF24EBAF1EF3CC670099FEDF /* CitysDataTool.swift in Sources */,
-				BF24EB9F1EF39FB70099FEDF /* AddressItem.m in Sources */,
+				BF194AE41EF4E8BD001538A9 /* AddressView.m in Sources */,
 				BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */,
 				BFB6D0B71EE6918A00F2C61F /* FJSubSectionModel.swift in Sources */,
 			);

@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @interface ChooseLocationView : UIView
 
 @property (nonatomic, copy) NSString * address;
 
-@property (nonatomic, copy) void(^chooseFinish)();
+@property (nonatomic, copy) void(^chooseFinish)(NSDictionary *params,NSString *title);
 
 @property (nonatomic,copy) NSString * areaCode;
 
+@property (nonatomic, strong) NSMutableDictionary * params;
 @end

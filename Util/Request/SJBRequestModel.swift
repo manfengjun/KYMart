@@ -28,7 +28,11 @@ enum ModelType {
     
     case UserInfo//用户信息
     case ChangePortrait//修改头像
-    case AddressSection//地址分级
+    
+    case AddressSection//地址分级(未使用，改用本地sqlite)
+    case AddAddRess//添加地址
+    case AddRessList//地址列表
+    case DelAddress//删除地址
     
 }
 class SJBRequestModel: NSObject {
@@ -140,7 +144,7 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
-            case .AddressSection:
+            case .AddRessList:
                 for item in response as! NSArray {
                     let temmodel = KYAddressModel.yy_model(with: item as! [AnyHashable : Any])
                     if let model = temmodel {
@@ -158,7 +162,7 @@ class SJBRequestModel: NSObject {
             completion(response as AnyObject,status)
         }
     }
-    // MARK: ------------------ Pull
+    // MARK: ------ 首页
     /// 首页数据
     ///
     /// - Parameter completion: completion description
@@ -178,7 +182,7 @@ class SJBRequestModel: NSObject {
             self.dataArrayToModel(type: .HomePageProduct, response: response, status: status, completion: completion)
         }
     }
-    
+    // MARK: ------ 分类
     /// 一级分类
     ///
     /// - Parameter completion: completion description
@@ -198,7 +202,7 @@ class SJBRequestModel: NSObject {
             self.dataArrayToModel(type: .SubSection, response: response, status: status, completion: completion)
         }
     }
-    
+    // MARK: ------ 商品
     /// 获取商品列表
     ///
     /// - Parameters:
@@ -224,6 +228,7 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .ProductInfo, response: response, status: status, completion: completion)
         }
     }
+    // MARK: ------ 图形验证码
     /// 获取验证码
     ///
     /// - Parameter completion: completion description
@@ -233,28 +238,10 @@ class SJBRequestModel: NSObject {
         }
     }
     
-    /// 获取用户信息
-    ///
-    /// - Parameter completion: completion description
-    class func pull_fetchUserInfoData(completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnUserInfoUrl()) { (response, status) in
-            self.dataToModel(type: .UserInfo, response: response, status: status, completion: completion)
-        }
-    }
     
-    /// 地址分级
-    ///
-    /// - Parameters:
-    ///   - level: level description
-    ///   - parent_id: parent_id description
-    ///   - completion: completion description
-    class func pull_fetchAddressSection(level:Int, parent_id:Int,completion:@escaping (AnyObject,Int) -> Void){
-        SJBRequest.Get(url: SJBRequestUrl.returnAddressMenuUrl(level: level, parent_id: parent_id)) { (response, status) in
-            self.dataArrayToModel(type: .AddressSection, response: response, status: status, completion: completion)
-        }
-    }
     
-    // MARK: ------------------ Push
+    
+    // MARK: ------ 登录注册
     
     /// 登录
     ///
@@ -311,7 +298,7 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .Forget, response: response, status: status, completion: completion)
         }
     }
-    
+    // MARK: ------ 购物车
     /// 添加购物车
     ///
     /// - Parameters:
@@ -345,7 +332,7 @@ class SJBRequestModel: NSObject {
         }
     }
     
-    
+    // MARK: ------ 个人信息
     /// 更换头像
     ///
     /// - Parameters:
@@ -357,6 +344,57 @@ class SJBRequestModel: NSObject {
         }
        
     }
+    /// 获取用户信息
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchUserInfoData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnUserInfoUrl()) { (response, status) in
+            self.dataToModel(type: .UserInfo, response: response, status: status, completion: completion)
+        }
+    }
+    // MARK: ------ 地址管理
+    /// 地址分级
+    ///
+    /// - Parameters:
+    ///   - level: level description
+    ///   - parent_id: parent_id description
+    ///   - completion: completion description
+    class func pull_fetchAddressSection(level:Int, parent_id:Int,completion:@escaping (AnyObject,Int) -> Void){
+        SJBRequest.Get(url: SJBRequestUrl.returnAddressMenuUrl(level: level, parent_id: parent_id)) { (response, status) in
+            self.dataArrayToModel(type: .AddressSection, response: response, status: status, completion: completion)
+        }
+    }
     
+    /// 添加地址
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchAddAddressData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void){
+        SJBRequest.Post(url: SJBRequestUrl.returnAddAddressUrl(), params: params) { (response, status) in
+            self.dataArrayToModel(type: .AddAddRess, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 地址列表
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchAddressListData(completion:@escaping (AnyObject,Int) -> Void){
+        SJBRequest.Get(url: SJBRequestUrl.returnAddressListUrl()) { (response, status) in
+            self.dataArrayToModel(type: .AddRessList, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 删除地址
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchAddressDelData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void){
+        SJBRequest.Post(url: SJBRequestUrl.returnAddAddressUrl(), params: params) { (response, status) in
+            self.dataArrayToModel(type: .DelAddress, response: response, status: status, completion: completion)
+        }
+    }
+
 
 }

@@ -166,9 +166,10 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func returnChangePortraitUrl() -> String {
-        return "\(basePath)m=api&c=User&a=upload_headpic&token=\(access_token())"
+        return "\(basePath)m=api&c=User&a=upload_headpic&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
     
+    // MARK: ------ 地址管理
     /// 获取地址分级信息
     ///
     /// - Parameters:
@@ -178,5 +179,25 @@ class SJBRequestUrl: NSObject {
     class func returnAddressMenuUrl(level:Int, parent_id:Int) -> String {
         return "\(basePath)m=api&c=other&a=region&level=\(level)&parent_id=\(parent_id)"
     }
-//    http://test.kymart.cn/index.php?m=api&c=other&a=region&level=1&parent_id=0
+    
+    /// 获取地址列表
+    ///
+    /// - Returns: return value description
+    class func returnAddressListUrl() -> String {
+        return "\(basePath)m=api&c=user&a=getAddressList&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
+    
+    /// 添加地址
+    ///
+    /// - Returns: return value description
+    class func returnAddAddressUrl() -> String {
+        return "\(basePath)m=api&c=user&a=addAddress&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
+    
+    /// 删除地址
+    ///
+    /// - Returns: return value description
+    class func returnDelAddressUrl() -> String {
+        return "\(basePath)m=api&c=user&a=del_address&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
 }

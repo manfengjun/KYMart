@@ -28,7 +28,7 @@ class KYMineViewController: UIViewController {
                 nameL.text = text
             }
             if let imgUrl = userInfoModel?.head_pic {
-                portraitIV.sd_setImage(with: URL(string: imgUrl), placeholderImage: nil)
+                portraitIV.sd_setImage(with: URL(string: baseHref + imgUrl), placeholderImage: nil)
             }
 
         }
