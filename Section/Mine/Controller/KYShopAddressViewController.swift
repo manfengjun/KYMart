@@ -103,7 +103,13 @@ extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
         cell.model = dataArray[indexPath.row]
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let addAddressVC = storyboard.instantiateViewController(withIdentifier: "addAddressVC") as! KYAddAddressViewController
+        self.navigationController?.pushViewController(addAddressVC, animated: true)
+        addAddressVC.model = dataArray[indexPath.row]
+        addAddressVC.isEdit = true
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
