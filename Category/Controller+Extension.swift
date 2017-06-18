@@ -51,6 +51,24 @@ extension BaseViewController{
         let item = UIBarButtonItem(customView: backBtn)
         navigationItem.rightBarButtonItem = item
     }
-    
+    /// 导航栏右侧按钮(无图)
+    ///
+    /// - Parameters:
+    ///   - title: imageUrl description
+    ///   - action: action description
+    func setRightButtonInNav(title: String, action: Selector, size:CGSize?) {
+        let backBtn = UIButton(type: UIButtonType.custom)
+        let point = CGPoint(x: 0, y: 0)
+        backBtn.frame = CGRect(origin: point, size: CGSize(width: 24, height: 24))
+        if size != nil {
+            backBtn.frame = CGRect(origin: point, size: size!)
+        }
+        backBtn.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        backBtn.addTarget(self, action: action, for: UIControlEvents.touchUpInside)
+        backBtn.setTitle(title, for: .normal)
+        let item = UIBarButtonItem(customView: backBtn)
+        navigationItem.rightBarButtonItem = item
+    }
+
     
 }

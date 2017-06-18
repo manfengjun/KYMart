@@ -353,6 +353,12 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .UserInfo, response: response, status: status, completion: completion)
         }
     }
+    
+    /// 修改用户信息
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
     class func push_fetchChangeUserInfoData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url:SJBRequestUrl.returnChangeUserInfoUrl(), params: params) { (response, status) in
             completion(response,status)
@@ -361,6 +367,11 @@ class SJBRequestModel: NSObject {
         
     }
 
+    class func push_fetchChangePasswordData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnChangePasswordUrl(), params: params) { (response, status) in
+            completion(response,status)
+        }
+    }
     // MARK: ------ 地址管理
     /// 地址分级
     ///

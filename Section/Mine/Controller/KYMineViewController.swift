@@ -8,7 +8,7 @@
 
 import UIKit
 import TZImagePickerController
-class KYMineViewController: UIViewController {
+class KYMineViewController: BaseViewController {
 
     @IBOutlet var headView: UIView!
     @IBOutlet weak var portraitBgV: UIView!
@@ -68,7 +68,20 @@ class KYMineViewController: UIViewController {
         tableView.tableHeaderView = headView
         navigationController?.navigationBar.isTranslucent = true
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
-
+        setRightButtonInNav(title: SingleManager.instance.isLogin ? "退出登录" : "登录", action: #selector(isLoginAction(sender:)), size:CGSize(width: 80, height: 24))
+    }
+    func isLoginAction(sender: UIButton) {
+        if SingleManager.instance.isLogin {
+            //退出登录
+            SingleManager.instance.isLogin = false
+            SingleManager.instance.loginInfo = nil
+            sender.setTitle("登录", for: .normal)
+        }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginNav")
+            self.present(loginVC, animated: true, completion: nil)
+        }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! KYUserInfoViewController
@@ -101,10 +114,16 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
     }
     /// 数据请求
     func dataRequest() {
-        SJBRequestModel.pull_fetchUserInfoData { (response, status) in
-            if status == 1{
-                self.userInfoModel = response as? KYUserInfoModel
+        if SingleManager.instance.isLogin {
+            SJBRequestModel.pull_fetchUserInfoData { (response, status) in
+                if status == 1{
+                    self.userInfoModel = response as? KYUserInfoModel
+                }
             }
+
+        }
+        else{
+            Toast(content: "未登录")
         }
     }
     

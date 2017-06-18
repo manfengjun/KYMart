@@ -10,6 +10,8 @@ import UIKit
 
 class KYUserInfoViewController: BaseViewController {
     @IBOutlet weak var nickNameL: UITextField!
+    @IBOutlet weak var oldPassL: UITextField!
+    @IBOutlet weak var newPassL: UITextField!
     var sexSelect:Int = 0
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -56,6 +58,24 @@ class KYUserInfoViewController: BaseViewController {
         }
     }
     @IBAction func savePhoneAction(_ sender: UIButton) {
+        //修改密码
+        if (oldPassL.text?.isEmpty)! {
+            Toast(content: "旧密码不能为空")
+        }
+        if (newPassL.text?.isEmpty)! {
+            Toast(content: "新密码不能为空")
+        }
+        let params = ["old_password":oldPassL.text!,"new_password":newPassL.text!]
+        SJBRequestModel.push_fetchChangePasswordData(params: params as [String : AnyObject]) { (response, status) in
+            if status == 1{
+                self.Toast(content: "修改密码成功！")
+            }
+            else
+            {
+                self.Toast(content: response as! String)
+
+            }
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
