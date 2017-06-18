@@ -16,6 +16,8 @@ class KYMineViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var nameL: UILabel!
     @IBOutlet weak var recommendL: UILabel!
+    @IBOutlet weak var usermoneyL: UILabel!
+    @IBOutlet weak var bonusL: UILabel!
     var userInfoModel:KYUserInfoModel?{
         didSet {
             dataMenu()
@@ -30,12 +32,22 @@ class KYMineViewController: UIViewController {
             if let imgUrl = userInfoModel?.head_pic {
                 portraitIV.sd_setImage(with: URL(string: baseHref + imgUrl), placeholderImage: nil)
             }
+            if let text = userInfoModel?.bonus {
+                bonusL.text = "¥\(text)"
+            }
+            if let text = userInfoModel?.user_money {
+                usermoneyL.text = "¥\(text)"
+            }
 
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 0
+        setupUI()
+
+        dataRequest()
+
 
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,8 +57,6 @@ class KYMineViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        dataRequest()
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -60,7 +70,12 @@ class KYMineViewController: UIViewController {
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
 
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! KYUserInfoViewController
+        vc.backResult { 
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -193,6 +208,10 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                     self.tabBarController?.tabBar.isHidden = false
                 })
             }
+            if indexPath.row == 3 {
+                self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
+            }
+
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

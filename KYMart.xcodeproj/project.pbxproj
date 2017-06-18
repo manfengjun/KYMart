@@ -30,6 +30,7 @@
 		BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */; };
 		BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */; };
 		BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */; };
+		BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
 		BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FA1EE3A1EC004A0FF7 /* TAAnimatedDotView.m */; };
 		BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FC1EE3A1EC004A0FF7 /* TADotView.m */; };
@@ -204,6 +205,7 @@
 		BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductHeadView.xib; sourceTree = "<group>"; };
 		BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddAddressViewController.swift; sourceTree = "<group>"; };
 		BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductBuyInfoModel.swift; sourceTree = "<group>"; };
+		BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYUserInfoViewController.swift; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		BF8902F91EE3A1EC004A0FF7 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 				BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */,
 				BFBAB4771EF17C3A0038B95E /* KYShopAddressViewController.swift */,
 				BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */,
+				BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1347,6 +1350,7 @@
 				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
+				BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */,

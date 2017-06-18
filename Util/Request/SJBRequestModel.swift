@@ -28,6 +28,7 @@ enum ModelType {
     
     case UserInfo//用户信息
     case ChangePortrait//修改头像
+    case ChangeUserInfo//更改用户信息
     
     case AddressSection//地址分级(未使用，改用本地sqlite)
     case AddAddRess//添加地址
@@ -352,6 +353,14 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .UserInfo, response: response, status: status, completion: completion)
         }
     }
+    class func push_fetchChangeUserInfoData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url:SJBRequestUrl.returnChangeUserInfoUrl(), params: params) { (response, status) in
+            completion(response,status)
+
+        }
+        
+    }
+
     // MARK: ------ 地址管理
     /// 地址分级
     ///
@@ -391,7 +400,7 @@ class SJBRequestModel: NSObject {
     ///   - params: params description
     ///   - completion: completion description
     class func push_fetchAddressDelData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void){
-        SJBRequest.Post(url: SJBRequestUrl.returnAddAddressUrl(), params: params) { (response, status) in
+        SJBRequest.Post(url: SJBRequestUrl.returnDelAddressUrl(), params: params) { (response, status) in
             self.dataArrayToModel(type: .DelAddress, response: response, status: status, completion: completion)
         }
     }

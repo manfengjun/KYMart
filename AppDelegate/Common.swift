@@ -49,7 +49,7 @@ let SelectProductProperty = NSNotification.Name(rawValue: "SelectProductProperty
 /// 回调闭包
 /// 返回Int
 typealias ResultClosure = (_ number: Int)->()
-
+typealias SelectClosure = ()->()
 /// 属性选择回调
 typealias PropertyClosure = ([Spec_list],Int)->()
 /// 登录成功回调
