@@ -192,6 +192,7 @@ extension FJSectionController:UICollectionViewDelegate,UICollectionViewDataSourc
         let array = model?.sub_category
         let submodel = array?[indexPath.row]
         listVC.id = submodel?.id
+        listVC.navTitle = submodel?.mobile_name
         listVC.backResult {
             self.tabBarController?.tabBar.isHidden = false
         }

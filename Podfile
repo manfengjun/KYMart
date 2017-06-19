@@ -13,6 +13,6 @@ target 'KYMart' do
     pod 'STPickerView', '~> 2.1'
     pod 'TZImagePickerController', '~> 1.7.9'
     pod 'SVProgressHUD', '~> 2.1.2'
-    pod 'YNSearch', '~> 2.3.0'
+    pod 'PYSearch', '~> 0.8.0'
 end
 

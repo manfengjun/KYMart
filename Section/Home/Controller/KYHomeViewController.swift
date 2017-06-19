@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import PYSearch
 private let KYHomeMenuIdentifier = "kYHomeMenuCVCell"
 private let KYProductScrollIdentifier = "kYProductScrollCVCell"
 private let KYHomeHeadViewIdentifier = "kYHomeHeadView"
@@ -163,9 +164,26 @@ extension KYHomeViewController {
     }
 
 }
-// MARK: ------ 轮播图片
+// MARK: ------ 轮播图片、响应事件
 extension KYHomeViewController:SDCycleScrollViewDelegate{
+    func searchAction(sender:UITapGestureRecognizer) {
+        let searchVC = PYSearchViewController()
+        let listVC = KYProductListViewController()
 
+        searchVC.didSearchBlock = { (searchViewController,searchBar,searchText) in
+            if let text = searchText {
+                listVC.backResult {
+                    self.tabBarController?.tabBar.isHidden = false
+                }
+                searchViewController?.navigationController?.pushViewController(listVC, animated: true)
+                listVC.q = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                listVC.navTitle = text
+
+            }
+        }
+        let nav = BaseNavViewController(rootViewController: searchVC)
+        self.present(nav, animated: true, completion: nil)
+    }
 }
 
 // MARK: - 数据列表
@@ -217,6 +235,8 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                 if let images = homepagemodel?.ad {
                     view.images = images
                 }
+                let searchTap = UITapGestureRecognizer(target: self, action: #selector(searchAction(sender:)))
+                view.addGestureRecognizer(searchTap)
                 resableview = view
             }
             else if indexPath.section == sectionCount - 1 {
@@ -240,7 +260,35 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
         return resableview
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == sectionCount - 1 {
+        if indexPath.section == 0 {
+            let noneVC = NoneViewController()
+            switch indexPath.row {
+            case 0:
+                noneVC.navTitle = "店铺街"
+                self.navigationController?.pushViewController(noneVC, animated: true)
+
+                break
+            case 1:
+                noneVC.navTitle = "品牌街"
+                self.navigationController?.pushViewController(noneVC, animated: true)
+
+
+                break
+            case 2:
+                noneVC.navTitle = "我的订单"
+                self.navigationController?.pushViewController(noneVC, animated: true)
+
+
+                break
+            case 3:
+                self.tabBarController?.selectedIndex = 3
+
+                break
+            default:
+                break
+            }
+        }
+        else if indexPath.section == sectionCount - 1 {
             let detailVC = KYProductDetailViewController()
             let model = productArray[indexPath.row]
             detailVC.id = model.goods_id

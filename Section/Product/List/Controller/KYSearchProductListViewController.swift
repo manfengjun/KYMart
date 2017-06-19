@@ -1,8 +1,8 @@
 //
-//  KYProductListViewController.swift
+//  KYSearchProductListViewController.swift
 //  KYMart
 //
-//  Created by jun on 2017/6/6.
+//  Created by jun on 2017/6/19.
 //  Copyright © 2017年 JUN. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import MJRefresh
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
-class KYProductListViewController: BaseViewController {
+class KYSearchProductListViewController: BaseViewController {
     /// 默认热门排序
     var url:String? {
         didSet {
@@ -19,27 +19,14 @@ class KYProductListViewController: BaseViewController {
         }
     }
     
-    /// 头部标题
-    var navTitle:String?{
-        didSet {
-            navigationItem.title = navTitle
-        }
-    }
     /// 当前选中
     var currentIndex = 0
+    
     /// 搜索进入
     var q:String? {
         didSet{
             page = 1
-            
-            url = "/index.php/api/Goods/search/q/\(q!)/sort/is_new/sort_asc/desc"
-            dataRequest()
-        }
-    }
-    var id:Int? {
-        didSet {
-            page = 1
-            url = "/index.php/api/Goods/goodsList/id/\(id!)/sort/is_new/sort_asc/desc"
+            url = "/index.php/api/Goods/goodsList/p/\(q!)/sort/is_new/sort_asc/desc"
             dataRequest()
         }
     }
@@ -54,13 +41,13 @@ class KYProductListViewController: BaseViewController {
     /// 下拉刷新
     fileprivate lazy var header:MJRefreshNormalHeader = {
         let header = MJRefreshNormalHeader()
-        header.setRefreshingTarget(self, refreshingAction: #selector(KYProductListViewController.headerRefresh))
+        header.setRefreshingTarget(self, refreshingAction: #selector(KYSearchProductListViewController.headerRefresh))
         return header
     }()
     /// 上拉加载
     fileprivate lazy var footer:MJRefreshAutoNormalFooter = {
         let footer = MJRefreshAutoNormalFooter()
-        footer.setRefreshingTarget(self, refreshingAction: #selector(KYProductListViewController.footerRefresh))
+        footer.setRefreshingTarget(self, refreshingAction: #selector(KYSearchProductListViewController.footerRefresh))
         return footer
     }()
     /// 商品列表
@@ -99,7 +86,7 @@ class KYProductListViewController: BaseViewController {
                     if let str = model.orderby_comment_count {
                         self.url = str
                     }
-
+                    
                     break
                 case 4:
                     if let str = model.orderby_price {
@@ -123,18 +110,18 @@ class KYProductListViewController: BaseViewController {
                     break
                 }
             }
-
+            
         })
         return headView
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
-        setupUI()
     }
     func setupUI() {
         setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(back))
@@ -164,7 +151,7 @@ class KYProductListViewController: BaseViewController {
     func dataRequest() {
         SJBRequestModel.pull_fetchProductListData(page: page, url:url!) { (response, status) in
             self.collectionView.mj_header.endRefreshing()
-
+            
             if status == 1 {
                 self.productListModel = response as? KYProductListModel
                 if let goods = self.productListModel?.goods_list {
@@ -200,21 +187,21 @@ class KYProductListViewController: BaseViewController {
                         self.dataArray.addObjects(from: goods)
                     }
                     self.collectionView.reloadData()
-
+                    
                 }
             }
-
+            
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 }
-extension KYProductListViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension KYSearchProductListViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

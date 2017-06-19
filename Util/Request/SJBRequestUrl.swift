@@ -67,7 +67,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Parameter id: id description
     /// - Returns: return value description
-    class func returnProductLisyUrl(id:Int, url:String, page:Int) -> String {
+    class func returnProductLisyUrl(url:String, page:Int) -> String {
         return "\(baseHref)\(url)/p/\(page)"
     }
     
@@ -85,9 +85,6 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=goods&a=goodsContent&id=\(id)"
     }
     
-    func returnProductSearchUrl() -> String {
-        return ""
-    }
     // MARK: ------ 购物车
     
     /// 添加购物车

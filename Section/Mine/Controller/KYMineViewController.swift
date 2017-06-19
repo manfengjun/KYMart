@@ -219,7 +219,30 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
         return view
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 {
+        if indexPath.section == 1 {
+            let noneVC = NoneViewController()
+            switch indexPath.row {
+            case 0:
+                noneVC.navTitle = "消费记录"
+                break
+            case 1:
+                noneVC.navTitle = "充值明细"
+                
+                break
+            case 2:
+                noneVC.navTitle = "奖金记录"
+                
+                break
+            case 3:
+                 noneVC.navTitle = "提现记录"
+                
+                break
+            default:
+                break
+            }
+            self.navigationController?.pushViewController(noneVC, animated: true)
+        }
+        else if indexPath.section == 2 {
             if indexPath.row == 0 {
                 let shopAddressVC = KYShopAddressViewController()
                 navigationController?.pushViewController(shopAddressVC, animated: true)
@@ -232,6 +255,7 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
             }
 
         }
+        
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let sectionHeaderHeight:CGFloat = 10;

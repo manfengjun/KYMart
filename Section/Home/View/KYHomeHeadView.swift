@@ -12,6 +12,7 @@ class KYHomeHeadView: UICollectionReusableView {
 
     @IBOutlet weak var searchView: UIView!
     @IBOutlet var contentView: UICollectionReusableView!
+    
     var images:[Ad]?{
         didSet {
             var urls:[String] = []
