@@ -30,6 +30,7 @@
 		BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */; };
 		BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */; };
 		BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */; };
+		BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
 		BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FA1EE3A1EC004A0FF7 /* TAAnimatedDotView.m */; };
 		BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FC1EE3A1EC004A0FF7 /* TADotView.m */; };
@@ -44,7 +45,6 @@
 		BF8903311EE3AAEC004A0FF7 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903301EE3AAEC004A0FF7 /* Common.swift */; };
 		BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903321EE3AAF5004A0FF7 /* SingleManager.swift */; };
 		BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF8903341EE3B055004A0FF7 /* 1.jpg */; };
-		BF8903371EE3B055004A0FF7 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BF8903351EE3B055004A0FF7 /* 2.jpg */; };
 		BF89033B1EE3B856004A0FF7 /* XLPlainFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BF89033A1EE3B856004A0FF7 /* XLPlainFlowLayout.m */; };
 		BF8903441EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903421EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift */; };
 		BF8903451EE3CBDC004A0FF7 /* KYHomeMenuCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8903431EE3CBDC004A0FF7 /* KYHomeMenuCVCell.xib */; };
@@ -129,6 +129,7 @@
 		BFE46DF91EF12D2400F65FED /* com_info_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DF81EF12D2400F65FED /* com_info_bg.png */; };
 		BFE46DFB1EF12D7600F65FED /* celan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DFA1EF12D7600F65FED /* celan.jpg */; };
 		BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DFC1EF12DEA00F65FED /* user.jpg */; };
+		BFE7BB131EF6B5D200A84B9F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE7BB121EF6B5D200A84B9F /* 2.jpg */; };
 		BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60341EEBC43F00885737 /* KYCodeView.swift */; };
 		BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60361EEBD2C000885737 /* DemoViewController.swift */; };
 		BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA603A1EEBDF9300885737 /* SSKeychain.m */; };
@@ -204,6 +205,7 @@
 		BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductHeadView.xib; sourceTree = "<group>"; };
 		BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddAddressViewController.swift; sourceTree = "<group>"; };
 		BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductBuyInfoModel.swift; sourceTree = "<group>"; };
+		BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYUserInfoViewController.swift; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		BF8902F91EE3A1EC004A0FF7 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -225,7 +227,6 @@
 		BF8903301EE3AAEC004A0FF7 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		BF8903321EE3AAF5004A0FF7 /* SingleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleManager.swift; sourceTree = "<group>"; };
 		BF8903341EE3B055004A0FF7 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		BF8903351EE3B055004A0FF7 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		BF8903391EE3B856004A0FF7 /* XLPlainFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLPlainFlowLayout.h; sourceTree = "<group>"; };
 		BF89033A1EE3B856004A0FF7 /* XLPlainFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLPlainFlowLayout.m; sourceTree = "<group>"; };
 		BF8903421EE3CBDC004A0FF7 /* KYHomeMenuCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYHomeMenuCVCell.swift; sourceTree = "<group>"; };
@@ -326,6 +327,7 @@
 		BFE46DF81EF12D2400F65FED /* com_info_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = com_info_bg.png; sourceTree = "<group>"; };
 		BFE46DFA1EF12D7600F65FED /* celan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = celan.jpg; sourceTree = "<group>"; };
 		BFE46DFC1EF12DEA00F65FED /* user.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user.jpg; sourceTree = "<group>"; };
+		BFE7BB121EF6B5D200A84B9F /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		BFEA60341EEBC43F00885737 /* KYCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCodeView.swift; sourceTree = "<group>"; };
 		BFEA60361EEBD2C000885737 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BFEA60391EEBDF9300885737 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 				BFE46DF21EF11C9300F65FED /* KYMineViewController.swift */,
 				BFBAB4771EF17C3A0038B95E /* KYShopAddressViewController.swift */,
 				BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */,
+				BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -914,11 +917,11 @@
 		BFC017611EDF9AB1005D66B0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BFE7BB121EF6B5D200A84B9F /* 2.jpg */,
 				BFE46DFC1EF12DEA00F65FED /* user.jpg */,
 				BFE46DFA1EF12D7600F65FED /* celan.jpg */,
 				BFE46DF81EF12D2400F65FED /* com_info_bg.png */,
 				BF8903341EE3B055004A0FF7 /* 1.jpg */,
-				BF8903351EE3B055004A0FF7 /* 2.jpg */,
 				BF8903521EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg */,
 			);
 			path = Resource;
@@ -1163,7 +1166,6 @@
 				BFC0173E1EDF9875005D66B0 /* LaunchScreen.storyboard in Resources */,
 				BF8903451EE3CBDC004A0FF7 /* KYHomeMenuCVCell.xib in Resources */,
 				BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */,
-				BF8903371EE3B055004A0FF7 /* 2.jpg in Resources */,
 				BF173A9D1EF261400031AF06 /* data.plist in Resources */,
 				BF194AF91EF4E8C4001538A9 /* Info.plist in Resources */,
 				BF194AFA1EF4E8C4001538A9 /* tp_region.sql in Resources */,
@@ -1183,6 +1185,7 @@
 				BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */,
 				BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */,
 				BF194AE31EF4E8BD001538A9 /* AddressTableViewCell.xib in Resources */,
+				BFE7BB131EF6B5D200A84B9F /* 2.jpg in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */,
@@ -1347,6 +1350,7 @@
 				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
+				BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */,

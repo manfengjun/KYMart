@@ -11,20 +11,14 @@ import UIKit
 class KYAddAddressViewController: BaseViewController {
 
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var delBtn: UIButton!
     @IBOutlet weak var addressAreaL: UILabel!
     @IBOutlet weak var nameT: UITextField!
     @IBOutlet weak var addressT: UITextField!
     @IBOutlet weak var phoneT: UITextField!
     @IBOutlet weak var codeT: UITextField!
     @IBOutlet weak var defaultIV: UIImageView!
-    
-    /// 默认选中
-    var isDefault:Bool = false
-    
-    /// 编辑状态下数据
-    var model:KYAddressModel?
-    
-    fileprivate var params:[String:AnyObject]?
+    fileprivate var params:[String:AnyObject]!
     fileprivate lazy var bgView : UIView = {
         let bgView = UIView(frame: UIScreen.main.bounds)
         bgView.backgroundColor = UIColor.rgbColor(r: 0, g: 0, b: 0, a: 0.3)
@@ -33,13 +27,93 @@ class KYAddAddressViewController: BaseViewController {
         bgView.addGestureRecognizer(tap)
         return bgView
     }()
+    /// 默认选中
+    var isDefault:Bool = false
+    
+    var isEdit:Bool = false
+    /// 编辑状态下数据
+    var model:KYAddressModel?
+    
+    func getAddressName(id:Int) -> String {
+        if let array = CitiesDataTool.sharedManager().queryData(with: id) {
+            if array.count > 0 {
+                return array[0] as! String + " "
+            }
+        }
+        return " "
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButtonInNav()
         navigationItem.title = "添加地址"
         saveBtn.layer.masksToBounds = true
         saveBtn.layer.cornerRadius = 5
+        delBtn.isHidden = !isEdit
+        if isEdit {
+            reloadData()
+        }
         // Do any additional setup after loading the view.
+    }
+    func reloadData() {
+        if let text = model?.consignee {
+            nameT.text = text
+        }
+        if let text = model?.mobile {
+            phoneT.text = "\(text)"
+        }
+        var addressStr = ""
+        if let provice = model?.province {
+            addressStr += getAddressName(id: provice)
+            params = ["province":String(provice) as AnyObject]
+            if let city = model?.city{
+                addressStr += getAddressName(id: city)
+                params?["city"] = String(city) as AnyObject
+
+                if let district = model?.district {
+                    addressStr += getAddressName(id: district)
+                    params?["district"] = String(district) as AnyObject
+
+                    if let twon = model?.twon {
+                        addressStr += getAddressName(id: twon)
+                        params?["twon"] = String(twon) as AnyObject
+                        
+                        addressAreaL.text = addressStr
+                    }
+                }
+            }
+        }
+        if let address_id = model?.address_id  {
+            params["address_id"] = String(address_id) as AnyObject
+        }
+        if let address = model?.address {
+            addressT.text = address
+        }
+        if let zipcode = model?.zipcode {
+            codeT.text = zipcode
+        }
+        if let is_default = model?.is_default {
+            isDefault = is_default == 1 ? true : false
+            defaultIV.image = (is_default == 1 ? UIImage(named: "cart_select_yes") : UIImage(named: "cart_select_no"))
+        }
+    }
+    @IBAction func delAction(_ sender: UIButton) {
+        if let address_id = model?.address_id {
+            SJBRequestModel.push_fetchAddressDelData(params: ["id":String(address_id) as AnyObject]) { (response, status) in
+                if status == 1{
+                    self.Toast(content: "删除地址成功")
+                    self.navigationController?.popViewController(animated: true)
+                }
+                else
+                {
+                    self.Toast(content: response as! String)
+                }
+            }
+        }
+        else
+        {
+            self.Toast(content: "删除失败")
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -85,16 +159,23 @@ extension KYAddAddressViewController {
             params?["address"] = addressT.text as AnyObject
             params?["zipcode"] = codeT.text as AnyObject
             params?["is_default"] = (isDefault ? "1" : "0") as AnyObject
-            SJBRequestModel.push_fetchAddAddressData(params: params!) { (response, status) in
-                if status == 1{
-                    self.Toast(content: "保存地址成功")
-                    self.navigationController?.popViewController(animated: true)
-                }
-                else
-                {
-                    self.Toast(content: "保存地址失败")
+            
+            if let dic = params {
+                SJBRequestModel.push_fetchAddAddressData(params: dic) { (response, status) in
+                    if status == 1{
+                        self.Toast(content: "保存地址成功")
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    else
+                    {
+                        self.Toast(content: response as! String)
+                    }
                 }
             }
+            else{
+                self.Toast(content: "保存地址失败")
+            }
+            
         }
         else
         {

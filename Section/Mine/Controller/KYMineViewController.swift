@@ -8,7 +8,7 @@
 
 import UIKit
 import TZImagePickerController
-class KYMineViewController: UIViewController {
+class KYMineViewController: BaseViewController {
 
     @IBOutlet var headView: UIView!
     @IBOutlet weak var portraitBgV: UIView!
@@ -16,6 +16,8 @@ class KYMineViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var nameL: UILabel!
     @IBOutlet weak var recommendL: UILabel!
+    @IBOutlet weak var usermoneyL: UILabel!
+    @IBOutlet weak var bonusL: UILabel!
     var userInfoModel:KYUserInfoModel?{
         didSet {
             dataMenu()
@@ -30,12 +32,22 @@ class KYMineViewController: UIViewController {
             if let imgUrl = userInfoModel?.head_pic {
                 portraitIV.sd_setImage(with: URL(string: baseHref + imgUrl), placeholderImage: nil)
             }
+            if let text = userInfoModel?.bonus {
+                bonusL.text = "¥\(text)"
+            }
+            if let text = userInfoModel?.user_money {
+                usermoneyL.text = "¥\(text)"
+            }
 
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 0
+        setupUI()
+
+        dataRequest()
+
 
     }
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,8 +57,6 @@ class KYMineViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        dataRequest()
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -58,9 +68,27 @@ class KYMineViewController: UIViewController {
         tableView.tableHeaderView = headView
         navigationController?.navigationBar.isTranslucent = true
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
-
+        setRightButtonInNav(title: SingleManager.instance.isLogin ? "退出登录" : "登录", action: #selector(isLoginAction(sender:)), size:CGSize(width: 80, height: 24))
     }
-    
+    func isLoginAction(sender: UIButton) {
+        if SingleManager.instance.isLogin {
+            //退出登录
+            SingleManager.instance.isLogin = false
+            SingleManager.instance.loginInfo = nil
+            sender.setTitle("登录", for: .normal)
+        }
+        else{
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginNav")
+            self.present(loginVC, animated: true, completion: nil)
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! KYUserInfoViewController
+        vc.backResult { 
+            self.tabBarController?.tabBar.isHidden = false
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -86,10 +114,16 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
     }
     /// 数据请求
     func dataRequest() {
-        SJBRequestModel.pull_fetchUserInfoData { (response, status) in
-            if status == 1{
-                self.userInfoModel = response as? KYUserInfoModel
+        if SingleManager.instance.isLogin {
+            SJBRequestModel.pull_fetchUserInfoData { (response, status) in
+                if status == 1{
+                    self.userInfoModel = response as? KYUserInfoModel
+                }
             }
+
+        }
+        else{
+            Toast(content: "未登录")
         }
     }
     
@@ -193,6 +227,10 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                     self.tabBarController?.tabBar.isHidden = false
                 })
             }
+            if indexPath.row == 3 {
+                self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
+            }
+
         }
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

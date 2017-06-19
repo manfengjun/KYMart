@@ -173,6 +173,19 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=User&a=upload_headpic&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
     
+    /// 更改用户信息
+    ///
+    /// - Returns: return value description
+    class func returnChangeUserInfoUrl() -> String {
+        return "\(basePath)m=api&c=User&a=updateUserInfo&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
+    
+    /// 修改密码
+    ///
+    /// - Returns: return value description
+    class func returnChangePasswordUrl() -> String {
+        return "\(basePath)m=api&c=User&a=password&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
     // MARK: ------ 地址管理
     /// 获取地址分级信息
     ///

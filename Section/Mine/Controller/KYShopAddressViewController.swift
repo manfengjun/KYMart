@@ -100,10 +100,30 @@ extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KYShopAddressTVCellIdentifier, for: indexPath) as! KYShopAddressTVCell
-        cell.model = dataArray[indexPath.row]
+        let model = dataArray[indexPath.row]
+        cell.model = model
+        cell.selectResult {
+            SJBRequestModel.push_fetchAddressDelData(params: ["id":String(model.address_id) as AnyObject]) { (response, status) in
+                if status == 1{
+                    self.dataArray.remove(at: indexPath.row)
+                    self.Toast(content: "删除地址成功")
+                    tableView.reloadData()
+                }
+                else
+                {
+                    self.Toast(content: response as! String)
+                }
+            }
+        }
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let addAddressVC = storyboard.instantiateViewController(withIdentifier: "addAddressVC") as! KYAddAddressViewController
+        self.navigationController?.pushViewController(addAddressVC, animated: true)
+        addAddressVC.model = dataArray[indexPath.row]
+        addAddressVC.isEdit = true
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }

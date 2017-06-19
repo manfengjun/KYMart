@@ -14,6 +14,7 @@ extension NSObject{
 class SJBRequest: NSObject {
     class func Get(url:String, completion:@escaping (AnyObject,Int) -> Void) {
         print("Get请求 ------ \(url)")
+        
         Alamofire.request(url).responseJSON { response in
             //            print(response.request ?? "request")  // original URL request
             //            print(response.response ?? "response") // HTTP URL response
@@ -27,8 +28,9 @@ class SJBRequest: NSObject {
                     }
                     else
                     {
-                        if status as! Int == 101{
+                        if status as! Int == -101 || status as! Int == -102{
                             SingleManager.instance.isLogin = false
+                            presentLogin()
                         }
                         else {
                             XHToast.showBottomWithText(responseDic["msg"] as! String)
@@ -64,9 +66,9 @@ class SJBRequest: NSObject {
                     }
                     else
                     {
-                        if status as! Int == 101{
+                        if status as! Int == -101 || status as! Int == -102{
                             SingleManager.instance.isLogin = false
-
+                            presentLogin()
                         }
                         else
                         {
@@ -152,5 +154,9 @@ class SJBRequest: NSObject {
             }
         }
     }
-
+    class func presentLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "loginNav")
+        UIApplication.shared.keyWindow?.rootViewController?.present(loginVC, animated: true, completion: nil)
+    }
 }
