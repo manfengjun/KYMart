@@ -84,6 +84,10 @@ class SJBRequestUrl: NSObject {
     class func returnProductContentUrl(id:Int) -> String {
         return "\(basePath)m=api&c=goods&a=goodsContent&id=\(id)"
     }
+    
+    func returnProductSearchUrl() -> String {
+        return ""
+    }
     // MARK: ------ 购物车
     
     /// 添加购物车
