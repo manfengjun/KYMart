@@ -183,6 +183,34 @@ class SJBRequestUrl: NSObject {
     class func returnChangePasswordUrl() -> String {
         return "\(basePath)m=api&c=User&a=password&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
+    // MARK: ------ 明细
+    
+    /// 明细
+    ///
+    /// - Parameter type: type description
+    /// - Returns: return value description
+    class func returnRecordList(type:Int) -> String {
+        var url = ""
+        switch type {
+        case 1:
+            url = "sell_list"
+            break
+        case 2:
+            url = "bonus_list"
+            break
+        case 3:
+            url = "pay_list"
+            break
+        case 4:
+            url = "withdrawals_list"
+            break
+        default:
+            break
+        }
+        // sell_list 消费明细  bonus_list 分享明细  pay_list 充值记录  withdrawals_list 提现记录
+        return "\(basePath)m=api&c=User&a=\(url)&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+
+    }
     // MARK: ------ 地址管理
     /// 获取地址分级信息
     ///

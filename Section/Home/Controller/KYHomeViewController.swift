@@ -266,23 +266,17 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
             case 0:
                 noneVC.navTitle = "店铺街"
                 self.navigationController?.pushViewController(noneVC, animated: true)
-
                 break
             case 1:
                 noneVC.navTitle = "品牌街"
                 self.navigationController?.pushViewController(noneVC, animated: true)
-
-
                 break
             case 2:
                 noneVC.navTitle = "我的订单"
                 self.navigationController?.pushViewController(noneVC, animated: true)
-
-
                 break
             case 3:
                 self.tabBarController?.selectedIndex = 3
-
                 break
             default:
                 break
