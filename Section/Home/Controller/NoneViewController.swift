@@ -21,6 +21,9 @@ class NoneViewController: BaseViewController {
         super.viewDidLoad()
         setBackButtonInNav()
         view.backgroundColor = UIColor.white
+        SJBRequestModel.pull_fetchRecordList(type: 1) { (response, status) in
+            
+        }
         // Do any additional setup after loading the view.
     }
 

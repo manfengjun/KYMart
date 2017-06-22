@@ -35,6 +35,8 @@ enum ModelType {
     case AddRessList//地址列表
     case DelAddress//删除地址
     
+    case RecordList//明细统计
+    
 }
 class SJBRequestModel: NSObject {
     class func dataToModel(type:ModelType, response:AnyObject, status:Int, completion:(AnyObject,Int)-> Void) {
@@ -413,6 +415,13 @@ class SJBRequestModel: NSObject {
     class func push_fetchAddressDelData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void){
         SJBRequest.Post(url: SJBRequestUrl.returnDelAddressUrl(), params: params) { (response, status) in
             self.dataArrayToModel(type: .DelAddress, response: response, status: status, completion: completion)
+        }
+    }
+
+    // MARK: ------ 明细
+    class func pull_fetchRecordList(type:Int, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnRecordList(type: type)) { (response, status) in
+            self.dataArrayToModel(type: .RecordList, response: response, status: status, completion: completion)
         }
     }
 
