@@ -166,10 +166,13 @@ extension KYHomeViewController {
 }
 // MARK: ------ 轮播图片、响应事件
 extension KYHomeViewController:SDCycleScrollViewDelegate{
+    
+    /// 搜索
+    ///
+    /// - Parameter sender: <#sender description#>
     func searchAction(sender:UITapGestureRecognizer) {
         let searchVC = PYSearchViewController()
         let listVC = KYProductListViewController()
-
         searchVC.didSearchBlock = { (searchViewController,searchBar,searchText) in
             if let text = searchText {
                 listVC.backResult {

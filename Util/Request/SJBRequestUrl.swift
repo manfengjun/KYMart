@@ -184,32 +184,40 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=User&a=password&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
     // MARK: ------ 明细
-    
-    /// 明细
+    /// 消费明细
     ///
-    /// - Parameter type: type description
     /// - Returns: return value description
-    class func returnRecordList(type:Int) -> String {
-        var url = ""
-        switch type {
-        case 1:
-            url = "sell_list"
-            break
-        case 2:
-            url = "bonus_list"
-            break
-        case 3:
-            url = "pay_list"
-            break
-        case 4:
-            url = "withdrawals_list"
-            break
-        default:
-            break
-        }
-        // sell_list 消费明细  bonus_list 分享明细  pay_list 充值记录  withdrawals_list 提现记录
-        return "\(basePath)m=api&c=User&a=\(url)&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
-
+    class func returnSellListUrl() -> String {
+        // sell_list 消费明细
+        return "\(basePath)m=api&c=User&a=sell_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        
+    }
+    
+    /// 分享明细
+    ///
+    /// - Returns: return value description
+    class func returnBonusListUrl() -> String {
+        // bonus_list 分享明细
+        return "\(basePath)m=api&c=User&a=bonus_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        
+    }
+    
+    /// 充值记录
+    ///
+    /// - Returns: return value description
+    class func returnPayListUrl() -> String {
+        // pay_list 充值记录
+        return "\(basePath)m=api&c=User&a=pay_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        
+    }
+    
+    /// 提现记录
+    ///
+    /// - Returns: return value description
+    class func returnWithdrawalsListUrl() -> String {
+        // withdrawals_list 提现记录
+        return "\(basePath)m=api&c=User&a=withdrawals_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        
     }
     // MARK: ------ 地址管理
     /// 获取地址分级信息

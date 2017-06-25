@@ -35,7 +35,10 @@ enum ModelType {
     case AddRessList//地址列表
     case DelAddress//删除地址
     
-    case RecordList//明细统计
+    case SellList//消费明细
+    case BonusList//分享记录
+    case PayList//充值记录
+    case WithdrawalsList//提现记录
     
 }
 class SJBRequestModel: NSObject {
@@ -150,6 +153,14 @@ class SJBRequestModel: NSObject {
             case .AddRessList:
                 for item in response as! NSArray {
                     let temmodel = KYAddressModel.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
+            case .SellList:
+                for item in response as! NSArray {
+                    let temmodel = KYSellListModel.yy_model(with: item as! [AnyHashable : Any])
                     if let model = temmodel {
                         dataArray.add(model)
                     }
@@ -419,11 +430,40 @@ class SJBRequestModel: NSObject {
     }
 
     // MARK: ------ 明细
-    class func pull_fetchRecordList(type:Int, completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnRecordList(type: type)) { (response, status) in
-            self.dataArrayToModel(type: .RecordList, response: response, status: status, completion: completion)
+    
+    /// 消费明细
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchSellListData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+            self.dataArrayToModel(type: .SellList, response: response, status: status, completion: completion)
         }
     }
+    /// 分享记录
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchBonusListData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+            self.dataArrayToModel(type: .BonusList, response: response, status: status, completion: completion)
+        }
+    }
+    /// 充值记录
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchPayListData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+            self.dataArrayToModel(type: .PayList, response: response, status: status, completion: completion)
+        }
+    }
+    /// 提现记录
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchWithdrawalsListData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+            self.dataArrayToModel(type: .WithdrawalsList, response: response, status: status, completion: completion)
+        }
+    }
+
 
 
 }

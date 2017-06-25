@@ -67,6 +67,13 @@
 		BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B74B61EE782FC00322E2C /* KYProductMenuView.swift */; };
 		BF9B74B91EE7830800322E2C /* KYProductMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9B74B81EE7830800322E2C /* KYProductMenuView.xib */; };
 		BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */; };
+		BF9F0B7A1EFF4B9700BA4DEE /* KYSellListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0B791EFF4B9700BA4DEE /* KYSellListViewController.swift */; };
+		BF9F0B7C1EFF4BB800BA4DEE /* KYBonusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0B7B1EFF4BB800BA4DEE /* KYBonusListViewController.swift */; };
+		BF9F0B7E1EFF4BD100BA4DEE /* KYPayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0B7D1EFF4BD100BA4DEE /* KYPayListViewController.swift */; };
+		BF9F0B801EFF4BF200BA4DEE /* KYWithDrawalsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0B7F1EFF4BF200BA4DEE /* KYWithDrawalsListViewController.swift */; };
+		BF9F0B831EFF4C3D00BA4DEE /* KYSellListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0B811EFF4C3D00BA4DEE /* KYSellListTVCell.swift */; };
+		BF9F0B841EFF4C3D00BA4DEE /* KYSellListTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9F0B821EFF4C3D00BA4DEE /* KYSellListTVCell.xib */; };
+		BF9F0B861EFF505100BA4DEE /* KYSellListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F0B851EFF505100BA4DEE /* KYSellListModel.swift */; };
 		BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */; };
 		BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */; };
 		BFB5C8381EEA26F800BFFDE5 /* HXTagCustomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB5C8371EEA26F800BFFDE5 /* HXTagCustomeCell.swift */; };
@@ -253,6 +260,13 @@
 		BF9B74B61EE782FC00322E2C /* KYProductMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductMenuView.swift; sourceTree = "<group>"; };
 		BF9B74B81EE7830800322E2C /* KYProductMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductMenuView.xib; sourceTree = "<group>"; };
 		BF9B74BA1EE7AA6800322E2C /* KYProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailViewController.swift; sourceTree = "<group>"; };
+		BF9F0B791EFF4B9700BA4DEE /* KYSellListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSellListViewController.swift; sourceTree = "<group>"; };
+		BF9F0B7B1EFF4BB800BA4DEE /* KYBonusListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYBonusListViewController.swift; sourceTree = "<group>"; };
+		BF9F0B7D1EFF4BD100BA4DEE /* KYPayListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPayListViewController.swift; sourceTree = "<group>"; };
+		BF9F0B7F1EFF4BF200BA4DEE /* KYWithDrawalsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWithDrawalsListViewController.swift; sourceTree = "<group>"; };
+		BF9F0B811EFF4C3D00BA4DEE /* KYSellListTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSellListTVCell.swift; sourceTree = "<group>"; };
+		BF9F0B821EFF4C3D00BA4DEE /* KYSellListTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYSellListTVCell.xib; sourceTree = "<group>"; };
+		BF9F0B851EFF505100BA4DEE /* KYSellListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSellListModel.swift; sourceTree = "<group>"; };
 		BFA1C2B01EE977840072C04D /* KYPropertyHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPropertyHeadView.swift; sourceTree = "<group>"; };
 		BFA1C2B21EE977950072C04D /* KYPropertyHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYPropertyHeadView.xib; sourceTree = "<group>"; };
 		BFB5C8371EEA26F800BFFDE5 /* HXTagCustomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HXTagCustomeCell.swift; path = TagView/HXTagCustomeCell.swift; sourceTree = "<group>"; };
@@ -635,6 +649,10 @@
 				BFBAB4771EF17C3A0038B95E /* KYShopAddressViewController.swift */,
 				BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */,
 				BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */,
+				BF9F0B791EFF4B9700BA4DEE /* KYSellListViewController.swift */,
+				BF9F0B7B1EFF4BB800BA4DEE /* KYBonusListViewController.swift */,
+				BF9F0B7D1EFF4BD100BA4DEE /* KYPayListViewController.swift */,
+				BF9F0B7F1EFF4BF200BA4DEE /* KYWithDrawalsListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -644,6 +662,7 @@
 			children = (
 				BFBAB4751EF161DA0038B95E /* KYUserInfoModel.swift */,
 				BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */,
+				BF9F0B851EFF505100BA4DEE /* KYSellListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -654,6 +673,8 @@
 				BFE46DF41EF11DDB00F65FED /* KYMineTVCell.swift */,
 				BFBAB4791EF17C5F0038B95E /* KYShopAddressTVCell.swift */,
 				BFBAB47A1EF17C5F0038B95E /* KYShopAddressTVCell.xib */,
+				BF9F0B811EFF4C3D00BA4DEE /* KYSellListTVCell.swift */,
+				BF9F0B821EFF4C3D00BA4DEE /* KYSellListTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -936,10 +957,10 @@
 		BFC017621EDF9AB1005D66B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
 				BF194AD51EF4E8BD001538A9 /* ChooseLocation */,
 				BFEA60381EEBDF9300885737 /* KeychainItemWraper */,
 				BFB6D0AB1EE63C1600F2C61F /* Request */,
-				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1170,6 +1191,7 @@
 				BFB6D0CF1EE6965300F2C61F /* FJLeftMenuTVCell.xib in Resources */,
 				BFB6D0D31EE6965300F2C61F /* FJSectionRowHeadView.xib in Resources */,
 				BFC0173E1EDF9875005D66B0 /* LaunchScreen.storyboard in Resources */,
+				BF9F0B841EFF4C3D00BA4DEE /* KYSellListTVCell.xib in Resources */,
 				BF8903451EE3CBDC004A0FF7 /* KYHomeMenuCVCell.xib in Resources */,
 				BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */,
 				BF173A9D1EF261400031AF06 /* data.plist in Resources */,
@@ -1281,10 +1303,12 @@
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
+				BF9F0B7E1EFF4BD100BA4DEE /* KYPayListViewController.swift in Sources */,
 				BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */,
 				BF194AE51EF4E8BD001538A9 /* ChooseLocationView.m in Sources */,
 				BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */,
 				BFB5C84C1EEA661F00BFFDE5 /* SJBCountDown.swift in Sources */,
+				BF9F0B7C1EFF4BB800BA4DEE /* KYBonusListViewController.swift in Sources */,
 				BFDCB4081EE8F3730040A09B /* HXTagCollectionViewCell.m in Sources */,
 				BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */,
 				BFB6D0E31EE69DD700F2C61F /* KYProductListCVCell.swift in Sources */,
@@ -1292,8 +1316,10 @@
 				BFF05C7B1EEC2A9A00D18D43 /* KYProductContentViewController.swift in Sources */,
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
+				BF9F0B801EFF4BF200BA4DEE /* KYWithDrawalsListViewController.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
+				BF9F0B7A1EFF4B9700BA4DEE /* KYSellListViewController.swift in Sources */,
 				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
 				BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */,
@@ -1307,6 +1333,7 @@
 				BFB6D0D21EE6965300F2C61F /* FJSectionRowHeadView.swift in Sources */,
 				BFF959501EED660300C799CD /* KYCartListModel.swift in Sources */,
 				BFF959581EED833700C799CD /* KYCartFootView.swift in Sources */,
+				BF9F0B831EFF4C3D00BA4DEE /* KYSellListTVCell.swift in Sources */,
 				BFEA603E1EEBDF9300885737 /* SSKeychainQuery.m in Sources */,
 				BF8903581EE41D47004A0FF7 /* KYHomeSallHeadView.swift in Sources */,
 				BFE46DF31EF11C9300F65FED /* KYMineViewController.swift in Sources */,
@@ -1325,6 +1352,7 @@
 				BF194AE21EF4E8BD001538A9 /* AddressTableViewCell.m in Sources */,
 				BF89030B1EE3A1EC004A0FF7 /* UIView+SDExtension.m in Sources */,
 				BF194AF41EF4E8C4001538A9 /* FMDatabase.m in Sources */,
+				BF9F0B861EFF505100BA4DEE /* KYSellListModel.swift in Sources */,
 				BFB5C84A1EEA625E00BFFDE5 /* SJBResetPassViewController.swift in Sources */,
 				BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */,
 				BF3DA80E1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift in Sources */,
