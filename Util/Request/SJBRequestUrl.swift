@@ -216,7 +216,7 @@ class SJBRequestUrl: NSObject {
     /// - Returns: return value description
     class func returnWithdrawalsListUrl() -> String {
         // withdrawals_list 提现记录
-        return "\(basePath)m=api&c=User&a=withdrawals_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        return "\(basePath)m=api&c=User&a=withdraw_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
         
     }
     // MARK: ------ 地址管理
