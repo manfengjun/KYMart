@@ -189,11 +189,11 @@ class SJBRequestUrl: NSObject {
     /// - Returns: return value description
     class func returnSellListUrl() -> String {
         // sell_list 消费明细
-        return "\(basePath)m=api&c=User&a=sell_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        return "\(basePath)m=api&c=User&a=money_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
         
     }
     
-    /// 分享明细
+    /// 奖金明细
     ///
     /// - Returns: return value description
     class func returnBonusListUrl() -> String {
@@ -202,23 +202,23 @@ class SJBRequestUrl: NSObject {
         
     }
     
-    /// 充值记录
-    ///
-    /// - Returns: return value description
-    class func returnPayListUrl() -> String {
-        // pay_list 充值记录
-        return "\(basePath)m=api&c=User&a=pay_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
-        
-    }
-    
-    /// 提现记录
-    ///
-    /// - Returns: return value description
-    class func returnWithdrawalsListUrl() -> String {
-        // withdrawals_list 提现记录
-        return "\(basePath)m=api&c=User&a=withdraw_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
-        
-    }
+//    /// 充值记录
+//    ///
+//    /// - Returns: return value description
+//    class func returnPayListUrl() -> String {
+//        // pay_list 充值记录
+//        return "\(basePath)m=api&c=User&a=pay_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+//        
+//    }
+//    
+//    /// 提现记录
+//    ///
+//    /// - Returns: return value description
+//    class func returnWithdrawalsListUrl() -> String {
+//        // withdrawals_list 提现记录
+//        return "\(basePath)m=api&c=User&a=withdraw_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+//        
+//    }
     // MARK: ------ 地址管理
     /// 获取地址分级信息
     ///

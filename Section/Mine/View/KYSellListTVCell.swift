@@ -13,16 +13,30 @@ class KYSellListTVCell: UITableViewCell {
     @IBOutlet weak var contentL: UILabel!
     @IBOutlet weak var moneyL: UILabel!
     @IBOutlet weak var timeL: UILabel!
+    @IBOutlet weak var circleView: UIView!
     
-    var model:KYSellListModel?{
+    var sellModel:KYSellListModel?{
         didSet {
-            if let text = model?.desc {
+            if let text = sellModel?.desc {
                 contentL.text = text
             }
-            if let text = model?.user_money {
+            if let text = sellModel?.user_money {
                 moneyL.text = text
             }
-            if let text = model?.change_time {
+            if let text = sellModel?.change_time {
+                timeL.text = String(text).timeStampToString()
+            }
+        }
+    }
+    var bonusModel:KYBonusListModel?{
+        didSet {
+            if let text = bonusModel?.type_text {
+                contentL.text = text
+            }
+            if let text = bonusModel?.amount {
+                moneyL.text = text
+            }
+            if let text = bonusModel?.create_time {
                 timeL.text = String(text).timeStampToString()
             }
         }
@@ -30,6 +44,8 @@ class KYSellListTVCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        circleView.layer.masksToBounds = true
+        circleView.layer.cornerRadius = 4
         // Initialization code
     }
 

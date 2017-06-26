@@ -166,6 +166,15 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
+            case .BonusList:
+                for item in response as! NSArray {
+                    let temmodel = KYBonusListModel.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
+
             default:
                 break
             }
@@ -439,30 +448,30 @@ class SJBRequestModel: NSObject {
             self.dataArrayToModel(type: .SellList, response: response, status: status, completion: completion)
         }
     }
-    /// 分享记录
+    /// 奖金明细
     ///
     /// - Parameter completion: completion description
     class func pull_fetchBonusListData(completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+        SJBRequest.Get(url: SJBRequestUrl.returnBonusListUrl()) { (response, status) in
             self.dataArrayToModel(type: .BonusList, response: response, status: status, completion: completion)
         }
     }
-    /// 充值记录
-    ///
-    /// - Parameter completion: completion description
-    class func pull_fetchPayListData(completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
-            self.dataArrayToModel(type: .PayList, response: response, status: status, completion: completion)
-        }
-    }
-    /// 提现记录
-    ///
-    /// - Parameter completion: completion description
-    class func pull_fetchWithdrawalsListData(completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
-            self.dataArrayToModel(type: .WithdrawalsList, response: response, status: status, completion: completion)
-        }
-    }
+//    /// 充值记录
+//    ///
+//    /// - Parameter completion: completion description
+//    class func pull_fetchPayListData(completion:@escaping (AnyObject,Int) -> Void) {
+//        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+//            self.dataArrayToModel(type: .PayList, response: response, status: status, completion: completion)
+//        }
+//    }
+//    /// 提现记录
+//    ///
+//    /// - Parameter completion: completion description
+//    class func pull_fetchWithdrawalsListData(completion:@escaping (AnyObject,Int) -> Void) {
+//        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+//            self.dataArrayToModel(type: .WithdrawalsList, response: response, status: status, completion: completion)
+//        }
+//    }
 
 
 

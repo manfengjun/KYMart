@@ -18,6 +18,9 @@ class KYMineViewController: BaseViewController {
     @IBOutlet weak var recommendL: UILabel!
     @IBOutlet weak var usermoneyL: UILabel!
     @IBOutlet weak var bonusL: UILabel!
+    @IBOutlet weak var userInfoBtn: UIButton!
+    @IBOutlet weak var userTypeL: UILabel!
+    
     var userInfoModel:KYUserInfoModel?{
         didSet {
             dataMenu()
@@ -38,7 +41,18 @@ class KYMineViewController: BaseViewController {
             if let text = userInfoModel?.user_money {
                 usermoneyL.text = "¥\(text)"
             }
-
+            if let text = userInfoModel?.user_id {
+                if let operatorStatus = userInfoModel?.operator_status{
+                    recommendL.text = "会员ID:\(text)（\(operatorStatus == 0 ? "" : "运营商")）"
+                }
+                else
+                {
+                    recommendL.text = "会员ID:\(text)"
+                }
+            }
+            if let text = userInfoModel?.sell_status {
+                userTypeL.text = (text == 0 ? "预备会员" : "开心果")
+            }
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -64,11 +78,13 @@ class KYMineViewController: BaseViewController {
         portraitBgV.layer.cornerRadius = SCREEN_WIDTH/12
         portraitIV.layer.masksToBounds = true
         portraitIV.layer.cornerRadius = (SCREEN_WIDTH*1/6 - 6)/2
+        userInfoBtn.layer.masksToBounds = true
+        userInfoBtn.layer.cornerRadius = 25/2
         headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 )
         tableView.tableHeaderView = headView
         navigationController?.navigationBar.isTranslucent = true
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
-        setRightButtonInNav(title: SingleManager.instance.isLogin ? "退出登录" : "登录", action: #selector(isLoginAction(sender:)), size:CGSize(width: 80, height: 24))
+//        setRightButtonInNav(title: SingleManager.instance.isLogin ? "退出登录" : "登录", action: #selector(isLoginAction(sender:)), size:CGSize(width: 80, height: 24))
     }
     func isLoginAction(sender: UIButton) {
         if SingleManager.instance.isLogin {
@@ -127,6 +143,14 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
         }
     }
     
+    /// 个人资料
+    ///
+    /// - Parameter sender: sender description
+    @IBAction func setUserInfoAction(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
+
+    }
+
     /// 修改头像
     ///
     /// - Parameter sender: sender description
@@ -219,28 +243,34 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
         return view
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 1 {
+        if indexPath.section == 0 {
             let noneVC = NoneViewController()
+            noneVC.navTitle = "全部订单"
+            self.navigationController?.pushViewController(noneVC, animated: true)
+        }
+        if indexPath.section == 1 {
             switch indexPath.row {
             case 0:
-                noneVC.navTitle = "消费记录"
+                let sellListVC = KYSellListViewController()
+                sellListVC.navTitle = "我的钱包"
+                sellListVC.bonusMoney = userInfoModel?.bonus
+                self.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(sellListVC, animated: true)
+                self.hidesBottomBarWhenPushed = false
+
                 break
             case 1:
-                noneVC.navTitle = "充值明细"
-                
-                break
-            case 2:
-                noneVC.navTitle = "奖金记录"
-                
-                break
-            case 3:
-                 noneVC.navTitle = "提现记录"
+                let bonusListVC = KYBonusListViewController()
+                bonusListVC.navTitle = "奖金明细"
+                bonusListVC.userMoney = userInfoModel?.user_money
+                self.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(bonusListVC, animated: true)
+                self.hidesBottomBarWhenPushed = false
                 
                 break
             default:
                 break
             }
-            self.navigationController?.pushViewController(noneVC, animated: true)
         }
         else if indexPath.section == 2 {
             if indexPath.row == 0 {

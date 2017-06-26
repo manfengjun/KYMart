@@ -9,7 +9,20 @@
 import UIKit
 fileprivate let KYSellListTVCellIdentifier = "kYSellListTVCell"
 
-class KYSellListViewController: UIViewController {
+class KYSellListViewController: BaseViewController {
+    var bonusMoney:String?{
+        didSet {
+            headView.moneyL.text = bonusMoney
+        }
+    }
+    
+    var navTitle:String?{
+        
+        didSet {
+            self.navigationItem.title = navTitle
+        }
+    }
+
     /// 列表
     fileprivate lazy var tableView : UITableView = {
         let tableView = UITableView(frame: self.view.bounds, style: .plain)
@@ -19,19 +32,26 @@ class KYSellListViewController: UIViewController {
         tableView.backgroundColor = UIColor.white
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableHeaderView = self.headView
         return tableView
     }()
-    
+    fileprivate lazy var headView:KYMoneyManagerView = {
+        let headView = KYMoneyManagerView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 100))
+        return headView
+    }()
     /// 数据源
     var dataArray:[KYSellListModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         // Do any additional setup after loading the view.
     }
     func setupUI() {
         view.addSubview(tableView)
+        setBackButtonInNav()
+        view.backgroundColor = UIColor.white
+        dataRequest()
     }
     func dataRequest(){
         SJBRequestModel.pull_fetchSellListData { (response, status) in
@@ -68,7 +88,13 @@ extension KYSellListViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KYSellListTVCellIdentifier, for: indexPath) as! KYSellListTVCell
         let model = dataArray[indexPath.row]
-        cell.model = model
+        cell.sellModel = model
+        if indexPath.row == 0 {
+            cell.circleView.backgroundColor = BAR_TINTCOLOR
+        }
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 }
