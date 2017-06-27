@@ -43,7 +43,14 @@ class KYMineViewController: BaseViewController {
             }
             if let text = userInfoModel?.user_id {
                 if let operatorStatus = userInfoModel?.operator_status{
-                    recommendL.text = "会员ID:\(text)（\(operatorStatus == 0 ? "" : "运营商")）"
+                    if operatorStatus == 0 {
+                        recommendL.text = "会员ID:\(text)"
+                    }
+                    else
+                    {
+                        recommendL.text = "会员ID:\(text)（运营商）"
+
+                    }
                 }
                 else
                 {
@@ -86,19 +93,7 @@ class KYMineViewController: BaseViewController {
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
 //        setRightButtonInNav(title: SingleManager.instance.isLogin ? "退出登录" : "登录", action: #selector(isLoginAction(sender:)), size:CGSize(width: 80, height: 24))
     }
-    func isLoginAction(sender: UIButton) {
-        if SingleManager.instance.isLogin {
-            //退出登录
-            SingleManager.instance.isLogin = false
-            SingleManager.instance.loginInfo = nil
-            sender.setTitle("登录", for: .normal)
-        }
-        else{
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginNav")
-            self.present(loginVC, animated: true, completion: nil)
-        }
-    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! KYUserInfoViewController
         vc.backResult { 
@@ -196,27 +191,32 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
 extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         if let dic = dataDic {
-            return dic.allKeys.count
+            return dic.allKeys.count + 1
         }
         return 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let dic = dataDic {
-            if let array = dic["\(section)"]{
-                return (array as! [NSDictionary]).count
+            if section == dic.allKeys.count {
+                return 1
+            }
+            else {
+                if let array = dic["\(section)"]{
+                    return (array as! [NSDictionary]).count
+                }
             }
         }
         return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kYMineTVCell", for: indexPath) as! KYMineTVCell
-//        cell.titleL.textColor = UIColor.hexStringColor(hex: "#333333")
-//
-//        if indexPath.section == 0 {
-//            cell.titleL.textColor = BAR_TINTCOLOR
-//        }
-        if let dic = dataDic {
-            if let array = dic["\(indexPath.section)"]{
+        if indexPath.section == dataDic?.allKeys.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "kYMineOtherTVCell", for: indexPath) as! KYMineOtherTVCell
+            return cell
+        }
+        else
+        {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "kYMineTVCell", for: indexPath) as! KYMineTVCell
+            if let array = dataDic?["\(indexPath.section)"]{
                 let dic = (array as! [NSDictionary])[indexPath.row]
                 if let text = dic["image"] {
                     cell.cellIV.image = UIImage(named:text as! String)
@@ -225,8 +225,8 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                     cell.titleL.text = text as? String
                 }
             }
+            return cell
         }
-        return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
@@ -235,6 +235,9 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
         return 0.01
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == dataDic?.allKeys.count {
+            return 20
+        }
         return 10
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -284,6 +287,13 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
             }
 
+        }
+        else if indexPath.section == dataDic?.allKeys.count
+        {
+            //退出登录
+            SingleManager.instance.isLogin = false
+            SingleManager.instance.loginInfo = nil
+            self.tabBarController?.selectedIndex = 0
         }
         
     }

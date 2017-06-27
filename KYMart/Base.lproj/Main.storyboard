@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="632"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXc-Qw-bXJ" id="xOd-d7-ggf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="631.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="632"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wg3-Zf-hGA">
@@ -687,6 +687,28 @@
                                             <outlet property="titleL" destination="k8E-Bx-O2U" id="A2e-eE-bIv"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kYMineOtherTVCell" rowHeight="75" id="mea-s6-9RV" customClass="KYMineOtherTVCell" customModule="KYMart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="265" width="375" height="75"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mea-s6-9RV" id="98g-H7-mdy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="退出登录" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBR-8u-knC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="VBR-8u-knC" secondAttribute="bottom" id="5nz-9c-Qb0"/>
+                                                <constraint firstAttribute="trailing" secondItem="VBR-8u-knC" secondAttribute="trailing" id="lz3-pD-cfe"/>
+                                                <constraint firstItem="VBR-8u-knC" firstAttribute="leading" secondItem="98g-H7-mdy" secondAttribute="leading" id="mrB-C3-kOq"/>
+                                                <constraint firstItem="VBR-8u-knC" firstAttribute="top" secondItem="98g-H7-mdy" secondAttribute="top" id="vBC-xf-QFM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="MDf-Pi-zsd" id="ajm-Vy-zhs"/>
@@ -881,7 +903,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1612" y="1238"/>
+            <point key="canvasLocation" x="1612" y="1237.3313343328336"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="381-Aj-OlV">
