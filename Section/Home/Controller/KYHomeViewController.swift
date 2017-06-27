@@ -169,7 +169,7 @@ extension KYHomeViewController:SDCycleScrollViewDelegate{
     
     /// 搜索
     ///
-    /// - Parameter sender: <#sender description#>
+    /// - Parameter sender: sender description
     func searchAction(sender:UITapGestureRecognizer) {
         let searchVC = PYSearchViewController()
         let listVC = KYProductListViewController()
@@ -279,7 +279,21 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                 self.navigationController?.pushViewController(noneVC, animated: true)
                 break
             case 3:
-                self.tabBarController?.selectedIndex = 3
+                if SingleManager.instance.isLogin {
+                    self.tabBarController?.selectedIndex = 3
+                }
+                else{
+                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    let loginNav = storyboard.instantiateViewController(withIdentifier: "loginNav") as! BaseNavViewController
+                    let loginVC = loginNav.viewControllers[0] as! SJBLoginViewController
+                    loginVC.loginResult({ (isLogin) in
+                        if isLogin {
+                            self.tabBarController?.selectedIndex = 3
+                        }
+                    })
+                    loginVC.hidesBottomBarWhenPushed = true
+                    self.present(loginNav, animated: true, completion: nil)
+                }
                 break
             default:
                 break
