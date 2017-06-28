@@ -256,7 +256,7 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
             case 0:
                 let sellListVC = KYSellListViewController()
                 sellListVC.navTitle = "我的钱包"
-                sellListVC.bonusMoney = userInfoModel?.bonus
+                sellListVC.bonusMoney = userInfoModel?.user_money
                 self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(sellListVC, animated: true)
                 self.hidesBottomBarWhenPushed = false
@@ -265,7 +265,7 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
             case 1:
                 let bonusListVC = KYBonusListViewController()
                 bonusListVC.navTitle = "奖金明细"
-                bonusListVC.userMoney = userInfoModel?.user_money
+                bonusListVC.userMoney = userInfoModel?.bonus
                 self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(bonusListVC, animated: true)
                 self.hidesBottomBarWhenPushed = false
