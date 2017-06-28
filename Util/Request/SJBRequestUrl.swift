@@ -7,12 +7,12 @@
 //
 
 import UIKit
-//let basePath = "http://test.kymart.cn/index.php?"
-//let baseHref = "http://test.kymart.cn"
-//let imgPath = "http://test.kymart.cn"
-let basePath = "https://kymart.cn/index.php?"
-let baseHref = "https://kymart.cn"
-let imgPath = "https://kymart.cn"
+let basePath = "http://test.kymart.cn/index.php?"
+let baseHref = "http://test.kymart.cn"
+let imgPath = "http://test.kymart.cn"
+//let basePath = "https://kymart.cn/index.php?"
+//let baseHref = "https://kymart.cn"
+//let imgPath = "https://kymart.cn"
 class SJBRequestUrl: NSObject {
     
     /// access_token
@@ -189,18 +189,18 @@ class SJBRequestUrl: NSObject {
     /// 消费明细
     ///
     /// - Returns: return value description
-    class func returnSellListUrl() -> String {
+    class func returnSellListUrl(page:Int) -> String {
         // sell_list 消费明细
-        return "\(basePath)m=api&c=User&a=money_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        return "\(basePath)m=api&c=User&a=money_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())&p=\(page)"
         
     }
     
     /// 奖金明细
     ///
     /// - Returns: return value description
-    class func returnBonusListUrl() -> String {
+    class func returnBonusListUrl(page:Int) -> String {
         // bonus_list 分享明细
-        return "\(basePath)m=api&c=User&a=bonus_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        return "\(basePath)m=api&c=User&a=bonus_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())&p=\(page)"
         
     }
     

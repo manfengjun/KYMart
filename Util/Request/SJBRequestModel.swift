@@ -443,16 +443,16 @@ class SJBRequestModel: NSObject {
     /// 消费明细
     ///
     /// - Parameter completion: completion description
-    class func pull_fetchSellListData(completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
+    class func pull_fetchSellListData(page:Int,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl(page: page)) { (response, status) in
             self.dataArrayToModel(type: .SellList, response: response, status: status, completion: completion)
         }
     }
     /// 奖金明细
     ///
     /// - Parameter completion: completion description
-    class func pull_fetchBonusListData(completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnBonusListUrl()) { (response, status) in
+    class func pull_fetchBonusListData(page:Int,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnBonusListUrl(page: page)) { (response, status) in
             self.dataArrayToModel(type: .BonusList, response: response, status: status, completion: completion)
         }
     }
