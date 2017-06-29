@@ -271,6 +271,14 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 self.hidesBottomBarWhenPushed = false
                 
                 break
+            case 2:
+                let withdrawListVC = KYWithdrawListViewController()
+                withdrawListVC.navTitle = "申请提现"
+                self.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(withdrawListVC, animated: true)
+                self.hidesBottomBarWhenPushed = false
+                
+                break
             default:
                 break
             }
