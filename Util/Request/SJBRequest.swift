@@ -16,10 +16,6 @@ class SJBRequest: NSObject {
         print("Get请求 ------ \(url)")
         
         Alamofire.request(url).responseJSON { response in
-            //            print(response.request ?? "request")  // original URL request
-            //            print(response.response ?? "response") // HTTP URL response
-            //            print(response.data ?? "data")     // server data
-            //            print(response.result)   // result of response serialization
             if let JSON = response.result.value {
                 let responseDic = JSON as! NSDictionary
                 if let status = responseDic["status"] {
@@ -35,10 +31,43 @@ class SJBRequest: NSObject {
                         else {
                             XHToast.showBottomWithText(responseDic["msg"] as! String)
                             completion(responseDic["msg"] as AnyObject,status as! Int)
-
                         }
                     }
-
+                }
+                else
+                {
+                    XHToast.showBottomWithText("请求失败！",duration:1)
+                    completion("error" as AnyObject,500)
+                }
+            }
+            else
+            {
+                XHToast.showBottomWithText("请求失败！",duration:1)
+                completion("error" as AnyObject,500)
+            }
+        }
+    }
+    class func GetAll(url:String, completion:@escaping (AnyObject,Int) -> Void) {
+        print("Get请求 ------ \(url)")
+        
+        Alamofire.request(url).responseJSON { response in
+            if let JSON = response.result.value {
+                let responseDic = JSON as! NSDictionary
+                if let status = responseDic["status"] {
+                    if status as! Int == 1 {
+                        completion(responseDic as AnyObject,status as! Int)
+                    }
+                    else
+                    {
+                        if status as! Int == -101 || status as! Int == -102{
+                            SingleManager.instance.isLogin = false
+                            presentLogin()
+                        }
+                        else {
+                            XHToast.showBottomWithText(responseDic["msg"] as! String)
+                            completion(responseDic["msg"] as AnyObject,status as! Int)
+                        }
+                    }
                 }
                 else
                 {

@@ -204,6 +204,15 @@ class SJBRequestUrl: NSObject {
         
     }
     
+    /// 提现记录
+    ///
+    /// - Returns: return value description
+    class func returnWithdrawListUrl(page:Int) -> String {
+        return "\(basePath)m=api&c=User&a=withdrawals_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())&p=\(page)"
+        
+    }
+
+    
 //    /// 充值记录
 //    ///
 //    /// - Returns: return value description

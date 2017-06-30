@@ -30,7 +30,7 @@ class KYWithdrawListViewController: BaseViewController {
         return tableView
     }()
     fileprivate lazy var tableHeadView : KYWithdrawHeadView = {
-        let tableHeadView = KYWithdrawHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 281))
+        let tableHeadView = KYWithdrawHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 336))
         return tableHeadView
     }()
     /// 下拉刷新
@@ -49,6 +49,11 @@ class KYWithdrawListViewController: BaseViewController {
     var page = 1
     
     /// 数据源
+    var info:Info?{
+        didSet {
+            tableHeadView.info = info
+        }
+    }
     fileprivate lazy var dataArray:NSMutableArray = {
         let dataArray = NSMutableArray()
         return dataArray
@@ -63,8 +68,9 @@ class KYWithdrawListViewController: BaseViewController {
         view.addSubview(tableView)
         setBackButtonInNav()
         view.backgroundColor = UIColor.white
-        tableView.mj_header = header
+//        tableView.mj_header = header
         tableView.mj_footer = footer
+        dataRequest()
     }
     // 下拉加载
     func headerRefresh() {
@@ -79,15 +85,17 @@ class KYWithdrawListViewController: BaseViewController {
     }
     
     func dataRequest(){
-        SJBRequestModel.pull_fetchSellListData(page: page) { (response, status) in
-            self.tableView.mj_header.endRefreshing()
+        SJBRequestModel.pull_fetchWithdrawListData(page: page) { (response, status) in
+//            self.tableView.mj_header.endRefreshing()
             if status == 1 {
+                let model = response as! KYWithdrawListModel
+                self.info = model.info
                 if self.page == 1{
                     self.dataArray.removeAllObjects()
                 }
                 else
                 {
-                    if response.count == 0{
+                    if model.result.count == 0{
                         XHToast.showBottomWithText("没有更多数据")
                         self.page -= 1
                         self.tableView.mj_footer.endRefreshing()
@@ -100,8 +108,8 @@ class KYWithdrawListViewController: BaseViewController {
                 }
                 if self.dataArray.count > 0{
                     //去重
-                    for item in response as! [KYSellListModel] {
-                        let predicate = NSPredicate(format: "log_id = %@", String(item.log_id))
+                    for item in model.result {
+                        let predicate = NSPredicate(format: "id = %@", String(item.id))
                         let result = self.dataArray.filtered(using: predicate)
                         if result.count <= 0{
                             self.dataArray.add(item)
@@ -111,7 +119,7 @@ class KYWithdrawListViewController: BaseViewController {
                 }
                 else
                 {
-                    self.dataArray.addObjects(from: response as! [Any])
+                    self.dataArray.addObjects(from: model.result!)
                 }
                 self.tableView.reloadData()
             }
@@ -142,12 +150,15 @@ extension KYWithdrawListViewController:UITableViewDelegate,UITableViewDataSource
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 1
         }
-        return 20
+        return dataArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: KYWithDrawListTVCellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: KYWithDrawListTVCellIdentifier, for: indexPath) as! KYWithDrawListTVCell
+        if indexPath.section == 1 {
+            cell.result = dataArray[indexPath.row] as? Result
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

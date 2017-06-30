@@ -109,7 +109,12 @@ class SJBRequestModel: NSObject {
                     completion(model,status)
                 }
                 break
-
+            case .WithdrawalsList:
+                let temmodel = KYWithdrawListModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
             default:
                 break
             }
@@ -456,6 +461,18 @@ class SJBRequestModel: NSObject {
             self.dataArrayToModel(type: .BonusList, response: response, status: status, completion: completion)
         }
     }
+    
+    /// 提现记录
+    ///
+    /// - Parameters:
+    ///   - page: page description
+    ///   - completion: completion description
+    class func pull_fetchWithdrawListData(page:Int,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.GetAll(url: SJBRequestUrl.returnWithdrawListUrl(page: page)) { (response, status) in
+            self.dataToModel(type: .WithdrawalsList, response: response, status: status, completion: completion)
+        }
+    }
+
 //    /// 充值记录
 //    ///
 //    /// - Parameter completion: completion description

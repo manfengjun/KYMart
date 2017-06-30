@@ -26,10 +26,13 @@ extension String {
      */
     func timeStampToString() -> String {
         
+        let dfmatter = DateFormatter()
+        dfmatter.dateFormat="yyyy-MM-dd"
         let string = NSString(string: self)
         let timeSta: TimeInterval = string.doubleValue
         let date = Date(timeIntervalSince1970: timeSta)
-        return date.description
+        let dateStr = dfmatter.string(from: date)
+        return dateStr
     }
     /// md5
     ///
