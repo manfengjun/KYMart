@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="632"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXc-Qw-bXJ" id="xOd-d7-ggf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="632"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="631.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wg3-Zf-hGA">
@@ -688,7 +688,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kYMineOtherTVCell" rowHeight="75" id="mea-s6-9RV" customClass="KYMineOtherTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="265" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="264.5" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mea-s6-9RV" id="98g-H7-mdy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
@@ -740,6 +740,7 @@
                         <segue destination="us2-jm-dcT" kind="show" id="ZWr-hR-e1U"/>
                         <segue destination="e4x-3p-sU8" kind="show" id="23B-S5-DPO"/>
                         <segue destination="H5C-YD-OzX" kind="show" identifier="M_setting_SegueID" id="leY-ft-Oe6"/>
+                        <segue destination="9pD-kN-T4R" kind="show" identifier="M_shareQrCode_SegudID" id="8U0-3d-I8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkT-PT-QfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1288,7 +1289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdj-fU-Jnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="2011"/>
+            <point key="canvasLocation" x="3524" y="2051"/>
         </scene>
         <!--Add Address View Controller-->
         <scene sceneID="RYi-Hx-pu6">
@@ -1786,7 +1787,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1141.5999999999999" y="1983.9580209895055"/>
+            <point key="canvasLocation" x="1271" y="2011"/>
         </scene>
         <!--Reset Pass View Controller-->
         <scene sceneID="rs4-jJ-T6w">
@@ -1972,7 +1973,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnR-54-5E6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="2011"/>
+            <point key="canvasLocation" x="1945" y="2011"/>
+        </scene>
+        <!--Qr Code View Controller-->
+        <scene sceneID="iXY-V4-cRu">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="9pD-kN-T4R" customClass="KYQrCodeViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fl5-Ub-Zf8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Twy-cn-a6U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HbP-cH-PED">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="08q-bw-TWs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="08q-bw-TWs" secondAttribute="trailing" id="5CM-iG-dkM"/>
+                            <constraint firstItem="Twy-cn-a6U" firstAttribute="top" secondItem="08q-bw-TWs" secondAttribute="bottom" id="GG8-wa-5Id"/>
+                            <constraint firstItem="08q-bw-TWs" firstAttribute="top" secondItem="HbP-cH-PED" secondAttribute="top" id="fZa-k3-9Jf"/>
+                            <constraint firstItem="08q-bw-TWs" firstAttribute="leading" secondItem="HbP-cH-PED" secondAttribute="leading" id="t1F-8a-nLG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="qrCodeIV" destination="08q-bw-TWs" id="qcG-6d-WL5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBb-ai-toZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2585" y="571"/>
         </scene>
         <!--Base Nav View Controller-->
         <scene sceneID="Un4-Oc-F7Q">

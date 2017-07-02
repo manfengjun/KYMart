@@ -212,24 +212,23 @@ class SJBRequestUrl: NSObject {
         
     }
 
+    /// 提现处理
+    ///
+    /// - Returns: return value description
+    class func returnWithdrawalsUrl() -> String {
+        return "\(basePath)m=api&c=User&a=withdrawals&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+        
+    }
+
+    // MARK: ------ 分享二维码
+    /// 二维码
+    ///
+    /// - Returns: return value description
+    class func returnQrCodeUrl() -> String {
+        return "\(basePath)m=api&c=User&a=qr_code&token=\(access_token())"
+        
+    }
     
-//    /// 充值记录
-//    ///
-//    /// - Returns: return value description
-//    class func returnPayListUrl() -> String {
-//        // pay_list 充值记录
-//        return "\(basePath)m=api&c=User&a=pay_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
-//        
-//    }
-//    
-//    /// 提现记录
-//    ///
-//    /// - Returns: return value description
-//    class func returnWithdrawalsListUrl() -> String {
-//        // withdrawals_list 提现记录
-//        return "\(basePath)m=api&c=User&a=withdraw_list&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
-//        
-//    }
     // MARK: ------ 地址管理
     /// 获取地址分级信息
     ///

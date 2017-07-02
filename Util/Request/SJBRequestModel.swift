@@ -39,7 +39,10 @@ enum ModelType {
     case BonusList//分享记录
     case PayList//充值记录
     case WithdrawalsList//提现记录
+    case Withdrawals//提现记录
     
+    case QrCode//二维码
+
 }
 class SJBRequestModel: NSObject {
     class func dataToModel(type:ModelType, response:AnyObject, status:Int, completion:(AnyObject,Int)-> Void) {
@@ -115,6 +118,13 @@ class SJBRequestModel: NSObject {
                     completion(model,status)
                 }
                 break
+            case .Withdrawals:
+                completion(response,status)
+                break
+            case .QrCode:
+                completion(response,status)
+                break
+
             default:
                 break
             }
@@ -472,24 +482,26 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .WithdrawalsList, response: response, status: status, completion: completion)
         }
     }
-
-//    /// 充值记录
-//    ///
-//    /// - Parameter completion: completion description
-//    class func pull_fetchPayListData(completion:@escaping (AnyObject,Int) -> Void) {
-//        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
-//            self.dataArrayToModel(type: .PayList, response: response, status: status, completion: completion)
-//        }
-//    }
-//    /// 提现记录
-//    ///
-//    /// - Parameter completion: completion description
-//    class func pull_fetchWithdrawalsListData(completion:@escaping (AnyObject,Int) -> Void) {
-//        SJBRequest.Get(url: SJBRequestUrl.returnSellListUrl()) { (response, status) in
-//            self.dataArrayToModel(type: .WithdrawalsList, response: response, status: status, completion: completion)
-//        }
-//    }
+    /// 提现处理
+    ///
+    /// - Parameters:
+    ///   - page: page description
+    ///   - completion: completion description
+    class func push_fetchWithdrawalsData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnWithdrawalsUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .Withdrawals, response: response, status: status, completion: completion)
+        }
+    }
 
 
+    // MARK: ------ 二维码
 
+    /// 分享二维码
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchQrCodeData(completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.GetAll(url: SJBRequestUrl.returnQrCodeUrl()) { (response, status) in
+            self.dataToModel(type: .QrCode, response: response, status: status, completion: completion)
+        }
+    }
 }

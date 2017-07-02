@@ -23,4 +23,7 @@
 #import <STPickerView/STPickerView.h>
 #import "ChooseLocationView.h"
 #import "CitiesDataTool.h"
+//验证码
+#import "PooCodeView.h"
+
 

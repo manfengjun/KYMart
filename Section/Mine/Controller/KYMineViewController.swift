@@ -95,10 +95,13 @@ class KYMineViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! KYUserInfoViewController
-        vc.backResult { 
-            self.tabBarController?.tabBar.isHidden = false
+        if segue.identifier == "M_setting_SegueID" {
+            let vc = segue.destination as! KYUserInfoViewController
+            vc.backResult {
+                self.tabBarController?.tabBar.isHidden = false
+            }
         }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -290,6 +293,9 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 shopAddressVC.backResult({ 
                     self.tabBarController?.tabBar.isHidden = false
                 })
+            }
+            if indexPath.row == 2 {
+                self.performSegue(withIdentifier: "M_shareQrCode_SegudID", sender: "")
             }
             if indexPath.row == 3 {
                 self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")

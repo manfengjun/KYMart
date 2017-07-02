@@ -16,6 +16,8 @@
                 <outlet property="bankCardT" destination="fsG-45-OTe" id="5m6-JS-vsq"/>
                 <outlet property="bankNameT" destination="YGf-GJ-c1p" id="cmW-QO-QEI"/>
                 <outlet property="bonusBtn" destination="Lu5-2V-ThR" id="DIk-Gt-XZP"/>
+                <outlet property="codeBgView" destination="OQy-X1-O4M" id="rpg-tV-J96"/>
+                <outlet property="codeT" destination="FnS-CV-8Xn" id="bHW-vL-n0a"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="be7-xd-qCE"/>
                 <outlet property="moneyT" destination="4gE-HI-57o" id="53o-tK-71z"/>
                 <outlet property="realNameT" destination="hMX-Z0-V3s" id="Fud-Lj-73S"/>
@@ -103,7 +105,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入验证码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FnS-CV-8Xn">
-                    <rect key="frame" x="125" y="234" width="94" height="25"/>
+                    <rect key="frame" x="125" y="234" width="99" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="OtR-UQ-vTp"/>
                     </constraints>
@@ -112,11 +114,11 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQy-X1-O4M">
-                    <rect key="frame" x="249" y="234" width="60" height="25"/>
+                    <rect key="frame" x="239" y="234" width="70" height="25"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="uOR-Sk-23z"/>
-                        <constraint firstAttribute="width" constant="60" id="xDM-Ab-D0M"/>
+                        <constraint firstAttribute="width" constant="70" id="xDM-Ab-D0M"/>
                     </constraints>
                 </view>
                 <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-Ql-z6H">
@@ -243,7 +245,7 @@
                 <constraint firstItem="o8J-cE-dwt" firstAttribute="width" secondItem="Ecz-P6-0LS" secondAttribute="width" id="n6P-bz-gdr"/>
                 <constraint firstItem="FnS-CV-8Xn" firstAttribute="leading" secondItem="o8J-cE-dwt" secondAttribute="trailing" constant="10" id="oSS-HQ-9Jn"/>
                 <constraint firstItem="Uyw-Ql-z6H" firstAttribute="width" secondItem="9iD-Uh-qBy" secondAttribute="width" id="pkf-Cv-Z19"/>
-                <constraint firstItem="OQy-X1-O4M" firstAttribute="leading" secondItem="FnS-CV-8Xn" secondAttribute="trailing" constant="30" id="qqR-Ra-Sgz"/>
+                <constraint firstItem="OQy-X1-O4M" firstAttribute="leading" secondItem="FnS-CV-8Xn" secondAttribute="trailing" constant="15" id="qqR-Ra-Sgz"/>
                 <constraint firstItem="xvg-nb-Eqm" firstAttribute="top" secondItem="mTz-Qr-j5n" secondAttribute="bottom" constant="25" id="qt6-6K-VyC"/>
                 <constraint firstItem="hyC-Qt-klH" firstAttribute="leading" secondItem="fHv-M0-QFh" secondAttribute="leading" id="tck-ys-lMT"/>
                 <constraint firstItem="Uyw-Ql-z6H" firstAttribute="leading" secondItem="Ecz-P6-0LS" secondAttribute="trailing" constant="10" id="tk3-gW-hZ4"/>
