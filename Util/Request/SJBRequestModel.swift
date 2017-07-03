@@ -40,6 +40,7 @@ enum ModelType {
     case PayList//充值记录
     case WithdrawalsList//提现记录
     case Withdrawals//提现记录
+    case BonusToMoney//奖金转金额
     
     case QrCode//二维码
 
@@ -124,7 +125,9 @@ class SJBRequestModel: NSObject {
             case .QrCode:
                 completion(response,status)
                 break
-
+            case .BonusToMoney:
+                completion(response,status)
+                break
             default:
                 break
             }
@@ -492,7 +495,17 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .Withdrawals, response: response, status: status, completion: completion)
         }
     }
-
+    
+    /// 奖金转金额
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchBonusToMoneyData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnBonusToMoneyUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .BonusToMoney, response: response, status: status, completion: completion)
+        }
+    }
 
     // MARK: ------ 二维码
 

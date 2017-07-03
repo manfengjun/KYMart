@@ -29,11 +29,11 @@
 		BF335E381EE57CB1002358C1 /* KYProductCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */; };
 		BF335E3B1EE58033002358C1 /* KYProductHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF335E391EE58033002358C1 /* KYProductHeadView.swift */; };
 		BF335E3C1EE58033002358C1 /* KYProductHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */; };
+		BF3797D21F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */; };
+		BF3797D41F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */; };
 		BF3DA80E1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DA80D1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift */; };
 		BF3DA8101EF7B6090041BE6C /* NoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DA80F1EF7B6090041BE6C /* NoneViewController.swift */; };
 		BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */; };
-		BF577E001F09D3FC00757DEE /* KYQrCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF577DFF1F09D3FC00757DEE /* KYQrCodeView.swift */; };
-		BF577E021F09D40A00757DEE /* KYQrCodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF577E011F09D40A00757DEE /* KYQrCodeView.xib */; };
 		BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */; };
 		BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
@@ -226,11 +226,11 @@
 		BF335E361EE57CB1002358C1 /* KYProductCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductCVCell.xib; sourceTree = "<group>"; };
 		BF335E391EE58033002358C1 /* KYProductHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductHeadView.swift; sourceTree = "<group>"; };
 		BF335E3A1EE58033002358C1 /* KYProductHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductHeadView.xib; sourceTree = "<group>"; };
+		BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeTVCell.swift; sourceTree = "<group>"; };
+		BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYBonusToMoneyViewController.swift; sourceTree = "<group>"; };
 		BF3DA80D1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSearchProductListViewController.swift; sourceTree = "<group>"; };
 		BF3DA80F1EF7B6090041BE6C /* NoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoneViewController.swift; sourceTree = "<group>"; };
 		BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddAddressViewController.swift; sourceTree = "<group>"; };
-		BF577DFF1F09D3FC00757DEE /* KYQrCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeView.swift; sourceTree = "<group>"; };
-		BF577E011F09D40A00757DEE /* KYQrCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYQrCodeView.xib; sourceTree = "<group>"; };
 		BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductBuyInfoModel.swift; sourceTree = "<group>"; };
 		BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYUserInfoViewController.swift; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
@@ -680,6 +680,7 @@
 				BF9F0B7B1EFF4BB800BA4DEE /* KYBonusListViewController.swift */,
 				BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */,
 				BF9B49AB1F09070900982EBA /* KYQrCodeViewController.swift */,
+				BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -711,8 +712,7 @@
 				BFD6FAA81F05204F00E6BDA2 /* KYWithdrawHeadView.xib */,
 				BFD6FAAE1F053EB600E6BDA2 /* KYWithDrawListTVCell.swift */,
 				BFD6FAAF1F053EB600E6BDA2 /* KYWithDrawListTVCell.xib */,
-				BF577DFF1F09D3FC00757DEE /* KYQrCodeView.swift */,
-				BF577E011F09D40A00757DEE /* KYQrCodeView.xib */,
+				BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1256,7 +1256,6 @@
 				BFE46DFB1EF12D7600F65FED /* celan.jpg in Resources */,
 				BFE46DF91EF12D2400F65FED /* com_info_bg.png in Resources */,
 				BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */,
-				BF577E021F09D40A00757DEE /* KYQrCodeView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
 				BFDCB4111EE912070040A09B /* KYProductInfoTVCell.xib in Resources */,
 				BF8903591EE41D47004A0FF7 /* KYHomeSallHeadView.xib in Resources */,
@@ -1373,6 +1372,7 @@
 				BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */,
 				BFF05C7B1EEC2A9A00D18D43 /* KYProductContentViewController.swift in Sources */,
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
+				BF3797D21F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift in Sources */,
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
@@ -1428,11 +1428,11 @@
 				BF8903311EE3AAEC004A0FF7 /* Common.swift in Sources */,
 				BFB6D0CE1EE6965300F2C61F /* FJLeftMenuTVCell.swift in Sources */,
 				BF194AF81EF4E8C4001538A9 /* FMResultSet.m in Sources */,
-				BF577E001F09D3FC00757DEE /* KYQrCodeView.swift in Sources */,
 				BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */,
 				BFF05C7D1EEC384800D18D43 /* KYCartViewController.swift in Sources */,
 				BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */,
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
+				BF3797D41F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift in Sources */,
 				BFDCB40D1EE905BD0040A09B /* KYGoodInfoModel.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
 				BFE46DF11EF0DEDD00F65FED /* CartUtil.swift in Sources */,

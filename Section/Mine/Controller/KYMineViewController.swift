@@ -282,6 +282,9 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 self.hidesBottomBarWhenPushed = false
                 
                 break
+            case 3:
+                self.performSegue(withIdentifier: "M_bonusToMoney_SegudID", sender: "")
+                break
             default:
                 break
             }
@@ -294,10 +297,10 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                     self.tabBarController?.tabBar.isHidden = false
                 })
             }
-            if indexPath.row == 2 {
+            if indexPath.row == 1 {
                 self.performSegue(withIdentifier: "M_shareQrCode_SegudID", sender: "")
             }
-            if indexPath.row == 3 {
+            if indexPath.row == 2 {
                 self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
             }
 

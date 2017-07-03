@@ -14,6 +14,5 @@ target 'KYMart' do
     pod 'TZImagePickerController', '~> 1.7.9'
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'PYSearch', '~> 0.8.0'
-    pod 'TYAlertController', '~> 1.1.8'
 end
 

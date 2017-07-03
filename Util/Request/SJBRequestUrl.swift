@@ -219,6 +219,12 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=User&a=withdrawals&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
         
     }
+    /// 奖金转金额
+    ///
+    /// - Returns: return value description
+    class func returnBonusToMoneyUrl() -> String {
+        return "\(basePath)m=api&c=User&a=changebonus&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
 
     // MARK: ------ 分享二维码
     /// 二维码
