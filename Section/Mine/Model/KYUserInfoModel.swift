@@ -66,4 +66,5 @@ class KYUserInfoModel: NSObject {
     var last_login: Int = 0
     var discount: String!
     var second_leader: Int = 0
+    var ref_nickname: String!
 }

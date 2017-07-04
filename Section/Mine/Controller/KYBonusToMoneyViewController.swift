@@ -12,6 +12,7 @@ class KYBonusToMoneyViewController: BaseViewController {
 
     @IBOutlet weak var codeBgView: UIView!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var bonusL: UILabel!
     @IBOutlet weak var amountT: UITextField!
     @IBOutlet weak var codeT: UITextField!
     
@@ -19,7 +20,7 @@ class KYBonusToMoneyViewController: BaseViewController {
         let codeView = PooCodeView(frame: CGRect(x: 0, y: 0, width: 70, height: 25), andChange: nil)
         return codeView!
     }()
-
+    var bonus:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -30,6 +31,7 @@ class KYBonusToMoneyViewController: BaseViewController {
         saveBtn.layer.masksToBounds = true
         saveBtn.layer.cornerRadius = 5.0
         codeBgView.addSubview(codeView)
+        bonusL.text = bonus
     }
     @IBAction func saveAction(_ sender: UIButton) {
         if (amountT.text?.isEmpty)! {
@@ -43,6 +45,7 @@ class KYBonusToMoneyViewController: BaseViewController {
             SJBRequestModel.push_fetchBonusToMoneyData(params: params as [String : AnyObject], completion: { (response, status) in
                 if status == 1{
                     self.Toast(content: "申请成功")
+                    self.navigationController?.popViewController(animated: true)
                 }
                 else
                 {

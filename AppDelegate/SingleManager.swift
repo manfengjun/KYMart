@@ -20,6 +20,9 @@ class SingleManager: NSObject {
     var productBuyInfoModel:KYProductBuyInfoModel?
     /// 登录对象
     var loginInfo:KYLoginInfoModel?
+    /// 用户信息对象
+    var userInfo:KYUserInfoModel?
+
     /// 是否登录
     var isLogin:Bool = false
     /// 获取UUID

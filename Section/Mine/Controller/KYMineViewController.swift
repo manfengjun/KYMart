@@ -18,7 +18,6 @@ class KYMineViewController: BaseViewController {
     @IBOutlet weak var recommendL: UILabel!
     @IBOutlet weak var usermoneyL: UILabel!
     @IBOutlet weak var bonusL: UILabel!
-    @IBOutlet weak var userInfoBtn: UIButton!
     @IBOutlet weak var userTypeL: UILabel!
     
     var userInfoModel:KYUserInfoModel?{
@@ -85,9 +84,7 @@ class KYMineViewController: BaseViewController {
         portraitBgV.layer.cornerRadius = SCREEN_WIDTH/12
         portraitIV.layer.masksToBounds = true
         portraitIV.layer.cornerRadius = (SCREEN_WIDTH*1/6 - 6)/2
-        userInfoBtn.layer.masksToBounds = true
-        userInfoBtn.layer.cornerRadius = 25/2
-        headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 )
+        headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5)
         tableView.tableHeaderView = headView
         navigationController?.navigationBar.isTranslucent = true
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
@@ -100,6 +97,11 @@ class KYMineViewController: BaseViewController {
             vc.backResult {
                 self.tabBarController?.tabBar.isHidden = false
             }
+        }
+        if segue.identifier == "M_bonusToMoney_SegudID" {
+            let vc = segue.destination as! KYBonusToMoneyViewController
+            vc.bonus = userInfoModel?.bonus
+
         }
         
     }
@@ -298,9 +300,12 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 })
             }
             if indexPath.row == 1 {
-                self.performSegue(withIdentifier: "M_shareQrCode_SegudID", sender: "")
+                self.performSegue(withIdentifier: "M_member_SegueID", sender: "")
             }
             if indexPath.row == 2 {
+                self.performSegue(withIdentifier: "M_shareQrCode_SegudID", sender: "")
+            }
+            if indexPath.row == 3 {
                 self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
             }
 

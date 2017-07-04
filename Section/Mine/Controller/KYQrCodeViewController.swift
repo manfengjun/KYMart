@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PopupDialog
 class KYQrCodeViewController: BaseViewController {
 
     
@@ -51,6 +51,31 @@ class KYQrCodeViewController: BaseViewController {
                 self.Toast(content: "获取二维码失败")
             }
         }
+    }
+    @IBAction func savePhotoAction(_ sender: UILongPressGestureRecognizer) {
+        // Prepare the popup assets
+        let title = "提示"
+        let message = "是否确认保存到手机相册"
+        let popup = PopupDialog(title: title, message: message, image: nil)
+        let buttonOne = CancelButton(title: "取消") {
+        }
+        let buttonTwo = DefaultButton(title: "保存到相册") {
+            let indexPath = IndexPath(row: 0, section: 0)
+            let cell = self.tableView.cellForRow(at: indexPath) as! KYQrCodeTVCell
+            UIImageWriteToSavedPhotosAlbum(cell.qrCodeIV.image!, self, #selector(self.image(image:didFinishSavingWithError:contextInfo:)), nil)
+        }
+        popup.addButtons([buttonOne, buttonTwo])
+        self.present(popup, animated: true, completion: nil)
+
+    }
+    func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject)
+    {
+        if didFinishSavingWithError != nil
+        {
+            print("error!")
+            return
+        }
+        Toast(content: "保存成功！")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

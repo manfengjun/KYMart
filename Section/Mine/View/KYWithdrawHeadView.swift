@@ -20,6 +20,8 @@ class KYWithdrawHeadView: UIView {
     @IBOutlet weak var realNameT: UITextField!
     @IBOutlet weak var codeT: UITextField!
     @IBOutlet weak var codeBgView: UIView!
+    //闭包类型
+    var SaveResultClosure: SelectClosure?     // 闭包
     
     var info:Info? {
         willSet {
@@ -92,6 +94,7 @@ class KYWithdrawHeadView: UIView {
             SJBRequestModel.push_fetchWithdrawalsData(params: params as [String : AnyObject], completion: { (response, status) in
                 if status == 1{
                     self.Toast(content: "申请成功")
+                    self.SaveResultClosure?()
                 }
                 else
                 {
@@ -104,6 +107,13 @@ class KYWithdrawHeadView: UIView {
             Toast(content: "验证码错误！")
         }
     }
+    /**
+     选择闭包回调
+     */
+    func saveResult(_ finished: @escaping SelectClosure) {
+        SaveResultClosure = finished
+    }
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

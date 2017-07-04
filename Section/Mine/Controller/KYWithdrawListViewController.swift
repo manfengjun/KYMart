@@ -31,6 +31,10 @@ class KYWithdrawListViewController: BaseViewController {
     }()
     fileprivate lazy var tableHeadView : KYWithdrawHeadView = {
         let tableHeadView = KYWithdrawHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 336))
+        
+        tableHeadView.saveResult({
+            self.navigationController?.popViewController(animated: true)
+        })
         return tableHeadView
     }()
     /// 下拉刷新

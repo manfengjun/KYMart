@@ -3,6 +3,7 @@ PODS:
   - HMSegmentedControl (1.5.4)
   - IQKeyboardManagerSwift (4.0.10)
   - MJRefresh (3.1.12)
+  - PopupDialog (0.5.4)
   - PPNumberButtonSwift (0.2.0)
   - PYSearch (0.8.0)
   - ReactiveCocoa (5.0.3):
@@ -15,7 +16,6 @@ PODS:
   - SDWebImage/Core (4.0.0)
   - STPickerView (2.1)
   - SVProgressHUD (2.1.2)
-  - TYAlertController (1.1.8)
   - TZImagePickerController (1.7.9)
   - YYCache (1.0.4)
   - YYModel (1.0.4)
@@ -25,13 +25,13 @@ DEPENDENCIES:
   - HMSegmentedControl (~> 1.5.3)
   - IQKeyboardManagerSwift (~> 4.0.9)
   - MJRefresh (~> 3.1.12)
+  - PopupDialog (~> 0.5.4)
   - PPNumberButtonSwift (~> 0.2.0)
   - PYSearch (~> 0.8.0)
   - ReactiveCocoa (~> 5.0.3)
   - SDWebImage (~> 4.0.0)
   - STPickerView (~> 2.1)
   - SVProgressHUD (~> 2.1.2)
-  - TYAlertController (~> 1.1.8)
   - TZImagePickerController (~> 1.7.9)
   - YYCache (~> 1.0.4)
   - YYModel (~> 1.0.4)
@@ -41,6 +41,7 @@ SPEC CHECKSUMS:
   HMSegmentedControl: b25bc4ec44766e073d62c473188fb354ee244b76
   IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  PopupDialog: 75cf955693590b0cb2fdde00223fb65d99c57247
   PPNumberButtonSwift: 322b76d594ced30aa1a4b57b1424dcc7bc5ade00
   PYSearch: 53c239376b392fe0658c2bd002f408e7caf63046
   ReactiveCocoa: 066a855f613fb72f68258771095805fdb10312d2
@@ -49,11 +50,10 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   STPickerView: 9bfbb827de31d4807424454296ade35a85c21f9e
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
-  TYAlertController: 502d3dbc5d007e68559400b509c736f60ebc2cc1
   TZImagePickerController: 0a8ff228d287ebdd7d485e8c42a2a932894f1fba
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: 8dfdee6cf8d55bcdd3e8067275c4b13a9f64d644
+PODFILE CHECKSUM: 9083fb3065babaa0791b11731a0e048e6eb01236
 
 COCOAPODS: 1.2.1

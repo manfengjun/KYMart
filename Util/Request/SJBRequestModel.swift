@@ -43,6 +43,8 @@ enum ModelType {
     case BonusToMoney//奖金转金额
     
     case QrCode//二维码
+    
+    case ShareMember//分享会员
 
 }
 class SJBRequestModel: NSObject {
@@ -127,6 +129,12 @@ class SJBRequestModel: NSObject {
                 break
             case .BonusToMoney:
                 completion(response,status)
+                break
+            case .ShareMember:
+                let temmodel = KYMemberModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
                 break
             default:
                 break
@@ -515,6 +523,16 @@ class SJBRequestModel: NSObject {
     class func pull_fetchQrCodeData(completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.GetAll(url: SJBRequestUrl.returnQrCodeUrl()) { (response, status) in
             self.dataToModel(type: .QrCode, response: response, status: status, completion: completion)
+        }
+    }
+    
+    // MARK: ------ 分享会员
+    /// 分享会员
+    ///
+    /// - Returns: return value description
+    class func pull_fetchShareMemberData(page:Int,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.GetAll(url: SJBRequestUrl.returnShareMemberUrl(page: page)) { (response, status) in
+            self.dataToModel(type: .ShareMember, response: response, status: status, completion: completion)
         }
     }
 }

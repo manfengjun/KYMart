@@ -234,7 +234,15 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=api&c=User&a=qr_code&token=\(access_token())"
         
     }
-    
+    // MARK: ------ 分享会员
+    /// 分享会员
+    ///
+    /// - Returns: return value description
+    class func returnShareMemberUrl(page:Int) -> String {
+        return "\(basePath)m=api&c=User&a=lower_list&level=1&token=\(access_token())&p=\(page)"
+        
+    }
+
     // MARK: ------ 地址管理
     /// 获取地址分级信息
     ///
