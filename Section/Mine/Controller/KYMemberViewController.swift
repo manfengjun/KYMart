@@ -69,6 +69,7 @@ class KYMemberViewController: BaseViewController {
             if status == 1 {
                 let model = response as! KYMemberModel
                 self.memberModel = model
+                self.tableViewHeadView.titleL.text = "我分享的会员（\(model.count)）人"
                 if self.page == 1{
                     self.dataArray.removeAllObjects()
                 }
@@ -130,10 +131,13 @@ extension KYMemberViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KYMemberTVCellIdentifier, for: indexPath) as! KYMemberTVCell
-        cell.model = dataArray[indexPath.row] as! List
+        cell.model = dataArray[indexPath.row] as? List
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        navigationController?.navigationBar.subviews[0].alpha = scrollView.contentOffset.y/(SCREEN_WIDTH*3/5 + 51)
     }
 }

@@ -26,6 +26,7 @@ class KYWithdrawListViewController: BaseViewController {
     fileprivate lazy var tableViewHeadView : KYUserInfoView = {
         let tableViewHeadView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51))
         tableViewHeadView.userModel = SingleManager.instance.userInfo
+        tableViewHeadView.titleL.text = "提现信息"
         return tableViewHeadView
     }()
     /// 下拉刷新
@@ -190,6 +191,7 @@ extension KYWithdrawListViewController:UITableViewDelegate,UITableViewDataSource
     }
     // 去除头部悬停
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        navigationController?.navigationBar.subviews[0].alpha = scrollView.contentOffset.y/(SCREEN_WIDTH*3/5 + 51)
         let sectionHeaderH:CGFloat = 336
         if tableView.contentOffset.y < sectionHeaderH && tableView.contentOffset.y > 0 {
             tableView.contentInset = UIEdgeInsetsMake(-tableView.contentOffset.y, 0, 0, 0)
