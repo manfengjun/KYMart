@@ -19,6 +19,7 @@
                 <outlet property="portraitBgV" destination="m2j-Uv-af5" id="Vev-nA-rOP"/>
                 <outlet property="portraitIV" destination="SZl-V5-fkH" id="spw-63-bVa"/>
                 <outlet property="recommendL" destination="nPF-7k-kqg" id="zxp-cj-o2p"/>
+                <outlet property="titleL" destination="ASn-R9-SvJ" id="aEg-t7-C1V"/>
                 <outlet property="userTypeL" destination="1Bx-kK-HJ5" id="vrc-ob-wbb"/>
                 <outlet property="usermoneyL" destination="g15-v9-ZO3" id="80L-zf-wJw"/>
             </connections>

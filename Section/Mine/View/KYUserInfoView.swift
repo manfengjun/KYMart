@@ -18,6 +18,7 @@ class KYUserInfoView: UIView {
     @IBOutlet weak var usermoneyL: UILabel!
     @IBOutlet weak var bonusL: UILabel!
     @IBOutlet weak var userTypeL: UILabel!
+    @IBOutlet weak var titleL: UILabel!
     var userModel:KYUserInfoModel?{
         didSet {
             if let text = userModel?.nickname {
