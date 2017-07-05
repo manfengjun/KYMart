@@ -15,6 +15,8 @@ class KYCartFootView: UIView {
     @IBOutlet weak var selectAllBtn: UIButton!
     /// 闭包回调传值
     var SelectAllClosure: BackClosure?     // 闭包
+    var BalanceSelectClosure: SelectClosure?     // 闭包
+
 
     var cartListModel:KYCartListModel?{
         didSet {
@@ -42,10 +44,19 @@ class KYCartFootView: UIView {
     @IBAction func selectAllAction(_ sender: UIButton) {
         SelectAllClosure?()
     }
+    @IBAction func balanceAction(_ sender: UIButton) {
+        BalanceSelectClosure?()
+    }
     /**
-     属性选择闭包回调
+     选择所有商品
      */
     func selectAllResult(_ finished: @escaping BackClosure) {
         SelectAllClosure = finished
+    }
+    /**
+     结算
+     */
+    func balanceSelectResult(_ finished: @escaping SelectClosure) {
+        BalanceSelectClosure = finished
     }
 }

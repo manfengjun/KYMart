@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -40,7 +40,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总计：¥ 900元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CCQ-Eq-Y7H">
-                    <rect key="frame" x="276" y="5.5" width="97" height="17"/>
+                    <rect key="frame" x="276" y="16.5" width="97" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                     <color key="textColor" red="0.90588235289999997" green="0.1215686275" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -55,13 +55,10 @@
                     <state key="normal" title="结算">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="balanceAction:" destination="-1" eventType="touchUpInside" id="7ev-jn-lTs"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="不含运费" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iR-oI-ktw">
-                    <rect key="frame" x="323.5" y="30" width="49.5" height="14.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kk9-tU-YWZ">
                     <rect key="frame" x="0.0" y="0.0" width="481" height="0.5"/>
                     <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -91,11 +88,9 @@
                 <constraint firstAttribute="trailing" secondItem="lJL-Ji-Esn" secondAttribute="trailing" id="Ds9-Zu-TPp"/>
                 <constraint firstItem="lJL-Ji-Esn" firstAttribute="top" secondItem="Kk9-tU-YWZ" secondAttribute="bottom" id="HJA-We-DrC"/>
                 <constraint firstItem="lJL-Ji-Esn" firstAttribute="leading" secondItem="CCQ-Eq-Y7H" secondAttribute="trailing" constant="10" id="HVE-oQ-PHw"/>
-                <constraint firstItem="lJL-Ji-Esn" firstAttribute="leading" secondItem="0iR-oI-ktw" secondAttribute="trailing" constant="10" id="OHA-iZ-YSi"/>
                 <constraint firstItem="FPp-ew-cKo" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S9u-5X-Eoz"/>
                 <constraint firstItem="Bip-Jq-HqX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eZx-ze-qkV"/>
-                <constraint firstItem="Bip-Jq-HqX" firstAttribute="top" secondItem="0iR-oI-ktw" secondAttribute="bottom" constant="5" id="iMD-Ul-FMe"/>
-                <constraint firstItem="CCQ-Eq-Y7H" firstAttribute="top" secondItem="Kk9-tU-YWZ" secondAttribute="bottom" constant="5" id="zhh-9d-dst"/>
+                <constraint firstItem="CCQ-Eq-Y7H" firstAttribute="centerY" secondItem="lJL-Ji-Esn" secondAttribute="centerY" id="zPU-0M-ahC"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

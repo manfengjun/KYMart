@@ -111,6 +111,9 @@
 		BFBAB4781EF17C3A0038B95E /* KYShopAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAB4771EF17C3A0038B95E /* KYShopAddressViewController.swift */; };
 		BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAB4791EF17C5F0038B95E /* KYShopAddressTVCell.swift */; };
 		BFBAB47C1EF17C5F0038B95E /* KYShopAddressTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBAB47A1EF17C5F0038B95E /* KYShopAddressTVCell.xib */; };
+		BFBF04871F0D2D030032AEDA /* KYOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF04861F0D2D030032AEDA /* KYOrderViewController.swift */; };
+		BFBF048A1F0D2D6C0032AEDA /* KYOrderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBF04881F0D2D6C0032AEDA /* KYOrderTVCell.swift */; };
+		BFBF048B1F0D2D6C0032AEDA /* KYOrderTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBF04891F0D2D6C0032AEDA /* KYOrderTVCell.xib */; };
 		BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017351EDF9875005D66B0 /* ViewController.swift */; };
 		BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC017371EDF9875005D66B0 /* Main.storyboard */; };
 		BFC0173B1EDF9875005D66B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC0173A1EDF9875005D66B0 /* Assets.xcassets */; };
@@ -324,6 +327,9 @@
 		BFBAB4771EF17C3A0038B95E /* KYShopAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYShopAddressViewController.swift; sourceTree = "<group>"; };
 		BFBAB4791EF17C5F0038B95E /* KYShopAddressTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYShopAddressTVCell.swift; sourceTree = "<group>"; };
 		BFBAB47A1EF17C5F0038B95E /* KYShopAddressTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYShopAddressTVCell.xib; sourceTree = "<group>"; };
+		BFBF04861F0D2D030032AEDA /* KYOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderViewController.swift; sourceTree = "<group>"; };
+		BFBF04881F0D2D6C0032AEDA /* KYOrderTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderTVCell.swift; sourceTree = "<group>"; };
+		BFBF04891F0D2D6C0032AEDA /* KYOrderTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYOrderTVCell.xib; sourceTree = "<group>"; };
 		BFC017301EDF9875005D66B0 /* KYMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KYMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC017351EDF9875005D66B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFC017381EDF9875005D66B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -560,6 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				BFF05C7C1EEC384800D18D43 /* KYCartViewController.swift */,
+				BFBF04861F0D2D030032AEDA /* KYOrderViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -580,6 +587,8 @@
 				BFF9594C1EED167000C799CD /* CartTVCell.xib */,
 				BFF959571EED833700C799CD /* KYCartFootView.swift */,
 				BFF959591EED834200C799CD /* KYCartFootView.xib */,
+				BFBF04881F0D2D6C0032AEDA /* KYOrderTVCell.swift */,
+				BFBF04891F0D2D6C0032AEDA /* KYOrderTVCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1290,6 +1299,7 @@
 				BFD6FAA91F05204F00E6BDA2 /* KYWithdrawHeadView.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
+				BFBF048B1F0D2D6C0032AEDA /* KYOrderTVCell.xib in Resources */,
 				BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */,
 				BFB6D0D11EE6965300F2C61F /* FJSectionHeadView.xib in Resources */,
 				BF89036F1EE44915004A0FF7 /* KYHomeFootView.xib in Resources */,
@@ -1370,6 +1380,7 @@
 				BFEFA9991F01479B00419995 /* KYMoneyManagerView.swift in Sources */,
 				BFD6FAB01F053EB600E6BDA2 /* KYWithDrawListTVCell.swift in Sources */,
 				BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */,
+				BFBF04871F0D2D030032AEDA /* KYOrderViewController.swift in Sources */,
 				BF194AF61EF4E8C4001538A9 /* FMDatabasePool.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
 				BFF9594D1EED167000C799CD /* CartTVCell.swift in Sources */,
@@ -1472,6 +1483,7 @@
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
 				BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */,
+				BFBF048A1F0D2D6C0032AEDA /* KYOrderTVCell.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BF8DF2871F01F2EF00A23921 /* KYMineOtherTVCell.swift in Sources */,
 				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,

@@ -38,6 +38,9 @@ class KYCartViewController: UIViewController {
             }
 
         })
+        bottomView.balanceSelectResult({ 
+            self.performSegue(withIdentifier: "C_order_SegueID", sender: "")
+        })
         return bottomView
     }()
     /// 列表

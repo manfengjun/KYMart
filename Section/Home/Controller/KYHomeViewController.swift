@@ -239,7 +239,7 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                     view.images = images
                 }
                 let searchTap = UITapGestureRecognizer(target: self, action: #selector(searchAction(sender:)))
-                view.addGestureRecognizer(searchTap)
+                view.searchView.addGestureRecognizer(searchTap)
                 resableview = view
             }
             else if indexPath.section == sectionCount - 1 {
