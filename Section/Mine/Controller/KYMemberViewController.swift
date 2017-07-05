@@ -29,12 +29,26 @@ class KYMemberViewController: BaseViewController {
         let dataArray = NSMutableArray()
         return dataArray
     }()
+    fileprivate lazy var tableViewHeadView : KYUserInfoView = {
+        let tableViewHeadView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51))
+        tableViewHeadView.userModel = SingleManager.instance.userInfo
+        return tableViewHeadView
+    }()
     //刷新页数
     var page = 1
     fileprivate var memberModel:KYMemberModel?{
         didSet {
             tableView.reloadData()
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.subviews[0].alpha = 0
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.subviews[0].alpha = 1
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +58,7 @@ class KYMemberViewController: BaseViewController {
     func setupUI() {
         setBackButtonInNav()
         view.backgroundColor = UIColor.white
+        tableView.tableHeaderView = tableViewHeadView
         tableView.mj_header = header
         tableView.mj_footer = footer
         dataRequest()

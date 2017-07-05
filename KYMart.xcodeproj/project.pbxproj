@@ -62,7 +62,7 @@
 		BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89034E1EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift */; };
 		BF8903511EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF89034F1EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib */; };
 		BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BF8903521EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg */; };
-		BF8903551EE4176D004A0FF7 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903541EE4176D004A0FF7 /* View+Extension.swift */; };
+		BF8903551EE4176D004A0FF7 /* FJView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903541EE4176D004A0FF7 /* FJView+Extension.swift */; };
 		BF8903581EE41D47004A0FF7 /* KYHomeSallHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903561EE41D46004A0FF7 /* KYHomeSallHeadView.swift */; };
 		BF8903591EE41D47004A0FF7 /* KYHomeSallHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF8903571EE41D46004A0FF7 /* KYHomeSallHeadView.xib */; };
 		BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903621EE42EB5004A0FF7 /* KYProductScrollCVCell.swift */; };
@@ -117,10 +117,10 @@
 		BFC0173E1EDF9875005D66B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFC0173C1EDF9875005D66B0 /* LaunchScreen.storyboard */; };
 		BFC017491EDF9875005D66B0 /* KYMartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017481EDF9875005D66B0 /* KYMartTests.swift */; };
 		BFC017541EDF9875005D66B0 /* KYMartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017531EDF9875005D66B0 /* KYMartUITests.swift */; };
-		BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017661EDF9AC1005D66B0 /* Color+Extension.swift */; };
-		BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */; };
-		BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */; };
-		BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017691EDF9AC1005D66B0 /* String+Extension.swift */; };
+		BFC0176A1EDF9AC1005D66B0 /* FJColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017661EDF9AC1005D66B0 /* FJColor+Extension.swift */; };
+		BFC0176B1EDF9AC1005D66B0 /* FJController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017671EDF9AC1005D66B0 /* FJController+Extension.swift */; };
+		BFC0176C1EDF9AC1005D66B0 /* FJObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017681EDF9AC1005D66B0 /* FJObject+Extension.swift */; };
+		BFC0176D1EDF9AC1005D66B0 /* FJString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017691EDF9AC1005D66B0 /* FJString+Extension.swift */; };
 		BFC017BF1EDF9B95005D66B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017BE1EDF9B95005D66B0 /* AppDelegate.swift */; };
 		BFC017C61EDF9BCB005D66B0 /* CeshiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC017C51EDF9BCB005D66B0 /* CeshiViewController.m */; };
 		BFC017FD1EDF9BD6005D66B0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC017C91EDF9BD6005D66B0 /* Reachability.m */; };
@@ -273,7 +273,7 @@
 		BF89034E1EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYHomeSecKillCVCell.swift; sourceTree = "<group>"; };
 		BF89034F1EE4038D004A0FF7 /* KYHomeSecKillCVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYHomeSecKillCVCell.xib; sourceTree = "<group>"; };
 		BF8903521EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = goods_thumb_1_400_400.jpeg; sourceTree = "<group>"; };
-		BF8903541EE4176D004A0FF7 /* View+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		BF8903541EE4176D004A0FF7 /* FJView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FJView+Extension.swift"; sourceTree = "<group>"; };
 		BF8903561EE41D46004A0FF7 /* KYHomeSallHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYHomeSallHeadView.swift; sourceTree = "<group>"; };
 		BF8903571EE41D46004A0FF7 /* KYHomeSallHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYHomeSallHeadView.xib; sourceTree = "<group>"; };
 		BF8903621EE42EB5004A0FF7 /* KYProductScrollCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductScrollCVCell.swift; sourceTree = "<group>"; };
@@ -336,10 +336,10 @@
 		BFC0174F1EDF9875005D66B0 /* KYMartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KYMartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC017531EDF9875005D66B0 /* KYMartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KYMartUITests.swift; sourceTree = "<group>"; };
 		BFC017551EDF9875005D66B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFC017661EDF9AC1005D66B0 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Controller+Extension.swift"; sourceTree = "<group>"; };
-		BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Object+Extension.swift"; sourceTree = "<group>"; };
-		BFC017691EDF9AC1005D66B0 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BFC017661EDF9AC1005D66B0 /* FJColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FJColor+Extension.swift"; sourceTree = "<group>"; };
+		BFC017671EDF9AC1005D66B0 /* FJController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FJController+Extension.swift"; sourceTree = "<group>"; };
+		BFC017681EDF9AC1005D66B0 /* FJObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FJObject+Extension.swift"; sourceTree = "<group>"; };
+		BFC017691EDF9AC1005D66B0 /* FJString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FJString+Extension.swift"; sourceTree = "<group>"; };
 		BFC017BE1EDF9B95005D66B0 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFC017C31EDF9BCB005D66B0 /* KYMart-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KYMart-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFC017C41EDF9BCB005D66B0 /* CeshiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeshiViewController.h; sourceTree = "<group>"; };
@@ -1060,11 +1060,11 @@
 		BFC017651EDF9AB1005D66B0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				BFC017661EDF9AC1005D66B0 /* Color+Extension.swift */,
-				BFC017671EDF9AC1005D66B0 /* Controller+Extension.swift */,
-				BFC017681EDF9AC1005D66B0 /* Object+Extension.swift */,
-				BF8903541EE4176D004A0FF7 /* View+Extension.swift */,
-				BFC017691EDF9AC1005D66B0 /* String+Extension.swift */,
+				BFC017661EDF9AC1005D66B0 /* FJColor+Extension.swift */,
+				BFC017671EDF9AC1005D66B0 /* FJController+Extension.swift */,
+				BFC017681EDF9AC1005D66B0 /* FJObject+Extension.swift */,
+				BF8903541EE4176D004A0FF7 /* FJView+Extension.swift */,
+				BFC017691EDF9AC1005D66B0 /* FJString+Extension.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1443,7 +1443,7 @@
 				BF8903081EE3A1EC004A0FF7 /* TAPageControl.m in Sources */,
 				BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */,
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
-				BFC0176B1EDF9AC1005D66B0 /* Controller+Extension.swift in Sources */,
+				BFC0176B1EDF9AC1005D66B0 /* FJController+Extension.swift in Sources */,
 				BFE46DF51EF11DDB00F65FED /* KYMineTVCell.swift in Sources */,
 				BF8903331EE3AAF5004A0FF7 /* SingleManager.swift in Sources */,
 				BFF959541EED775A00C799CD /* KYProductDetailBuyView.swift in Sources */,
@@ -1453,7 +1453,7 @@
 				BF194AF81EF4E8C4001538A9 /* FMResultSet.m in Sources */,
 				BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */,
 				BFF05C7D1EEC384800D18D43 /* KYCartViewController.swift in Sources */,
-				BFC0176C1EDF9AC1005D66B0 /* Object+Extension.swift in Sources */,
+				BFC0176C1EDF9AC1005D66B0 /* FJObject+Extension.swift in Sources */,
 				BF8903501EE4038D004A0FF7 /* KYHomeSecKillCVCell.swift in Sources */,
 				BF3797D41F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift in Sources */,
 				BF73F2F01F0BCC9E00BAE922 /* KYMemberViewController.swift in Sources */,
@@ -1468,21 +1468,21 @@
 				BFB6D0E01EE69D4200F2C61F /* KYProductListViewController.swift in Sources */,
 				BF89032F1EE3A520004A0FF7 /* KYHomeViewController.swift in Sources */,
 				BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */,
-				BFC0176A1EDF9AC1005D66B0 /* Color+Extension.swift in Sources */,
+				BFC0176A1EDF9AC1005D66B0 /* FJColor+Extension.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
 				BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BF8DF2871F01F2EF00A23921 /* KYMineOtherTVCell.swift in Sources */,
 				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,
-				BFC0176D1EDF9AC1005D66B0 /* String+Extension.swift in Sources */,
+				BFC0176D1EDF9AC1005D66B0 /* FJString+Extension.swift in Sources */,
 				BF9B49AC1F09070900982EBA /* KYQrCodeViewController.swift in Sources */,
 				BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */,
 				BFBAB4781EF17C3A0038B95E /* KYShopAddressViewController.swift in Sources */,
 				BF194AF71EF4E8C4001538A9 /* FMDatabaseQueue.m in Sources */,
 				BFB6D0D01EE6965300F2C61F /* FJSectionHeadView.swift in Sources */,
 				BFBAB4761EF161DA0038B95E /* KYUserInfoModel.swift in Sources */,
-				BF8903551EE4176D004A0FF7 /* View+Extension.swift in Sources */,
+				BF8903551EE4176D004A0FF7 /* FJView+Extension.swift in Sources */,
 				BF194AE41EF4E8BD001538A9 /* AddressView.m in Sources */,
 				BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */,
 				BFB6D0B71EE6918A00F2C61F /* FJSubSectionModel.swift in Sources */,

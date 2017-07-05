@@ -11,31 +11,22 @@ import MJRefresh
 fileprivate let KYWithDrawListTVCellIdentifier = "kYWithDrawListTVCell"
 
 class KYWithdrawListViewController: BaseViewController {
-    var navTitle:String?{
-        
-        didSet {
-            self.navigationItem.title = navTitle
-        }
-    }
     /// 列表
     fileprivate lazy var tableView : UITableView = {
-        let tableView = UITableView(frame: self.view.bounds, style: .plain)
+        let tableView = UITableView(frame:CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), style: .plain)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "KYWithDrawListTVCell", bundle: nil), forCellReuseIdentifier: KYWithDrawListTVCellIdentifier)
         tableView.backgroundColor = UIColor.white
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableHeaderView = self.tableHeadView
+        tableView.tableHeaderView = self.tableViewHeadView
         return tableView
     }()
-    fileprivate lazy var tableHeadView : KYWithdrawHeadView = {
-        let tableHeadView = KYWithdrawHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 336))
-        
-        tableHeadView.saveResult({
-            self.navigationController?.popViewController(animated: true)
-        })
-        return tableHeadView
+    fileprivate lazy var tableViewHeadView : KYUserInfoView = {
+        let tableViewHeadView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51))
+        tableViewHeadView.userModel = SingleManager.instance.userInfo
+        return tableViewHeadView
     }()
     /// 下拉刷新
     fileprivate lazy var header:MJRefreshNormalHeader = {
@@ -55,13 +46,22 @@ class KYWithdrawListViewController: BaseViewController {
     /// 数据源
     var info:Info?{
         didSet {
-            tableHeadView.info = info
         }
     }
     fileprivate lazy var dataArray:NSMutableArray = {
         let dataArray = NSMutableArray()
         return dataArray
     }()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.subviews[0].alpha = 0
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.subviews[0].alpha = 1
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,7 @@ class KYWithdrawListViewController: BaseViewController {
     func setupUI() {
         view.addSubview(tableView)
         setBackButtonInNav()
+        self.automaticallyAdjustsScrollViewInsets = false
         view.backgroundColor = UIColor.white
 //        tableView.mj_header = header
         tableView.mj_footer = footer
@@ -168,4 +169,34 @@ extension KYWithdrawListViewController:UITableViewDelegate,UITableViewDataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
     }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let headView = KYWithdrawHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 336))
+            headView.info = self.info
+            headView.saveResult({
+                self.navigationController?.popViewController(animated: true)
+            })
+            return headView
+        }
+        
+        return nil
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 336
+
+        }
+        return 0
+    }
+    // 去除头部悬停
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let sectionHeaderH:CGFloat = 336
+        if tableView.contentOffset.y < sectionHeaderH && tableView.contentOffset.y > 0 {
+            tableView.contentInset = UIEdgeInsetsMake(-tableView.contentOffset.y, 0, 0, 0)
+        }
+        else if (tableView.contentOffset.y >= sectionHeaderH){
+            tableView.contentInset = UIEdgeInsetsMake(-sectionHeaderH, 0, 0, 0)
+        }
+    }
+
 }
