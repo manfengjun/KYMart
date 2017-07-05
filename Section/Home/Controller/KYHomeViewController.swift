@@ -220,9 +220,9 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYProductScrollIdentifier, for: indexPath) as! KYProductScrollCVCell
             let models = scrollSectionData[indexPath.section - 1] as? [Good]
             cell.models = models
-            cell.selectResult({ 
+            cell.selectResult({ (index) in
                 let detailVC = KYProductDetailViewController()
-                let model = models?[indexPath.row]
+                let model = models?[index]
                 detailVC.id = model?.goods_id
                 self.navigationController?.pushViewController(detailVC, animated: true)
             })

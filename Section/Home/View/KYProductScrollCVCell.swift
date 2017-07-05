@@ -13,7 +13,7 @@ class KYProductScrollCVCell: UICollectionViewCell {
 
     @IBOutlet weak var pageControl: UIPageControl!
     /// 闭包回调传值
-    var SelectClosure: BackClosure?     // 闭包
+    var SelectClosure: ResultClosure?     // 闭包
     var models:[Good]?{
         didSet {
             if let array = models {
@@ -43,7 +43,7 @@ class KYProductScrollCVCell: UICollectionViewCell {
     /**
      属性选择闭包回调
      */
-    func selectResult(_ finished: @escaping BackClosure) {
+    func selectResult(_ finished: @escaping ResultClosure) {
         SelectClosure = finished
     }
     override func awakeFromNib() {
@@ -71,7 +71,7 @@ extension KYProductScrollCVCell:UICollectionViewDelegate,UICollectionViewDataSou
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        SelectClosure?()
+        SelectClosure?(indexPath.row)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let index = collectionView.contentOffset.x/SCREEN_WIDTH
