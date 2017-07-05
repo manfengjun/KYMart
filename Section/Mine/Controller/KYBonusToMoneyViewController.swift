@@ -15,23 +15,43 @@ class KYBonusToMoneyViewController: BaseViewController {
     @IBOutlet weak var bonusL: UILabel!
     @IBOutlet weak var amountT: UITextField!
     @IBOutlet weak var codeT: UITextField!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var headH: NSLayoutConstraint!
     
     fileprivate lazy var codeView : PooCodeView = {
         let codeView = PooCodeView(frame: CGRect(x: 0, y: 0, width: 70, height: 25), andChange: nil)
         return codeView!
     }()
+    fileprivate lazy var headView : KYUserInfoView = {
+        let headView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51))
+        headView.userModel = SingleManager.instance.userInfo
+        return headView
+    }()
     var bonus:String?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.subviews[0].alpha = 0
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.subviews[0].alpha = 1
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
     }
     func setupUI() {
-        navigationItem.title = "分享兑换余额"
         setBackButtonInNav()
         saveBtn.layer.masksToBounds = true
         saveBtn.layer.cornerRadius = 5.0
         codeBgView.addSubview(codeView)
         bonusL.text = bonus
+        headH.constant = SCREEN_WIDTH*3/5 + 51
+        infoView.addSubview(headView)
+        headView.userModel = SingleManager.instance.userInfo
+
     }
     @IBAction func saveAction(_ sender: UIButton) {
         if (amountT.text?.isEmpty)! {

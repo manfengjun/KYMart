@@ -53,6 +53,9 @@ class KYUserInfoView: UIView {
         super.awakeFromNib()
     }
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+        super.init(coder: aDecoder)
+        contentView = Bundle.main.loadNibNamed("KYUserInfoView", owner: self, options: nil)?.first as! UIView
+        contentView.frame = self.bounds
+        addSubview(contentView)
+        awakeFromNib()    }
 }

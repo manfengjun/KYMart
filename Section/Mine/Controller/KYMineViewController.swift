@@ -133,7 +133,8 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
         if SingleManager.instance.isLogin {
             SJBRequestModel.pull_fetchUserInfoData { (response, status) in
                 if status == 1{
-                    self.userInfoModel = response as? KYUserInfoModel
+                    SingleManager.instance.userInfo = response as? KYUserInfoModel
+                    self.userInfoModel = SingleManager.instance.userInfo
                 }
             }
 
@@ -278,7 +279,6 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 break
             case 2:
                 let withdrawListVC = KYWithdrawListViewController()
-                withdrawListVC.navTitle = "申请提现"
                 self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(withdrawListVC, animated: true)
                 self.hidesBottomBarWhenPushed = false

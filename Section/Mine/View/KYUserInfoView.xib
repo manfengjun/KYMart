@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -179,6 +179,7 @@
                 <constraint firstItem="8Ez-ul-0dG" firstAttribute="bottom" secondItem="VZc-uR-Dan" secondAttribute="bottom" constant="-8" id="Y0z-F3-Toc"/>
                 <constraint firstItem="VZc-uR-Dan" firstAttribute="leading" secondItem="bsC-px-rWm" secondAttribute="trailing" constant="1" id="Yvh-1S-WA8"/>
                 <constraint firstItem="ASn-R9-SvJ" firstAttribute="top" secondItem="Flj-YU-mQq" secondAttribute="bottom" id="ZmR-1v-88q"/>
+                <constraint firstAttribute="bottom" secondItem="7me-qE-AHr" secondAttribute="bottom" id="eAb-f9-gl4"/>
                 <constraint firstItem="7me-qE-AHr" firstAttribute="top" secondItem="ASn-R9-SvJ" secondAttribute="bottom" id="gdC-22-AM7"/>
                 <constraint firstItem="m2j-Uv-af5" firstAttribute="width" secondItem="owF-W2-q6Q" secondAttribute="width" multiplier="1/6" id="h0m-Se-KV8"/>
                 <constraint firstItem="8Ez-ul-0dG" firstAttribute="top" secondItem="owF-W2-q6Q" secondAttribute="bottom" constant="8" id="ioQ-Rg-Kis"/>
