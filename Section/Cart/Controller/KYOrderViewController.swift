@@ -9,14 +9,23 @@
 import UIKit
 fileprivate let KYOrderTVCellIdentifier = "kYOrderTVCell"
 
-class KYOrderViewController: UIViewController {
+class KYOrderViewController: BaseViewController {
 
+    @IBOutlet var headView: UIView!
+    @IBOutlet var footView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         // Do any additional setup after loading the view.
     }
-
+    func setupUI() {
+        setBackButtonInNav()
+        headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 80)
+        footView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 315)
+        tableView.tableHeaderView = headView
+        tableView.tableFooterView = footView
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,6 +43,6 @@ extension KYOrderViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 148
+        return 198
     }
 }
