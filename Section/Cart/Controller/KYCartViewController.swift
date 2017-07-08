@@ -38,8 +38,26 @@ class KYCartViewController: UIViewController {
             }
 
         })
-        bottomView.balanceSelectResult({ 
-            self.performSegue(withIdentifier: "C_order_SegueID", sender: "")
+        bottomView.balanceSelectResult({
+            /// 结算
+            var isHaveSelect = false
+            if let array = self.cartListModel?.storeList {
+                for storeList in array {
+                    for cartList in storeList.cartList {
+                        if cartList.selected == "1"{
+                            isHaveSelect = true
+                            break
+                        }
+                    }
+                }
+            }
+            if isHaveSelect {            
+                self.performSegue(withIdentifier: "C_order_SegueID", sender: "")
+
+            }
+            else{
+                Toast(content: "没有选择商品！")
+            }
         })
         return bottomView
     }()

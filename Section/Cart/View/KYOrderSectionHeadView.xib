@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYOrderSectionHeadView" customModule="KYMart" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="2xi-eh-j0o"/>
+                <outlet property="storeNameL" destination="F8e-Th-XPK" id="7Xe-nF-qWi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="41"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="旺小姐" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8e-Th-XPK">
+                    <rect key="frame" x="45" y="12" width="40" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dianpu" translatesAutoresizingMaskIntoConstraints="NO" id="K41-PM-naL">
+                    <rect key="frame" x="15" y="10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="3kZ-Sg-xsO"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZTA-Mt-VfK">
+                    <rect key="frame" x="15" y="40" width="377" height="0.5"/>
+                    <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="vzG-z0-Ito"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="K41-PM-naL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Fcr-HM-d8S"/>
+                <constraint firstItem="K41-PM-naL" firstAttribute="width" secondItem="K41-PM-naL" secondAttribute="height" multiplier="1:1" id="WgL-yd-ko6"/>
+                <constraint firstItem="F8e-Th-XPK" firstAttribute="centerY" secondItem="K41-PM-naL" secondAttribute="centerY" id="Zag-8Z-Agg"/>
+                <constraint firstItem="F8e-Th-XPK" firstAttribute="leading" secondItem="K41-PM-naL" secondAttribute="trailing" constant="10" id="aTw-oR-saT"/>
+                <constraint firstItem="ZTA-Mt-VfK" firstAttribute="top" secondItem="K41-PM-naL" secondAttribute="bottom" constant="10" id="e6i-Lv-slq"/>
+                <constraint firstAttribute="trailing" secondItem="ZTA-Mt-VfK" secondAttribute="trailing" constant="15" id="exq-EJ-SrL"/>
+                <constraint firstItem="ZTA-Mt-VfK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="k25-k5-s0S"/>
+                <constraint firstItem="K41-PM-naL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="qtT-tv-1cd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="50.5" y="360.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dianpu" width="50" height="50"/>
+    </resources>
+</document>

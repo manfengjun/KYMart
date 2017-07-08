@@ -123,7 +123,6 @@ extension KYHomeViewController {
             }
         }
     }
-    
     /// 猜我喜欢
     func dataProductRequest() {
         SJBRequestModel.pull_fetchFavoriteProductData(page: self.page) { (response, status) in

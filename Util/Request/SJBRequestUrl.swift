@@ -109,6 +109,22 @@ class SJBRequestUrl: NSObject {
     class func returnDelCartUrl() -> String {
         return "\(basePath)m=Api&c=Cart&a=delCart"
     }
+    
+    /// 生成订单
+    ///
+    /// - Returns: return value description
+    class func returnOrderUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=cart2&token=\(access_token())"
+
+    }
+    
+    /// 订单金额信息
+    ///
+    /// - Returns: return value description
+    class func returnOrderMoneyUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=cart3&token=\(access_token())"
+    }
+
     // MARK: ------ 登录
     /// 登录
     ///

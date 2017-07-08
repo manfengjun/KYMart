@@ -18,6 +18,8 @@ enum ModelType {
     case CartList//购物车列表
     case AddCart//添加购物车
     case DelCart//删除购物车商品
+    case Order//生成订单
+    case OrderMoney//订单金额
     
     case VerifyCode//验证码
     case Login//登录
@@ -136,6 +138,19 @@ class SJBRequestModel: NSObject {
                     completion(model,status)
                 }
                 break
+            case .Order:
+                let temmodel = KYOrderModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .OrderMoney:
+                let temmodel = KYOrderPriceModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+
             default:
                 break
             }
@@ -380,7 +395,27 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .DelCart, response: response, status: status, completion: completion)
         }
     }
-    
+    /// 生成订单
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchOrderProductData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnOrderUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .Order, response: response, status: status, completion: completion)
+        }
+    }
+    /// 订单金额
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchOrderMoneyData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnOrderMoneyUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderMoney, response: response, status: status, completion: completion)
+        }
+    }
+
     // MARK: ------ 个人信息
     /// 更换头像
     ///
