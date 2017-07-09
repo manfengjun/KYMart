@@ -25,5 +25,10 @@
 #import "CitiesDataTool.h"
 //验证码
 #import "PooCodeView.h"
+//微信支付
+#import "WXApi.h"
+#import "WXApiObject.h"
+//支付宝支付
+#import <AlipaySDK/AlipaySDK.h>
 
 

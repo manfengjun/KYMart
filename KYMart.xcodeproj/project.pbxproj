@@ -137,6 +137,13 @@
 		BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC017CB1EDF9BD6005D66B0 /* XHToast.swift */; };
 		BFC018151EDF9C06005D66B0 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018141EDF9C06005D66B0 /* libsqlite3.0.tbd */; };
 		BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC018161EDF9C3D005D66B0 /* libz.tbd */; };
+		BFC332B21F11D48400FEABE0 /* KYOrderPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC332B11F11D48400FEABE0 /* KYOrderPayViewController.swift */; };
+		BFC332BD1F11FABD00FEABE0 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC332B81F11FABD00FEABE0 /* libWeChatSDK.a */; };
+		BFC332BE1F11FABD00FEABE0 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BFC332B91F11FABD00FEABE0 /* README.txt */; };
+		BFC332C01F11FAE300FEABE0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC332BF1F11FAE300FEABE0 /* CFNetwork.framework */; };
+		BFC332C21F11FAEC00FEABE0 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC332C11F11FAEC00FEABE0 /* libstdc++.tbd */; };
+		BFC332C41F1208D500FEABE0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC332C31F1208D500FEABE0 /* CoreTelephony.framework */; };
+		BFC332C61F12101E00FEABE0 /* KYWXPayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC332C51F12101E00FEABE0 /* KYWXPayModel.swift */; };
 		BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFC679051EE5624D00545C2C /* logo.jpg */; };
 		BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679061EE5624D00545C2C /* FJSectionController.swift */; };
 		BFD6FAA51F051E5600E6BDA2 /* KYWithdrawListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */; };
@@ -164,6 +171,16 @@
 		BFE46DFB1EF12D7600F65FED /* celan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DFA1EF12D7600F65FED /* celan.jpg */; };
 		BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE46DFC1EF12DEA00F65FED /* user.jpg */; };
 		BFE7BB131EF6B5D200A84B9F /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFE7BB121EF6B5D200A84B9F /* 2.jpg */; };
+		BFE7F7E31F12238300432994 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFE7F7E11F12238300432994 /* AlipaySDK.bundle */; };
+		BFE7F7E41F12238300432994 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7E21F12238300432994 /* AlipaySDK.framework */; };
+		BFE7F7E61F12240700432994 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7E51F12240700432994 /* libc++.tbd */; };
+		BFE7F7E81F12241500432994 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7E71F12241500432994 /* SystemConfiguration.framework */; };
+		BFE7F7EA1F12242300432994 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7E91F12242300432994 /* QuartzCore.framework */; };
+		BFE7F7EC1F12242C00432994 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7EB1F12242C00432994 /* CoreText.framework */; };
+		BFE7F7EE1F12243500432994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7ED1F12243500432994 /* CoreGraphics.framework */; };
+		BFE7F7F01F12243D00432994 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7EF1F12243D00432994 /* UIKit.framework */; };
+		BFE7F7F21F12244400432994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7F11F12244400432994 /* Foundation.framework */; };
+		BFE7F7F41F12244E00432994 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE7F7F31F12244E00432994 /* CoreMotion.framework */; };
 		BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60341EEBC43F00885737 /* KYCodeView.swift */; };
 		BFEA60371EEBD2C000885737 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA60361EEBD2C000885737 /* DemoViewController.swift */; };
 		BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = BFEA603A1EEBDF9300885737 /* SSKeychain.m */; };
@@ -369,6 +386,16 @@
 		BFC017CB1EDF9BD6005D66B0 /* XHToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHToast.swift; sourceTree = "<group>"; };
 		BFC018141EDF9C06005D66B0 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		BFC018161EDF9C3D005D66B0 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		BFC332B11F11D48400FEABE0 /* KYOrderPayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderPayViewController.swift; sourceTree = "<group>"; };
+		BFC332B81F11FABD00FEABE0 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		BFC332B91F11FABD00FEABE0 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		BFC332BA1F11FABD00FEABE0 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		BFC332BB1F11FABD00FEABE0 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		BFC332BC1F11FABD00FEABE0 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		BFC332BF1F11FAE300FEABE0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BFC332C11F11FAEC00FEABE0 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		BFC332C31F1208D500FEABE0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		BFC332C51F12101E00FEABE0 /* KYWXPayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWXPayModel.swift; sourceTree = "<group>"; };
 		BFC679051EE5624D00545C2C /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		BFC679061EE5624D00545C2C /* FJSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionController.swift; sourceTree = "<group>"; };
 		BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWithdrawListViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +428,16 @@
 		BFE46DFA1EF12D7600F65FED /* celan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = celan.jpg; sourceTree = "<group>"; };
 		BFE46DFC1EF12DEA00F65FED /* user.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = user.jpg; sourceTree = "<group>"; };
 		BFE7BB121EF6B5D200A84B9F /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		BFE7F7E11F12238300432994 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		BFE7F7E21F12238300432994 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		BFE7F7E51F12240700432994 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		BFE7F7E71F12241500432994 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BFE7F7E91F12242300432994 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BFE7F7EB1F12242C00432994 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		BFE7F7ED1F12243500432994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BFE7F7EF1F12243D00432994 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BFE7F7F11F12244400432994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BFE7F7F31F12244E00432994 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		BFEA60341EEBC43F00885737 /* KYCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCodeView.swift; sourceTree = "<group>"; };
 		BFEA60361EEBD2C000885737 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		BFEA60391EEBDF9300885737 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
@@ -432,8 +469,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE7F7F41F12244E00432994 /* CoreMotion.framework in Frameworks */,
+				BFE7F7F21F12244400432994 /* Foundation.framework in Frameworks */,
+				BFE7F7F01F12243D00432994 /* UIKit.framework in Frameworks */,
+				BFE7F7EE1F12243500432994 /* CoreGraphics.framework in Frameworks */,
+				BFE7F7EC1F12242C00432994 /* CoreText.framework in Frameworks */,
+				BFE7F7EA1F12242300432994 /* QuartzCore.framework in Frameworks */,
+				BFE7F7E81F12241500432994 /* SystemConfiguration.framework in Frameworks */,
 				BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */,
+				BFE7F7E61F12240700432994 /* libc++.tbd in Frameworks */,
+				BFC332C41F1208D500FEABE0 /* CoreTelephony.framework in Frameworks */,
+				BFE7F7E41F12238300432994 /* AlipaySDK.framework in Frameworks */,
+				BFC332C21F11FAEC00FEABE0 /* libstdc++.tbd in Frameworks */,
+				BFC332C01F11FAE300FEABE0 /* CFNetwork.framework in Frameworks */,
 				BFC018151EDF9C06005D66B0 /* libsqlite3.0.tbd in Frameworks */,
+				BFC332BD1F11FABD00FEABE0 /* libWeChatSDK.a in Frameworks */,
 				7F421A4FD87650F1917A05B4 /* Pods_KYMart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +508,17 @@
 		357C7D29D9B4C0B5522B7D49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFE7F7F31F12244E00432994 /* CoreMotion.framework */,
+				BFE7F7F11F12244400432994 /* Foundation.framework */,
+				BFE7F7EF1F12243D00432994 /* UIKit.framework */,
+				BFE7F7ED1F12243500432994 /* CoreGraphics.framework */,
+				BFE7F7EB1F12242C00432994 /* CoreText.framework */,
+				BFE7F7E91F12242300432994 /* QuartzCore.framework */,
+				BFE7F7E71F12241500432994 /* SystemConfiguration.framework */,
+				BFE7F7E51F12240700432994 /* libc++.tbd */,
+				BFC332C31F1208D500FEABE0 /* CoreTelephony.framework */,
+				BFC332C11F11FAEC00FEABE0 /* libstdc++.tbd */,
+				BFC332BF1F11FAE300FEABE0 /* CFNetwork.framework */,
 				BFC018161EDF9C3D005D66B0 /* libz.tbd */,
 				BFC018141EDF9C06005D66B0 /* libsqlite3.0.tbd */,
 				73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */,
@@ -581,6 +642,7 @@
 			children = (
 				BFF05C7C1EEC384800D18D43 /* KYCartViewController.swift */,
 				BFBF04861F0D2D030032AEDA /* KYOrderViewController.swift */,
+				BFC332B11F11D48400FEABE0 /* KYOrderPayViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -593,6 +655,7 @@
 				BFA8C81E1F1085F500C9155B /* KYOrderModel.swift */,
 				BFA8C8281F10C1DB00C9155B /* KYCartFormDataModel.swift */,
 				BFA8C82A1F10D83700C9155B /* KYOrderPriceModel.swift */,
+				BFC332C51F12101E00FEABE0 /* KYWXPayModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1064,6 +1127,8 @@
 		BFC017631EDF9AB1005D66B0 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				BFE7F7E01F12237500432994 /* Alipay */,
+				BFC332B71F11FABD00FEABE0 /* OpenSDK1.7.8 */,
 				BF9B49A71F08E2E100982EBA /* PooCodeView */,
 				BF194AE61EF4E8C4001538A9 /* fmdb */,
 				BF8902F51EE3A1EC004A0FF7 /* SDCycleScrollView */,
@@ -1131,6 +1196,18 @@
 			path = XHToastSwift;
 			sourceTree = "<group>";
 		};
+		BFC332B71F11FABD00FEABE0 /* OpenSDK1.7.8 */ = {
+			isa = PBXGroup;
+			children = (
+				BFC332B81F11FABD00FEABE0 /* libWeChatSDK.a */,
+				BFC332B91F11FABD00FEABE0 /* README.txt */,
+				BFC332BA1F11FABD00FEABE0 /* WechatAuthSDK.h */,
+				BFC332BB1F11FABD00FEABE0 /* WXApi.h */,
+				BFC332BC1F11FABD00FEABE0 /* WXApiObject.h */,
+			);
+			path = OpenSDK1.7.8;
+			sourceTree = "<group>";
+		};
 		BFDCB3FC1EE8F3730040A09B /* TagView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1146,6 +1223,15 @@
 				BFDCB4061EE8F3730040A09B /* HXTagsView.m */,
 			);
 			path = TagView;
+			sourceTree = "<group>";
+		};
+		BFE7F7E01F12237500432994 /* Alipay */ = {
+			isa = PBXGroup;
+			children = (
+				BFE7F7E11F12238300432994 /* AlipaySDK.bundle */,
+				BFE7F7E21F12238300432994 /* AlipaySDK.framework */,
+			);
+			path = Alipay;
 			sourceTree = "<group>";
 		};
 		BFEA60381EEBDF9300885737 /* KeychainItemWraper */ = {
@@ -1241,7 +1327,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = R89T2LLRX5;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					BFC017431EDF9875005D66B0 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -1316,11 +1402,13 @@
 				BFC017391EDF9875005D66B0 /* Main.storyboard in Resources */,
 				BFDCB4151EE951EA0040A09B /* KYPropertyFootView.xib in Resources */,
 				BFD7B4E71F0BE17B0082EAFF /* KYUserInfoView.xib in Resources */,
+				BFC332BE1F11FABD00FEABE0 /* README.txt in Resources */,
 				BFA1C2B31EE977950072C04D /* KYPropertyHeadView.xib in Resources */,
 				BF194AE31EF4E8BD001538A9 /* AddressTableViewCell.xib in Resources */,
 				BFE7BB131EF6B5D200A84B9F /* 2.jpg in Resources */,
 				BFD6FAA91F05204F00E6BDA2 /* KYWithdrawHeadView.xib in Resources */,
 				BF8903491EE3CE80004A0FF7 /* KYHomeHeadView.xib in Resources */,
+				BFE7F7E31F12238300432994 /* AlipaySDK.bundle in Resources */,
 				BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */,
 				BFBF048B1F0D2D6C0032AEDA /* KYOrderTVCell.xib in Resources */,
 				BFE46DFD1EF12DEA00F65FED /* user.jpg in Resources */,
@@ -1511,11 +1599,13 @@
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
 				BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */,
 				BFBF048A1F0D2D6C0032AEDA /* KYOrderTVCell.swift in Sources */,
+				BFC332B21F11D48400FEABE0 /* KYOrderPayViewController.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BF8DF2871F01F2EF00A23921 /* KYMineOtherTVCell.swift in Sources */,
 				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* FJString+Extension.swift in Sources */,
 				BF9B49AC1F09070900982EBA /* KYQrCodeViewController.swift in Sources */,
+				BFC332C61F12101E00FEABE0 /* KYWXPayModel.swift in Sources */,
 				BFA8C82B1F10D83700C9155B /* KYOrderPriceModel.swift in Sources */,
 				BFDCB4131EE951AC0040A09B /* KYPropertyFootView.swift in Sources */,
 				BFBAB4781EF17C3A0038B95E /* KYShopAddressViewController.swift in Sources */,
@@ -1680,19 +1770,61 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
+					"$(PROJECT_DIR)/Vender/Alipay",
 				);
 				INFOPLIST_FILE = KYMart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vender/OpenSDK1.7.8",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"PPNumberButtonSwift\"",
+					"-framework",
+					"\"PYSearch\"",
+					"-framework",
+					"\"PopupDialog\"",
+					"-framework",
+					"\"ReactiveCocoa\"",
+					"-framework",
+					"\"ReactiveSwift\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"STPickerView\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"TZImagePickerController\"",
+					"-framework",
+					"\"YYCache\"",
+					"-framework",
+					"\"YYModel\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f125f120-e61f-4920-9b8a-f1416a1bd976";
-				PROVISIONING_PROFILE_SPECIFIER = production;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -1706,19 +1838,61 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
+					"$(PROJECT_DIR)/Vender/Alipay",
 				);
 				INFOPLIST_FILE = KYMart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vender/OpenSDK1.7.8",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"HMSegmentedControl\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"MJRefresh\"",
+					"-framework",
+					"\"PPNumberButtonSwift\"",
+					"-framework",
+					"\"PYSearch\"",
+					"-framework",
+					"\"PopupDialog\"",
+					"-framework",
+					"\"ReactiveCocoa\"",
+					"-framework",
+					"\"ReactiveSwift\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"STPickerView\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"TZImagePickerController\"",
+					"-framework",
+					"\"YYCache\"",
+					"-framework",
+					"\"YYModel\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f125f120-e61f-4920-9b8a-f1416a1bd976";
-				PROVISIONING_PROFILE_SPECIFIER = production;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

@@ -7,12 +7,12 @@
 //
 
 import UIKit
-let basePath = "http://test.kymart.cn/index.php?"
-let baseHref = "http://test.kymart.cn"
-let imgPath = "http://test.kymart.cn"
-//let basePath = "https://kymart.cn/index.php?"
-//let baseHref = "https://kymart.cn"
-//let imgPath = "https://kymart.cn"
+//let basePath = "http://test.kymart.cn/index.php?"
+//let baseHref = "http://test.kymart.cn"
+//let imgPath = "http://test.kymart.cn"
+let basePath = "https://kymart.cn/index.php?"
+let baseHref = "https://kymart.cn"
+let imgPath = "https://kymart.cn"
 class SJBRequestUrl: NSObject {
     
     /// access_token
@@ -124,6 +124,27 @@ class SJBRequestUrl: NSObject {
     class func returnOrderMoneyUrl() -> String {
         return "\(basePath)m=Api&c=Cart&a=cart3&token=\(access_token())"
     }
+    /// 提交订单编号
+    ///
+    /// - Returns: return value description
+    class func returnPostOrderIdUrl() -> String {
+        return "\(basePath)m=Api&c=Cart&a=cart4&token=\(access_token())"
+    }
+    
+    /// 微信支付
+    ///
+    /// - Returns: return value description
+    class func returnWeiXinPayUrl() -> String {
+        return "\(basePath)m=Api&c=wxpay&a=dopay&token=\(access_token())"
+    }
+    /// 支付宝支付
+    ///
+    /// - Returns: return value description
+    class func returnAlipayPayUrl() -> String {
+        return "\(basePath)m=Api&c=payment&a=alipay_sign&token=\(access_token())"
+    }
+
+    
 
     // MARK: ------ 登录
     /// 登录

@@ -18,9 +18,15 @@ enum ModelType {
     case CartList//购物车列表
     case AddCart//添加购物车
     case DelCart//删除购物车商品
+    
     case Order//生成订单
     case OrderMoney//订单金额
-    
+    case OrderSubmit//提交订单
+    case PostOrderID//提交订单编号
+    case OrderWenxinPay//微信支付
+    case OrderAlipayPay//支付宝支付
+
+
     case VerifyCode//验证码
     case Login//登录
     case RegVerifyCode//注册短信验证码
@@ -150,7 +156,24 @@ class SJBRequestModel: NSObject {
                     completion(model,status)
                 }
                 break
+            case .OrderSubmit:
+                completion(response,status)
 
+                break
+            case .PostOrderID:
+                completion(response,status)
+                
+                break
+            case .OrderWenxinPay:
+                let temmodel = KYWXPayModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .OrderAlipayPay:
+                completion(response,status)
+                
+                break
             default:
                 break
             }
@@ -412,9 +435,50 @@ class SJBRequestModel: NSObject {
     ///   - completion: completion description
     class func push_fetchOrderMoneyData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Post(url: SJBRequestUrl.returnOrderMoneyUrl(), params: params) { (response, status) in
-            self.dataToModel(type: .OrderMoney, response: response, status: status, completion: completion)
+            if response is String {
+                self.dataToModel(type: .OrderSubmit, response: response, status: status, completion: completion)
+            }
+            else
+            {
+                self.dataToModel(type: .OrderMoney, response: response, status: status, completion: completion)
+
+            }
         }
     }
+    
+    /// 提交订单编号
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchPostOrderIdData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnPostOrderIdUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .PostOrderID, response: response, status: status, completion: completion)
+        }
+    }
+
+    /// 微信支付
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchOrderWeiXinPayData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnWeiXinPayUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderWenxinPay, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 支付宝支付
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchOrderAlipayPayData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnAlipayPayUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
+        }
+    }
+
 
     // MARK: ------ 个人信息
     /// 更换头像

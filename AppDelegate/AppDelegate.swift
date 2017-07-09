@@ -11,7 +11,7 @@ import YYCache
 import IQKeyboardManagerSwift
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
 
     var window: UIWindow?
 
@@ -53,10 +53,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
 
         }
-
+        //微信支付
+        WXApi.registerApp("wxcf54c829295655ba")
+        //键盘
         setupIQKeyboardManager()
 
         return true
+    }
+    /// 微信支付
+    ///
+    /// - Parameter resp: resp description
+    
+    func onResp(_ resp: BaseResp!) {
+        if resp is PayResp {
+            switch resp.errCode {
+            case 0:
+                NotificationCenter.default.post(name:WeiXinPayClosure, object: nil)
+                break
+            default:
+                Toast(content: "支付失败")
+                break
+            }
+        }
     }
     /// 键盘管理
     func setupIQKeyboardManager() {
@@ -64,6 +82,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         manager.enable = false
         manager.shouldResignOnTouchOutside = true
         manager.enableAutoToolbar = false
+    }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        if url.host == "safepay" {
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (result) in
+                print(result ?? "result")
+            })
+        }
+        return WXApi.handleOpen(url, delegate: self)
+    }
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        if url.host == "safepay" {
+            AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (result) in
+                print(result ?? "result")
+
+            })
+        }
+
+        return WXApi.handleOpen(url, delegate: self)
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

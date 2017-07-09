@@ -117,7 +117,8 @@ class KYOrderViewController: BaseViewController {
             }
             else
             {
-                self.Toast(content: "生成订单失败！")
+                self.Toast(content: response as! String)
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -134,26 +135,47 @@ class KYOrderViewController: BaseViewController {
             if let text = store.user_note {
                 cart_form_data.user_note[String(store.store_id)] = text
             }
+            else
+            {
+                cart_form_data.user_note[String(store.store_id)] = ""
+
+            }
             
         }
         if let user_id = SingleManager.instance.loginInfo?.user_id {
             var formparams = ["user_id":user_id,"act":"order_price","address_id":String(model.addressList.address_id),"cart_form_data":cart_form_data.yy_modelToJSONString()!]
-            if type == "balance" {
-                formparams["pay_points"] = balanceT.text
+            formparams["user_money"] = (balanceT.text?.isEmpty)! ? "" : balanceT.text
+            formparams["pay_points"] = (ponitsfeeT.text?.isEmpty)! ? "" : ponitsfeeT.text
+            if type == "submit" {
+                formparams["act"] = "submit_order"
+                
             }
-            if type == "ponitsfee" {
-                formparams["user_money"] = ponitsfeeT.text
-
-            }
-
             SJBRequestModel.push_fetchOrderMoneyData(params: formparams as [String : AnyObject], completion: { (response, status) in
                 if status == 1 {
-                    if type == "update" {
+                    if type == "update" || type == "balance" || type == "ponitsfee"{
+                        // 刷新信息
                         self.orderPriceModel = response as? KYOrderPriceModel
                         self.orderModel = model
                     }
                     else
                     {
+                        //提交订单成功
+                        let order_id = response
+                        self.Toast(content: "提交订单成功！")
+                        let params = ["master_order_sn":order_id]
+                        SJBRequestModel.push_fetchPostOrderIdData(params: params, completion: { (response, status) in
+                            if status == 1 {
+                                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                let orderPayVC = storyboard.instantiateViewController(withIdentifier: "OrderPayVC") as! KYOrderPayViewController
+                                orderPayVC.orderID = order_id as? String
+                                orderPayVC.orderMoney = response as? String
+                                self.navigationController?.pushViewController(orderPayVC, animated: true)
+                            }
+                            else
+                            {
+                                self.Toast(content: "支付失败！")
+                            }
+                        })
                     }
                 }
                 else
@@ -166,7 +188,7 @@ class KYOrderViewController: BaseViewController {
     }
     @IBAction func submitAction(_ sender: UIButton) {
         if let model = self.orderModel {
-            self.postOrderInfo(type: "submite", model: model)
+            self.postOrderInfo(type: "submit", model: model)
 
         }
         else
@@ -183,7 +205,7 @@ class KYOrderViewController: BaseViewController {
             if let text = orderModel?.userInfo.user_money {
                 if Float(balanceT.text!)! < Float(text)! {
                     if let model = self.orderModel {
-                        self.postOrderInfo(type: "balance", model: model)
+                        self.postOrderInfo(type: "update", model: model)
                         
                     }
                 }
@@ -202,7 +224,7 @@ class KYOrderViewController: BaseViewController {
             if let text = orderModel?.userInfo.pay_points {
                 if Int(ponitsfeeT.text!)! < text {
                     if let model = self.orderModel {
-                        self.postOrderInfo(type: "ponitsfee", model: model)
+                        self.postOrderInfo(type: "update", model: model)
                         
                     }
                 }
