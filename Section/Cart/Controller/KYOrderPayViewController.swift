@@ -7,20 +7,17 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class KYOrderPayViewController: UIViewController {
 
-    var orderID:String?{
-        didSet {
-            
-        }
-    }
-    var orderMoney:String?{
-        didSet {
-            
-        }
-    }
+    var orderID:String?
+    var orderMoney:String?
+    var currentSelect:Int = 1;
     var model:KYWXPayModel?
+    @IBOutlet weak var sureBtn: UIButton!
+    @IBOutlet weak var orderIdL: UILabel!
+    @IBOutlet weak var orderMoneyL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +30,25 @@ class KYOrderPayViewController: UIViewController {
         self.tabBarController?.selectedIndex = 3
 
     }
+    @IBAction func selectAction(_ sender: UITapGestureRecognizer) {
+        currentSelect = (sender.view?.tag)!
+        let wechatBtn = view.viewWithTag(1)?.viewWithTag(11) as! UIButton
+        let alipayBtn = view.viewWithTag(2)?.viewWithTag(11) as! UIButton
+        wechatBtn.setImage(sender.view?.tag == 1 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
+        alipayBtn.setImage(sender.view?.tag == 2 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
+    }
     
     @IBAction func payAction(_ sender: UIButton) {
-//        self.weixinPay()
-        alipayPay()
+        sureBtn.isUserInteractionEnabled = false
+        SVProgressHUD.show(withStatus: "加载中")
+        if currentSelect == 1 {
+            weixinPay()
+            
+        }
+        else
+        {
+            alipayPay()
+        }
 
     }
     override func didReceiveMemoryWarning() {
@@ -60,6 +72,8 @@ extension KYOrderPayViewController{
     func weixinPay() {
         let params = ["master_order_sn":orderID]
         SJBRequestModel.push_fetchOrderWeiXinPayData(params: params as [String : AnyObject]) { (response, status) in
+            self.sureBtn.isUserInteractionEnabled = true
+            SVProgressHUD.dismiss()
             if status == 1{
                 let model = response as? KYWXPayModel
                 if let timeStr = model?.timestamp{
@@ -79,6 +93,8 @@ extension KYOrderPayViewController{
     func alipayPay() {
         let alipayParams = ["order_sn":orderID]
         SJBRequestModel.push_fetchOrderAlipayPayData(params: alipayParams as [String : AnyObject]) { (response, status) in
+            self.sureBtn.isUserInteractionEnabled = true
+            SVProgressHUD.dismiss()
             if status == 1 {
                 let orderString = response as! String
                 let appScheme = "com.kymart.shop"

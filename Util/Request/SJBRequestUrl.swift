@@ -109,7 +109,7 @@ class SJBRequestUrl: NSObject {
     class func returnDelCartUrl() -> String {
         return "\(basePath)m=Api&c=Cart&a=delCart"
     }
-    
+    // MARK: ------ 订单
     /// 生成订单
     ///
     /// - Returns: return value description
@@ -143,7 +143,13 @@ class SJBRequestUrl: NSObject {
     class func returnAlipayPayUrl() -> String {
         return "\(basePath)m=Api&c=payment&a=alipay_sign&token=\(access_token())"
     }
-
+    
+    /// 订单列表
+    ///
+    /// - Returns: return value description
+    class func returnOrderListUrl(user_id:String,type:String) -> String {
+        return "\(basePath)m=Api&c=User&a=getOrderList&user_id=\(user_id)&type=\(type)&token=\(access_token())"
+    }
     
 
     // MARK: ------ 登录

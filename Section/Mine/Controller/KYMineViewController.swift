@@ -253,9 +253,11 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            let noneVC = NoneViewController()
+            let noneVC = KYOrderListViewController()
             noneVC.navTitle = "全部订单"
+            self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(noneVC, animated: true)
+            self.hidesBottomBarWhenPushed = false
         }
         if indexPath.section == 1 {
             switch indexPath.row {

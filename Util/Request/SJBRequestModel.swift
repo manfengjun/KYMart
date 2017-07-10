@@ -25,6 +25,7 @@ enum ModelType {
     case PostOrderID//提交订单编号
     case OrderWenxinPay//微信支付
     case OrderAlipayPay//支付宝支付
+    case OrderList//订单列表
 
 
     case VerifyCode//验证码
@@ -238,7 +239,14 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
-
+            case .OrderList:
+                for item in response as! NSArray {
+                    let temmodel = KYOrderListModel.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
             default:
                 break
             }
@@ -418,6 +426,8 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .DelCart, response: response, status: status, completion: completion)
         }
     }
+    // MARK: ------ 订单
+
     /// 生成订单
     ///
     /// - Parameters:
@@ -478,7 +488,14 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
         }
     }
-
+    /// 获取订单列表
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchOrderListData(user_id:String,type:String,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnOrderListUrl(user_id: user_id,type: type)) { (response, status) in
+            self.dataArrayToModel(type: .OrderList, response: response, status: status, completion: completion)
+        }
+    }
 
     // MARK: ------ 个人信息
     /// 更换头像
