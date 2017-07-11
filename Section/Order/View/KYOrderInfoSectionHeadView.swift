@@ -9,13 +9,22 @@
 import UIKit
 
 class KYOrderInfoSectionHeadView: UIView {
+    @IBOutlet var contentView: UIView!
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView = Bundle.main.loadNibNamed("KYOrderInfoSectionHeadView", owner: self, options: nil)?.first as! UIView
+        contentView.frame = self.bounds
+        addSubview(contentView)
+        awakeFromNib()
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
 
 }

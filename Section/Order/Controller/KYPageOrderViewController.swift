@@ -45,11 +45,8 @@ class KYPageOrderViewController: BaseViewController {
     
     func setupUI() {
         view.backgroundColor = UIColor.white
-        setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(goback))
+        setBackButtonInNav()
         view.addSubview(ninaPagerView)
-    }
-    override func goback() {
-        navigationController?.popViewController(animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

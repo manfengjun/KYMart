@@ -167,7 +167,7 @@ extension KYOrderListViewController:UITableViewDelegate,UITableViewDataSource{
         return 111
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let noneVC = NoneViewController()
+        let noneVC = KYOrderInfoViewController()
         self.navigationController?.pushViewController(noneVC, animated: true)
     }
 }

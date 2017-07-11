@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYOrderInfoSectionHeadView" customModule="KYMart" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="mQ9-gi-oTA" id="6pD-NV-kzh"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="mQ9-gi-oTA">
             <rect key="frame" x="0.0" y="0.0" width="407" height="41"/>
@@ -29,7 +33,7 @@
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FK6-ie-QGB">
-                    <rect key="frame" x="0.0" y="40" width="407" height="0.5"/>
+                    <rect key="frame" x="15" y="40" width="377" height="0.5"/>
                     <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="hAm-L5-xO5"/>
@@ -38,13 +42,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="FK6-ie-QGB" firstAttribute="leading" secondItem="mQ9-gi-oTA" secondAttribute="leading" id="27A-BY-4T7"/>
+                <constraint firstItem="FK6-ie-QGB" firstAttribute="leading" secondItem="mQ9-gi-oTA" secondAttribute="leading" constant="15" id="27A-BY-4T7"/>
                 <constraint firstItem="1eA-ei-t8W" firstAttribute="centerY" secondItem="gRM-iP-TQU" secondAttribute="centerY" id="ASf-hy-Frk"/>
                 <constraint firstItem="gRM-iP-TQU" firstAttribute="width" secondItem="gRM-iP-TQU" secondAttribute="height" multiplier="1:1" id="DCt-3k-6Dn"/>
                 <constraint firstItem="FK6-ie-QGB" firstAttribute="top" secondItem="gRM-iP-TQU" secondAttribute="bottom" constant="10" id="Ryp-ch-Xzd"/>
                 <constraint firstItem="gRM-iP-TQU" firstAttribute="leading" secondItem="mQ9-gi-oTA" secondAttribute="leading" constant="15" id="dFu-fN-q2J"/>
                 <constraint firstItem="1eA-ei-t8W" firstAttribute="leading" secondItem="gRM-iP-TQU" secondAttribute="trailing" constant="10" id="lkE-rX-4qP"/>
-                <constraint firstAttribute="trailing" secondItem="FK6-ie-QGB" secondAttribute="trailing" id="xFh-A4-bON"/>
+                <constraint firstAttribute="trailing" secondItem="FK6-ie-QGB" secondAttribute="trailing" constant="15" id="xFh-A4-bON"/>
                 <constraint firstItem="gRM-iP-TQU" firstAttribute="top" secondItem="mQ9-gi-oTA" secondAttribute="top" constant="10" id="zGB-7U-Q6t"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
