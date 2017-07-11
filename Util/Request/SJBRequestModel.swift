@@ -491,8 +491,8 @@ class SJBRequestModel: NSObject {
     /// 获取订单列表
     ///
     /// - Parameter completion: completion description
-    class func pull_fetchOrderListData(user_id:String,type:String,completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnOrderListUrl(user_id: user_id,type: type)) { (response, status) in
+    class func pull_fetchOrderListData(page:Int,user_id:String,type:String,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnOrderListUrl(page:page,user_id: user_id,type: type)) { (response, status) in
             self.dataArrayToModel(type: .OrderList, response: response, status: status, completion: completion)
         }
     }

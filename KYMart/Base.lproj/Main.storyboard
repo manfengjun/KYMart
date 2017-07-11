@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -909,6 +909,7 @@
                         <segue destination="9pD-kN-T4R" kind="show" identifier="M_shareQrCode_SegudID" id="8U0-3d-I8Z"/>
                         <segue destination="yOm-jY-PCo" kind="show" identifier="M_bonusToMoney_SegudID" id="iNc-Oa-7oy"/>
                         <segue destination="tJZ-T0-IsK" kind="show" identifier="M_member_SegueID" id="jZ2-m3-DOe"/>
+                        <segue destination="XJe-dc-pdh" kind="show" identifier="M_orderList_SegudID" id="pXD-U2-cLQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SkT-PT-QfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1702,7 +1703,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="673" y="2632"/>
+            <point key="canvasLocation" x="-1284" y="2658"/>
         </scene>
         <!--User Info View Controller-->
         <scene sceneID="GsM-iK-i7a">
@@ -1938,7 +1939,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1612" y="2632"/>
+            <point key="canvasLocation" x="-281" y="2658"/>
         </scene>
         <!--Reset Pass View Controller-->
         <scene sceneID="rs4-jJ-T6w">
@@ -2124,7 +2125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WnR-54-5E6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="2632"/>
+            <point key="canvasLocation" x="673" y="2658"/>
         </scene>
         <!--Bonus To Money View Controller-->
         <scene sceneID="Aig-16-wxE">
@@ -2248,7 +2249,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0qB-HM-KWB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3484" y="2631.6341829085459"/>
+            <point key="canvasLocation" x="1612" y="2658"/>
+        </scene>
+        <!--Page Order View Controller-->
+        <scene sceneID="CKV-aA-gos">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="XJe-dc-pdh" customClass="KYPageOrderViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nYR-nS-A2R"/>
+                        <viewControllerLayoutGuide type="bottom" id="0aM-QZ-XKm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="faT-xK-LbI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qmy-eZ-7ew" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2585" y="2658"/>
         </scene>
         <!--Qr Code View Controller-->
         <scene sceneID="iXY-V4-cRu">

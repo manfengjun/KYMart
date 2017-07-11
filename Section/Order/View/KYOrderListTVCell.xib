@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +56,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84T-3z-xwc">
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84T-3z-xwc">
                         <rect key="frame" x="95" y="104.5" width="280" height="0.5"/>
                         <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -82,6 +82,13 @@
                     <constraint firstItem="sP5-Ap-1Qf" firstAttribute="top" secondItem="b7w-Xc-QZe" secondAttribute="top" constant="10" id="unq-0v-zNY"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="countL" destination="uSs-Ff-bhB" id="0tb-TN-JN1"/>
+                <outlet property="moneyL" destination="RFB-J6-CnO" id="uGe-Xz-vSV"/>
+                <outlet property="productIV" destination="P9M-3x-229" id="8eU-fI-Htw"/>
+                <outlet property="productInfoL" destination="sP5-Ap-1Qf" id="WSu-BQ-5gp"/>
+                <outlet property="productPropertyL" destination="drE-aZ-5FP" id="XLq-OH-bUa"/>
+            </connections>
             <point key="canvasLocation" x="107.5" y="120.5"/>
         </tableViewCell>
     </objects>

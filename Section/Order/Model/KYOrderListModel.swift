@@ -56,7 +56,9 @@ class KYOrderListModel: NSObject {
     var receive_btn: Int = 0
     var discount: String!
     var pay_name: String!
-
+    class func modelContainerPropertyGenericClass() -> NSDictionary {
+        return ["goods_list" : Order_Goods_list.classForCoder()]
+    }
 }
 class Order_Goods_list :NSObject{
     var goods_name: String!

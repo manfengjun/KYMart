@@ -32,3 +32,6 @@
 #import <AlipaySDK/AlipaySDK.h>
 
 
+//滚动菜单
+#import "NinaPagerView.h"
+#import "UIParameter.h"

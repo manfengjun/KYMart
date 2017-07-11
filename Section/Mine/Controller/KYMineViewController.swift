@@ -74,9 +74,11 @@ class KYMineViewController: BaseViewController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 1
 
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -253,11 +255,8 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            let noneVC = KYOrderListViewController()
-            noneVC.navTitle = "全部订单"
-            self.hidesBottomBarWhenPushed = true
-            self.navigationController?.pushViewController(noneVC, animated: true)
-            self.hidesBottomBarWhenPushed = false
+            self.performSegue(withIdentifier: "M_orderList_SegudID", sender: nil)
+        
         }
         if indexPath.section == 1 {
             switch indexPath.row {

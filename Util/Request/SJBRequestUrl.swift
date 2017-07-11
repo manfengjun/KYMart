@@ -147,8 +147,11 @@ class SJBRequestUrl: NSObject {
     /// 订单列表
     ///
     /// - Returns: return value description
-    class func returnOrderListUrl(user_id:String,type:String) -> String {
-        return "\(basePath)m=Api&c=User&a=getOrderList&user_id=\(user_id)&type=\(type)&token=\(access_token())"
+    class func returnOrderListUrl(page:Int,user_id:String,type:String) -> String {
+        if type == "all" {
+            return "\(basePath)m=Api&c=User&a=getOrderList&user_id=\(user_id)&p=\(page)&token=\(access_token())"
+        }
+        return "\(basePath)m=Api&c=User&a=getOrderList&user_id=\(user_id)&type=\(type)&p=\(page)&token=\(access_token())"
     }
     
 
