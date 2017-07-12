@@ -179,6 +179,13 @@ class SJBRequestUrl: NSObject {
     class func returnDelOrderUrl() -> String {
         return "\(basePath)m=Api&c=user&a=cancelOrder&token=\(access_token())"
     }
+    
+    /// 确认收货
+    ///
+    /// - Returns: return value description
+    class func returnConfirmOrderUrl() -> String {
+        return "\(basePath)m=Api&c=user&a=orderConfirm&token=\(access_token())"
+    }
     // MARK: ------ 登录
     /// 登录
     ///

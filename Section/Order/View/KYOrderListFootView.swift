@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import PopupDialog
 class KYOrderListFootView: UIView {
 
     @IBOutlet var contentView: UIView!
@@ -65,6 +65,28 @@ class KYOrderListFootView: UIView {
                 if text == 1 {
                     let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
                     button.title = "确认收货"
+                    button.selectResult({ (sender) in
+                        let title = "提示"
+                        let message = "是否确认收货"
+                        let popup = PopupDialog(title: title, message: message, image: nil)
+                        let buttonOne = CancelButton(title: "取消") {
+                        }
+                        let buttonTwo = DefaultButton(title: "确定") {
+                            KYOrderMenuUtil.delOrder(order_id: (self.model?.order_id)!, completion: { (isSuccess) in
+                                if isSuccess {
+                                    NotificationCenter.default.post(name:OrderListRefreshNotification, object: nil)
+                                }
+                                else
+                                {
+                                    
+                                }
+                            })
+
+                        }
+                        popup.addButtons([buttonOne, buttonTwo])
+                        self.getCurrentController()?.present(popup, animated: true, completion: nil)
+                    })
+
                     buttonArray.append(button)
 
                 }

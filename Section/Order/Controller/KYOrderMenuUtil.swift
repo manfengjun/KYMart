@@ -45,4 +45,25 @@ class KYOrderMenuUtil: NSObject {
         target.navigationController?.pushViewController(orderPayVC, animated: true)
     }
     
+    /// 确认收货
+    ///
+    /// - Parameters:
+    ///   - order_id: order_id description
+    ///   - completion: completion description
+    class func confirmOrder(order_id:String,completion:@escaping (Bool) -> Void) {
+        let params = ["order_id":order_id]
+        SJBRequestModel.push_fetchConfirmOrderData(params: params as [String : AnyObject]) { (response, status) in
+            if status == 1 {
+                self.Toast(content: "确认收货成功")
+                completion(true)
+            }
+            else
+            {
+                self.Toast(content: "确认收货失败")
+                completion(false)
+                
+            }
+        }
+    }
+    
 }

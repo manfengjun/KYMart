@@ -28,6 +28,7 @@ enum ModelType {
     case OrderList//订单列表
     case OrderInfo//订单详情
     case OrderDel//删除订单
+    case OrderConfirm//确认收货
 
 
     case VerifyCode//验证码
@@ -525,6 +526,16 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .OrderDel, response: response, status: status, completion: completion)
         }
     }
+    
+    /// 确认收货
+    ///
+    /// - Parameter completion: completion description
+    class func push_fetchConfirmOrderData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnConfirmOrderUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderConfirm, response: response, status: status, completion: completion)
+        }
+    }
+
 
     // MARK: ------ 个人信息
     /// 更换头像
