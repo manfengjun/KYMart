@@ -27,6 +27,7 @@ enum ModelType {
     case OrderAlipayPay//支付宝支付
     case OrderList//订单列表
     case OrderInfo//订单详情
+    case OrderDel//删除订单
 
 
     case VerifyCode//验证码
@@ -181,6 +182,10 @@ class SJBRequestModel: NSObject {
                 if let model = temmodel {
                     completion(model,status)
                 }
+                break
+            case .OrderDel:
+                completion(response,status)
+                
                 break
             default:
                 break
@@ -509,6 +514,15 @@ class SJBRequestModel: NSObject {
     class func pull_fetchOrderInfoData(id:String,user_id:String,completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Get(url: SJBRequestUrl.returnOrderInfoUrl(id: id, user_id: user_id)) { (response, status) in
             self.dataToModel(type: .OrderInfo, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 删除订单
+    ///
+    /// - Parameter completion: completion description
+    class func push_fetchDelOrderData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnDelOrderUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderDel, response: response, status: status, completion: completion)
         }
     }
 

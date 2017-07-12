@@ -11,7 +11,7 @@ import UIKit
 class KYPageOrderViewController: BaseViewController {
     fileprivate var titleArray:[String] = ["全部","待付款","待发货","待收货","待评价"]
     fileprivate var typeArray:[String] = ["all","WAITPAY","WAITSEND","WAITRECEIVE","WAITCCOMMENT"]
-
+    fileprivate var currentPage = 0
     fileprivate lazy var childvcsArray:[UIViewController] = {
         var childvcsArray:[UIViewController] = []
         for (index,item) in self.titleArray.enumerated() {
@@ -40,6 +40,8 @@ class KYPageOrderViewController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector:#selector(refreshAction),name: OrderListRefreshNotification, object: nil)
+
         setupUI()
     }
     
@@ -47,6 +49,11 @@ class KYPageOrderViewController: BaseViewController {
         view.backgroundColor = UIColor.white
         setBackButtonInNav()
         view.addSubview(ninaPagerView)
+        
+    }
+    func refreshAction() {
+        let vc = childvcsArray[currentPage] as! KYOrderListViewController
+        vc.tableView.mj_header.beginRefreshing()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,6 +65,7 @@ class KYPageOrderViewController: BaseViewController {
 }
 extension KYPageOrderViewController:NinaPagerViewDelegate{
     func ninaCurrentPageIndex(_ currentPage: String!, currentObject: Any!) {
+        self.currentPage = Int(currentPage)!
         //        let currentNewListVC = currentObject as! SJBNewSListNoViewController
         //        currentNewListVC.title = titleArray[Int(currentPage)!]
         //        currentNewListVC.cid = classIDArray[Int(currentPage)!]

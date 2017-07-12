@@ -120,7 +120,44 @@ class SJBRequest: NSObject {
             }
         }
     }
-    
+    class func PostAll(url:String, params:[String:AnyObject]?, completion:@escaping (AnyObject,Int) -> Void) {
+        print("Post请求 ------ \(url)     Params: \(String(describing: params))")
+        
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            ///101 token失效
+            if let JSON = response.result.value {
+                let responseDic = JSON as! NSDictionary
+                if let status = responseDic["status"] {
+                    if status as! Int == 1 {
+                        completion(responseDic as AnyObject,status as! Int)
+                    }
+                    else
+                    {
+                        if status as! Int == -101 || status as! Int == -102{
+                            SingleManager.instance.isLogin = false
+                            presentLogin()
+                        }
+                        else
+                        {
+                            completion(responseDic["msg"] as AnyObject,status as! Int)
+                            
+                        }
+                    }
+                    
+                }
+                else
+                {
+                    XHToast.showBottomWithText("请求失败！",duration:1)
+                    completion("error" as AnyObject,500)
+                }
+            }
+            else
+            {
+                XHToast.showBottomWithText("请求失败！",duration:1)
+                completion("error" as AnyObject,500)
+            }
+        }
+    }
     /// 上传图片
     ///
     /// - Parameters:

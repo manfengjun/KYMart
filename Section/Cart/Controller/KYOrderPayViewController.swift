@@ -9,7 +9,7 @@
 import UIKit
 import SVProgressHUD
 
-class KYOrderPayViewController: UIViewController {
+class KYOrderPayViewController: BaseViewController {
 
     var orderID:String?
     var orderMoney:String?
@@ -21,6 +21,7 @@ class KYOrderPayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButtonInNav()
         orderIdL.text = "订单号：\(orderID!)"
         orderMoneyL.text = "支付金额：￥\(orderMoney!)"
 

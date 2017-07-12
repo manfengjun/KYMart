@@ -68,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         if resp is PayResp {
             switch resp.errCode {
             case 0:
-                NotificationCenter.default.post(name:WeiXinPayClosure, object: nil)
+                NotificationCenter.default.post(name:WeiXinPayNotification, object: nil)
                 break
             default:
                 Toast(content: "支付失败")

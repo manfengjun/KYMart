@@ -216,6 +216,8 @@
 		BFF959561EED776800C799CD /* KYProductDetailBuyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF959551EED776800C799CD /* KYProductDetailBuyView.xib */; };
 		BFF959581EED833700C799CD /* KYCartFootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF959571EED833700C799CD /* KYCartFootView.swift */; };
 		BFF9595A1EED834200C799CD /* KYCartFootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF959591EED834200C799CD /* KYCartFootView.xib */; };
+		BFFAD7501F164ED60043F796 /* KYOrderShipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAD74F1F164ED60043F796 /* KYOrderShipViewController.swift */; };
+		BFFAD7541F1656570043F796 /* KYOrderMenuUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFAD7531F1656560043F796 /* KYOrderMenuUtil.swift */; };
 		BFFE0E681EE8367E00621CB0 /* KYProductDetailHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */; };
 		BFFE0E6A1EE83B8900621CB0 /* KYProductPropertyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */; };
 		BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */; };
@@ -503,6 +505,8 @@
 		BFF959551EED776800C799CD /* KYProductDetailBuyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYProductDetailBuyView.xib; sourceTree = "<group>"; };
 		BFF959571EED833700C799CD /* KYCartFootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCartFootView.swift; sourceTree = "<group>"; };
 		BFF959591EED834200C799CD /* KYCartFootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYCartFootView.xib; sourceTree = "<group>"; };
+		BFFAD74F1F164ED60043F796 /* KYOrderShipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderShipViewController.swift; sourceTree = "<group>"; };
+		BFFAD7531F1656560043F796 /* KYOrderMenuUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderMenuUtil.swift; sourceTree = "<group>"; };
 		BFFE0E671EE8367E00621CB0 /* KYProductDetailHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductDetailHomeViewController.swift; sourceTree = "<group>"; };
 		BFFE0E691EE83B8900621CB0 /* KYProductPropertyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYProductPropertyView.swift; path = Section/Product/Detail/Controller/KYProductPropertyView.swift; sourceTree = SOURCE_ROOT; };
 		BFFE0E6B1EE83B9B00621CB0 /* KYProductPropertyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KYProductPropertyView.xib; path = Section/Product/Detail/Controller/KYProductPropertyView.xib; sourceTree = SOURCE_ROOT; };
@@ -1318,6 +1322,8 @@
 				BFE8969C1F13B21500C1C32A /* KYOrderInfoViewController.swift */,
 				BFE8969D1F13B21500C1C32A /* KYOrderListViewController.swift */,
 				BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */,
+				BFFAD74F1F164ED60043F796 /* KYOrderShipViewController.swift */,
+				BFFAD7531F1656560043F796 /* KYOrderMenuUtil.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1661,6 +1667,7 @@
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
 				BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */,
+				BFFAD7541F1656570043F796 /* KYOrderMenuUtil.swift in Sources */,
 				BF89032B1EE3A4F1004A0FF7 /* BaseViewController.swift in Sources */,
 				BF6D1D3E1F145CAD00587056 /* KYPageOrderViewController.swift in Sources */,
 				BF89032D1EE3A4FD004A0FF7 /* BaseNavViewController.swift in Sources */,
@@ -1675,6 +1682,7 @@
 				BFEA603E1EEBDF9300885737 /* SSKeychainQuery.m in Sources */,
 				BF8903581EE41D47004A0FF7 /* KYHomeSallHeadView.swift in Sources */,
 				BF035DF01F067965004EA4CF /* KYWithdrawListModel.swift in Sources */,
+				BFFAD7501F164ED60043F796 /* KYOrderShipViewController.swift in Sources */,
 				BFE896A41F13B25600C1C32A /* KYOrderListTVCell.swift in Sources */,
 				BF73F2F31F0BCD4B00BAE922 /* KYMemberTVCell.swift in Sources */,
 				BF9B49AA1F08E2E100982EBA /* PooCodeView.m in Sources */,

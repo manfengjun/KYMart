@@ -20,7 +20,7 @@ class KYOrderListViewController: BaseViewController {
         }
     }
     /// 列表
-    fileprivate lazy var tableView : UITableView = {
+    lazy var tableView : UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64 - 40), style: .grouped)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none

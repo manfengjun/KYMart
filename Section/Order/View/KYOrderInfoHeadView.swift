@@ -30,6 +30,7 @@ class KYOrderInfoHeadView: UIView {
     @IBOutlet weak var storeQQL: UILabel!
     @IBOutlet weak var storePhoneL: UILabel!
     
+    var showShipClosure: SelectClosure?     // 闭包
     
     @IBOutlet var contentView: UIView!
     var model:KYOrderInfoModel? {
@@ -135,6 +136,13 @@ class KYOrderInfoHeadView: UIView {
         super.awakeFromNib()
         
     }
+    @IBAction func showShipAction(_ sender: UIButton) {
+        showShipClosure?()
+    }
+    func showShipResult(_ finished: @escaping SelectClosure) {
+        showShipClosure = finished
+    }
+
     /// 获取显示地址
     ///
     /// - Parameter id: id description

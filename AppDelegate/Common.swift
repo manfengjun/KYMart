@@ -45,9 +45,12 @@ func imageUrl(goods_id:Int) -> URL {
 // 选择商品属性
 let SelectProductProperty = NSNotification.Name(rawValue: "SelectProductProperty")
 // 微信支付回调
-let WeiXinPayClosure = NSNotification.Name(rawValue: "WeiXinPayClosure")
+let WeiXinPayNotification = NSNotification.Name(rawValue: "WeiXinPayNotification")
 // 支付宝支付回调
-let AliPayPayClosure = NSNotification.Name(rawValue: "AliPayPayClosure")
+let AliPayPayNotification = NSNotification.Name(rawValue: "AliPayPayNotification")
+// 订单操作刷新
+let OrderListRefreshNotification = NSNotification.Name(rawValue: "AliPayPayNotification")
+
 
 
 /// 回调闭包

@@ -42,6 +42,7 @@ class KYOrderButton: UIView {
         contentView = Bundle.main.loadNibNamed("KYOrderButton", owner: self, options: nil)?.first as! UIView
         contentView.frame = self.bounds
         addSubview(contentView)
+        
         awakeFromNib()
     }
     
@@ -57,6 +58,7 @@ class KYOrderButton: UIView {
         button.backgroundColor = bgColor
         layer.borderColor = borderColor.cgColor
         layer.borderWidth = 0.5
+        isUserInteractionEnabled = true
     }
     @IBAction func selectAction(_ sender: UIButton) {
         SelectResultClosure?(sender)

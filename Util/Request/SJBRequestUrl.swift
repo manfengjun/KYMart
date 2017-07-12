@@ -165,7 +165,20 @@ class SJBRequestUrl: NSObject {
     class func returnOrderInfoUrl(id:String,user_id:String) -> String {
         return "\(basePath)m=Api&c=order&a=order_detail&user_id=\(user_id)&id=\(id)&token=\(access_token())"
     }
-
+    
+    /// 物流信息
+    ///
+    /// - Parameter user_id: user_id description
+    /// - Returns: return value description
+    class func returnOrderShipUrl(order_id:Int) -> String {
+        return "\(basePath)m=Api&c=user&a=express&user_id=\(order_id)&token=\(access_token())"
+    }
+    /// 删除订单
+    ///
+    /// - Returns: return value description
+    class func returnDelOrderUrl() -> String {
+        return "\(basePath)m=Api&c=user&a=cancelOrder&token=\(access_token())"
+    }
     // MARK: ------ 登录
     /// 登录
     ///

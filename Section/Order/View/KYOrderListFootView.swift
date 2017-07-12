@@ -32,6 +32,12 @@ class KYOrderListFootView: UIView {
                     button.bgColor = BAR_TINTCOLOR
                     button.borderColor = BAR_TINTCOLOR
                     button.textColor = UIColor.white
+                    button.selectResult({ (sender) in
+                        if let viewController = self.getCurrentController() {
+                            KYOrderMenuUtil.payOrder(order_id: (self.model?.order_sn)!, order_money: (self.model?.order_amount)!, target: viewController)
+                        }
+                        
+                    })
                     buttonArray.append(button)
                 }
             }
@@ -39,6 +45,18 @@ class KYOrderListFootView: UIView {
                 if text == 1 {
                     let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
                     button.title = "取消订单"
+                    button.selectResult({ (sender) in
+                        KYOrderMenuUtil.delOrder(order_id: (self.model?.order_id)!, completion: { (isSuccess) in
+                            if isSuccess {
+                                NotificationCenter.default.post(name:OrderListRefreshNotification, object: nil)
+
+                            }
+                            else
+                            {
+                                
+                            }
+                        })
+                    })
                     buttonArray.append(button)
 
                 }
@@ -53,17 +71,17 @@ class KYOrderListFootView: UIView {
             }
             if let text = model?.shipping_btn {
                 if text == 1 {
-                    let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
-                    button.title = "查看物流"
-                    buttonArray.append(button)
+//                    let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
+//                    button.title = "查看物流"
+//                    buttonArray.append(button)
 
                 }
             }
             if let text = model?.return_btn {
                 if text == 1 {
-                    let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
-                    button.title = "退货"
-                    buttonArray.append(button)
+//                    let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
+//                    button.title = "退货"
+//                    buttonArray.append(button)
                     
                 }
             }
