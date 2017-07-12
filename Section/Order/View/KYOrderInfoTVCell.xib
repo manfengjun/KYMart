@@ -63,12 +63,6 @@
                             <constraint firstAttribute="height" constant="0.5" id="FIZ-oZ-8kq"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="申请退款" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-JB-QBg">
-                        <rect key="frame" x="306.5" y="75" width="53.5" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SbS-xg-SRx">
                         <rect key="frame" x="0.0" y="102.5" width="375" height="40"/>
                         <subviews>
@@ -101,6 +95,20 @@
                             <constraint firstAttribute="height" constant="0.5" id="8nM-ty-nDD"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnK-ob-FnH">
+                        <rect key="frame" x="300" y="70.5" width="60" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="2QJ-Ju-cwK"/>
+                            <constraint firstAttribute="height" constant="25" id="GD1-ZW-UFz"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="申请退款">
+                            <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="refundAction:" destination="exb-4J-1Wr" eventType="touchUpInside" id="rRj-rl-nqh"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="kZO-s1-iuG" firstAttribute="top" secondItem="SbS-xg-SRx" secondAttribute="bottom" id="633-Kg-olf"/>
@@ -111,10 +119,11 @@
                     <constraint firstItem="yX4-16-9q7" firstAttribute="centerY" secondItem="fZl-dr-CJY" secondAttribute="centerY" id="Drw-dv-M6l"/>
                     <constraint firstItem="SbS-xg-SRx" firstAttribute="leading" secondItem="5sM-qr-mqc" secondAttribute="leading" id="ENj-lw-8cN"/>
                     <constraint firstItem="UWC-VU-PKD" firstAttribute="leading" secondItem="5sM-qr-mqc" secondAttribute="leading" constant="15" id="JT6-0s-XZb"/>
+                    <constraint firstAttribute="trailing" secondItem="vnK-ob-FnH" secondAttribute="trailing" constant="15" id="OR3-jV-FV8"/>
                     <constraint firstItem="fZl-dr-CJY" firstAttribute="leading" secondItem="UWC-VU-PKD" secondAttribute="trailing" constant="10" id="bAx-rl-1Au"/>
+                    <constraint firstItem="vnK-ob-FnH" firstAttribute="centerY" secondItem="fZl-dr-CJY" secondAttribute="centerY" id="bRo-37-hbW"/>
                     <constraint firstAttribute="trailing" secondItem="SbS-xg-SRx" secondAttribute="trailing" id="ccM-Y8-Sel"/>
                     <constraint firstItem="kZO-s1-iuG" firstAttribute="leading" secondItem="5sM-qr-mqc" secondAttribute="leading" id="egT-zB-V4A"/>
-                    <constraint firstItem="dfa-JB-QBg" firstAttribute="centerY" secondItem="fZl-dr-CJY" secondAttribute="centerY" id="h3C-8c-Bqx"/>
                     <constraint firstAttribute="trailing" secondItem="kZO-s1-iuG" secondAttribute="trailing" id="hm0-fs-ICU"/>
                     <constraint firstAttribute="trailing" secondItem="KTs-Zv-czd" secondAttribute="trailing" constant="15" id="kBY-9S-h5n"/>
                     <constraint firstAttribute="trailing" secondItem="2yt-CX-lcT" secondAttribute="trailing" constant="15" id="mDt-NB-rHN"/>
@@ -123,11 +132,18 @@
                     <constraint firstItem="2yt-CX-lcT" firstAttribute="top" secondItem="yX4-16-9q7" secondAttribute="bottom" constant="10" id="rtY-Nd-fjl"/>
                     <constraint firstItem="vU3-8r-6oa" firstAttribute="leading" secondItem="UWC-VU-PKD" secondAttribute="trailing" constant="10" id="sEa-4P-1ys"/>
                     <constraint firstItem="vU3-8r-6oa" firstAttribute="top" secondItem="KTs-Zv-czd" secondAttribute="bottom" constant="5" id="skF-4e-ByN"/>
-                    <constraint firstAttribute="trailing" secondItem="dfa-JB-QBg" secondAttribute="trailing" constant="15" id="tD5-tu-x35"/>
                     <constraint firstItem="UWC-VU-PKD" firstAttribute="top" secondItem="5sM-qr-mqc" secondAttribute="top" constant="10" id="v6X-xK-4GF"/>
                     <constraint firstItem="yX4-16-9q7" firstAttribute="leading" secondItem="fZl-dr-CJY" secondAttribute="trailing" constant="10" id="yqH-2i-cnL"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="countL" destination="yX4-16-9q7" id="ZEg-X5-Pu3"/>
+                <outlet property="moneyL" destination="fZl-dr-CJY" id="lAu-K1-1fP"/>
+                <outlet property="productIV" destination="UWC-VU-PKD" id="PU4-nx-hcb"/>
+                <outlet property="productInfoL" destination="KTs-Zv-czd" id="vGz-DM-vwf"/>
+                <outlet property="productPropertyL" destination="vU3-8r-6oa" id="YEu-Sr-5a0"/>
+                <outlet property="totalAmountL" destination="l3m-aF-foZ" id="s7h-oS-Ten"/>
+            </connections>
             <point key="canvasLocation" x="107.5" y="134.5"/>
         </tableViewCell>
     </objects>

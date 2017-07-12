@@ -10,7 +10,14 @@ import UIKit
 
 class KYOrderInfoSectionHeadView: UIView {
     @IBOutlet var contentView: UIView!
-
+    @IBOutlet weak var storeNameL: UILabel!
+    var model:KYOrderInfoModel? {
+        didSet {
+            if let text = model?.store_name {
+                storeNameL.text = text
+            }
+        }
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView = Bundle.main.loadNibNamed("KYOrderInfoSectionHeadView", owner: self, options: nil)?.first as! UIView

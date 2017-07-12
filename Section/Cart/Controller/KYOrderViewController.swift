@@ -39,9 +39,25 @@ class KYOrderViewController: BaseViewController {
             if let text = orderModel?.addressList.consignee {
                 consignorL.text = text
             }
-            if let text = orderModel?.addressList.address {
-                addressL.text = text
+            var addressStr = ""
+            if let provice = orderModel?.addressList?.province {
+                addressStr += getAddressName(id: provice)
+                if let city = orderModel?.addressList?.city{
+                    addressStr += getAddressName(id: city)
+                    if let district = orderModel?.addressList?.district {
+                        addressStr += getAddressName(id: district)
+                        if let twon = orderModel?.addressList?.twon {
+                            addressStr += getAddressName(id: twon)
+                            if let address = orderModel?.addressList?.address {
+                                addressStr += "\(address)"
+                                addressL.text = addressStr
+                            }
+                        }
+                    }
+                }
             }
+
+            
             if let text = orderModel?.addressList.mobile {
                 phoneL.text = text
             }
@@ -53,6 +69,26 @@ class KYOrderViewController: BaseViewController {
             }
         }
     }
+    
+    /// 获取显示地址
+    ///
+    /// - Parameter id: id description
+    /// - Returns: return value description
+    func getAddressName(id:Int) -> String {
+        if let array = CitiesDataTool.sharedManager().queryData(with: id) {
+            if array.count > 0 {
+                return array[0] as! String + " "
+            }
+        }
+        return " "
+    }
+    
+    /// 拼接价格
+    ///
+    /// - Parameters:
+    ///   - text: text description
+    ///   - value: value description
+    /// - Returns: return value description
     func returnAttributedStr(text:String,value:String) -> NSMutableAttributedString {
         let attStr = NSMutableAttributedString(string: text)
         attStr.addAttributes([NSFontAttributeName:UIFont.systemFont(ofSize: 12),NSForegroundColorAttributeName:UIColor.hexStringColor(hex: "#666666")], range: NSRange(location: 0, length: attStr.length))
@@ -67,30 +103,42 @@ class KYOrderViewController: BaseViewController {
     fileprivate var orderPriceModel:KYOrderPriceModel?{
         didSet {
             if let text = orderPriceModel?.goodsFee {
-                goodsFeeL.attributedText = returnAttributedStr(text: "商品总额：¥", value: "\(text)")
+                goodsFeeL.text = "￥\(text)元"
+//                goodsFeeL.attributedText = returnAttributedStr(text: "商品总额：¥", value: "\(text)")
             }
             if let text = orderPriceModel?.postFee {
-                postFeeL.attributedText = returnAttributedStr(text: "配送费用：¥", value: "\(text)")
+                postFeeL.text = "￥\(text)元"
+
+//                postFeeL.attributedText = returnAttributedStr(text: "配送费用：¥", value: "\(text)")
 
             }
             if let text = orderPriceModel?.couponFee {
-                couponFeeL.attributedText = returnAttributedStr(text: "使用优惠卷：-¥", value: "\(text)")
+                couponFeeL.text = "￥\(text)元"
+
+//                couponFeeL.attributedText = returnAttributedStr(text: "使用优惠卷：-¥", value: "\(text)")
 
             }
             if let text = orderPriceModel?.pointsFee {
-                ponitsfeeL.attributedText = returnAttributedStr(text: "使用积分：-¥", value: "\(text)")
+                ponitsfeeL.text = "￥\(text)元"
+
+//                ponitsfeeL.attributedText = returnAttributedStr(text: "使用积分：-¥", value: "\(text)")
 
             }
             if let text = orderPriceModel?.balance {
-                balanceL.attributedText = returnAttributedStr(text: "使用金额：-¥", value: "\(text)")
+                balanceL.text = "￥\(text)元"
+
+//                balanceL.attributedText = returnAttributedStr(text: "使用金额：-¥", value: "\(text)")
 
             }
             if let text = orderPriceModel?.order_prom_amount {
-                order_prom_amountL.attributedText = returnAttributedStr(text: "优惠活动：-¥", value: "\(text)")
+                order_prom_amountL.text = "￥\(text)元"
+//                order_prom_amountL.attributedText = returnAttributedStr(text: "优惠活动：-¥", value: "\(text)")
 
             }
             if let text = orderPriceModel?.payables {
-                payablesL.attributedText = returnAttributedStr(text: "应付金额：¥", value: "\(text)")
+                payablesL.text = "￥\(text)元"
+
+//                payablesL.attributedText = returnAttributedStr(text: "应付金额：¥", value: "\(text)")
 
             }
             
@@ -168,7 +216,7 @@ class KYOrderViewController: BaseViewController {
                                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                                 let orderPayVC = storyboard.instantiateViewController(withIdentifier: "OrderPayVC") as! KYOrderPayViewController
                                 orderPayVC.orderID = order_id as? String
-                                orderPayVC.orderMoney = response as? String
+                                orderPayVC.orderMoney = String(response as! Int)
                                 self.navigationController?.pushViewController(orderPayVC, animated: true)
                             }
                             else

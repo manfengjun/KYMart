@@ -66,9 +66,11 @@ class KYProductDetailViewController: BaseViewController {
     fileprivate lazy var buyView:KYProductDetailBuyView = {
         let buyView = KYProductDetailBuyView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - 50, width: SCREEN_WIDTH, height: 50))
         buyView.buttonResult({ (index) in
-            if !(SingleManager.instance.productBuyInfoModel?.isCanBuy)! {
-                self.Toast(content: "库存不够")
-                return
+            if let isCanBuy = SingleManager.instance.productBuyInfoModel?.isCanBuy{
+                if !isCanBuy {
+                    self.Toast(content: "库存不够")
+                    return
+                }
             }
             if index == 1{
                 //加入购物车

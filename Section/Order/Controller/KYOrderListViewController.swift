@@ -168,6 +168,9 @@ extension KYOrderListViewController:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let noneVC = KYOrderInfoViewController()
+        let orderModel = dataArray[indexPath.section] as! KYOrderListModel
+
+        noneVC.order_id = orderModel.order_id
         self.navigationController?.pushViewController(noneVC, animated: true)
     }
 }

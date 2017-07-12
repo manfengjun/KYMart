@@ -10,15 +10,28 @@ import UIKit
 fileprivate let KYOrderInfoTVCellIdentifier = "kYOrderInfoTVCell"
 
 class KYOrderInfoViewController: BaseViewController {
+    var order_id:String?{
+        didSet {
+            dataRequest()
+        }
+    }
+    
     /// 数据源
-    fileprivate lazy var dataArray:NSMutableArray = {
-        let dataArray = NSMutableArray()
-        return dataArray
-    }()
+    fileprivate var orderInfoModel:KYOrderInfoModel?{
+        didSet {
+            tableViewHeadView.model = orderInfoModel
+            tableViewFootView.model = orderInfoModel
+            tableView.reloadData()
+        }
+    }
+    
+    /// 头视图
     fileprivate lazy var tableViewHeadView : KYOrderInfoHeadView = {
         let tableViewHeadView = KYOrderInfoHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 372))
         return tableViewHeadView
     }()
+    
+    /// 尾部视图
     fileprivate lazy var tableViewFootView : KYOrderInfoFootView = {
         let tableViewFootView = KYOrderInfoFootView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 155))
         return tableViewFootView
@@ -49,6 +62,16 @@ class KYOrderInfoViewController: BaseViewController {
         setBackButtonInNav()
         view.addSubview(tableView)
     }
+    func dataRequest() {
+        if let text = SingleManager.instance.loginInfo?.user_id {
+            SJBRequestModel.pull_fetchOrderInfoData(id: order_id!, user_id: text, completion: { (response, status) in
+                if status == 1 {
+                    self.orderInfoModel = response as? KYOrderInfoModel
+                }
+            })
+        }
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,15 +94,21 @@ extension KYOrderInfoViewController:UITableViewDelegate,UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if let array = orderInfoModel?.goods_list{
+            return array.count
+        }
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KYOrderInfoTVCellIdentifier, for: indexPath) as! KYOrderInfoTVCell
-        
+        if let array = orderInfoModel?.goods_list {
+            cell.model = array[indexPath.row]
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = KYOrderInfoSectionHeadView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 41))
+        view.model = orderInfoModel
         return view
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -91,6 +120,7 @@ extension KYOrderInfoViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let view = UIView()
         view.backgroundColor = UIColor.hexStringColor(hex: "#DEDEDE", alpha: 0.6)
+        
         return view
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

@@ -21,6 +21,10 @@ class KYOrderPayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        orderIdL.text = "订单号：\(orderID!)"
+        orderMoneyL.text = "支付金额：￥\(orderMoney!)"
+
+
         NotificationCenter.default.addObserver(self, selector:#selector(weixinPayAction),name: SelectProductProperty, object: nil)
 
         // Do any additional setup after loading the view.
@@ -42,11 +46,13 @@ class KYOrderPayViewController: UIViewController {
         sureBtn.isUserInteractionEnabled = false
         SVProgressHUD.show(withStatus: "加载中")
         if currentSelect == 1 {
+            // 微信支付
             weixinPay()
             
         }
         else
         {
+            //支付宝支付
             alipayPay()
         }
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F421A4FD87650F1917A05B4 /* Pods_KYMart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */; };
 		BF035DF01F067965004EA4CF /* KYWithdrawListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF035DEF1F067965004EA4CF /* KYWithdrawListModel.swift */; };
+		BF0696221F15BC680038E42D /* KYOrderInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0696211F15BC670038E42D /* KYOrderInfoModel.swift */; };
 		BF173A9D1EF261400031AF06 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF173A9C1EF261400031AF06 /* data.plist */; };
 		BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AD81EF4E8BD001538A9 /* AddressItem.m */; };
 		BF194AE21EF4E8BD001538A9 /* AddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194ADB1EF4E8BD001538A9 /* AddressTableViewCell.m */; };
@@ -250,6 +251,7 @@
 		73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYMart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9F43A844CFA121A5EE4CB5 /* Pods-KYMart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.release.xcconfig"; sourceTree = "<group>"; };
 		BF035DEF1F067965004EA4CF /* KYWithdrawListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWithdrawListModel.swift; sourceTree = "<group>"; };
+		BF0696211F15BC670038E42D /* KYOrderInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderInfoModel.swift; sourceTree = "<group>"; };
 		BF173A9C1EF261400031AF06 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		BF194AD71EF4E8BD001538A9 /* AddressItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressItem.h; sourceTree = "<group>"; };
 		BF194AD81EF4E8BD001538A9 /* AddressItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressItem.m; sourceTree = "<group>"; };
@@ -1324,6 +1326,7 @@
 			isa = PBXGroup;
 			children = (
 				BFE896B41F13C56600C1C32A /* KYOrderListModel.swift */,
+				BF0696211F15BC670038E42D /* KYOrderInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1627,6 +1630,7 @@
 				BFE8969E1F13B21500C1C32A /* KYOrderInfoViewController.swift in Sources */,
 				BFD7B4E51F0BE1640082EAFF /* KYUserInfoView.swift in Sources */,
 				BF8903641EE42EB5004A0FF7 /* KYProductScrollCVCell.swift in Sources */,
+				BF0696221F15BC680038E42D /* KYOrderInfoModel.swift in Sources */,
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BF335E371EE57CB1002358C1 /* KYProductCVCell.swift in Sources */,
 				BFE8969F1F13B21500C1C32A /* KYOrderListViewController.swift in Sources */,

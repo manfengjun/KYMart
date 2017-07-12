@@ -10,6 +10,12 @@ import UIKit
 
 class KYOrderListTVCell: UITableViewCell {
 
+    
+    @IBOutlet weak var productIV: UIImageView!
+    @IBOutlet weak var productInfoL: UILabel!
+    @IBOutlet weak var productPropertyL: UILabel!
+    @IBOutlet weak var moneyL: UILabel!
+    @IBOutlet weak var countL: UILabel!
     var model : Order_Goods_list?{
         didSet {
             if let text = model?.goods_name {
@@ -32,12 +38,6 @@ class KYOrderListTVCell: UITableViewCell {
             }
         }
     }
-    @IBOutlet weak var productIV: UIImageView!
-    @IBOutlet weak var productInfoL: UILabel!
-    @IBOutlet weak var productPropertyL: UILabel!
-    @IBOutlet weak var moneyL: UILabel!
-    @IBOutlet weak var countL: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

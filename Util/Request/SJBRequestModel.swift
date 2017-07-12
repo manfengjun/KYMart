@@ -26,6 +26,7 @@ enum ModelType {
     case OrderWenxinPay//微信支付
     case OrderAlipayPay//支付宝支付
     case OrderList//订单列表
+    case OrderInfo//订单详情
 
 
     case VerifyCode//验证码
@@ -174,6 +175,12 @@ class SJBRequestModel: NSObject {
             case .OrderAlipayPay:
                 completion(response,status)
                 
+                break
+            case .OrderInfo:
+                let temmodel = KYOrderInfoModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
                 break
             default:
                 break
@@ -494,6 +501,14 @@ class SJBRequestModel: NSObject {
     class func pull_fetchOrderListData(page:Int,user_id:String,type:String,completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Get(url: SJBRequestUrl.returnOrderListUrl(page:page,user_id: user_id,type: type)) { (response, status) in
             self.dataArrayToModel(type: .OrderList, response: response, status: status, completion: completion)
+        }
+    }
+    /// 获取订单详情
+    ///
+    /// - Parameter completion: completion description
+    class func pull_fetchOrderInfoData(id:String,user_id:String,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnOrderInfoUrl(id: id, user_id: user_id)) { (response, status) in
+            self.dataToModel(type: .OrderInfo, response: response, status: status, completion: completion)
         }
     }
 
