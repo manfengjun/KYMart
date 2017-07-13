@@ -166,7 +166,12 @@ class KYOrderViewController: BaseViewController {
             else
             {
                 self.Toast(content: response as! String)
-                self.navigationController?.popViewController(animated: true)
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let addAddressVC = storyboard.instantiateViewController(withIdentifier: "addAddressVC") as! KYAddAddressViewController
+                addAddressVC.saveResult({ 
+                    self.dataRequest()
+                })
+                self.navigationController?.pushViewController(addAddressVC, animated: true)
             }
         }
     }
@@ -282,6 +287,19 @@ class KYOrderViewController: BaseViewController {
                 }
             }
         }
+    }
+    @IBAction func selectAddressAction(_ sender: UITapGestureRecognizer) {
+        let addressVC = KYShopAddressViewController()
+        addressVC.isSelectAddress = true
+        addressVC.selectResult { (addressmodel) in
+            let model = self.orderModel
+            model?.addressList = addressmodel as! KYAddressModel
+            self.orderModel = model
+//            self.orderModel?.addressList = addressmodel as! KYAddressModel
+//            self.tableView.reloadData()
+        }
+        
+        self.navigationController?.pushViewController(addressVC, animated: true)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

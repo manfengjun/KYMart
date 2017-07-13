@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,7 +89,7 @@
                                 <inset key="scrollIndicatorInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="kYOrderTVCell" rowHeight="105" id="mXc-Qw-bXJ" customClass="KYOrderTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="105"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXc-Qw-bXJ" id="xOd-d7-ggf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
@@ -492,6 +492,7 @@
                         </label>
                     </subviews>
                     <color key="backgroundColor" red="0.36862745098039218" green="0.41960784313725491" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="tnr-h5-zMu" firstAttribute="centerY" secondItem="9Ha-Is-W3k" secondAttribute="centerY" constant="-12.5" id="0sr-CP-GjP"/>
                         <constraint firstItem="Qft-5m-Znx" firstAttribute="centerY" secondItem="9Ha-Is-W3k" secondAttribute="centerY" constant="12.5" id="5zA-kj-JUI"/>
@@ -504,7 +505,15 @@
                         <constraint firstItem="vPf-fS-ydG" firstAttribute="centerY" secondItem="tnr-h5-zMu" secondAttribute="centerY" id="q5a-bf-6Vw"/>
                         <constraint firstItem="M7I-YH-q08" firstAttribute="centerY" secondItem="Wg3-Zf-hGA" secondAttribute="centerY" id="w9H-U1-dLN"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="jkI-SY-IDY" appends="YES" id="leT-NE-xQj"/>
+                    </connections>
                 </view>
+                <tapGestureRecognizer id="jkI-SY-IDY">
+                    <connections>
+                        <action selector="selectAddressAction:" destination="CqH-Fy-gbq" id="PZk-Gz-ZoC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2584.8000000000002" y="-373.76311844077964"/>
         </scene>
@@ -841,7 +850,7 @@
                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="kYMineTVCell" rowHeight="209" id="Fb2-sl-Fag" customClass="KYMineTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="375" height="210"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="209"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fb2-sl-Fag" id="70u-oo-cQ7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
@@ -911,7 +920,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kYMineOtherTVCell" rowHeight="75" id="mea-s6-9RV" customClass="KYMineOtherTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="265" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="264.5" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mea-s6-9RV" id="98g-H7-mdy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>

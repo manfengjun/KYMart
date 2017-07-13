@@ -10,6 +10,8 @@ import UIKit
 fileprivate let KYShopAddressTVCellIdentifier = "kYShopAddressTVCell"
 
 class KYShopAddressViewController: BaseViewController {
+    var SelectResultClosure: ResultValueClosure?     // 闭包
+    var isSelectAddress:Bool = false //是否选择地址操作
     /// 地址列表
     fileprivate lazy var tableView : UITableView = {
         let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT ), style: .plain)
@@ -102,16 +104,44 @@ extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: KYShopAddressTVCellIdentifier, for: indexPath) as! KYShopAddressTVCell
         let model = dataArray[indexPath.row]
         cell.model = model
-        cell.selectResult {
-            SJBRequestModel.push_fetchAddressDelData(params: ["id":String(model.address_id) as AnyObject]) { (response, status) in
-                if status == 1{
-                    self.dataArray.remove(at: indexPath.row)
-                    self.Toast(content: "删除地址成功")
-                    tableView.reloadData()
-                }
-                else
+        cell.selectResult { (index) in
+            if index == 1 {
+               //设置默认
+                if let text = SingleManager.instance.loginInfo?.user_id{
+                    let params = ["user_id":text,"address_id":String(model.address_id)]
+                    SJBRequestModel.push_fetchDefaultressDelData(params: params as [String : AnyObject], completion: { (response, status) in
+                        if status == 1{
+                            self.Toast(content: "设置默认地址成功")
+                            self.dataRequest()
+                            self.SelectResultClosure?(model)
+                            if self.isSelectAddress {
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        }
+                        else
+                        {
+                            self.Toast(content: response as! String)
+                        }
+                        
+                    })
+                    
+                }else
                 {
-                    self.Toast(content: response as! String)
+                    self.Toast(content: "请先登录！")
+                }
+            }
+            else{
+                //删除
+                SJBRequestModel.push_fetchAddressDelData(params: ["id":String(model.address_id) as AnyObject]) { (response, status) in
+                    if status == 1{
+                        self.dataArray.remove(at: indexPath.row)
+                        self.Toast(content: "删除地址成功")
+                        tableView.reloadData()
+                    }
+                    else
+                    {
+                        self.Toast(content: response as! String)
+                    }
                 }
             }
         }
@@ -127,4 +157,8 @@ extension KYShopAddressViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
+    func selectResult(_ finished: @escaping ResultValueClosure) {
+        SelectResultClosure = finished
+    }
+
 }

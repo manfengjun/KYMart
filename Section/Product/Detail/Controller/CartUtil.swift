@@ -25,16 +25,18 @@ class CartUtil: NSObject {
         return ["goods_num": String(goods_num!) as AnyObject, "goods_id": String(goods_id!) as AnyObject]
 
     }
-    class func addCart() {
+    class func addCart(completion:@escaping (Bool) -> Void) {
         let params = returnAddParams()
         SJBRequestModel.push_fetchAddCartProductData(params: params as [String : AnyObject], completion: { (response, status) in
             if status == 1{
                 
                 self.Toast(content: "添加成功！")
+                completion(true)
             }
             else
             {
                 self.Toast(content: "添加失败")
+                completion(false)
             }
         })
     }

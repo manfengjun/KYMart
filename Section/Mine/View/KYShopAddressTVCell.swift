@@ -14,8 +14,9 @@ class KYShopAddressTVCell: UITableViewCell {
     @IBOutlet weak var addressL: UILabel!
     @IBOutlet weak var phoneL: UILabel!
     @IBOutlet weak var isDefaultBtn: UIButton!
-    // 闭包回调传值
-    var SelectResultClosure: SelectClosure?     // 闭包
+    // 删除回调传值
+    var SelectResultClosure: ResultClosure?     // 闭包
+    typealias ResultValueClosure = (_ value: AnyObject)->()
 
     var model:KYAddressModel?{
         didSet {
@@ -56,13 +57,17 @@ class KYShopAddressTVCell: UITableViewCell {
         }
         return " "
     }
+    @IBAction func setDefaultAction(_ sender: UIButton) {
+        SelectResultClosure?(1)
+
+    }
     @IBAction func delAction(_ sender: UIButton) {
-        SelectResultClosure?()
+        SelectResultClosure?(2)
     }
     /**
-     返回回调
+     删除回调
      */
-    func selectResult(_ finished: @escaping SelectClosure) {
+    func selectResult(_ finished: @escaping ResultClosure) {
         SelectResultClosure = finished
     }
     override func awakeFromNib() {

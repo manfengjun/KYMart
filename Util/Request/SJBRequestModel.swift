@@ -46,6 +46,7 @@ enum ModelType {
     case AddAddRess//添加地址
     case AddRessList//地址列表
     case DelAddress//删除地址
+    case DefaultAddress//默认地址
     
     case SellList//消费明细
     case BonusList//分享记录
@@ -188,6 +189,16 @@ class SJBRequestModel: NSObject {
                 completion(response,status)
                 
                 break
+            case .DelAddress:
+                completion(response,status)
+                
+                break
+
+            case .DefaultAddress:
+                completion(response,status)
+                
+                break
+
             default:
                 break
             }
@@ -616,9 +627,21 @@ class SJBRequestModel: NSObject {
     ///   - completion: completion description
     class func push_fetchAddressDelData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void){
         SJBRequest.Post(url: SJBRequestUrl.returnDelAddressUrl(), params: params) { (response, status) in
-            self.dataArrayToModel(type: .DelAddress, response: response, status: status, completion: completion)
+            self.dataToModel(type: .DelAddress, response: response, status: status, completion: completion)
         }
     }
+    
+    /// 设置默认地址
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchDefaultressDelData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void){
+        SJBRequest.Post(url: SJBRequestUrl.returnDefaultAddressUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .DefaultAddress, response: response, status: status, completion: completion)
+        }
+    }
+
 
     // MARK: ------ 明细
     

@@ -65,6 +65,7 @@ class KYProductDetailViewController: BaseViewController {
     /// 购买菜单
     fileprivate lazy var buyView:KYProductDetailBuyView = {
         let buyView = KYProductDetailBuyView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - 50, width: SCREEN_WIDTH, height: 50))
+    
         buyView.buttonResult({ (index) in
             if let isCanBuy = SingleManager.instance.productBuyInfoModel?.isCanBuy{
                 if !isCanBuy {
@@ -72,10 +73,15 @@ class KYProductDetailViewController: BaseViewController {
                     return
                 }
             }
+            
             if index == 1{
                 //加入购物车
                 if SingleManager.instance.isLogin {
-                    CartUtil.addCart()
+                    CartUtil.addCart(completion: { (isSuccess) in
+                        if isSuccess {
+                            self.tabBarController?.selectedIndex = 2
+                        }
+                    })
                 }
                 else
                 {
@@ -91,7 +97,7 @@ class KYProductDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButtonInNav()
-
+        
         
         view.backgroundColor = UIColor.white
         view.addSubview(scrollView)

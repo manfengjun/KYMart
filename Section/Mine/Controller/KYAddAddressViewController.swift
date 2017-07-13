@@ -18,6 +18,7 @@ class KYAddAddressViewController: BaseViewController {
     @IBOutlet weak var phoneT: UITextField!
     @IBOutlet weak var codeT: UITextField!
     @IBOutlet weak var defaultIV: UIImageView!
+    var SaveResultClosure: BackClosure?     // 闭包
     fileprivate var params:[String:AnyObject]!
     fileprivate lazy var bgView : UIView = {
         let bgView = UIView(frame: UIScreen.main.bounds)
@@ -125,7 +126,9 @@ class KYAddAddressViewController: BaseViewController {
 
 // MARK: - 按钮事件
 extension KYAddAddressViewController {
-    
+    func saveResult(_ finished: @escaping BackClosure) {
+        SaveResultClosure = finished
+    }
     /// 保存
     ///
     /// - Parameter sender: sender description
@@ -164,6 +167,8 @@ extension KYAddAddressViewController {
                 SJBRequestModel.push_fetchAddAddressData(params: dic) { (response, status) in
                     if status == 1{
                         self.Toast(content: "保存地址成功")
+                        self.SaveResultClosure?()
+
                         self.navigationController?.popViewController(animated: true)
                     }
                     else

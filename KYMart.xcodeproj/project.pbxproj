@@ -853,9 +853,9 @@
 				BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */,
 				BF9F0B791EFF4B9700BA4DEE /* KYSellListViewController.swift */,
 				BF9F0B7B1EFF4BB800BA4DEE /* KYBonusListViewController.swift */,
+				BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */,
 				BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */,
 				BF9B49AB1F09070900982EBA /* KYQrCodeViewController.swift */,
-				BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */,
 				BF73F2EF1F0BCC9E00BAE922 /* KYMemberViewController.swift */,
 			);
 			path = Controller;

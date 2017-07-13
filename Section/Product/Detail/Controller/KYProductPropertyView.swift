@@ -96,7 +96,11 @@ class KYProductPropertyView: UIView {
         }
         //加入购物车
         if SingleManager.instance.isLogin {
-            CartUtil.addCart()
+            CartUtil.addCart(completion: { (isSuccess) in
+                if isSuccess {
+                    self.getCurrentController()?.tabBarController?.selectedIndex = 2
+                }
+            })
         }
         else
         {

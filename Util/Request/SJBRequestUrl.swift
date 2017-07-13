@@ -7,12 +7,12 @@
 //
 
 import UIKit
-let basePath = "http://test.kymart.cn/index.php?"
-let baseHref = "http://test.kymart.cn"
-let imgPath = "http://test.kymart.cn"
-//let basePath = "https://kymart.cn/index.php?"
-//let baseHref = "https://kymart.cn"
-//let imgPath = "https://kymart.cn"
+//let basePath = "http://test.kymart.cn/index.php?"
+//let baseHref = "http://test.kymart.cn"
+//let imgPath = "http://test.kymart.cn"
+let basePath = "https://kymart.cn/index.php?"
+let baseHref = "https://kymart.cn"
+let imgPath = "https://kymart.cn"
 class SJBRequestUrl: NSObject {
     
     /// access_token
@@ -350,5 +350,12 @@ class SJBRequestUrl: NSObject {
     /// - Returns: return value description
     class func returnDelAddressUrl() -> String {
         return "\(basePath)m=api&c=user&a=del_address&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
+    
+    /// 设置默认地址
+    ///
+    /// - Returns: return value description
+    class func returnDefaultAddressUrl() -> String {
+        return "\(basePath)m=api&c=user&a=setDefaultAddress&token=\(access_token())"
     }
 }

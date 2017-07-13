@@ -26,7 +26,7 @@ class KYOrderPayViewController: BaseViewController {
         orderMoneyL.text = "支付金额：￥\(orderMoney!)"
 
 
-        NotificationCenter.default.addObserver(self, selector:#selector(weixinPayAction),name: SelectProductProperty, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(weixinPayAction),name: WeiXinPayNotification, object: nil)
 
         // Do any additional setup after loading the view.
     }
