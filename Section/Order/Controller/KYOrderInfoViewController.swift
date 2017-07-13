@@ -20,7 +20,7 @@ class KYOrderInfoViewController: BaseViewController {
     var buttonArray:[KYOrderButton] = []
     fileprivate lazy var menuView : UIView = {
         let menuView = UIView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - 50, width: SCREEN_WIDTH, height: 50))
-        menuView.backgroundColor = UIColor.hexStringColor(hex: "#DEDEDE", alpha: 1)
+        menuView.backgroundColor = UIColor.white
         return menuView
     }()
     /// 数据源
