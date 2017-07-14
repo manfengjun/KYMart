@@ -171,7 +171,7 @@ class SJBRequestUrl: NSObject {
     /// - Parameter user_id: user_id description
     /// - Returns: return value description
     class func returnOrderShipUrl(order_id:Int) -> String {
-        return "\(basePath)m=Api&c=user&a=express&user_id=\(order_id)&token=\(access_token())"
+        return "\(basePath)m=Api&c=user&a=express&order_id=\(order_id)&token=\(access_token())"
     }
     /// 删除订单
     ///
