@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import STPickerView
 class DemoViewController: UIViewController {
 
     override func viewDidLoad() {

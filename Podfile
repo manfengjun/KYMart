@@ -10,7 +10,6 @@ target 'KYMart' do
     pod 'HMSegmentedControl', '~> 1.5.3'
     pod 'IQKeyboardManagerSwift', '~> 4.0.9'
     pod 'PPNumberButtonSwift', '~> 0.2.0'
-    pod 'STPickerView', '~> 2.1'
     pod 'TZImagePickerController', '~> 1.7.9'
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'PYSearch', '~> 0.8.0'
