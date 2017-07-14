@@ -40,6 +40,7 @@ class KYOrderMenuUtil: NSObject {
     class func payOrder(order_id:String,order_money:String,target:UIViewController) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let orderPayVC = storyboard.instantiateViewController(withIdentifier: "OrderPayVC") as! KYOrderPayViewController
+        orderPayVC.isCart = false
         orderPayVC.orderID = order_id
         orderPayVC.orderMoney = order_money
         target.navigationController?.pushViewController(orderPayVC, animated: true)

@@ -26,9 +26,7 @@
 - (id)initWithFrame:(CGRect)frame andChangeArray:(NSArray *)changeArr
 {
     self = [super initWithFrame:frame];
-    
     if (self) {
-        
         self.backgroundColor = RandColor(0.2);
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
         [self addGestureRecognizer:tap];
@@ -36,7 +34,6 @@
         _changeArray = changeArr;
         
         [self change];
-        
     }
     return self;
 }

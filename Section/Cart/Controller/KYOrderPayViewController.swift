@@ -15,6 +15,7 @@ class KYOrderPayViewController: BaseViewController {
     var orderMoney:String?
     var currentSelect:Int = 1;
     var model:KYWXPayModel?
+    var isCart:Bool = true
     @IBOutlet weak var sureBtn: UIButton!
     @IBOutlet weak var orderIdL: UILabel!
     @IBOutlet weak var orderMoneyL: UILabel!
@@ -77,7 +78,15 @@ class KYOrderPayViewController: BaseViewController {
 }
 extension KYOrderPayViewController{
     func weixinPay() {
-        let params = ["master_order_sn":orderID]
+        var params: [String:Any] = [String:Any]()
+        if isCart {
+            params["master_order_sn"] = orderID
+        }
+        else
+        {
+            params["order_sn"] = orderID
+
+        }
         SJBRequestModel.push_fetchOrderWeiXinPayData(params: params as [String : AnyObject]) { (response, status) in
             self.sureBtn.isUserInteractionEnabled = true
             SVProgressHUD.dismiss()
@@ -94,6 +103,10 @@ extension KYOrderPayViewController{
                     WXApi.send(request)
                 }
                 
+            }
+            else
+            {
+                self.Toast(content: "支付失败！")
             }
         }
     }
@@ -120,6 +133,11 @@ extension KYOrderPayViewController{
                         }
                     }
                 })
+            }
+            else
+            {
+                self.Toast(content: "支付失败！")
+
             }
         }
         
