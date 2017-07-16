@@ -1453,7 +1453,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = R89T2LLRX5;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					BFC017431EDF9875005D66B0 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -1922,7 +1922,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1931,7 +1931,7 @@
 					"$(PROJECT_DIR)/Vender/Alipay",
 				);
 				INFOPLIST_FILE = KYMart/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1975,11 +1975,12 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "254aa073-1776-4466-8e3e-69e19ed4f761";
+				PROVISIONING_PROFILE_SPECIFIER = Distribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1990,7 +1991,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1999,7 +2000,7 @@
 					"$(PROJECT_DIR)/Vender/Alipay",
 				);
 				INFOPLIST_FILE = KYMart/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2043,10 +2044,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "254aa073-1776-4466-8e3e-69e19ed4f761";
+				PROVISIONING_PROFILE_SPECIFIER = Distribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
