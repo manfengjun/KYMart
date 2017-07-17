@@ -22,9 +22,13 @@ class SingleManager: NSObject {
     var loginInfo:KYLoginInfoModel?
     /// 用户信息对象
     var userInfo:KYUserInfoModel?
-
+    /// 跳转分类显示的默认
+    var selectId:Int = 0
     /// 是否登录
     var isLogin:Bool = false
+    
+    
+    
     /// 获取UUID
     ///
     /// - Returns: return value description

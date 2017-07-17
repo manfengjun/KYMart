@@ -50,7 +50,8 @@ let WeiXinPayNotification = NSNotification.Name(rawValue: "WeiXinPayNotification
 let AliPayPayNotification = NSNotification.Name(rawValue: "AliPayPayNotification")
 // 订单操作刷新
 let OrderListRefreshNotification = NSNotification.Name(rawValue: "AliPayPayNotification")
-
+// 分类ID选择
+let SectionIDSelectedNotification = NSNotification.Name(rawValue: "SectionIDSelectedNotification")
 
 
 /// 回调闭包
@@ -68,3 +69,10 @@ typealias LoginClosure = (Bool)->()
 typealias BackClosure = ()->()
 /// 更改购物车回调
 typealias CartChangeClosure = (AnyObject?,Int)->()
+
+
+/// 无参数回调
+typealias NoParamsClosure = ()->()
+
+/// 一个参数回调
+typealias OneParamsClosure = (_ value:AnyObject)->()

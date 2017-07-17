@@ -56,6 +56,14 @@ class FJSectionController: UIViewController {
             tableView.reloadData()
             tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
             selectIndex = 0
+//            //去重
+//            for (index,item) in (leftDataArray?.enumerated())! {
+//                if item.id == SingleManager.instance.selectId{
+//                    tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+//                    selectIndex = index
+//                    
+//                }
+//            }
         }
     }
     
@@ -65,8 +73,7 @@ class FJSectionController: UIViewController {
             collectionView.reloadData()
         }
     }
-    
-    fileprivate var selectIndex = 0{
+    fileprivate var selectIndex = 1{
         didSet {
             if let model = leftDataArray?[selectIndex]
             {
@@ -78,6 +85,8 @@ class FJSectionController: UIViewController {
         super.viewDidLoad()
         setupUI()
         dataSectionRequest()
+        NotificationCenter.default.addObserver(self, selector:#selector(selectIdAction),name: SectionIDSelectedNotification, object: nil)
+
         // Do any additional setup after loading the view.
     }
     func setupUI() {
@@ -104,6 +113,18 @@ class FJSectionController: UIViewController {
         SJBRequestModel.pull_fetchSubSectionData(parent_id: parent_id) { (response, status) in
             if status == 1 {
                 self.rightDataArray = response as? [FJSubSectionModel]
+            }
+        }
+    }
+    
+    /// 切换分类
+    func selectIdAction() {
+        //去重
+        for (index,item) in (leftDataArray?.enumerated())! {
+            if item.id == SingleManager.instance.selectId{
+                tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+                selectIndex = index
+                
             }
         }
     }

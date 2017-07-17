@@ -10,6 +10,10 @@ import UIKit
 import MJRefresh
 import PYSearch
 private let KYHomeMenuIdentifier = "kYHomeMenuCVCell"
+private let KYHomeMenuPageCVCellIdentifier = "kYHomeMenuPageCVCell"
+
+
+private let KYHomeAdCVCellIdentifier = "kYHomeAdCVCell"
 private let KYProductScrollIdentifier = "kYProductScrollCVCell"
 private let KYHomeHeadViewIdentifier = "kYHomeHeadView"
 private let KYHomeFootViewIdentifier = "kYHomeFootView"
@@ -19,6 +23,8 @@ private let KYPoductHeadViewIdentifier = "kYProductHeadView"
 
 private let headerIdentifier = "header"
 class KYHomeViewController: UIViewController {
+    let  menuTitles:[String] = ["家用电器","手机数码","家居生活","潮流服饰","鞋靴箱包","礼品首饰","食品生鲜","母婴专区","美妆个护","运动户外","汽车用品","生活出行","店铺街","品牌街","我的订单","限时优惠"]
+    let menuIDs:[String] = ["1","2","4","5","6","7","8","9","10","11","12","399"]
     var sectionCount:Int = 0
     var scrollSectionTitles:[String] = []
     var scrollSectionData:NSMutableArray = NSMutableArray()
@@ -69,12 +75,15 @@ class KYHomeViewController: UIViewController {
     var page = 1
     /// 列表
     fileprivate lazy var collectionView : UICollectionView = {
-        let homeLayout = KYHomeLayout()
+        let homeLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: homeLayout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
         collectionView.register(UINib(nibName:"KYHomeMenuCVCell", bundle:Bundle.main), forCellWithReuseIdentifier: KYHomeMenuIdentifier)
+        collectionView.register(UINib(nibName:"KYHomeMenuPageCVCell", bundle:Bundle.main), forCellWithReuseIdentifier: KYHomeMenuPageCVCellIdentifier)
+
+        collectionView.register(UINib(nibName:"KYHomeAdCVCell", bundle:Bundle.main), forCellWithReuseIdentifier: KYHomeAdCVCellIdentifier)
         collectionView.register(UINib(nibName:"KYProductScrollCVCell", bundle:Bundle.main), forCellWithReuseIdentifier: KYProductScrollIdentifier)
         collectionView.register(UINib(nibName:"KYProductCVCell", bundle:Bundle.main), forCellWithReuseIdentifier: KYPoductIdentifier)
 
@@ -195,8 +204,12 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 4
+            return 1
         }
+        if section == 1 {
+            return 3
+        }
+
         else if section == sectionCount - 1 {
             return productArray.count
         }
@@ -204,12 +217,30 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYHomeMenuIdentifier, for: indexPath) as! KYHomeMenuCVCell
-            cell.menutitleL.text = titleArray[indexPath.row]
-            cell.menuIV.image = UIImage(named: "home_menu_\(indexPath.row + 1)")
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYHomeMenuPageCVCellIdentifier, for: indexPath) as! KYHomeMenuPageCVCell
+            cell.menuTitles = menuTitles
+            cell.menuIDs = menuIDs
+            cell.callBackOne({ (index) in
+                let row = index as! Int
+                if row < 12 {
+                    SingleManager.instance.selectId = Int(self.menuIDs[row])!
+                    NotificationCenter.default.post(name:SectionIDSelectedNotification, object: nil)
+                    self.tabBarController?.selectedIndex = 1
+
+                }
+                else
+                {
+                    
+                }
+            })
             return cell
         }
-        if indexPath.section == sectionCount - 1 {
+        else if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYHomeAdCVCellIdentifier, for: indexPath) as! KYHomeAdCVCell
+            cell.adIV.image = UIImage(named: "home_ad_\(indexPath.row + 1)")
+            return cell
+        }
+        else if indexPath.section == sectionCount - 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYPoductIdentifier, for: indexPath) as! KYProductCVCell
             cell.good = productArray[indexPath.row]
             return cell
@@ -241,6 +272,9 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                 view.searchView.addGestureRecognizer(searchTap)
                 resableview = view
             }
+            else if indexPath.section == 1 {
+                
+            }
             else if indexPath.section == sectionCount - 1 {
                 let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: KYPoductHeadViewIdentifier, for: indexPath) as! KYProductHeadView
                 resableview = view
@@ -260,6 +294,36 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
 
         }
         return resableview
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0 {
+            return CGSize(width: SCREEN_WIDTH, height: (SCREEN_WIDTH/4 - 20 + 30)*2 + 20)
+        }
+        if indexPath.section == 1 {
+            return CGSize(width: SCREEN_WIDTH, height: SCREEN_WIDTH*2/9)
+        }
+        else if indexPath.section == sectionCount - 1 {
+            return CGSize(width: (SCREEN_WIDTH - 10) / 2, height: (SCREEN_WIDTH - 10)/2 + 80)
+        }
+        return CGSize(width: SCREEN_WIDTH, height: SCREEN_WIDTH/3 + 100)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if section == 0 {
+            return CGSize(width: SCREEN_WIDTH, height: SCREEN_WIDTH*20/49 + 50)
+        }
+        else if section == 1 {
+            return CGSize(width: SCREEN_WIDTH, height: 0)
+        }
+
+        else if section == sectionCount - 1 {
+            return CGSize(width: SCREEN_WIDTH, height: 40)
+        }
+        else {
+            return CGSize(width: SCREEN_WIDTH, height: 60)
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: SCREEN_WIDTH, height: 11)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 0 {
