@@ -19,6 +19,9 @@ class KYProductInfoTVCell: UITableViewCell {
     @IBOutlet weak var shareView: UIView!
     @IBOutlet weak var selectView: UIView!
     @IBOutlet weak var selectL: UILabel!
+    @IBOutlet weak var productTypeIV: UIImageView!
+    
+    
     //闭包类型
     var replyColsure:((Int)->())?
 
@@ -54,6 +57,26 @@ class KYProductInfoTVCell: UITableViewCell {
             if let text = SingleManager.instance.productBuyInfoModel?.good_select_info {
                 selectL.text = text
             }
+            if let text = model?.goods.ky_type {
+                switch text {
+                case 0:
+                    productTypeIV.image = UIImage(named: "product_type_0.png")
+                    break
+                case 1:
+                    productTypeIV.image = UIImage(named: "product_type_1.png")
+                    
+                    break
+                    
+                case 3:
+                    productTypeIV.image = UIImage(named: "product_type_3.png")
+                    
+                    break
+                    
+                default:
+                    break
+                }
+            }
+
         }
     }
     override func awakeFromNib() {

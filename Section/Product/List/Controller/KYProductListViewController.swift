@@ -27,20 +27,11 @@ class KYProductListViewController: BaseViewController {
     }
     /// 当前选中
     var currentIndex = 0
-    /// 搜索进入
-    var q:String? {
-        didSet{
-            page = 1
-            
-            url = "/index.php/api/Goods/search/q/\(q!)/sort/is_new/sort_asc/desc"
-            dataRequest()
-        }
-    }
     var id:Int? {
         didSet {
-            var urlStr = "/index.php/api/activity/goodsList/id/\(id!)/sort/is_new/sort_asc/desc"
+            var urlStr = "/index.php/api/Goods/goodsList/id/\(id!)/sort/is_new/sort_asc/desc"
             if id == 10000 {
-                urlStr = "/index.php/api/activity/goodsList"
+                urlStr = "/index.php/api/Goods/goodsList"
             }
             url = urlStr
         }

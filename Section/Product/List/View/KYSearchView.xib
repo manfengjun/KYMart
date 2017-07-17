@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KYSearchView" customModule="KYMart" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="9cO-wY-Qdr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="53"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="搜索关键字" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USR-WF-Z4j">
+                    <rect key="frame" x="40" y="0.0" width="348" height="53"/>
+                    <gestureRecognizers/>
+                    <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_search" translatesAutoresizingMaskIntoConstraints="NO" id="b0B-Jo-EHz">
+                    <rect key="frame" x="15" y="16.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="l3g-pT-Zgh"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="USR-WF-Z4j" secondAttribute="bottom" id="5RQ-2x-qaj"/>
+                <constraint firstItem="b0B-Jo-EHz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="8F0-Ke-RIu"/>
+                <constraint firstItem="USR-WF-Z4j" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="As2-Tl-DKm"/>
+                <constraint firstItem="USR-WF-Z4j" firstAttribute="leading" secondItem="b0B-Jo-EHz" secondAttribute="trailing" constant="5" id="IQZ-BR-xSy"/>
+                <constraint firstItem="b0B-Jo-EHz" firstAttribute="width" secondItem="b0B-Jo-EHz" secondAttribute="height" multiplier="1:1" id="Pyl-eA-m71"/>
+                <constraint firstItem="b0B-Jo-EHz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="dKK-Ad-o0L"/>
+                <constraint firstAttribute="trailing" secondItem="USR-WF-Z4j" secondAttribute="trailing" constant="20" id="noN-5Q-x18"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="NYs-ce-L2C" appends="YES" id="ynm-wo-2ad"/>
+            </connections>
+            <point key="canvasLocation" x="4" y="480.5"/>
+        </view>
+        <tapGestureRecognizer id="NYs-ce-L2C">
+            <connections>
+                <action selector="tapAction:" destination="-1" id="4lI-Iv-5FA"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="home_search" width="29" height="29"/>
+    </resources>
+</document>

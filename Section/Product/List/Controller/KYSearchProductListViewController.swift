@@ -1,8 +1,8 @@
 //
-//  KYSearchProductListViewController.swift
+//  KYProductListViewController.swift
 //  KYMart
 //
-//  Created by jun on 2017/6/19.
+//  Created by jun on 2017/6/6.
 //  Copyright © 2017年 JUN. All rights reserved.
 //
 
@@ -19,15 +19,28 @@ class KYSearchProductListViewController: BaseViewController {
         }
     }
     
+    /// 头部标题
+    var navTitle:String?{
+        didSet {
+            navigationItem.title = navTitle
+        }
+    }
     /// 当前选中
     var currentIndex = 0
-    
+    /// 搜索参数
+    var kt:Int?
     /// 搜索进入
     var q:String? {
         didSet{
             page = 1
-            url = "/index.php/api/Goods/goodsList/p/\(q!)/sort/is_new/sort_asc/desc"
-            dataRequest()
+            if let text = kt {
+                url = "/index.php/api/Goods/search/q/\(q!)/kt/\(text)"
+            }
+            else
+            {
+                url = "/index.php/api/Goods/search/q/\(q!)/sort/is_new/sort_asc/desc"
+
+            }
         }
     }
     fileprivate var productListModel:KYProductListModel?
@@ -41,13 +54,13 @@ class KYSearchProductListViewController: BaseViewController {
     /// 下拉刷新
     fileprivate lazy var header:MJRefreshNormalHeader = {
         let header = MJRefreshNormalHeader()
-        header.setRefreshingTarget(self, refreshingAction: #selector(KYSearchProductListViewController.headerRefresh))
+        header.setRefreshingTarget(self, refreshingAction: #selector(KYProductListViewController.headerRefresh))
         return header
     }()
     /// 上拉加载
     fileprivate lazy var footer:MJRefreshAutoNormalFooter = {
         let footer = MJRefreshAutoNormalFooter()
-        footer.setRefreshingTarget(self, refreshingAction: #selector(KYSearchProductListViewController.footerRefresh))
+        footer.setRefreshingTarget(self, refreshingAction: #selector(KYProductListViewController.footerRefresh))
         return footer
     }()
     /// 商品列表
@@ -74,36 +87,36 @@ class KYSearchProductListViewController: BaseViewController {
                 switch index {
                 case 1:
                     if let str = model.orderby_is_new {
-                        self.url = str
+                        self.url = str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                     }
                     break
                 case 2:
                     if let str = model.orderby_sales_sum {
-                        self.url = str
+                        self.url = str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                     }
                     break
                 case 3:
                     if let str = model.orderby_comment_count {
-                        self.url = str
+                        self.url = str.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                     }
                     
                     break
                 case 4:
                     if let str = model.orderby_price {
                         let array = str.components(separatedBy: "/")
-                        self.url = str.replacingOccurrences(of: array.last!, with: "asc")
+                        self.url = str.replacingOccurrences(of: array.last!, with: "asc").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                     }
                     break
                 case 5:
                     if let str = model.orderby_price {
                         let array = str.components(separatedBy: "/")
-                        self.url = str.replacingOccurrences(of: array.last!, with: "asc")
+                        self.url = str.replacingOccurrences(of: array.last!, with: "asc").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                     }
                     break
                 case 6:
                     if let str = model.orderby_price {
                         let array = str.components(separatedBy: "/")
-                        self.url = str.replacingOccurrences(of: array.last!, with: "desc")
+                        self.url = str.replacingOccurrences(of: array.last!, with: "desc").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
                     }
                     break
                 default:
@@ -116,12 +129,12 @@ class KYSearchProductListViewController: BaseViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
+        setupUI()
     }
     func setupUI() {
         setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(back))

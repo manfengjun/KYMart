@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7F421A4FD87650F1917A05B4 /* Pods_KYMart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */; };
+		BF02F1D31F1CEF1600B0FF3C /* KYSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02F1D21F1CEF1600B0FF3C /* KYSearchView.swift */; };
+		BF02F1D51F1CEF3B00B0FF3C /* KYSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF02F1D41F1CEF3B00B0FF3C /* KYSearchView.xib */; };
 		BF035DF01F067965004EA4CF /* KYWithdrawListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF035DEF1F067965004EA4CF /* KYWithdrawListModel.swift */; };
 		BF0696221F15BC680038E42D /* KYOrderInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0696211F15BC670038E42D /* KYOrderInfoModel.swift */; };
 		BF173A9D1EF261400031AF06 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF173A9C1EF261400031AF06 /* data.plist */; };
@@ -259,6 +261,8 @@
 		01CB4B724B5560F7C7F4E1F7 /* Pods-KYMart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.debug.xcconfig"; sourceTree = "<group>"; };
 		73CE343BF70BEFD504900FAC /* Pods_KYMart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KYMart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B9F43A844CFA121A5EE4CB5 /* Pods-KYMart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KYMart.release.xcconfig"; path = "Pods/Target Support Files/Pods-KYMart/Pods-KYMart.release.xcconfig"; sourceTree = "<group>"; };
+		BF02F1D21F1CEF1600B0FF3C /* KYSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSearchView.swift; sourceTree = "<group>"; };
+		BF02F1D41F1CEF3B00B0FF3C /* KYSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYSearchView.xib; sourceTree = "<group>"; };
 		BF035DEF1F067965004EA4CF /* KYWithdrawListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWithdrawListModel.swift; sourceTree = "<group>"; };
 		BF0696211F15BC670038E42D /* KYOrderInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderInfoModel.swift; sourceTree = "<group>"; };
 		BF173A9C1EF261400031AF06 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
@@ -1167,6 +1171,8 @@
 				BFB6D0E21EE69DD700F2C61F /* KYProductListCVCell.xib */,
 				BF9B74B61EE782FC00322E2C /* KYProductMenuView.swift */,
 				BF9B74B81EE7830800322E2C /* KYProductMenuView.xib */,
+				BF02F1D21F1CEF1600B0FF3C /* KYSearchView.swift */,
+				BF02F1D41F1CEF3B00B0FF3C /* KYSearchView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1574,6 +1580,7 @@
 				BF9F0B841EFF4C3D00BA4DEE /* KYSellListTVCell.xib in Resources */,
 				BF9DD9511F1C44F9002379A0 /* KYProductHeadView.xib in Resources */,
 				BFFF01F11F14CEAA008CC160 /* KYOrderInfoTVCell.xib in Resources */,
+				BF02F1D51F1CEF3B00B0FF3C /* KYSearchView.xib in Resources */,
 				BFEFA99B1F0147A800419995 /* KYMoneyManagerView.xib in Resources */,
 				BF6D1D4D1F14A79100587056 /* KYOrderButton.xib in Resources */,
 				BF8903361EE3B055004A0FF7 /* 1.jpg in Resources */,
@@ -1729,6 +1736,7 @@
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
 				BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */,
+				BF02F1D31F1CEF1600B0FF3C /* KYSearchView.swift in Sources */,
 				BFFAD7541F1656570043F796 /* KYOrderMenuUtil.swift in Sources */,
 				BF89032B1EE3A4F1004A0FF7 /* BaseViewController.swift in Sources */,
 				BF6D1D3E1F145CAD00587056 /* KYPageOrderViewController.swift in Sources */,

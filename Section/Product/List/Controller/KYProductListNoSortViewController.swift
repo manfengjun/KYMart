@@ -8,6 +8,7 @@
 
 import UIKit
 import MJRefresh
+import PYSearch
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
 class KYProductListNoSortViewController: BaseViewController {
@@ -27,15 +28,7 @@ class KYProductListNoSortViewController: BaseViewController {
     }
     /// 当前选中
     var currentIndex = 0
-    /// 搜索进入
-    var q:String? {
-        didSet{
-            page = 1
-            
-            url = "/index.php/api/Goods/search/q/\(q!)/sort/is_new/sort_asc/desc"
-            dataRequest()
-        }
-    }
+    
     var type:String? {
         didSet {
             url = "/index.php/api/activity/\(type!)"
@@ -73,20 +66,50 @@ class KYProductListNoSortViewController: BaseViewController {
         collectionView.dataSource = self
         return collectionView
     }()
-    
+    fileprivate lazy var searchView : KYSearchView = {
+        let searchView = KYSearchView(frame: CGRect(x: 60, y: 26, width: SCREEN_WIDTH - 80, height: 32))
+        searchView.callBackNo({ 
+            let searchVC = PYSearchViewController()
+            let listVC = KYSearchProductListViewController()
+            searchVC.didSearchBlock = { (searchViewController,searchBar,searchText) in
+                if let text = searchText {
+                    if self.productListModel?.search_kt != nil {
+                        listVC.backResult {
+                            self.tabBarController?.tabBar.isHidden = false
+                        }
+                        searchViewController?.navigationController?.pushViewController(listVC, animated: true)
+                        listVC.kt = self.productListModel?.search_kt
+
+                        listVC.q = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                        listVC.navTitle = text
+                    }
+                    
+                }
+            }
+            let nav = BaseNavViewController(rootViewController: searchVC)
+            self.present(nav, animated: true, completion: nil)
+
+        })
+        return searchView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = true
         setupUI()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        searchView.removeFromSuperview()
+    }
     func setupUI() {
         setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(back))
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
+        navigationController?.view.addSubview(searchView)
+
         collectionView.mj_header = header
         collectionView.mj_footer = footer
     }

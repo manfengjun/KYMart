@@ -180,7 +180,7 @@ extension KYHomeViewController:SDCycleScrollViewDelegate{
     /// - Parameter sender: sender description
     func searchAction(sender:UITapGestureRecognizer) {
         let searchVC = PYSearchViewController()
-        let listVC = KYProductListViewController()
+        let listVC = KYSearchProductListViewController()
         searchVC.didSearchBlock = { (searchViewController,searchBar,searchText) in
             if let text = searchText {
                 listVC.backResult {
@@ -228,11 +228,54 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                     self.tabBarController?.selectedIndex = 1
 
                 }
-                else
-                {
+                else if row == 14{
+                    
+                    if SingleManager.instance.isLogin {
+                        self.tabBarController?.selectedIndex = 3
+                        let nav = self.tabBarController?.selectedViewController as! BaseNavViewController
+                        nav.viewControllers[0].performSegue(withIdentifier: "M_orderList_SegudID", sender: nil)
+                    }
+                    else{
+                        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                        let loginNav = storyboard.instantiateViewController(withIdentifier: "loginNav") as! BaseNavViewController
+                        let loginVC = loginNav.viewControllers[0] as! SJBLoginViewController
+                        loginVC.loginResult({ (isLogin) in
+                            if isLogin {
+                                self.tabBarController?.selectedIndex = 3
+                                let nav = self.tabBarController?.selectedViewController as! BaseNavViewController
+                                nav.viewControllers[0].performSegue(withIdentifier: "M_orderList_SegudID", sender: nil)
+                            }
+                        })
+                        loginVC.hidesBottomBarWhenPushed = true
+                        self.present(loginNav, animated: true, completion: nil)
+                    }
+                    
+
                     
                 }
+                else
+                {
+                    let noneVC = NoneViewController()
+                    self.navigationController?.pushViewController(noneVC, animated: true)
+                    switch indexPath.row {
+                    case 12:
+                        noneVC.navTitle = "店铺街"
+                        break
+                    case 13:
+                        noneVC.navTitle = "品牌街"
+
+                        break
+                    
+                    case 15:
+                        noneVC.navTitle = "限时优惠"
+
+                        break
+                    default:
+                        break
+                    }
+                }
             })
+            
             return cell
         }
         else if indexPath.section == 1 {

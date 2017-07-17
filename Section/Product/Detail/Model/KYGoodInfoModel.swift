@@ -85,6 +85,8 @@ class Goods :NSObject{
     var on_time: Int = 0
     var virtual_refund: Int = 0
     var is_hot: Int = 0
+    var ky_type: Int = 0
+
     
 }
 
