@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -43,16 +42,25 @@
                         <color key="textColor" red="0.90588235289999997" green="0.1215686275" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="A9s-pI-Vwb">
+                        <rect key="frame" x="240" y="0.0" width="50" height="63"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="A9s-pI-Vwb" secondAttribute="height" multiplier="27:34" id="EzX-cQ-Kuc"/>
+                            <constraint firstAttribute="width" constant="50" id="tLL-s0-qcQ"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="oLk-uB-bdR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0gJ-lv-Fjy"/>
+                <constraint firstAttribute="trailing" secondItem="A9s-pI-Vwb" secondAttribute="trailing" id="6NJ-I8-D1z"/>
                 <constraint firstItem="4CJ-as-iOW" firstAttribute="top" secondItem="oLk-uB-bdR" secondAttribute="bottom" constant="5" id="Fsl-vW-Xkc"/>
                 <constraint firstItem="vou-lA-9zq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="HaI-Zu-OPj"/>
                 <constraint firstItem="oLk-uB-bdR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="JTz-sk-kpq"/>
                 <constraint firstItem="4CJ-as-iOW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="OX8-sN-lGa"/>
                 <constraint firstAttribute="trailing" secondItem="oLk-uB-bdR" secondAttribute="trailing" id="SQ9-t8-Wmz"/>
+                <constraint firstItem="A9s-pI-Vwb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TzU-Zw-wRJ"/>
                 <constraint firstAttribute="trailing" secondItem="vou-lA-9zq" secondAttribute="trailing" constant="5" id="eCB-7h-N5d"/>
                 <constraint firstAttribute="trailing" secondItem="4CJ-as-iOW" secondAttribute="trailing" constant="5" id="jPS-3I-zJc"/>
                 <constraint firstItem="vou-lA-9zq" firstAttribute="top" secondItem="4CJ-as-iOW" secondAttribute="bottom" constant="5" id="xBh-cK-dRc"/>
@@ -62,8 +70,9 @@
                 <outlet property="priceL" destination="vou-lA-9zq" id="QyA-Df-C0Z"/>
                 <outlet property="productIV" destination="oLk-uB-bdR" id="bQb-EF-6Hk"/>
                 <outlet property="productInfoL" destination="4CJ-as-iOW" id="yFb-G6-GAI"/>
+                <outlet property="productTypeIV" destination="A9s-pI-Vwb" id="4CF-iw-ciP"/>
             </connections>
-            <point key="canvasLocation" x="-2" y="-7"/>
+            <point key="canvasLocation" x="-59" y="-45"/>
         </collectionViewCell>
     </objects>
 </document>

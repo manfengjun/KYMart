@@ -14,6 +14,7 @@ enum ModelType {
     case SubSection//二三级分类
     
     case ProductList//商品列表
+    case ProductNoSortList//无排序商品列表
     case ProductInfo//商品详情
     case CartList//购物车列表
     case AddCart//添加购物车
@@ -72,6 +73,12 @@ class SJBRequestModel: NSObject {
                 break
             case .ProductList:
                 let temmodel = KYProductListModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .ProductNoSortList:
+                let temmodel = KYProductListNoSortModel.yy_model(with: response as! [AnyHashable : Any])
                 if let model = temmodel {
                     completion(model,status)
                 }
@@ -223,6 +230,7 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
+            
             case .Section:
                 for item in response as! NSArray {
                     let temmodel = FJSectionModel.yy_model(with: item as! [AnyHashable : Any])
@@ -335,6 +343,18 @@ class SJBRequestModel: NSObject {
         }
     }
 
+    /// 获取商品列表(无排序)
+    ///
+    /// - Parameters:
+    ///   - id: id description
+    ///   - page: page description
+    ///   - url: url description
+    ///   - completion: completion description
+    class func pull_fetchProductListNoSortData(page:Int, url:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.GetAll(url: SJBRequestUrl.returnProductLisyUrl(url: url, page: page )) { (response, status) in
+            self.dataToModel(type: .ProductNoSortList, response: response, status: status, completion: completion)
+        }
+    }
     
     /// 获取商品详情
     ///

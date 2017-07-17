@@ -14,6 +14,7 @@ class KYProductCVCell: UICollectionViewCell {
     @IBOutlet weak var productInfoL: UILabel!
     @IBOutlet weak var countL: UILabel!
     @IBOutlet weak var buyBtn: UIButton!
+    @IBOutlet weak var productTypeIV: UIImageView!
     var good:Good?{
         didSet {
             if let id = good?.goods_id {
@@ -25,6 +26,7 @@ class KYProductCVCell: UICollectionViewCell {
             if let text = good?.shop_price {
                 countL.text = text
             }
+
         }
     }
     override func awakeFromNib() {

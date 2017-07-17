@@ -15,6 +15,8 @@ class KYProductListCVCell: UICollectionViewCell {
     @IBOutlet weak var productInfoL: UILabel!
     @IBOutlet weak var priceL: UILabel!
     @IBOutlet weak var buyBtn: UIButton!
+    @IBOutlet weak var productTypeIV: UIImageView!
+    
     var model: Goods_list? {
         didSet {
             if let id = model?.goods_id {
@@ -25,6 +27,25 @@ class KYProductListCVCell: UICollectionViewCell {
             }
             if let text = model?.shop_price {
                 priceL.text = text
+            }
+            if let text = model?.ky_type {
+                switch text {
+                case 0:
+                    productTypeIV.image = UIImage(named: "product_type_0.png")
+                    break
+                case 1:
+                    productTypeIV.image = UIImage(named: "product_type_1.png")
+                    
+                    break
+                    
+                case 3:
+                    productTypeIV.image = UIImage(named: "product_type_3.png")
+                    
+                    break
+                    
+                default:
+                    break
+                }
             }
         }
     }

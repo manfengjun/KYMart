@@ -10,7 +10,7 @@ import UIKit
 import MJRefresh
 fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
-class KYProductListViewController: BaseViewController {
+class KYProductListNoSortViewController: BaseViewController {
     /// 默认热门排序
     var url:String? {
         didSet {
@@ -36,16 +36,12 @@ class KYProductListViewController: BaseViewController {
             dataRequest()
         }
     }
-    var id:Int? {
+    var type:String? {
         didSet {
-            var urlStr = "/index.php/api/activity/goodsList/id/\(id!)/sort/is_new/sort_asc/desc"
-            if id == 10000 {
-                urlStr = "/index.php/api/activity/goodsList"
-            }
-            url = urlStr
+            url = "/index.php/api/activity/\(type!)"
         }
     }
-    fileprivate var productListModel:KYProductListModel?
+    fileprivate var productListModel:KYProductListNoSortModel?
     /// 数据源
     fileprivate lazy var dataArray:NSMutableArray = {
         let dataArray = NSMutableArray()
@@ -69,7 +65,7 @@ class KYProductListViewController: BaseViewController {
     fileprivate lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 40, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64), collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor.hexStringColor(hex: "#F1F1F1")
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(UINib(nibName: "KYProductListCVCell", bundle: nil), forCellWithReuseIdentifier: KYProductListCVCellIdentifier)
@@ -78,60 +74,9 @@ class KYProductListViewController: BaseViewController {
         return collectionView
     }()
     
-    fileprivate lazy var headView : KYProductMenuView = {
-        let headView = KYProductMenuView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 40))
-        headView.completionSignal?.observeValues({ (index) in
-            if let model = self.productListModel {
-                if self.currentIndex == index{
-                    return
-                }
-                self.currentIndex = index
-                switch index {
-                case 1:
-                    if let str = model.orderby_is_new {
-                        self.url = str
-                    }
-                    break
-                case 2:
-                    if let str = model.orderby_sales_sum {
-                        self.url = str
-                    }
-                    break
-                case 3:
-                    if let str = model.orderby_comment_count {
-                        self.url = str
-                    }
-
-                    break
-                case 4:
-                    if let str = model.orderby_price {
-                        let array = str.components(separatedBy: "/")
-                        self.url = str.replacingOccurrences(of: array.last!, with: "asc")
-                    }
-                    break
-                case 5:
-                    if let str = model.orderby_price {
-                        let array = str.components(separatedBy: "/")
-                        self.url = str.replacingOccurrences(of: array.last!, with: "asc")
-                    }
-                    break
-                case 6:
-                    if let str = model.orderby_price {
-                        let array = str.components(separatedBy: "/")
-                        self.url = str.replacingOccurrences(of: array.last!, with: "desc")
-                    }
-                    break
-                default:
-                    break
-                }
-            }
-
-        })
-        return headView
-    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -142,7 +87,6 @@ class KYProductListViewController: BaseViewController {
         setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(back))
         view.backgroundColor = UIColor.white
         view.addSubview(collectionView)
-        view.addSubview(headView)
         collectionView.mj_header = header
         collectionView.mj_footer = footer
     }
@@ -164,11 +108,11 @@ class KYProductListViewController: BaseViewController {
     
     /// 请求数据
     func dataRequest() {
-        SJBRequestModel.pull_fetchProductListData(page: page, url:url!) { (response, status) in
+        SJBRequestModel.pull_fetchProductListNoSortData(page: page, url:url!) { (response, status) in
             self.collectionView.mj_header.endRefreshing()
-
+            
             if status == 1 {
-                self.productListModel = response as? KYProductListModel
+                self.productListModel = response as? KYProductListNoSortModel
                 if let goods = self.productListModel?.goods_list {
                     if self.page == 1{
                         self.dataArray.removeAllObjects()
@@ -202,21 +146,21 @@ class KYProductListViewController: BaseViewController {
                         self.dataArray.addObjects(from: goods)
                     }
                     self.collectionView.reloadData()
-
+                    
                 }
             }
-
+            
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
 }
-extension KYProductListViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension KYProductListNoSortViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }

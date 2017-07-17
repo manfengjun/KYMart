@@ -157,6 +157,8 @@
 		BFC332C61F12101E00FEABE0 /* KYWXPayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC332C51F12101E00FEABE0 /* KYWXPayModel.swift */; };
 		BFC6790D1EE5624D00545C2C /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BFC679051EE5624D00545C2C /* logo.jpg */; };
 		BFC6790E1EE5624D00545C2C /* FJSectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC679061EE5624D00545C2C /* FJSectionController.swift */; };
+		BFC7E35E1F1CB47900A67306 /* KYProductListNoSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7E35D1F1CB47900A67306 /* KYProductListNoSortViewController.swift */; };
+		BFC7E3601F1CBC6F00A67306 /* KYProductListNoSortModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC7E35F1F1CBC6F00A67306 /* KYProductListNoSortModel.swift */; };
 		BFD6FAA51F051E5600E6BDA2 /* KYWithdrawListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */; };
 		BFD6FAA71F05203200E6BDA2 /* KYWithdrawHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD6FAA61F05203200E6BDA2 /* KYWithdrawHeadView.swift */; };
 		BFD6FAA91F05204F00E6BDA2 /* KYWithdrawHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD6FAA81F05204F00E6BDA2 /* KYWithdrawHeadView.xib */; };
@@ -444,6 +446,8 @@
 		BFC332C51F12101E00FEABE0 /* KYWXPayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWXPayModel.swift; sourceTree = "<group>"; };
 		BFC679051EE5624D00545C2C /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 		BFC679061EE5624D00545C2C /* FJSectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJSectionController.swift; sourceTree = "<group>"; };
+		BFC7E35D1F1CB47900A67306 /* KYProductListNoSortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductListNoSortViewController.swift; sourceTree = "<group>"; };
+		BFC7E35F1F1CBC6F00A67306 /* KYProductListNoSortModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductListNoSortModel.swift; sourceTree = "<group>"; };
 		BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWithdrawListViewController.swift; sourceTree = "<group>"; };
 		BFD6FAA61F05203200E6BDA2 /* KYWithdrawHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYWithdrawHeadView.swift; sourceTree = "<group>"; };
 		BFD6FAA81F05204F00E6BDA2 /* KYWithdrawHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KYWithdrawHeadView.xib; sourceTree = "<group>"; };
@@ -1141,6 +1145,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB6D0DF1EE69D4200F2C61F /* KYProductListViewController.swift */,
+				BFC7E35D1F1CB47900A67306 /* KYProductListNoSortViewController.swift */,
 				BF3DA80D1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift */,
 			);
 			path = Controller;
@@ -1150,6 +1155,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB6D0E51EE6ADBC00F2C61F /* KYProductListModel.swift */,
+				BFC7E35F1F1CBC6F00A67306 /* KYProductListNoSortModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1697,6 +1703,7 @@
 				BFE8969F1F13B21500C1C32A /* KYOrderListViewController.swift in Sources */,
 				BF194AE51EF4E8BD001538A9 /* ChooseLocationView.m in Sources */,
 				BFA1C2B11EE977840072C04D /* KYPropertyHeadView.swift in Sources */,
+				BFC7E35E1F1CB47900A67306 /* KYProductListNoSortViewController.swift in Sources */,
 				BFB5C84C1EEA661F00BFFDE5 /* SJBCountDown.swift in Sources */,
 				BFEFA99D1F01591700419995 /* KYBonusListModel.swift in Sources */,
 				BF9F0B7C1EFF4BB800BA4DEE /* KYBonusListViewController.swift in Sources */,
@@ -1801,6 +1808,7 @@
 				BF89032F1EE3A520004A0FF7 /* KYHomeViewController.swift in Sources */,
 				BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */,
 				BFC0176A1EDF9AC1005D66B0 /* FJColor+Extension.swift in Sources */,
+				BFC7E3601F1CBC6F00A67306 /* KYProductListNoSortModel.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BF9DD9541F1C44F9002379A0 /* KYHomeSecKillCVCell.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,

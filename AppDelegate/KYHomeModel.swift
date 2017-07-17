@@ -14,6 +14,7 @@ class Good :NSObject{
     var goods_name: String!
     var percent: Int = 0
     var cat_id3: Int = 0
+    var ky_type: Int = 0
 
 }
 class Ad :NSObject{

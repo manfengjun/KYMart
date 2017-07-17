@@ -56,14 +56,14 @@ class FJSectionController: UIViewController {
             tableView.reloadData()
             tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: .top)
             selectIndex = 0
-//            //去重
-//            for (index,item) in (leftDataArray?.enumerated())! {
-//                if item.id == SingleManager.instance.selectId{
-//                    tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
-//                    selectIndex = index
-//                    
-//                }
-//            }
+            //去重
+            for (index,item) in (leftDataArray?.enumerated())! {
+                if item.id == SingleManager.instance.selectId{
+                    tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .top)
+                    selectIndex = index
+                    
+                }
+            }
         }
     }
     

@@ -42,6 +42,8 @@ class Goods_list :NSObject{
     var comment_count: Int = 0
     var goods_name: String!
     var goods_id: Int = 0
+    var ky_type: Int = 0
+
     
 }
 

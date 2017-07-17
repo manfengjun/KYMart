@@ -322,45 +322,39 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
             return CGSize(width: SCREEN_WIDTH, height: 60)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if section == sectionCount - 1 {
+            return 10
+        }
+        return 0.01
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.01
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: SCREEN_WIDTH, height: 11)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            let noneVC = NoneViewController()
-            switch indexPath.row {
-            case 0:
-                noneVC.navTitle = "店铺街"
-                self.navigationController?.pushViewController(noneVC, animated: true)
-                break
-            case 1:
-                noneVC.navTitle = "品牌街"
-                self.navigationController?.pushViewController(noneVC, animated: true)
-                break
-            case 2:
-                noneVC.navTitle = "我的订单"
-                self.navigationController?.pushViewController(noneVC, animated: true)
-                break
-            case 3:
-                if SingleManager.instance.isLogin {
-                    self.tabBarController?.selectedIndex = 3
+        if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                let productlistVC = KYProductListViewController()
+                productlistVC.id = 10000
+                productlistVC.navTitle = "分享区"
+                self.navigationController?.pushViewController(productlistVC, animated: true)
+                productlistVC.backResult {
+                    self.tabBarController?.tabBar.isHidden = false
                 }
-                else{
-                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                    let loginNav = storyboard.instantiateViewController(withIdentifier: "loginNav") as! BaseNavViewController
-                    let loginVC = loginNav.viewControllers[0] as! SJBLoginViewController
-                    loginVC.loginResult({ (isLogin) in
-                        if isLogin {
-                            self.tabBarController?.selectedIndex = 3
-                        }
-                    })
-                    loginVC.hidesBottomBarWhenPushed = true
-                    self.present(loginNav, animated: true, completion: nil)
-                }
-                break
-            default:
-                break
             }
+            else
+            {
+                let productlistVC = KYProductListNoSortViewController()
+                productlistVC.type = indexPath.row == 1 ? "onsale_list" : "miaosha_list"
+                self.navigationController?.pushViewController(productlistVC, animated: true)
+                productlistVC.backResult {
+                    self.tabBarController?.tabBar.isHidden = false
+                }
+            }
+            
         }
         else if indexPath.section == sectionCount - 1 {
             let detailVC = KYProductDetailViewController()
