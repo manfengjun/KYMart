@@ -35,7 +35,7 @@ class CartUtil: NSObject {
             }
             else
             {
-                self.Toast(content: "添加失败")
+                self.Toast(content: response as! String)
                 completion(false)
             }
         })
