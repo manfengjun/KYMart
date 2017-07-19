@@ -221,7 +221,7 @@ class KYOrderViewController: BaseViewController {
                                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                                 let orderPayVC = storyboard.instantiateViewController(withIdentifier: "OrderPayVC") as! KYOrderPayViewController
                                 orderPayVC.orderID = order_id as? String
-                                orderPayVC.orderMoney = String(response as! Int)
+                                orderPayVC.orderMoney = String(response as! Float)
                                 self.navigationController?.pushViewController(orderPayVC, animated: true)
                             }
                             else

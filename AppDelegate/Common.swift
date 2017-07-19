@@ -52,6 +52,8 @@ let AliPayPayNotification = NSNotification.Name(rawValue: "AliPayPayNotification
 let OrderListRefreshNotification = NSNotification.Name(rawValue: "AliPayPayNotification")
 // 分类ID选择
 let SectionIDSelectedNotification = NSNotification.Name(rawValue: "SectionIDSelectedNotification")
+// 搜索后购物车选择
+let CartSelectedNotification = NSNotification.Name(rawValue: "CartSelectedNotification")
 
 
 /// 回调闭包

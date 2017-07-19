@@ -14,7 +14,13 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         self.tabBar.tintColor = BAR_TINTCOLOR
+        NotificationCenter.default.addObserver(self, selector:#selector(cartSelectAction),name: CartSelectedNotification, object: nil)
+
         // Do any additional setup after loading the view.
+    }
+    func cartSelectAction() {
+        self.selectedIndex = 2
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,7 +13,7 @@ class KYProductDetailHomeViewController: UIViewController {
 
     /// 详情
     fileprivate lazy var tableView : UITableView = {
-        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT), style: .plain)
+        let tableView = UITableView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64 - 50), style: .plain)
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "KYProductInfoTVCell", bundle: nil), forCellReuseIdentifier: KYProductInfoTVCellIdentifier)
@@ -158,7 +158,7 @@ extension KYProductDetailHomeViewController:UITableViewDelegate,UITableViewDataS
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREEN_HEIGHT - 64 - 50
+        return SCREEN_HEIGHT
     }
     
 }

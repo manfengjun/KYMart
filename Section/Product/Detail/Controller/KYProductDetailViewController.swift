@@ -12,7 +12,9 @@ fileprivate let KYProductListCVCellIdentifier = "kYProductListCVCell"
 
 class KYProductDetailViewController: BaseViewController {
 
-
+    
+    /// 是否搜索状态
+    var isSearch:Bool = false
     /// 新闻滚动菜单
     fileprivate lazy var segmentControl : HMSegmentedControl = {
         let segmentControl = HMSegmentedControl(frame: CGRect(x: 100, y: 20, width: SCREEN_WIDTH/2, height: 44))
@@ -34,10 +36,12 @@ class KYProductDetailViewController: BaseViewController {
     /// 滚动视图
     fileprivate lazy var scrollView : UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - 64))
-        scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64 - 50)
+        scrollView.contentSize = CGSize(width: 2*SCREEN_WIDTH, height: SCREEN_HEIGHT - 64)
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
         scrollView.delegate = self
+        scrollView.contentInset = UIEdgeInsetsMake(0, 0, -50, 0)
+
         return scrollView
         
     }()
@@ -79,13 +83,19 @@ class KYProductDetailViewController: BaseViewController {
                 if SingleManager.instance.isLogin {
                     CartUtil.addCart(completion: { (isSuccess) in
                         if isSuccess {
-                            self.tabBarController?.selectedIndex = 2
+                            if self.isSearch {
+                               self.dismiss(animated: true, completion: nil)
+                            }
+                            NotificationCenter.default.post(name: CartSelectedNotification, object: nil)
+
                         }
                     })
                 }
                 else
                 {
                     self.Toast(content: "请先登录")
+                    
+                    
                 }
             }else{
                 //立即购买
