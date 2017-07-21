@@ -21,6 +21,7 @@ class KYProductDetailHomeViewController: UIViewController {
         tableView.bounces = false
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 100
         return tableView
     }()
     /// 遮罩
@@ -157,8 +158,11 @@ extension KYProductDetailHomeViewController:UITableViewDelegate,UITableViewDataS
         }
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return SCREEN_HEIGHT
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 40
+//    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
 }

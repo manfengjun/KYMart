@@ -77,7 +77,8 @@ class KYOrderInfoViewController: BaseViewController {
                         let buttonTwo = DefaultButton(title: "确定") {
                             let orderid = self.orderInfoModel?.order_id
 
-                            KYOrderMenuUtil.delOrder(order_id: String(orderid!), completion: { (isSuccess) in
+                            
+                            KYOrderMenuUtil.confirmOrder(order_id: String(orderid!), completion: { (isSuccess) in
                                 if isSuccess {
                                     self.dataRequest()
                                 }

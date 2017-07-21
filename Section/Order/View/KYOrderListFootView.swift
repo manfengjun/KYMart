@@ -72,7 +72,7 @@ class KYOrderListFootView: UIView {
                         let buttonOne = CancelButton(title: "取消") {
                         }
                         let buttonTwo = DefaultButton(title: "确定") {
-                            KYOrderMenuUtil.delOrder(order_id: (self.model?.order_id)!, completion: { (isSuccess) in
+                            KYOrderMenuUtil.confirmOrder(order_id: (self.model?.order_id)!, completion: { (isSuccess) in
                                 if isSuccess {
                                     NotificationCenter.default.post(name:OrderListRefreshNotification, object: nil)
                                 }

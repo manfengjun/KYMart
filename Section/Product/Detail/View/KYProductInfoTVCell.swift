@@ -81,12 +81,11 @@ class KYProductInfoTVCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        shareView.isUserInteractionEnabled = true
         selectView.isUserInteractionEnabled = true
         scrollCircleView.currentPageDotColor = BAR_TINTCOLOR
         scrollCircleView.pageDotColor = UIColor.hexStringColor(hex: "#666666")
-        let shareTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
-        shareView.addGestureRecognizer(shareTap)
+//        let shareTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
+//        shareView.addGestureRecognizer(shareTap)
         let selectTap = UITapGestureRecognizer(target: self, action: #selector(tapAction(guesture:)))
         selectView.addGestureRecognizer(selectTap)
         //接受通知监听

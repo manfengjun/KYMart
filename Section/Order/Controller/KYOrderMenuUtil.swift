@@ -24,7 +24,7 @@ class KYOrderMenuUtil: NSObject {
             }
             else
             {
-                self.Toast(content: "删除失败")
+                self.Toast(content: response as! String)
                 completion(false)
 
             }
@@ -60,7 +60,7 @@ class KYOrderMenuUtil: NSObject {
             }
             else
             {
-                self.Toast(content: "确认收货失败")
+                self.Toast(content:response as! String)
                 completion(false)
                 
             }
