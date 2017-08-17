@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 import TZImagePickerController
 class KYMineViewController: BaseViewController {
 
@@ -19,6 +20,7 @@ class KYMineViewController: BaseViewController {
     @IBOutlet weak var usermoneyL: UILabel!
     @IBOutlet weak var bonusL: UILabel!
     @IBOutlet weak var userTypeL: UILabel!
+    @IBOutlet weak var pendingLabel: UILabel!
     
     var userInfoModel:KYUserInfoModel?{
         didSet {
@@ -40,6 +42,12 @@ class KYMineViewController: BaseViewController {
             if let text = userInfoModel?.user_money {
                 usermoneyL.text = "¥\(text)"
             }
+            if let text = userInfoModel?.total_sell {
+                if let text2 = userInfoModel?.total_bonus1 {
+                    pendingLabel.text = "¥\(Float(text)! - Float(text2)!)"
+                }
+            }
+            
             if let text = userInfoModel?.user_id {
                 if let operatorStatus = userInfoModel?.operator_status{
                     if operatorStatus == 0 {
@@ -271,7 +279,7 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 break
             case 1:
                 let bonusListVC = KYBonusListViewController()
-                bonusListVC.navTitle = "奖金明细"
+                bonusListVC.navTitle = "优惠卷明细"
                 bonusListVC.userMoney = userInfoModel?.bonus
                 self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(bonusListVC, animated: true)
@@ -313,10 +321,34 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
         }
         else if indexPath.section == dataDic?.allKeys.count
         {
-            //退出登录
-            SingleManager.instance.isLogin = false
-            SingleManager.instance.loginInfo = nil
-            self.tabBarController?.selectedIndex = 0
+            // Prepare the popup
+            let title = "提  示"
+            let message = "确认退出登录"
+            
+            // Create the dialog
+            let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+                print("Completed")
+            }
+            
+            // Create first button
+            let buttonOne = CancelButton(title: "取消") {
+            }
+            
+            // Create second button
+            let buttonTwo = DefaultButton(title: "确定") {
+                //退出登录
+                SingleManager.instance.isLogin = false
+                SingleManager.instance.loginInfo = nil
+                self.tabBarController?.selectedIndex = 0
+            }
+            
+            // Add buttons to dialog
+            popup.addButtons([buttonOne, buttonTwo])
+            
+            // Present dialog
+            self.present(popup, animated: true, completion: nil)
+
+            
         }
         
     }

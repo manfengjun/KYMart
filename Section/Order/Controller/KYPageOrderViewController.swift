@@ -46,6 +46,7 @@ class KYPageOrderViewController: BaseViewController {
     }
     
     func setupUI() {
+        navigationItem.title = "订单";
         view.backgroundColor = UIColor.white
         setBackButtonInNav()
         view.addSubview(ninaPagerView)

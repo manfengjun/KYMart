@@ -19,6 +19,8 @@ class KYUserInfoView: UIView {
     @IBOutlet weak var bonusL: UILabel!
     @IBOutlet weak var userTypeL: UILabel!
     @IBOutlet weak var titleL: UILabel!
+    @IBOutlet weak var pendingLabel: UILabel!
+    
     var userModel:KYUserInfoModel?{
         didSet {
             if let text = userModel?.nickname {
@@ -38,6 +40,11 @@ class KYUserInfoView: UIView {
             }
             if let text = userModel?.sell_status {
                 userTypeL.text = (text == 0 ? "预备会员" : "开心果")
+            }
+            if let text = userModel?.total_sell {
+                if let text2 = userModel?.total_bonus1 {
+                    pendingLabel.text = "¥\(Float(text)! - Float(text2)!)"
+                }
             }
 
         }
