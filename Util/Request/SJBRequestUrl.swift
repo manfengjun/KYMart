@@ -143,7 +143,13 @@ class SJBRequestUrl: NSObject {
     class func returnAlipayPayUrl() -> String {
         return "\(basePath)m=Api&c=payment&a=alipay_sign&token=\(access_token())"
     }
-    
+    /// 快钱支付
+    ///
+    /// - Returns: return value description
+    class func returnKuaiQianPayUrl(order_sn:String,user_id:String) -> String {
+        return "\(baseHref)/index.php/api/payment/bill.html?order_sn=\(order_sn)&user_id=\(user_id)"
+    }
+
     /// 订单列表
     ///
     /// - Returns: return value description

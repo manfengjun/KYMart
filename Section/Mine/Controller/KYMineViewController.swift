@@ -113,12 +113,19 @@ class KYMineViewController: BaseViewController {
             vc.bonus = userInfoModel?.bonus
 
         }
+        if segue.identifier == "M_recharge_SegudID" {
+            let vc = segue.destination as! KYRechargeViewController
+            vc.userMoney = userInfoModel?.user_money
+        }
+
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     
 }
@@ -161,7 +168,12 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
         self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
 
     }
-
+    /// 跳转到充值界面
+    ///
+    /// - Parameter sender: sender description
+    @IBAction func userMoneyAction(_ sender: UITapGestureRecognizer) {
+        self.performSegue(withIdentifier: "M_recharge_SegudID", sender: sender)
+    }
     /// 修改头像
     ///
     /// - Parameter sender: sender description

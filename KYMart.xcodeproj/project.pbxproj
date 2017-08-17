@@ -34,6 +34,9 @@
 		BF3DA8101EF7B6090041BE6C /* NoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DA80F1EF7B6090041BE6C /* NoneViewController.swift */; };
 		BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */; };
 		BF5E0CB91EEACD7800D82F91 /* KYProductBuyInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */; };
+		BF61B73E1F45CC1B003C1258 /* KYRechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61B73D1F45CC1B003C1258 /* KYRechargeViewController.swift */; };
+		BF61B7431F45D96C003C1258 /* AlertRechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */; };
+		BF61B7441F45D96C003C1258 /* AlertRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */; };
 		BF6D1D3E1F145CAD00587056 /* KYPageOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */; };
 		BF6D1D471F145CCF00587056 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D411F145CCF00587056 /* NinaBaseView.m */; };
 		BF6D1D481F145CCF00587056 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D431F145CCF00587056 /* NinaPagerView.m */; };
@@ -299,6 +302,9 @@
 		BF3DA80F1EF7B6090041BE6C /* NoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoneViewController.swift; sourceTree = "<group>"; };
 		BF4906491EF2B1E000C12A45 /* KYAddAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddAddressViewController.swift; sourceTree = "<group>"; };
 		BF5E0CB81EEACD7800D82F91 /* KYProductBuyInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductBuyInfoModel.swift; sourceTree = "<group>"; };
+		BF61B73D1F45CC1B003C1258 /* KYRechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYRechargeViewController.swift; sourceTree = "<group>"; };
+		BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRechargeViewController.swift; sourceTree = "<group>"; };
+		BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertRechargeViewController.xib; sourceTree = "<group>"; };
 		BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPageOrderViewController.swift; sourceTree = "<group>"; };
 		BF6D1D401F145CCF00587056 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
 		BF6D1D411F145CCF00587056 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = "<group>"; };
@@ -867,6 +873,9 @@
 				BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */,
 				BF9B49AB1F09070900982EBA /* KYQrCodeViewController.swift */,
 				BF73F2EF1F0BCC9E00BAE922 /* KYMemberViewController.swift */,
+				BF61B73D1F45CC1B003C1258 /* KYRechargeViewController.swift */,
+				BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */,
+				BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1575,6 +1584,7 @@
 				BFB6D0D51EE6965300F2C61F /* FJSectionTitleCVCellCell.xib in Resources */,
 				BFFF01F91F14D258008CC160 /* KYOrderInfoSectionHeadView.xib in Resources */,
 				BFB6D0CF1EE6965300F2C61F /* FJLeftMenuTVCell.xib in Resources */,
+				BF61B7441F45D96C003C1258 /* AlertRechargeViewController.xib in Resources */,
 				BFB6D0D31EE6965300F2C61F /* FJSectionRowHeadView.xib in Resources */,
 				BFC0173E1EDF9875005D66B0 /* LaunchScreen.storyboard in Resources */,
 				BF9F0B841EFF4C3D00BA4DEE /* KYSellListTVCell.xib in Resources */,
@@ -1732,6 +1742,7 @@
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
 				BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */,
 				BF73F2F61F0BD37E00BAE922 /* KYMemberModel.swift in Sources */,
+				BF61B73E1F45CC1B003C1258 /* KYRechargeViewController.swift in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
@@ -1757,6 +1768,7 @@
 				BF9B49AA1F08E2E100982EBA /* PooCodeView.m in Sources */,
 				BFE46DF31EF11C9300F65FED /* KYMineViewController.swift in Sources */,
 				BF89030A1EE3A1EC004A0FF7 /* SDCycleScrollView.m in Sources */,
+				BF61B7431F45D96C003C1258 /* AlertRechargeViewController.swift in Sources */,
 				BF6D1D4B1F14A78200587056 /* KYOrderButton.swift in Sources */,
 				BFDCB4071EE8F3730040A09B /* HXTagAttribute.m in Sources */,
 				BF6D1D471F145CCF00587056 /* NinaBaseView.m in Sources */,

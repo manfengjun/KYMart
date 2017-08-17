@@ -40,22 +40,41 @@ class KYOrderPayViewController: BaseViewController {
         currentSelect = (sender.view?.tag)!
         let wechatBtn = view.viewWithTag(1)?.viewWithTag(11) as! UIButton
         let alipayBtn = view.viewWithTag(2)?.viewWithTag(11) as! UIButton
+        let kuaiqianBtn = view.viewWithTag(3)?.viewWithTag(11) as! UIButton
+
         wechatBtn.setImage(sender.view?.tag == 1 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
         alipayBtn.setImage(sender.view?.tag == 2 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
+        kuaiqianBtn.setImage(sender.view?.tag == 3 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
+
     }
     
     @IBAction func payAction(_ sender: UIButton) {
         sureBtn.isUserInteractionEnabled = false
-        SVProgressHUD.show(withStatus: "加载中")
         if currentSelect == 1 {
             // 微信支付
+            SVProgressHUD.show(withStatus: "加载中")
+
             weixinPay()
             
         }
-        else
+        else if currentSelect == 2
         {
+            SVProgressHUD.show(withStatus: "加载中")
+
             //支付宝支付
             alipayPay()
+        }
+        else
+        {
+            //快钱支付
+            SJBRequestModel.push_fetchOrderKuaiQianPayData(order_sn: orderID!, user_id: (SingleManager.instance.loginInfo?.user_id)!, completion: { (response, status) in
+                if status == 1{
+                    let url = response["url"] as! String;
+                    UIApplication.shared.openURL(URL(string: url)!)
+                }
+                
+            })
+            
         }
 
     }

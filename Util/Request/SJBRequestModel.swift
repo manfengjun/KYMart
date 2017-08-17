@@ -26,6 +26,8 @@ enum ModelType {
     case PostOrderID//提交订单编号
     case OrderWenxinPay//微信支付
     case OrderAlipayPay//支付宝支付
+    case OrderKuaiQian//快钱支付
+
     case OrderList//订单列表
     case OrderInfo//订单详情
     case OrderDel//删除订单
@@ -183,6 +185,10 @@ class SJBRequestModel: NSObject {
                 }
                 break
             case .OrderAlipayPay:
+                completion(response,status)
+                
+                break
+            case .OrderKuaiQian:
                 completion(response,status)
                 
                 break
@@ -531,6 +537,20 @@ class SJBRequestModel: NSObject {
         SJBRequest.Post(url: SJBRequestUrl.returnAlipayPayUrl(), params: params) { (response, status) in
             self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
         }
+    }
+    
+    /// 快钱支付
+    ///
+    /// - Parameters:
+    ///   - order_sn: order_sn description
+    ///   - user_id: user_id description
+    ///   - completion: completion description
+    class func push_fetchOrderKuaiQianPayData(order_sn:String,user_id:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.GetAll(url: SJBRequestUrl.returnKuaiQianPayUrl(order_sn: order_sn, user_id: user_id)) { (response, status) in
+            self.dataToModel(type: .OrderKuaiQian, response: response, status: status, completion: completion)
+
+        }
+        
     }
     /// 获取订单列表
     ///
