@@ -106,18 +106,14 @@ class KYProductDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackButtonInNav()
-        
-        
-        view.backgroundColor = UIColor.white
-        view.addSubview(scrollView)
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(KYProductDetailViewController.ceshi))
-//        scrollView.addGestureRecognizer(tap)
         setupUI()
-        // Do any additional setup after loading the view.
     }
     
     func setupUI() {
+        setBackButtonInNav()
+        view.backgroundColor = UIColor.white
+        view.addSubview(scrollView)
+        setRightButtonInNav(imageUrl: "product_share_white.png", action: #selector(shareAction))
         scrollView.addSubview(productInfoVC.view)
         addChildViewController(productInfoVC)
         scrollView.addSubview(productContentVC.view)
@@ -135,6 +131,32 @@ class KYProductDetailViewController: BaseViewController {
         super.viewWillDisappear(animated)
         segmentControl.removeFromSuperview()
         buyView.removeFromSuperview()
+
+    }
+    
+    /// 分享
+    func shareAction() {
+        
+        FJUmSocialUtil.setupShareMenu(completion: { (platformType, userInfo) in
+            switch platformType {
+            case .wechatTimeLine,.wechatSession,.QQ:
+
+                SJBRequestModel.pull_fetchQrCodeData { (response, status) in
+                    if status == 1{
+                        let model = response as! KYQrCodeModel
+                        FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: model.title, descr: model.content, thumImage: "\(imgPath)\(model.url!)" as AnyObject, url: model.share_url)
+                        
+                    }
+                    else
+                    {
+                        self.Toast(content: "获取二维码失败")
+                    }
+                }
+                break
+            default:
+                break
+            }
+        })
 
     }
     override func didReceiveMemoryWarning() {

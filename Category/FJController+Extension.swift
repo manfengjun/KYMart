@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 extension BaseViewController{
     /// 导航栏返回按钮
     ///
@@ -69,6 +70,69 @@ extension BaseViewController{
         let item = UIBarButtonItem(customView: backBtn)
         navigationItem.rightBarButtonItem = item
     }
-
+    
+    /// 提示弹窗
+    ///
+    /// - Parameters:
+    ///   - content: content description
+    ///   - sure: sure description
+    ///   - cancel: cancel description
+    func popupDialog(content:String,sure:@escaping () -> Void,cancel:@escaping () -> Void) {
+        // Prepare the popup
+        let title = "提  示"
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: content, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+            
+        }
+        
+        // Create first button
+        let buttonOne = CancelButton(title: "取消") {
+            cancel()
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: "确定") {
+            sure()
+        }
+        buttonTwo.titleColor = BAR_TINTCOLOR
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+    }
+    
+    /// 提示弹窗
+    ///
+    /// - Parameters:
+    ///   - content: content description
+    ///   - cancelTitle: cancelTitle description
+    ///   - sureTitle: sureTitle description
+    ///   - sure: sure description
+    ///   - cancel: cancel description
+    func popupDialog(content:String,cancelTitle:String,sureTitle:String,sure:@escaping () -> Void,cancel:@escaping () -> Void) {
+        // Prepare the popup
+        let title = "提  示"
+        // Create the dialog
+        let popup = PopupDialog(title: title, message: content, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
+            
+        }
+        
+        // Create first button
+        let buttonOne = CancelButton(title: cancelTitle) {
+            cancel()
+        }
+        
+        // Create second button
+        let buttonTwo = DefaultButton(title: sureTitle) {
+            sure()
+        }
+        buttonTwo.titleColor = BAR_TINTCOLOR
+        // Add buttons to dialog
+        popup.addButtons([buttonOne, buttonTwo])
+        
+        // Present dialog
+        self.present(popup, animated: true, completion: nil)
+    }
     
 }

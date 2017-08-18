@@ -69,6 +69,15 @@ class KYOrderPayViewController: BaseViewController {
             //快钱支付
             SJBRequestModel.push_fetchOrderKuaiQianPayData(order_sn: orderID!, user_id: (SingleManager.instance.loginInfo?.user_id)!, completion: { (response, status) in
                 if status == 1{
+                    self.popupDialog(content: "是否支付成功？", cancelTitle: "支付失败", sureTitle: "支付完成", sure: { 
+                        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                        let pageOrderVC = storyboard.instantiateViewController(withIdentifier: "pageOrderVC") as! KYPageOrderViewController
+                        pageOrderVC.isPresent = true
+                        let nav = BaseNavViewController(rootViewController: pageOrderVC)
+                        self.present(nav, animated: true, completion: nil)
+                    }, cancel: {
+                        
+                    })
                     let url = response["url"] as! String;
                     UIApplication.shared.openURL(URL(string: url)!)
                 }

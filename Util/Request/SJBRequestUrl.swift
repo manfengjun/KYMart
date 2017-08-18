@@ -10,9 +10,9 @@ import UIKit
 //let basePath = "http://test.kymart.cn/index.php?"
 //let baseHref = "http://test.kymart.cn"
 //let imgPath = "http://test.kymart.cn"
-let basePath = "https://kymart.cn/index.php?"
-let baseHref = "https://kymart.cn"
-let imgPath = "https://kymart.cn"
+let basePath = "http://api.kymart.cn/index.php?"
+let baseHref = "http://api.kymart.cn"
+let imgPath = "http://api.kymart.cn"
 class SJBRequestUrl: NSObject {
     
     /// access_token

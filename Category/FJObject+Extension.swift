@@ -32,6 +32,7 @@ extension NSObject{
     class func Toast(content:String,duration:CGFloat) {
         XHToast.showBottomWithText(content, duration: duration)
     }
+    
 }
 // MARK: ------ 输入合法性验证
 extension NSObject{

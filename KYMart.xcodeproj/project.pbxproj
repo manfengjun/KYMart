@@ -47,6 +47,8 @@
 		BF73F2F31F0BCD4B00BAE922 /* KYMemberTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F2F11F0BCD4B00BAE922 /* KYMemberTVCell.swift */; };
 		BF73F2F61F0BD37E00BAE922 /* KYMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF73F2F51F0BD37E00BAE922 /* KYMemberModel.swift */; };
 		BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */; };
+		BF876C351F468D20001F32C6 /* FJUmSocialUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF876C341F468D20001F32C6 /* FJUmSocialUtil.swift */; };
+		BF876C391F46972F001F32C6 /* KYQrCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF876C381F46972F001F32C6 /* KYQrCodeModel.swift */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
 		BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FA1EE3A1EC004A0FF7 /* TAAnimatedDotView.m */; };
 		BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FC1EE3A1EC004A0FF7 /* TADotView.m */; };
@@ -319,6 +321,8 @@
 		BF73F2F11F0BCD4B00BAE922 /* KYMemberTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMemberTVCell.swift; sourceTree = "<group>"; };
 		BF73F2F51F0BD37E00BAE922 /* KYMemberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMemberModel.swift; sourceTree = "<group>"; };
 		BF7DA4081EF60EB8003D761B /* KYUserInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYUserInfoViewController.swift; sourceTree = "<group>"; };
+		BF876C341F468D20001F32C6 /* FJUmSocialUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJUmSocialUtil.swift; sourceTree = "<group>"; };
+		BF876C381F46972F001F32C6 /* KYQrCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeModel.swift; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		BF8902F91EE3A1EC004A0FF7 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -889,6 +893,7 @@
 				BFEFA99C1F01591700419995 /* KYBonusListModel.swift */,
 				BF035DEF1F067965004EA4CF /* KYWithdrawListModel.swift */,
 				BF73F2F51F0BD37E00BAE922 /* KYMemberModel.swift */,
+				BF876C381F46972F001F32C6 /* KYQrCodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1262,6 +1267,7 @@
 		BFC017621EDF9AB1005D66B0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BF876C341F468D20001F32C6 /* FJUmSocialUtil.swift */,
 				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
 				BF194AD51EF4E8BD001538A9 /* ChooseLocation */,
 				BFEA60381EEBDF9300885737 /* KeychainItemWraper */,
@@ -1715,6 +1721,7 @@
 				BFF959521EED668D00C799CD /* KYCartFormModel.swift in Sources */,
 				BFE8969E1F13B21500C1C32A /* KYOrderInfoViewController.swift in Sources */,
 				BFD7B4E51F0BE1640082EAFF /* KYUserInfoView.swift in Sources */,
+				BF876C351F468D20001F32C6 /* FJUmSocialUtil.swift in Sources */,
 				BF0696221F15BC680038E42D /* KYOrderInfoModel.swift in Sources */,
 				BFB6D0B51EE6913400F2C61F /* FJSectionModel.swift in Sources */,
 				BFE8969F1F13B21500C1C32A /* KYOrderListViewController.swift in Sources */,
@@ -1738,6 +1745,7 @@
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
 				BF9F0B7A1EFF4B9700BA4DEE /* KYSellListViewController.swift in Sources */,
+				BF876C391F46972F001F32C6 /* KYQrCodeModel.swift in Sources */,
 				BFDCB4091EE8F3730040A09B /* HXTagCollectionViewFlowLayout.m in Sources */,
 				BFB6D0B31EE63CE200F2C61F /* KYHomeModel.swift in Sources */,
 				BF49064A1EF2B1E000C12A45 /* KYAddAddressViewController.swift in Sources */,
@@ -2050,8 +2058,6 @@
 					"-framework",
 					"\"SDWebImage\"",
 					"-framework",
-					"\"STPickerView\"",
-					"-framework",
 					"\"SVProgressHUD\"",
 					"-framework",
 					"\"TZImagePickerController\"",
@@ -2118,8 +2124,6 @@
 					"\"Result\"",
 					"-framework",
 					"\"SDWebImage\"",
-					"-framework",
-					"\"STPickerView\"",
 					"-framework",
 					"\"SVProgressHUD\"",
 					"-framework",

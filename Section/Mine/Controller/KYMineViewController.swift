@@ -333,34 +333,14 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
         }
         else if indexPath.section == dataDic?.allKeys.count
         {
-            // Prepare the popup
-            let title = "提  示"
-            let message = "确认退出登录"
-            
-            // Create the dialog
-            let popup = PopupDialog(title: title, message: message, buttonAlignment: .horizontal, transitionStyle: .zoomIn, gestureDismissal: true) {
-                print("Completed")
-            }
-            
-            // Create first button
-            let buttonOne = CancelButton(title: "取消") {
-            }
-            
-            // Create second button
-            let buttonTwo = DefaultButton(title: "确定") {
+            self.popupDialog(content: "确认退出登录", sure: { 
                 //退出登录
                 SingleManager.instance.isLogin = false
                 SingleManager.instance.loginInfo = nil
                 self.tabBarController?.selectedIndex = 0
-            }
-            
-            // Add buttons to dialog
-            popup.addButtons([buttonOne, buttonTwo])
-            
-            // Present dialog
-            self.present(popup, animated: true, completion: nil)
-
-            
+            }, cancel: { 
+                
+            })
         }
         
     }

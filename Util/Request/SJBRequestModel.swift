@@ -147,7 +147,10 @@ class SJBRequestModel: NSObject {
                 completion(response,status)
                 break
             case .QrCode:
-                completion(response,status)
+                let temmodel = KYQrCodeModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
                 break
             case .BonusToMoney:
                 completion(response,status)

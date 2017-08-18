@@ -9,6 +9,7 @@
 import UIKit
 
 class KYPageOrderViewController: BaseViewController {
+    var isPresent:Bool = false
     fileprivate var titleArray:[String] = ["全部","待付款","待发货","待收货","待评价"]
     fileprivate var typeArray:[String] = ["all","WAITPAY","WAITSEND","WAITRECEIVE","WAITCCOMMENT"]
     fileprivate var currentPage = 0
@@ -48,9 +49,18 @@ class KYPageOrderViewController: BaseViewController {
     func setupUI() {
         navigationItem.title = "订单";
         view.backgroundColor = UIColor.white
-        setBackButtonInNav()
+        setLeftButtonInNav(imageUrl: "nav_back.png", action: #selector(goback))
         view.addSubview(ninaPagerView)
         
+    }
+    override func goback() {
+        if isPresent{
+            self.dismiss(animated: true, completion: nil)
+        }
+        else
+        {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     func refreshAction() {
         let vc = childvcsArray[currentPage] as! KYOrderListViewController

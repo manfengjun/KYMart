@@ -14,5 +14,12 @@ target 'KYMart' do
     pod 'SVProgressHUD', '~> 2.1.2'
     pod 'PYSearch', '~> 0.8.0'
     pod 'PopupDialog', '~> 0.5.4'
+    
+    # U-Share SDK UI模块（分享面板，建议添加）
+    pod 'UMengUShare/UI'
+    # 集成微信(完整版14.4M)
+    pod 'UMengUShare/Social/WeChat'
+    # 集成QQ/QZone/TIM(完整版7.6M)
+    pod 'UMengUShare/Social/QQ'
 end
 

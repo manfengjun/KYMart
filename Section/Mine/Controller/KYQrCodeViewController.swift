@@ -17,11 +17,13 @@ class KYQrCodeViewController: BaseViewController {
             tableView.reloadData()
         }
     }
-    
+    var model:KYQrCodeModel?
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "二维码"
         setBackButtonInNav()
+        setRightButtonInNav(imageUrl: "product_share_white.png", action: #selector(shareAction))
+
         dataRequest()
         // Do any additional setup after loading the view.
     }
@@ -36,8 +38,9 @@ class KYQrCodeViewController: BaseViewController {
     func dataRequest() {
         SJBRequestModel.pull_fetchQrCodeData { (response, status) in
             if status == 1{
-                if let text = response["url"]{
-                    self.imageUrl = URL(string: imgPath + (text as! String))
+                self.model = response as? KYQrCodeModel
+                if let text = self.model?.url{
+                    self.imageUrl = URL(string: imgPath + text)
 //                    let url = URL(string: imgPath + (text as! String))
 //                    self.qrCodeIV.sd_setImage(with: url, placeholderImage: nil, options: .retryFailed, completed: { (image, error, cacheType, url) in
 //                        
@@ -52,6 +55,21 @@ class KYQrCodeViewController: BaseViewController {
             }
         }
     }
+    /// 分享
+    func shareAction() {
+        
+        FJUmSocialUtil.setupShareMenu(completion: { (platformType, userInfo) in
+            switch platformType {
+            case .wechatTimeLine,.wechatSession,.QQ:
+                FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: (self.model?.title)!, descr: (self.model?.content)!, thumImage: "\(imgPath)\((self.model?.url)!)" as AnyObject, url: (self.model?.share_url)!)
+                break
+            default:
+                break
+            }
+        })
+        
+    }
+
     @IBAction func savePhotoAction(_ sender: UILongPressGestureRecognizer) {
         // Prepare the popup assets
         let title = "提示"

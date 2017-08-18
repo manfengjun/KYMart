@@ -34,3 +34,6 @@
 //滚动菜单
 #import "NinaPagerView.h"
 #import "UIParameter.h"
+//友盟分享
+#import <UMSocialCore/UMSocialCore.h>
+#import <UShareUI/UMSocialUIManager.h>

@@ -57,6 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         WXApi.registerApp("wxcf54c829295655ba")
         //键盘
         setupIQKeyboardManager()
+        //友盟分享
+        FJUmSocialUtil.instance.setup()
 
         return true
     }
@@ -84,22 +86,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         manager.enableAutoToolbar = false
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        if url.host == "safepay" {
-            AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (result) in
-                print(result ?? "result")
-            })
+        
+        let result = UMSocialManager.default().handleOpen(url, options: options)
+        if !result {
+            if url.host == "safepay" {
+                AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (result) in
+                    print(result ?? "result")
+                })
+            }
+            else{
+                //微信回调
+                WXApi.handleOpen(url, delegate: self)
+            }
         }
-        return WXApi.handleOpen(url, delegate: self)
+        return result
     }
     func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
-        if url.host == "safepay" {
-            AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (result) in
-                print(result ?? "result")
-
-            })
+        let result = UMSocialManager.default().handleOpen(url)
+        if !result {
+            if url.host == "safepay" {
+                AlipaySDK.defaultService().processOrder(withPaymentResult: url, standbyCallback: { (result) in
+                    print(result ?? "result")
+                    
+                })
+            }
+            else{
+                //微信回调
+                WXApi.handleOpen(url, delegate: self)
+            }
         }
-
-        return WXApi.handleOpen(url, delegate: self)
+        return result
     }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
