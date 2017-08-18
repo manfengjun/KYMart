@@ -392,18 +392,12 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                 if let text = zoneObj.api_url {
                     let productlistVC = KYProduceSectionListViewController()
                     productlistVC.url = text
-                    switch indexPath.row {
-                    case 0:
-                        productlistVC.navTitle = "分享区"
-                        break
-                    case 1:
-                        productlistVC.navTitle = "促销区"
-                        break
-                    case 2:
-                        productlistVC.navTitle = "中秋区"
-                        break
-                    default:
-                        break
+                    if let title = zoneObj.title {
+                        productlistVC.navTitle = title
+                    }
+                    else
+                    {
+                        productlistVC.navTitle = "商品列表"
                     }
                     self.navigationController?.pushViewController(productlistVC, animated: true)
                     productlistVC.backResult {

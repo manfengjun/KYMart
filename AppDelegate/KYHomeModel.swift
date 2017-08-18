@@ -26,6 +26,7 @@ class Ad :NSObject{
 class ZoneObj :NSObject{
     var img_url: String!
     var api_url: String!
+    var title:String!
     
 }
 class KYHomeModel :NSObject{
