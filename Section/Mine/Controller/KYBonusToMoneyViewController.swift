@@ -50,7 +50,7 @@ class KYBonusToMoneyViewController: BaseViewController {
         bonusL.text = bonus
         headH.constant = SCREEN_WIDTH*3/5 + 51
         infoView.addSubview(headView)
-        headView.titleL.text = "优惠卷兑换余额"
+        headView.titleL.text = "优惠券兑换余额"
         headView.userModel = SingleManager.instance.userInfo
 
     }

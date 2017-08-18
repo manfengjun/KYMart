@@ -16,6 +16,10 @@ enum ModelType {
     case ProductList//商品列表
     case ProductNoSortList//无排序商品列表
     case ProductInfo//商品详情
+    
+    case ProductSectionList//分享区、促销区、秒杀区
+    case ProductSectionMoreList//首页分区更多
+    
     case CartList//购物车列表
     case AddCart//添加购物车
     case DelCart//删除购物车商品
@@ -239,7 +243,23 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
-            
+            case .ProductSectionList:
+                for item in response as! NSArray {
+                    let temmodel = KYProductSectionListModel.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
+            case .ProductSectionMoreList:
+                for item in response as! NSArray {
+                    let temmodel = Goods_list.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
+
             case .Section:
                 for item in response as! NSArray {
                     let temmodel = FJSectionModel.yy_model(with: item as! [AnyHashable : Any])
@@ -347,7 +367,7 @@ class SJBRequestModel: NSObject {
     ///   - url: url description
     ///   - completion: completion description
     class func pull_fetchProductListData(page:Int, url:String, completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnProductLisyUrl(url: url, page: page )) { (response, status) in
+        SJBRequest.Get(url: SJBRequestUrl.returnProductListUrl(url: url, page: page )) { (response, status) in
             self.dataToModel(type: .ProductList, response: response, status: status, completion: completion)
         }
     }
@@ -360,7 +380,7 @@ class SJBRequestModel: NSObject {
     ///   - url: url description
     ///   - completion: completion description
     class func pull_fetchProductListNoSortData(page:Int, url:String, completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.GetAll(url: SJBRequestUrl.returnProductLisyUrl(url: url, page: page )) { (response, status) in
+        SJBRequest.GetAll(url: SJBRequestUrl.returnProductListUrl(url: url, page: page )) { (response, status) in
             self.dataToModel(type: .ProductNoSortList, response: response, status: status, completion: completion)
         }
     }
@@ -374,6 +394,30 @@ class SJBRequestModel: NSObject {
         let params = ["id":String(id)]
         SJBRequest.Post(url: SJBRequestUrl.returnProductInfoUrl(), params: params as [String : AnyObject]) { (response, status) in
             self.dataToModel(type: .ProductInfo, response: response, status: status, completion: completion)
+        }
+    }
+    // MARK: ------ 分享区、促销区、秒杀区
+
+    /// 获取首页分区商品列表
+    ///
+    /// - Parameters:
+    ///   - zid: zid description
+    ///   - completion: completion description
+    class func pull_fetchProductSectionListData(url:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSectionProductListUrl(url: url)) { (response, status) in
+            self.dataArrayToModel(type: .ProductSectionList, response: response, status: status, completion: completion)
+        }
+    }
+    
+
+    /// 首页分区获取更多
+    ///
+    /// - Parameters:
+    ///   - url: url description
+    ///   - completion: completion description
+    class func pull_fetchProductSectionMoreData(url:String,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSectionMoreProductListUrl(url: url)) { (response, status) in
+            self.dataArrayToModel(type: .ProductSectionMoreList, response: response, status: status, completion: completion)
         }
     }
     // MARK: ------ 图形验证码
@@ -520,41 +564,6 @@ class SJBRequestModel: NSObject {
         }
     }
 
-    /// 微信支付
-    ///
-    /// - Parameters:
-    ///   - params: params description
-    ///   - completion: completion description
-    class func push_fetchOrderWeiXinPayData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Post(url: SJBRequestUrl.returnWeiXinPayUrl(), params: params) { (response, status) in
-            self.dataToModel(type: .OrderWenxinPay, response: response, status: status, completion: completion)
-        }
-    }
-    
-    /// 支付宝支付
-    ///
-    /// - Parameters:
-    ///   - params: params description
-    ///   - completion: completion description
-    class func push_fetchOrderAlipayPayData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Post(url: SJBRequestUrl.returnAlipayPayUrl(), params: params) { (response, status) in
-            self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
-        }
-    }
-    
-    /// 快钱支付
-    ///
-    /// - Parameters:
-    ///   - order_sn: order_sn description
-    ///   - user_id: user_id description
-    ///   - completion: completion description
-    class func push_fetchOrderKuaiQianPayData(order_sn:String,user_id:String, completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.GetAll(url: SJBRequestUrl.returnKuaiQianPayUrl(order_sn: order_sn, user_id: user_id)) { (response, status) in
-            self.dataToModel(type: .OrderKuaiQian, response: response, status: status, completion: completion)
-
-        }
-        
-    }
     /// 获取订单列表
     ///
     /// - Parameter completion: completion description
@@ -588,6 +597,72 @@ class SJBRequestModel: NSObject {
         SJBRequest.Post(url: SJBRequestUrl.returnConfirmOrderUrl(), params: params) { (response, status) in
             self.dataToModel(type: .OrderConfirm, response: response, status: status, completion: completion)
         }
+    }
+    // MARK: ------ 支付
+    /// 微信支付
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchOrderWeiXinPayData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnWeiXinPayUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderWenxinPay, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 支付宝支付
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchOrderAlipayPayData(params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnAlipayPayUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
+        }
+    }
+    
+    /// 快钱支付
+    ///
+    /// - Parameters:
+    ///   - order_sn: order_sn description
+    ///   - user_id: user_id description
+    ///   - completion: completion description
+    class func push_fetchOrderKuaiQianPayData(order_sn:String,user_id:String, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.GetAll(url: SJBRequestUrl.returnKuaiQianPayUrl(order_sn: order_sn, user_id: user_id)) { (response, status) in
+            self.dataToModel(type: .OrderKuaiQian, response: response, status: status, completion: completion)
+        }
+        
+    }
+    
+    /// 充值
+    ///
+    /// - Parameters:
+    ///   - type: type description
+    ///   - amount: amount description
+    ///   - user_id: user_id description
+    ///   - completion: completion description
+    class func push_fetchRechargeData(type:Int,params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
+        switch type {
+        case 1:
+            SJBRequest.PostAll(url: SJBRequestUrl.returnWeiXinRechargeUrl(),params: params) { (response, status) in
+                self.dataToModel(type: .OrderWenxinPay, response: response, status: status, completion: completion)
+            }
+            break
+        case 2:
+            SJBRequest.PostAll(url: SJBRequestUrl.returnAlipayRechargeUrl(),params: params) { (response, status) in
+                self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
+            }
+            break
+        case 3:
+            SJBRequest.PostAll(url: SJBRequestUrl.returnKuaiQianRechargeUrl(),params: params) { (response, status) in
+                self.dataToModel(type: .OrderKuaiQian, response: response, status: status, completion: completion)
+            }
+            break
+        default:
+            break
+        }
+        
+        
     }
 
 

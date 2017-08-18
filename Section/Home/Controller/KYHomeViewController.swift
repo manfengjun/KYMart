@@ -9,17 +9,17 @@
 import UIKit
 import MJRefresh
 import PYSearch
-private let KYHomeMenuIdentifier = "kYHomeMenuCVCell"
-private let KYHomeMenuPageCVCellIdentifier = "kYHomeMenuPageCVCell"
+fileprivate let KYHomeMenuIdentifier = "kYHomeMenuCVCell"
+fileprivate let KYHomeMenuPageCVCellIdentifier = "kYHomeMenuPageCVCell"
 
 
-private let KYHomeAdCVCellIdentifier = "kYHomeAdCVCell"
-private let KYProductScrollIdentifier = "kYProductScrollCVCell"
-private let KYHomeHeadViewIdentifier = "kYHomeHeadView"
-private let KYHomeFootViewIdentifier = "kYHomeFootView"
-private let KYHomeSallHeadViewIdentifier = "kYHomeSallHeadView"
-private let KYPoductIdentifier = "kYProductCVCell"
-private let KYPoductHeadViewIdentifier = "kYProductHeadView"
+fileprivate let KYHomeAdCVCellIdentifier = "kYHomeAdCVCell"
+fileprivate let KYProductScrollIdentifier = "kYProductScrollCVCell"
+fileprivate let KYHomeHeadViewIdentifier = "kYHomeHeadView"
+fileprivate let KYHomeFootViewIdentifier = "kYHomeFootView"
+fileprivate let KYHomeSallHeadViewIdentifier = "kYHomeSallHeadView"
+fileprivate let KYPoductIdentifier = "kYProductCVCell"
+fileprivate let KYPoductHeadViewIdentifier = "kYProductHeadView"
 
 private let headerIdentifier = "header"
 class KYHomeViewController: UIViewController {
@@ -207,7 +207,10 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
             return 1
         }
         if section == 1 {
-            return 3
+            if let array = homepagemodel?.zone_obj {
+                return array.count
+            }
+            return 0
         }
 
         else if section == sectionCount - 1 {
@@ -280,7 +283,12 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
         }
         else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KYHomeAdCVCellIdentifier, for: indexPath) as! KYHomeAdCVCell
-            cell.adIV.image = UIImage(named: "home_ad_\(indexPath.row + 1)")
+            if let array = homepagemodel?.zone_obj {
+                let zoneObj = array[indexPath.row]
+                if let text = zoneObj.img_url {
+                    cell.adIV.sd_setImage(with: URL(string: imgPath + "/\(text)"))
+                }
+            }
             return cell
         }
         else if indexPath.section == sectionCount - 1 {
@@ -379,22 +387,28 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                let productlistVC = KYProductListViewController()
-                productlistVC.id = 10000
-                productlistVC.navTitle = "分享区"
-                self.navigationController?.pushViewController(productlistVC, animated: true)
-                productlistVC.backResult {
-                    self.tabBarController?.tabBar.isHidden = false
-                }
-            }
-            else
-            {
-                let productlistVC = KYProductListNoSortViewController()
-                productlistVC.type = indexPath.row == 1 ? "onsale_list" : "miaosha_list"
-                self.navigationController?.pushViewController(productlistVC, animated: true)
-                productlistVC.backResult {
-                    self.tabBarController?.tabBar.isHidden = false
+            if let array = homepagemodel?.zone_obj {
+                let zoneObj = array[indexPath.row]
+                if let text = zoneObj.api_url {
+                    let productlistVC = KYProduceSectionListViewController()
+                    productlistVC.url = text
+                    switch indexPath.row {
+                    case 0:
+                        productlistVC.navTitle = "分享区"
+                        break
+                    case 1:
+                        productlistVC.navTitle = "促销区"
+                        break
+                    case 2:
+                        productlistVC.navTitle = "中秋区"
+                        break
+                    default:
+                        break
+                    }
+                    self.navigationController?.pushViewController(productlistVC, animated: true)
+                    productlistVC.backResult {
+                        self.tabBarController?.tabBar.isHidden = false
+                    }
                 }
             }
             

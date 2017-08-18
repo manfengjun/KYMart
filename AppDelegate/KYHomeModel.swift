@@ -23,15 +23,23 @@ class Ad :NSObject{
     var ad_code: String!
     
 }
-
+class ZoneObj :NSObject{
+    var img_url: String!
+    var api_url: String!
+    
+}
 class KYHomeModel :NSObject{
     var promotion_goods: [Good]!//促销
     var high_quality_goods: [Good]!//精品推荐
     var hot_goods: [Good]!//热销商品
     var ad: [Ad]!//广告
+    var zone_obj: [ZoneObj]!//促销分区
     var new_goods: [Good]!//新品上市
     var flash_sale_goods: [Good]!//抢购
+    class func modelCustomPropertyMapper() -> NSDictionary {
+        return ["zone_obj" : "zone"]
+    }
     class func modelContainerPropertyGenericClass() -> NSDictionary {
-        return ["promotion_goods" : Good.classForCoder(),"high_quality_goods" : Good.classForCoder(),"hot_goods" : Good.classForCoder(),"flash_sale_goods" : Good.classForCoder(),"new_goods" : Good.classForCoder(),"ad" : Ad.classForCoder()]
+        return ["promotion_goods" : Good.classForCoder(),"high_quality_goods" : Good.classForCoder(),"hot_goods" : Good.classForCoder(),"flash_sale_goods" : Good.classForCoder(),"new_goods" : Good.classForCoder(),"ad" : Ad.classForCoder(),"zone_obj" : ZoneObj.classForCoder()]
     }
 }

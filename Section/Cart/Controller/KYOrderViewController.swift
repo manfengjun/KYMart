@@ -115,7 +115,7 @@ class KYOrderViewController: BaseViewController {
             if let text = orderPriceModel?.couponFee {
                 couponFeeL.text = "￥\(text)元"
 
-//                couponFeeL.attributedText = returnAttributedStr(text: "使用优惠卷：-¥", value: "\(text)")
+//                couponFeeL.attributedText = returnAttributedStr(text: "使用优惠券：-¥", value: "\(text)")
 
             }
             if let text = orderPriceModel?.pointsFee {

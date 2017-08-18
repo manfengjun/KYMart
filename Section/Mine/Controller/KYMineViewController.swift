@@ -291,7 +291,7 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 break
             case 1:
                 let bonusListVC = KYBonusListViewController()
-                bonusListVC.navTitle = "优惠卷明细"
+                bonusListVC.navTitle = "优惠券明细"
                 bonusListVC.userMoney = userInfoModel?.bonus
                 self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(bonusListVC, animated: true)

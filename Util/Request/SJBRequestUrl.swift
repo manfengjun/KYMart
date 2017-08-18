@@ -69,7 +69,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Parameter id: id description
     /// - Returns: return value description
-    class func returnProductLisyUrl(url:String, page:Int) -> String {
+    class func returnProductListUrl(url:String, page:Int) -> String {
         return "\(baseHref)\(url)/p/\(page)"
     }
     
@@ -86,7 +86,21 @@ class SJBRequestUrl: NSObject {
     class func returnProductContentUrl(id:Int) -> String {
         return "\(basePath)m=api&c=goods&a=goodsContent&id=\(id)"
     }
+    // MARK: ------ 分享区、促销区、秒杀区
+    /// 获取首页分区商品列表
+    ///
+    /// - Parameter zid: zid description
+    /// - Returns: return value description
+    class func returnSectionProductListUrl(url:String) -> String {
+        return "\(basePath)\(url)"
+    }
     
+    /// 分区获取更多
+    ///
+    /// - Returns: return value description
+    class func returnSectionMoreProductListUrl(url:String) -> String {
+        return "\(basePath)\(url)"
+    }
     // MARK: ------ 购物车
     
     /// 添加购物车
@@ -131,24 +145,6 @@ class SJBRequestUrl: NSObject {
         return "\(basePath)m=Api&c=Cart&a=cart4&token=\(access_token())"
     }
     
-    /// 微信支付
-    ///
-    /// - Returns: return value description
-    class func returnWeiXinPayUrl() -> String {
-        return "\(basePath)m=Api&c=wxpay&a=dopay&token=\(access_token())"
-    }
-    /// 支付宝支付
-    ///
-    /// - Returns: return value description
-    class func returnAlipayPayUrl() -> String {
-        return "\(basePath)m=Api&c=payment&a=alipay_sign&token=\(access_token())"
-    }
-    /// 快钱支付
-    ///
-    /// - Returns: return value description
-    class func returnKuaiQianPayUrl(order_sn:String,user_id:String) -> String {
-        return "\(baseHref)/index.php/api/payment/bill.html?order_sn=\(order_sn)&user_id=\(user_id)"
-    }
 
     /// 订单列表
     ///
@@ -191,6 +187,43 @@ class SJBRequestUrl: NSObject {
     /// - Returns: return value description
     class func returnConfirmOrderUrl() -> String {
         return "\(basePath)m=Api&c=user&a=orderConfirm&token=\(access_token())"
+    }
+    // MARK: ------ 支付
+    /// 微信支付
+    ///
+    /// - Returns: return value description
+    class func returnWeiXinPayUrl() -> String {
+        return "\(basePath)m=Api&c=wxpay&a=dopay&token=\(access_token())"
+    }
+    /// 支付宝支付
+    ///
+    /// - Returns: return value description
+    class func returnAlipayPayUrl() -> String {
+        return "\(basePath)m=Api&c=payment&a=alipay_sign&token=\(access_token())"
+    }
+    /// 快钱支付
+    ///
+    /// - Returns: return value description
+    class func returnKuaiQianPayUrl(order_sn:String,user_id:String) -> String {
+        return "\(baseHref)/index.php/api/payment/bill.html?order_sn=\(order_sn)&user_id=\(user_id)"
+    }
+    /// 微信充值
+    ///
+    /// - Returns: return value description
+    class func returnWeiXinRechargeUrl() -> String {
+        return "\(basePath)m=Api&c=wxpay&a=recharge"
+    }
+    /// 支付宝充值
+    ///
+    /// - Returns: return value description
+    class func returnAlipayRechargeUrl() -> String {
+        return "\(basePath)m=Api&c=payment&a=recharge_alipay"
+    }
+    /// 快钱充值
+    ///
+    /// - Returns: return value description
+    class func returnKuaiQianRechargeUrl() -> String {
+        return "\(basePath)/m=Api&c=payment&a=recharge_bill"
     }
     // MARK: ------ 登录
     /// 登录

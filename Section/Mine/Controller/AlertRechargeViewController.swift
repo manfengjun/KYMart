@@ -9,11 +9,22 @@
 import UIKit
 
 class AlertRechargeViewController: UIViewController {
-
+    var currentSelect:Int = 1;
+    @IBOutlet weak var moneyT: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    @IBAction func selectAction(_ sender: UITapGestureRecognizer) {
+        currentSelect = (sender.view?.tag)!
+        let wechatBtn = view.viewWithTag(1)?.viewWithTag(11) as! UIButton
+        let alipayBtn = view.viewWithTag(2)?.viewWithTag(11) as! UIButton
+        let kuaiqianBtn = view.viewWithTag(3)?.viewWithTag(11) as! UIButton
+        
+        wechatBtn.setImage(sender.view?.tag == 1 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
+        alipayBtn.setImage(sender.view?.tag == 2 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
+        kuaiqianBtn.setImage(sender.view?.tag == 3 ? UIImage(named:"cart_select_yes.png") : UIImage(named:"cart_select_no.png"), for: .normal)
     }
 
     override func didReceiveMemoryWarning() {
