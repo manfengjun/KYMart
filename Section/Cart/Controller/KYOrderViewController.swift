@@ -218,15 +218,28 @@ class KYOrderViewController: BaseViewController {
                         let params = ["master_order_sn":order_id]
                         SJBRequestModel.push_fetchPostOrderIdData(params: params, completion: { (response, status) in
                             if status == 1 {
-                                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-                                let orderPayVC = storyboard.instantiateViewController(withIdentifier: "OrderPayVC") as! KYOrderPayViewController
-                                orderPayVC.orderID = order_id as? String
-                                orderPayVC.orderMoney = String(response as! Float)
-                                self.navigationController?.pushViewController(orderPayVC, animated: true)
+                                if response as! Float == 0 {
+                                    self.Toast(content: "支付成功")
+                                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                    let pageOrderVC = storyboard.instantiateViewController(withIdentifier: "pageOrderVC") as! KYPageOrderViewController
+                                    pageOrderVC.isPresent = true
+                                    let nav = BaseNavViewController(rootViewController: pageOrderVC)
+                                    self.present(nav, animated: true, completion: nil)
+
+                                }
+                                else
+                                {
+                                    let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                                    let orderPayVC = storyboard.instantiateViewController(withIdentifier: "OrderPayVC") as! KYOrderPayViewController
+                                    orderPayVC.orderID = order_id as? String
+                                    orderPayVC.orderMoney = String(response as! Float)
+                                    self.navigationController?.pushViewController(orderPayVC, animated: true)
+                                }
+                                
                             }
                             else
                             {
-                                self.Toast(content: "支付失败！")
+                                self.Toast(content: "调用支付失败！")
                             }
                         })
                     }
