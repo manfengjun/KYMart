@@ -93,7 +93,7 @@ class KYProductSectionMoreListViewController: BaseViewController {
     
     /// 请求数据
     func dataRequest() {
-        SJBRequestModel.pull_fetchProductSectionMoreData(url: url!) { (response, status) in
+        SJBRequestModel.pull_fetchProductSectionMoreData(url: url!, page: String(page)) { (response, status) in
             self.collectionView.mj_header.endRefreshing()
             if status == 1 {
                 let goods = response as! [Goods_list]

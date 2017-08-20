@@ -98,8 +98,8 @@ class SJBRequestUrl: NSObject {
     /// 分区获取更多
     ///
     /// - Returns: return value description
-    class func returnSectionMoreProductListUrl(url:String) -> String {
-        return "\(basePath)\(url)"
+    class func returnSectionMoreProductListUrl(url:String,page:String) -> String {
+        return "\(basePath)\(url)&p=\(page)"
     }
     // MARK: ------ 购物车
     

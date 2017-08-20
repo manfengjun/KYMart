@@ -403,7 +403,7 @@ class SJBRequestModel: NSObject {
     /// - Parameters:
     ///   - zid: zid description
     ///   - completion: completion description
-    class func pull_fetchProductSectionListData(url:String, completion:@escaping (AnyObject,Int) -> Void) {
+    class func pull_fetchProductSectionListData(url:String,completion:@escaping (AnyObject,Int) -> Void) {
         SJBRequest.Get(url: SJBRequestUrl.returnSectionProductListUrl(url: url)) { (response, status) in
             self.dataArrayToModel(type: .ProductSectionList, response: response, status: status, completion: completion)
         }
@@ -415,8 +415,8 @@ class SJBRequestModel: NSObject {
     /// - Parameters:
     ///   - url: url description
     ///   - completion: completion description
-    class func pull_fetchProductSectionMoreData(url:String,completion:@escaping (AnyObject,Int) -> Void) {
-        SJBRequest.Get(url: SJBRequestUrl.returnSectionMoreProductListUrl(url: url)) { (response, status) in
+    class func pull_fetchProductSectionMoreData(url:String,page:String,completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSectionMoreProductListUrl(url: url,page:page)) { (response, status) in
             self.dataArrayToModel(type: .ProductSectionMoreList, response: response, status: status, completion: completion)
         }
     }
