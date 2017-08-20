@@ -644,12 +644,12 @@ class SJBRequestModel: NSObject {
     class func push_fetchRechargeData(type:Int,params:[String:AnyObject], completion:@escaping (AnyObject,Int) -> Void) {
         switch type {
         case 1:
-            SJBRequest.PostAll(url: SJBRequestUrl.returnWeiXinRechargeUrl(),params: params) { (response, status) in
+            SJBRequest.Post(url: SJBRequestUrl.returnWeiXinRechargeUrl(),params: params) { (response, status) in
                 self.dataToModel(type: .OrderWenxinPay, response: response, status: status, completion: completion)
             }
             break
         case 2:
-            SJBRequest.PostAll(url: SJBRequestUrl.returnAlipayRechargeUrl(),params: params) { (response, status) in
+            SJBRequest.Post(url: SJBRequestUrl.returnAlipayRechargeUrl(),params: params) { (response, status) in
                 self.dataToModel(type: .OrderAlipayPay, response: response, status: status, completion: completion)
             }
             break

@@ -110,9 +110,6 @@ extension SJBLoginViewController{
         self.performSegue(withIdentifier: "L_forget_SegueID", sender: sender)
         
     }
-    override func goback() {
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 // MARK: - 业务逻辑

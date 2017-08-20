@@ -58,7 +58,7 @@ class KYRechargeViewController: BaseViewController {
             //快钱支付
             let params = ["amount":rechargeVC.moneyT.text,"user_id":SingleManager.instance.loginInfo?.user_id]
             
-            SJBRequestModel.push_fetchRechargeData(type: 3, params: params as [String : AnyObject], completion: { (response, status) in
+            SJBRequestModel.push_fetchRechargeData(type: self.currentSelect, params: params as [String : AnyObject], completion: { (response, status) in
                 SVProgressHUD.dismiss()
                 if self.currentSelect == 1 {
                     // 微信支付

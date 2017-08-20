@@ -223,7 +223,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func returnKuaiQianRechargeUrl() -> String {
-        return "\(basePath)/m=Api&c=payment&a=recharge_bill"
+        return "\(basePath)m=Api&c=payment&a=recharge_bill"
     }
     // MARK: ------ 登录
     /// 登录

@@ -161,7 +161,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 
         //1.1 获取下一级别的数据源(市级别,如果是直辖市时,下级则为区级别)
         AddressItem * provinceItem = self.dataSouce[indexPath.row];
-        self.cityDataSouce = [[CitiesDataTool sharedManager] queryDataWith:@"2" parent_id:provinceItem.id];
+        self.cityDataSouce = [[CitiesDataTool sharedManager] queryDataWithParent_id:provinceItem.id];
         if(self.cityDataSouce.count == 0){
             for (int i = 0; i < self.tableViews.count && self.tableViews.count != 1; i++) {
                 [self removeLastItem];
@@ -202,9 +202,9 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     }else if ([self.tableViews indexOfObject:tableView] == 1){
         
         AddressItem * cityItem = self.cityDataSouce[indexPath.row];
-        self.districtDataSouce = [[CitiesDataTool sharedManager] queryDataWith:@"3" parent_id:cityItem.id];
+        self.districtDataSouce = [[CitiesDataTool sharedManager] queryDataWithParent_id:cityItem.id];
         if(self.districtDataSouce.count == 0){
-            for (int i = 0; i < self.tableViews.count && self.tableViews.count != 1; i++) {
+            for (int i = 0; i < self.tableViews.count && self.tableViews.count != 2; i++) {
                 [self removeLastItem];
             }
             [self setUpAddress:cityItem];
@@ -237,9 +237,9 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     else if ([self.tableViews indexOfObject:tableView] == 2){
         
         AddressItem * roadItem = self.districtDataSouce[indexPath.row];
-        self.roadDataSouce = [[CitiesDataTool sharedManager] queryDataWith:@"4" parent_id:roadItem.id];
+        self.roadDataSouce = [[CitiesDataTool sharedManager] queryDataWithParent_id:roadItem.id];
         if(self.roadDataSouce.count == 0){
-            for (int i = 0; i < self.tableViews.count && self.tableViews.count != 1; i++) {
+            for (int i = 0; i < self.tableViews.count && self.tableViews.count != 3; i++) {
                 [self removeLastItem];
             }
             [self setUpAddress:roadItem];

@@ -53,10 +53,8 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
 /**
  *  NinaPagerView init method.
  *
- *  @param ninaPagerStyle NinaPagerView show style.
  *  @param titles         Titles in Toptab.
  *  @param childVCs       Controllers or views in NinaPagerView.
- *  @param colors         Several colors can set in NinaPagerView.
  *
  */
 - (instancetype)initWithFrame:(CGRect)frame WithTitles:(NSArray *)titles WithVCs:(NSArray *)childVCs;
@@ -66,7 +64,6 @@ typedef NS_ENUM(NSInteger, NinaPagerStyle) {
  *  Reload NinaPagerView with updated titles and viewcontrollers or views.
  *
  @param updatedTitles   update titles.
- @param updatedVCs      update viewcontrollers and views.
  */
 - (void)reloadTopTabByTitles:(NSArray *)updatedTitles WithObjects:(NSArray *)updatedObjects;
 

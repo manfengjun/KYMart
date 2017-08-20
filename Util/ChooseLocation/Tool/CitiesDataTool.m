@@ -239,10 +239,10 @@ static CitiesDataTool *shareInstance = nil;
     return nil;
 }
 //查询下一级数据
-- (NSMutableArray *)queryDataWith:(NSString *)level parent_id:(NSString *)parent_id
+- (NSMutableArray *)queryDataWithParent_id:(NSString *)parent_id
 {
     if ([self.fmdb  open]) {
-        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE `level` = %@ and `parent_id` =  %@", locationTabbleName,level,parent_id];
+        NSString *sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE `parent_id` =  %@", locationTabbleName,parent_id];
         FMResultSet *result = [self.fmdb  executeQuery:sql];
         NSMutableArray *array = [[NSMutableArray alloc] initWithCapacity:0];
         //'code','sheng','di','xian','name', 'level'

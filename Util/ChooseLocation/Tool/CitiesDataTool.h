@@ -21,11 +21,10 @@
 /**
  查询下一级菜单
 
- @param level level description
  @param parent_id parent_id description
  @return return value description
  */
-- (NSMutableArray *)queryDataWith:(NSString *)level parent_id:(NSString *)parent_id;
+- (NSMutableArray *)queryDataWithParent_id:(NSString *)parent_id;
 
 /**
  根据id查询名称
