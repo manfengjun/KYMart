@@ -166,7 +166,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
             for (int i = 0; i < self.tableViews.count && self.tableViews.count != 1; i++) {
                 [self removeLastItem];
             }
-            [self setUpAddress:provinceItem];
+            [self setUpAddress:provinceItem level:1];
             return indexPath;
         }
         //1.1 判断是否是第一次选择,不是,则重新选择省,切换省.
@@ -207,7 +207,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
             for (int i = 0; i < self.tableViews.count && self.tableViews.count != 2; i++) {
                 [self removeLastItem];
             }
-            [self setUpAddress:cityItem];
+            [self setUpAddress:cityItem level:2];
             return indexPath;
         }
         NSIndexPath * indexPath0 = [tableView indexPathForSelectedRow];
@@ -242,7 +242,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
             for (int i = 0; i < self.tableViews.count && self.tableViews.count != 3; i++) {
                 [self removeLastItem];
             }
-            [self setUpAddress:roadItem];
+            [self setUpAddress:roadItem level:3];
             return indexPath;
         }
         NSIndexPath * indexPath0 = [tableView indexPathForSelectedRow];
@@ -272,7 +272,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     else if ([self.tableViews indexOfObject:tableView] == 3){
         
         AddressItem * item = self.roadDataSouce[indexPath.row];
-        [self setUpAddress:item];
+        [self setUpAddress:item level:4];
         
     }
     return indexPath;
@@ -340,7 +340,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 }
 
 //完成地址选择,执行chooseFinish代码块
-- (void)setUpAddress:(AddressItem *)item{
+- (void)setUpAddress:(AddressItem *)item level:(NSInteger)level{
 
     NSInteger index = self.contentView.contentOffset.x / HYScreenW;
     UIButton * btn = self.topTabbarItems[index];
@@ -350,7 +350,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
     [self changeUnderLineFrame:btn];
     NSMutableString * addressStr = [[NSMutableString alloc] init];
     for (UIButton * btn  in self.topTabbarItems) {
-        switch ([item.level intValue]) {
+        switch (level) {
             case 1:
                 [self.params setObject:item.id forKey:@"province"];
                 break;
@@ -544,7 +544,7 @@ static  CGFloat  const  kHYTopTabbarHeight = 30; //地址标签栏的高度
 - (NSMutableDictionary *)params
 {
     if (_params == nil) {
-        _params = [NSMutableDictionary dictionary];
+        _params = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"0",@"province",@"0",@"city",@"0",@"district",@"0",@"twon", nil];
     }
     return _params;
 }

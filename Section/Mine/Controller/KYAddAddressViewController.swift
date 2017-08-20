@@ -162,7 +162,11 @@ extension KYAddAddressViewController {
             params?["address"] = addressT.text as AnyObject
             params?["zipcode"] = codeT.text as AnyObject
             params?["is_default"] = (isDefault ? "1" : "0") as AnyObject
-            
+            if isEdit {
+                if let address_id = model?.address_id  {
+                    params["address_id"] = String(address_id) as AnyObject
+                }
+            }
             if let dic = params {
                 SJBRequestModel.push_fetchAddAddressData(params: dic) { (response, status) in
                     if status == 1{

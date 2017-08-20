@@ -9,12 +9,14 @@
 import UIKit
 import PopupDialog
 class KYQrCodeViewController: BaseViewController {
+    @IBOutlet var shareView: UIView!
 
-    
     @IBOutlet weak var tableView: UITableView!
     var imageUrl:URL?{
         didSet {
             tableView.reloadData()
+            shareView.frame = CGRect(x: 0, y: SCREEN_HEIGHT - 90, width: SCREEN_WIDTH, height: 90)
+            UIApplication.shared.keyWindow?.addSubview(shareView)
         }
     }
     var model:KYQrCodeModel?
@@ -22,18 +24,19 @@ class KYQrCodeViewController: BaseViewController {
         super.viewDidLoad()
         navigationItem.title = "二维码"
         setBackButtonInNav()
-        setRightButtonInNav(imageUrl: "product_share_white.png", action: #selector(shareAction))
+//        setRightButtonInNav(imageUrl: "product_share_white.png", action: #selector(shareAction))
 
         dataRequest()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
 
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        shareView.removeFromSuperview()
     }
     func dataRequest() {
         SJBRequestModel.pull_fetchQrCodeData { (response, status) in
@@ -55,20 +58,33 @@ class KYQrCodeViewController: BaseViewController {
             }
         }
     }
-    /// 分享
-    func shareAction() {
-        
-        FJUmSocialUtil.setupShareMenu(completion: { (platformType, userInfo) in
-            switch platformType {
-            case .wechatTimeLine,.wechatSession,.QQ:
-                FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: (self.model?.title)!, descr: (self.model?.content)!, thumImage: "\(imgPath)\((self.model?.url)!)" as AnyObject, url: (self.model?.share_url)!)
-                break
-            default:
-                break
-            }
-        })
-        
+    @IBAction func shareAction(_ sender: UIButton) {
+        var platformType:UMSocialPlatformType?
+        if sender.tag == 1 {
+            platformType = .wechatSession
+        }
+        else if sender.tag == 2 {
+            platformType = .wechatTimeLine
+        }
+        else if sender.tag == 3 {
+            platformType = .QQ
+        }
+        FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType!, title: (self.model?.title)!, descr: (self.model?.content)!, thumImage: "\(imgPath)\((self.model?.url)!)" as AnyObject, url: (self.model?.share_url)!)
     }
+//    /// 分享
+//    func shareAction() {
+//        
+//        FJUmSocialUtil.setupShareMenu(completion: { (platformType, userInfo) in
+//            switch platformType {
+//            case .wechatTimeLine,.wechatSession,.QQ:
+//                FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: (self.model?.title)!, descr: (self.model?.content)!, thumImage: "\(imgPath)\((self.model?.url)!)" as AnyObject, url: (self.model?.share_url)!)
+//                break
+//            default:
+//                break
+//            }
+//        })
+//        
+//    }
 
     @IBAction func savePhotoAction(_ sender: UILongPressGestureRecognizer) {
         // Prepare the popup assets

@@ -8,6 +8,7 @@
 
 import UIKit
 import PopupDialog
+import SVProgressHUD
 import TZImagePickerController
 class KYMineViewController: BaseViewController {
 
@@ -72,8 +73,8 @@ class KYMineViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 0
+        SVProgressHUD.show()
         setupUI()
-
         dataRequest()
 
 
@@ -149,7 +150,9 @@ extension KYMineViewController:TZImagePickerControllerDelegate {
     func dataRequest() {
         if SingleManager.instance.isLogin {
             SJBRequestModel.pull_fetchUserInfoData { (response, status) in
+                SVProgressHUD.dismiss()
                 if status == 1{
+                    
                     SingleManager.instance.userInfo = response as? KYUserInfoModel
                     self.userInfoModel = SingleManager.instance.userInfo
                 }

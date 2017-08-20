@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbV-0W-juI">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,7 +89,7 @@
                                 <inset key="scrollIndicatorInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="kYOrderTVCell" rowHeight="105" id="mXc-Qw-bXJ" customClass="KYOrderTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="105"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mXc-Qw-bXJ" id="xOd-d7-ggf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="105"/>
@@ -898,7 +898,7 @@
                                 <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="kYMineTVCell" rowHeight="209" id="Fb2-sl-Fag" customClass="KYMineTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="209"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="209"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fb2-sl-Fag" id="70u-oo-cQ7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="209"/>
@@ -968,7 +968,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kYMineOtherTVCell" rowHeight="75" id="mea-s6-9RV" customClass="KYMineOtherTVCell" customModule="KYMart" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="265" width="375" height="75"/>
+                                        <rect key="frame" x="0.0" y="264.5" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mea-s6-9RV" id="98g-H7-mdy">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
@@ -2556,6 +2556,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="shareView" destination="hfD-i6-lmE" id="E0b-O1-DfQ"/>
                         <outlet property="tableView" destination="AWf-SA-iTr" id="Bq2-KS-eVM"/>
                     </connections>
                 </viewController>
@@ -2565,8 +2566,57 @@
                         <action selector="savePhotoAction:" destination="9pD-kN-T4R" id="WiN-HQ-0eu"/>
                     </connections>
                 </pongPressGestureRecognizer>
+                <view contentMode="scaleToFill" id="hfD-i6-lmE">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="90"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwc-ed-w5y">
+                            <rect key="frame" x="20" y="20" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Kwc-ed-w5y" secondAttribute="height" multiplier="1:1" id="C8C-fz-BbU"/>
+                                <constraint firstAttribute="height" constant="50" id="gKh-3z-Dit"/>
+                            </constraints>
+                            <state key="normal" image="qr_share_wechat"/>
+                            <connections>
+                                <action selector="shareAction:" destination="9pD-kN-T4R" eventType="touchUpInside" id="ddR-Ug-IHA"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcr-d8-RZq">
+                            <rect key="frame" x="290" y="20" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="5xv-HF-tdg"/>
+                            </constraints>
+                            <state key="normal" image="qr_share_qq"/>
+                            <connections>
+                                <action selector="shareAction:" destination="9pD-kN-T4R" eventType="touchUpInside" id="box-mQ-oRw"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJS-VL-5Ki">
+                            <rect key="frame" x="155" y="20" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="A1n-Ue-kcB"/>
+                            </constraints>
+                            <state key="normal" image="qr_share_wechat_timeline"/>
+                            <connections>
+                                <action selector="shareAction:" destination="9pD-kN-T4R" eventType="touchUpInside" id="egT-B1-LDT"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="vJS-VL-5Ki" firstAttribute="top" secondItem="hfD-i6-lmE" secondAttribute="top" constant="20" id="2GA-oJ-4kM"/>
+                        <constraint firstItem="Wcr-d8-RZq" firstAttribute="width" secondItem="Wcr-d8-RZq" secondAttribute="height" multiplier="1:1" id="4Jp-UN-XIH"/>
+                        <constraint firstItem="vJS-VL-5Ki" firstAttribute="width" secondItem="vJS-VL-5Ki" secondAttribute="height" multiplier="1:1" id="baT-zl-Npn"/>
+                        <constraint firstAttribute="bottom" secondItem="vJS-VL-5Ki" secondAttribute="bottom" constant="20" id="cBf-ag-KBL"/>
+                        <constraint firstItem="Wcr-d8-RZq" firstAttribute="centerY" secondItem="vJS-VL-5Ki" secondAttribute="centerY" id="eSc-Uj-ZC0"/>
+                        <constraint firstItem="Kwc-ed-w5y" firstAttribute="centerY" secondItem="vJS-VL-5Ki" secondAttribute="centerY" id="pZr-ld-5Yw"/>
+                        <constraint firstItem="Kwc-ed-w5y" firstAttribute="leading" secondItem="hfD-i6-lmE" secondAttribute="leading" constant="20" id="r2H-zE-LzI"/>
+                        <constraint firstAttribute="trailing" secondItem="Wcr-d8-RZq" secondAttribute="trailing" constant="20" id="vTz-wB-IqY"/>
+                        <constraint firstItem="vJS-VL-5Ki" firstAttribute="centerX" secondItem="hfD-i6-lmE" secondAttribute="centerX" id="xLc-H0-hlO"/>
+                    </constraints>
+                </view>
             </objects>
-            <point key="canvasLocation" x="2585" y="1045"/>
+            <point key="canvasLocation" x="2609" y="1174"/>
         </scene>
         <!--Member View Controller-->
         <scene sceneID="AUk-6a-1VZ">
@@ -2904,6 +2954,9 @@
         <image name="order_right" width="29" height="29"/>
         <image name="pay_alipay" width="116" height="116"/>
         <image name="pay_wechat" width="116" height="116"/>
+        <image name="qr_share_qq" width="116" height="116"/>
+        <image name="qr_share_wechat" width="116" height="116"/>
+        <image name="qr_share_wechat_timeline" width="116" height="116"/>
         <image name="section_gray" width="23" height="23"/>
         <image name="section_red" width="23" height="23"/>
         <image name="user_pla.jpg" width="95" height="95"/>
