@@ -224,6 +224,8 @@
 		BFEFA99F1F015C9600419995 /* userbg.png in Resources */ = {isa = PBXBuildFile; fileRef = BFEFA99E1F015C9600419995 /* userbg.png */; };
 		BFF05C7B1EEC2A9A00D18D43 /* KYProductContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF05C7A1EEC2A9A00D18D43 /* KYProductContentViewController.swift */; };
 		BFF05C7D1EEC384800D18D43 /* KYCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF05C7C1EEC384800D18D43 /* KYCartViewController.swift */; };
+		BFF2554C1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2554B1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift */; };
+		BFF2554E1F4C67F800DCB18E /* KYAfterServiceTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF2554D1F4C67F800DCB18E /* KYAfterServiceTVCell.swift */; };
 		BFF9594D1EED167000C799CD /* CartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9594B1EED167000C799CD /* CartTVCell.swift */; };
 		BFF9594E1EED167000C799CD /* CartTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFF9594C1EED167000C799CD /* CartTVCell.xib */; };
 		BFF959501EED660300C799CD /* KYCartListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9594F1EED660300C799CD /* KYCartListModel.swift */; };
@@ -529,6 +531,8 @@
 		BFEFA99E1F015C9600419995 /* userbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userbg.png; sourceTree = "<group>"; };
 		BFF05C7A1EEC2A9A00D18D43 /* KYProductContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductContentViewController.swift; sourceTree = "<group>"; };
 		BFF05C7C1EEC384800D18D43 /* KYCartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCartViewController.swift; sourceTree = "<group>"; };
+		BFF2554B1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAfterServiceViewController.swift; sourceTree = "<group>"; };
+		BFF2554D1F4C67F800DCB18E /* KYAfterServiceTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAfterServiceTVCell.swift; sourceTree = "<group>"; };
 		BFF9594B1EED167000C799CD /* CartTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTVCell.swift; sourceTree = "<group>"; };
 		BFF9594C1EED167000C799CD /* CartTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartTVCell.xib; sourceTree = "<group>"; };
 		BFF9594F1EED660300C799CD /* KYCartListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCartListModel.swift; sourceTree = "<group>"; };
@@ -884,6 +888,7 @@
 				BF61B73D1F45CC1B003C1258 /* KYRechargeViewController.swift */,
 				BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */,
 				BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */,
+				BFF2554B1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -921,6 +926,7 @@
 				BFD6FAAF1F053EB600E6BDA2 /* KYWithDrawListTVCell.xib */,
 				BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */,
 				BF73F2F11F0BCD4B00BAE922 /* KYMemberTVCell.swift */,
+				BFF2554D1F4C67F800DCB18E /* KYAfterServiceTVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1718,6 +1724,7 @@
 				BFEFA9991F01479B00419995 /* KYMoneyManagerView.swift in Sources */,
 				BFD6FAB01F053EB600E6BDA2 /* KYWithDrawListTVCell.swift in Sources */,
 				BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */,
+				BFF2554C1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift in Sources */,
 				BFBF04871F0D2D030032AEDA /* KYOrderViewController.swift in Sources */,
 				BF194AF61EF4E8C4001538A9 /* FMDatabasePool.m in Sources */,
 				BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */,
@@ -1857,6 +1864,7 @@
 				BF8DF2871F01F2EF00A23921 /* KYMineOtherTVCell.swift in Sources */,
 				BFFF01EB1F14C3FF008CC160 /* KYOrderInfoHeadView.swift in Sources */,
 				BF194AE11EF4E8BD001538A9 /* AddressItem.m in Sources */,
+				BFF2554E1F4C67F800DCB18E /* KYAfterServiceTVCell.swift in Sources */,
 				BFC0176D1EDF9AC1005D66B0 /* FJString+Extension.swift in Sources */,
 				BF9DD9601F1C7D9E002379A0 /* BaseCollectionViewCell.swift in Sources */,
 				BF9B49AC1F09070900982EBA /* KYQrCodeViewController.swift in Sources */,

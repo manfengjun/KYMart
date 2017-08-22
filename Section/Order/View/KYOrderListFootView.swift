@@ -101,9 +101,12 @@ class KYOrderListFootView: UIView {
             }
             if let text = model?.return_btn {
                 if text == 1 {
-//                    let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
-//                    button.title = "退货"
-//                    buttonArray.append(button)
+                    let button = KYOrderButton(frame: CGRect(x: 0, y: 0, width: 80, height: 25))
+                    button.title = "申请退货"
+                    button.selectResult({ (sender) in
+                        print("sdff");
+                    })
+                    buttonArray.append(button)
                     
                 }
             }

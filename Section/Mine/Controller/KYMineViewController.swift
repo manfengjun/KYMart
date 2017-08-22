@@ -330,6 +330,9 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 self.performSegue(withIdentifier: "M_shareQrCode_SegudID", sender: "")
             }
             if indexPath.row == 3 {
+                self.performSegue(withIdentifier: "M_afterService_SegudID", sender: "")
+            }
+            if indexPath.row == 4 {
                 self.performSegue(withIdentifier: "M_setting_SegueID", sender: "")
             }
 
