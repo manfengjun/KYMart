@@ -16,8 +16,11 @@ class KYOrderInfoTVCell: UITableViewCell {
     @IBOutlet weak var countL: UILabel!
     @IBOutlet weak var statusL: UILabel!
     @IBOutlet weak var totalAmountL: UILabel!
+    @IBOutlet weak var returnBtn: UIButton!
     
     
+    var returnClosure: SelectClosure?     // 闭包
+
     var model : Order_Info_Goods_list?{
         didSet {
             if let text = model?.goods_name {
@@ -43,6 +46,10 @@ class KYOrderInfoTVCell: UITableViewCell {
     }
     @IBAction func refundAction(_ sender: UIButton) {
         //申请退款
+        returnClosure?()
+    }
+    func returnResult(_ finished: @escaping SelectClosure) {
+        returnClosure = finished
     }
     override func awakeFromNib() {
         super.awakeFromNib()

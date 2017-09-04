@@ -51,6 +51,9 @@
 		BF876C391F46972F001F32C6 /* KYQrCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF876C381F46972F001F32C6 /* KYQrCodeModel.swift */; };
 		BF876C3B1F46B650001F32C6 /* KYProduceSectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF876C3A1F46B650001F32C6 /* KYProduceSectionListViewController.swift */; };
 		BF876C3D1F46BA87001F32C6 /* KYProductSectionListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF876C3C1F46BA87001F32C6 /* KYProductSectionListModel.swift */; };
+		BF880B961F5256D2004A81BA /* KYSubmitReturnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF880B951F5256D2004A81BA /* KYSubmitReturnViewController.swift */; };
+		BF880B981F5257FE004A81BA /* KYSubmitReturnTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF880B971F5257FE004A81BA /* KYSubmitReturnTVCell.swift */; };
+		BF880B9A1F5263AC004A81BA /* KYSubmitReturnCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF880B991F5263AC004A81BA /* KYSubmitReturnCVCell.swift */; };
 		BF8903051EE3A1EC004A0FF7 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */; };
 		BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FA1EE3A1EC004A0FF7 /* TAAnimatedDotView.m */; };
 		BF8903071EE3A1EC004A0FF7 /* TADotView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF8902FC1EE3A1EC004A0FF7 /* TADotView.m */; };
@@ -329,6 +332,9 @@
 		BF876C381F46972F001F32C6 /* KYQrCodeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeModel.swift; sourceTree = "<group>"; };
 		BF876C3A1F46B650001F32C6 /* KYProduceSectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProduceSectionListViewController.swift; sourceTree = "<group>"; };
 		BF876C3C1F46BA87001F32C6 /* KYProductSectionListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYProductSectionListModel.swift; sourceTree = "<group>"; };
+		BF880B951F5256D2004A81BA /* KYSubmitReturnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSubmitReturnViewController.swift; sourceTree = "<group>"; };
+		BF880B971F5257FE004A81BA /* KYSubmitReturnTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSubmitReturnTVCell.swift; sourceTree = "<group>"; };
+		BF880B991F5263AC004A81BA /* KYSubmitReturnCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSubmitReturnCVCell.swift; sourceTree = "<group>"; };
 		BF8902F71EE3A1EC004A0FF7 /* TAAbstractDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAbstractDotView.h; sourceTree = "<group>"; };
 		BF8902F81EE3A1EC004A0FF7 /* TAAbstractDotView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TAAbstractDotView.m; sourceTree = "<group>"; };
 		BF8902F91EE3A1EC004A0FF7 /* TAAnimatedDotView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TAAnimatedDotView.h; sourceTree = "<group>"; };
@@ -889,6 +895,7 @@
 				BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */,
 				BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */,
 				BFF2554B1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift */,
+				BF880B951F5256D2004A81BA /* KYSubmitReturnViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -927,6 +934,8 @@
 				BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */,
 				BF73F2F11F0BCD4B00BAE922 /* KYMemberTVCell.swift */,
 				BFF2554D1F4C67F800DCB18E /* KYAfterServiceTVCell.swift */,
+				BF880B971F5257FE004A81BA /* KYSubmitReturnTVCell.swift */,
+				BF880B991F5263AC004A81BA /* KYSubmitReturnCVCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1757,6 +1766,7 @@
 				BF9B74BB1EE7AA6800322E2C /* KYProductDetailViewController.swift in Sources */,
 				BF3797D21F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift in Sources */,
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
+				BF880B981F5257FE004A81BA /* KYSubmitReturnTVCell.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
 				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
 				BF9F0B7A1EFF4B9700BA4DEE /* KYSellListViewController.swift in Sources */,
@@ -1809,6 +1819,7 @@
 				BF9DD9561F1C44F9002379A0 /* KYProductScrollCVCell.swift in Sources */,
 				BF9DD94E1F1C44F9002379A0 /* KYProductCVCell.swift in Sources */,
 				BF9DD94C1F1C44F9002379A0 /* KYHomeMenuPageCVCell.swift in Sources */,
+				BF880B961F5256D2004A81BA /* KYSubmitReturnViewController.swift in Sources */,
 				BF194AF51EF4E8C4001538A9 /* FMDatabaseAdditions.m in Sources */,
 				BFD6FAA51F051E5600E6BDA2 /* KYWithdrawListViewController.swift in Sources */,
 				BF194AE21EF4E8BD001538A9 /* AddressTableViewCell.m in Sources */,
@@ -1821,6 +1832,7 @@
 				BF3DA80E1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift in Sources */,
 				BFEA60351EEBC43F00885737 /* KYCodeView.swift in Sources */,
 				BF8903081EE3A1EC004A0FF7 /* TAPageControl.m in Sources */,
+				BF880B9A1F5263AC004A81BA /* KYSubmitReturnCVCell.swift in Sources */,
 				BFDCB40B1EE8F3730040A09B /* HXTagsView.m in Sources */,
 				BFB6D0B01EE63C1600F2C61F /* SJBRequestModel.swift in Sources */,
 				BFC0176B1EDF9AC1005D66B0 /* FJController+Extension.swift in Sources */,

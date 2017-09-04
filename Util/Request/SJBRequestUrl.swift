@@ -7,12 +7,12 @@
 //
 
 import UIKit
-//let basePath = "http://test.kymart.cn/index.php?"
-//let baseHref = "http://test.kymart.cn"
-//let imgPath = "http://test.kymart.cn"
-let basePath = "http://api.kymart.cn/index.php?"
-let baseHref = "http://api.kymart.cn"
-let imgPath = "http://api.kymart.cn"
+let basePath = "https://test.kymart.cn/index.php?"
+let baseHref = "https://test.kymart.cn"
+let imgPath = "https://test.kymart.cn"
+//let basePath = "http://api.kymart.cn/index.php?"
+//let baseHref = "http://api.kymart.cn"
+//let imgPath = "http://api.kymart.cn"
 class SJBRequestUrl: NSObject {
     
     /// access_token
@@ -175,11 +175,17 @@ class SJBRequestUrl: NSObject {
     class func returnOrderShipUrl(order_id:Int) -> String {
         return "\(basePath)m=Api&c=user&a=express&order_id=\(order_id)&token=\(access_token())"
     }
-    /// 售后信息
+    /// 售后信息列表
     ///
     /// - Returns: return value description
     class func returnAfterServiceUrl() -> String {
-        return "\(basePath)api/Order/return_goods_list.html"
+        return "\(basePath)api/Order/return_goods_list.html&token=\(access_token())"
+    }
+    /// 申请退货
+    ///
+    /// - Returns: return value description
+    class func returnReturnUrl() -> String {
+        return "\(basePath)m=Api&c=user&a=return_goods&token=\(access_token())"
     }
     /// 删除订单
     ///

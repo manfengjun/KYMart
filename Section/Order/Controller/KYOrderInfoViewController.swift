@@ -20,7 +20,7 @@ class KYOrderInfoViewController: BaseViewController {
     var buttonArray:[KYOrderButton] = []
     fileprivate lazy var menuView : UIView = {
         let menuView = UIView(frame: CGRect(x: 0, y: SCREEN_HEIGHT - 50, width: SCREEN_WIDTH, height: 50))
-        menuView.backgroundColor = UIColor.white
+        menuView.backgroundColor = UIColor.hexStringColor(hex: "#DEDEDE", alpha: 0.5)
         return menuView
     }()
     /// 数据源
@@ -139,6 +139,7 @@ class KYOrderInfoViewController: BaseViewController {
     /// 尾部视图
     fileprivate lazy var tableViewFootView : KYOrderInfoFootView = {
         let tableViewFootView = KYOrderInfoFootView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 155))
+
         return tableViewFootView
     }()
     /// 列表
@@ -219,6 +220,16 @@ extension KYOrderInfoViewController:UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: KYOrderInfoTVCellIdentifier, for: indexPath) as! KYOrderInfoTVCell
         if let array = orderInfoModel?.goods_list {
             cell.model = array[indexPath.row]
+//            cell.returnBtn.isHidden = orderInfoModel?.return_btn == 1 ? true : false
+            cell.returnResult {
+                let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                let submitReturnVC = storyboard.instantiateViewController(withIdentifier: "SubmitReturnVC") as! KYSubmitReturnViewController
+                let goodModel = array[indexPath.row]
+                goodModel.order_sn = self.orderInfoModel?.order_sn
+                submitReturnVC.model = array[indexPath.row]
+                self.navigationController?.pushViewController(submitReturnVC, animated: true)
+            }
+
         }
         return cell
     }

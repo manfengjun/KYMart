@@ -12,13 +12,13 @@ extension NSObject{
     ///
     /// - Parameter content: content description
     func Toast(content:String) {
-        XHToast.showBottomWithText(content, duration: 1)
+        XHToast.showBottomWithText(content, duration: 2)
     }
     /// 信息提示
     ///
     /// - Parameter content: content description
     class func Toast(content:String) {
-        XHToast.showBottomWithText(content, duration: 1)
+        XHToast.showBottomWithText(content, duration: 2)
     }
     /// 信息提示
     ///

@@ -74,6 +74,7 @@ class KYOrderInfoModel: NSObject {
     }
 }
 class Order_Info_Goods_list :NSObject{
+    var order_sn: String!
     var is_comment: Int = 0
     var spec_key: String!
     var is_checkout: Int = 0
@@ -100,6 +101,8 @@ class Order_Info_Goods_list :NSObject{
     var is_send: Int = 0
     var goods_sn: String!
     var rec_id: Int = 0
+    var reason: String!//退货时描述
+
     
 }
 class Vrorder: NSObject {
