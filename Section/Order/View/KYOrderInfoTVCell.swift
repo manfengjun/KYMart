@@ -20,7 +20,12 @@ class KYOrderInfoTVCell: UITableViewCell {
     
     
     var returnClosure: SelectClosure?     // 闭包
-
+    //是否允许申请退款
+    var isHideReturnBtn:Bool = true{
+        didSet{
+            returnBtn.isHidden = isHideReturnBtn
+        }
+    }
     var model : Order_Info_Goods_list?{
         didSet {
             if let text = model?.goods_name {

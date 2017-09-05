@@ -1,0 +1,60 @@
+@import "global";
+body,.mui-content{ background: #f9f9f9}
+.commentTop,.commentBox{ padding: 10px 17px;}
+.commentTop{ border-bottom: 1px solid #e8e8e8; padding-bottom: 15px;}
+.commentBox{ padding-top: 15px;}
+.comTitle{ font-size: 20px; line-height: 25px; color: #3a3a3a}
+.fbBtn{
+  display: block;
+  padding: 4px 8px;
+  font-size: 14px;
+  color: #888;
+  background: #fff;
+  width: 95%;
+  border-radius: 50px;
+  margin: 10px auto 0 auto;
+  border:1px solid #e6e6e6;
+}
+.mui-card{ margin: 0}
+.mui-card-content{ border-bottom: 1px solid #e6e6e6}
+.commentUl{ margin: 0;}
+.commentUl li{ margin: 0; position: relative;}
+.commentUl li .cm_context{ padding: 5px 0!important; color: #333; font-size: 15px;}
+.commentUl li .username{ font-size: 15px; color: #999;}
+.commentUl li .cm_userInfo{ line-height: 18px;}
+.commentUl li .avater{ width: 35px; height: 35px; float: left; border-radius: 100px; margin-right: 10px;}
+.commentUl li .mui-clearfix{ padding-bottom: 5px;}
+.commentUl li .zan,.commentUl li .jubBtn{ color: #999!important; font-size: 13px;}
+.commentUl li .iconfont{ font-size: 15px;}
+.comBox{ margin-left: 45px; }
+.commentUl li.line{ background: #eee; height: 1px; padding: 0; margin: 20px 0 20px 45px;}
+.commentUl li.replyBox{ padding-top: 0; margin-top: 5px;}
+.replyBox .comBox{ border-bottom: none; background: #f2f2f2; padding:10px; border-bottom: 1px dashed #e3e3e3}
+.replyBox .comBox:first-child{ margin-top: 5px;}
+.replyBox .comBox:last-child{border-bottom: none}
+#gotoTop{ bottom:60px;}
+
+.sendBox{
+  position: fixed;
+  bottom: 0;
+  padding:15px;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  display: none;
+  //box-shadow: 1px 0 10px rgba(0,0,0,0.3);
+}
+.textarea,.complain-text{ border: 1px solid #e6e6e6; margin-bottom: 0; font-size: 15px;}
+.mui-backdrop{ display: none}
+
+.btnGroup{ font-size: 14px; padding-bottom: 15px; overflow: hidden}
+.btnGroup a{ padding: 3px 12px; border-radius: 3px;}
+.btnGroup .cancelBtn{ color: #999; background: #f2f2f2;}
+.btnGroup .sendBtn{ color: #fff; background: #ff5555;}
+
+.report-content{ text-align: left}
+.report-content .report-option{ padding: 5px 0}
+.report-content .report-option label{ padding-left: 5px;}
+.layui-m-layercont{ padding: 20px 25px;}
+.complain-text{ width: 89%;}
+.newComment{ border-top: 1px solid #e8e8e8; padding-top: 15px; margin-top: 15px;}

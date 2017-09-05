@@ -1,0 +1,20 @@
+@import "comments";
+.tabNav.mui-title{ position: absolute!important; top:0; width: auto; text-align: center}
+.tabNav.mui-title .mui-control-item{position: relative; line-height: 40px; margin: 0 5%; display: inline-block; width: 40px; overflow: visible;}
+.tabNav.mui-title .mui-control-item.mui-active {
+  border-bottom: 2px solid #f85959 !important; color:#f85959 ;
+}
+.bg-light{ background: #f8f8f8}
+//.tabNav.mui-title em{ background: #ff5f5f; right: -5px; top:3px; color:#fff; padding: 0 3px; position: absolute; border-radius: 10px; display: inline; line-height: 13px; font-size: 0.2rem}
+.commentDiv li .username{ font-size: 16px; color: #428bca}
+.commentDiv .replyBox .myComt{ margin-left: 0; background: none; margin-bottom: 10px; border-left: 3px solid #eee; padding: 0 0 0 10px; font-size: 15px; color: #888}
+.commentDiv .replyBox .comBox{ margin-left: 0; background: #f6f6f6; padding: 5px 5px 5px 10px; font-size: 15px;}
+.commentDiv .replyBox .media{padding: 0 0 0 8px; line-height: 18px;}
+.commentDiv .comBox .mui-ellipsis-2{ color: #666; padding: 6px 0;}
+.commentDiv .replyBox .mui-media-object{ height: 48px;}
+.commentDiv li .replyBox .cm_context{ color: #999; font-size: 14px; margin-top: 0;}
+.commentDiv li .avater{ width: 25px; height: 25px;}
+.commentDiv li .cm_userInfo{line-height: 25px;}
+.commentDiv li.line{margin-left: 0}
+.otherCom{ padding: 5px 0 10px;}
+.icon-shanchu1{ position: relative; top:1px;}

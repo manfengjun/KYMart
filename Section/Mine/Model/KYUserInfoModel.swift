@@ -11,6 +11,8 @@ import UIKit
 class KYUserInfoModel: NSObject {
     var user_id: Int = 0
     var bonus: String!
+    var bonus1: String!
+    var level_name: String!
     var sex: Int = 0
     var sell_status: Int = 0
     var idcard: String!

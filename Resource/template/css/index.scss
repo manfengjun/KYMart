@@ -1,0 +1,83 @@
+@import "global";
+.mui-btn-link{ color: #333!important;}
+.mainTop{ width: 100%; background:url("../images/default/top.jpg") center 0; background-size: cover; padding: 30px 20px 22px; text-align:center}
+.avatar{ width: 60px; height: 60px;}
+.imgBorder{ border-radius: 100px; background: rgba(255,255,255,0.3); width: 66px; height: 66px; padding: 3px; display: inline-block}
+.mainTop p{ line-height: 18px; text-shadow: 1px 1px 0 rgba(255,255,255,1)}
+
+.title{ font-weight: normal; font-size: 18px; line-height: 1.3em;}
+.list{ border-top: 1px solid #e8e8e8}
+.tabNav .mui-control-item.mui-active{ border-bottom: 2px solid #f85959!important; color: #f85959!important;}
+
+section .link {
+  padding: 16px 15px; color: #333;
+  display: block;
+  position: relative;
+}
+.holder img, .holder-large img {
+  border: 0;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+}
+.list-image li .holder {
+  margin: 0 auto;
+  overflow: hidden;
+  width: 97.9%;
+  padding-bottom: 64%;
+  position: relative;
+}
+.list-image li:first-child .holder {
+  float: left;
+}
+
+.list-image li {
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  width: 33.3%;
+}
+.info {
+  margin-top: 8px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1em;
+  white-space: nowrap;
+}
+.info span {
+  margin-right: 5px;
+}
+.info span.time {
+  float: right;
+}
+.line {
+  height: 1px; margin: 0 15px;
+  background:rgba(116,116,116,.17);
+}
+
+section.middle-mode .holder {
+  float: right;
+  overflow: hidden;
+  width: 33%;
+  padding-bottom: 0;
+}
+section.middle-mode .holder img{ position: static}
+
+section .link .text-wrap {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  margin-right: 33%;
+  padding-right: 10px;
+}
+section.middle-mode .info .time{ float: none;}
+.favList section{ position: relative}
+.favList .favDel{
+  display: none; position: absolute;
+  right: 15px; top:20px; background: #ff5f5f;
+  color: #fff; z-index: 9;
+  width: 30px; height: 30px; text-align: center; line-height: 30px;
+  border-radius: 100%;
+}
+
+

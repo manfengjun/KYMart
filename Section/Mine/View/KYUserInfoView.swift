@@ -20,6 +20,7 @@ class KYUserInfoView: UIView {
     @IBOutlet weak var userTypeL: UILabel!
     @IBOutlet weak var titleL: UILabel!
     @IBOutlet weak var pendingLabel: UILabel!
+    @IBOutlet weak var tgfyLabel: UILabel!
     
     var userModel:KYUserInfoModel?{
         didSet {
@@ -38,8 +39,14 @@ class KYUserInfoView: UIView {
             if let text = userModel?.ref_nickname {
                 recommendL.text = "推荐人:\(text)"
             }
-            if let text = userModel?.sell_status {
-                userTypeL.text = (text == 0 ? "预备会员" : "开心果")
+            if let text = userModel?.bonus1 {
+                tgfyLabel.text = "¥\(text)"
+            }
+//            if let text = userModel?.sell_status {
+//                userTypeL.text = (text == 0 ? "预备会员" : "开心果")
+//            }
+            if let text = userModel?.level_name {
+                userTypeL.text = text
             }
             if let text = userModel?.total_sell {
                 if let text2 = userModel?.total_bonus1 {

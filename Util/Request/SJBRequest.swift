@@ -212,6 +212,12 @@ class SJBRequest: NSObject {
                             completion("error" as AnyObject,500)
                         }
                     }
+                    else
+                    {
+                        XHToast.showBottomWithText("请求失败！",duration:1)
+                        completion("error" as AnyObject,500)
+                    }
+
                 }
                 
             case .failure( _):
@@ -242,7 +248,7 @@ class SJBRequest: NSObject {
                 //输出样式
                 dateFormatter.dateFormat = "yyyyMMddHHmmss"
                 let stringDate = dateFormatter.string(from: Date())
-                multipartFormData.append(UIImageJPEGRepresentation(image, 1)!, withName: "return_imgs[0] ", fileName: "\(stringDate)_\(index).jpeg", mimeType: "image/jpeg")
+                multipartFormData.append(UIImageJPEGRepresentation(image, 1)!, withName: "return_imgs[0]", fileName: "\(stringDate)_\(index).jpeg", mimeType: "image/jpeg")
             }
         }, to:url)
         { (result) in
@@ -260,7 +266,7 @@ class SJBRequest: NSObject {
                         let responseDic = JSON as! NSDictionary
                         if let status = responseDic["status"] {
                             if status as! Int == 1 {
-                                completion(responseDic["result"] as AnyObject,status as! Int)
+                                completion(responseDic["msg"] as AnyObject,status as! Int)
                             }
                             else
                             {
@@ -282,6 +288,12 @@ class SJBRequest: NSObject {
                             completion("error" as AnyObject,500)
                         }
                     }
+                    else
+                    {
+                        XHToast.showBottomWithText("请求失败！",duration:1)
+                        completion("error" as AnyObject,500)
+                    }
+
                 }
                 
             case .failure( _):

@@ -219,9 +219,18 @@ extension KYOrderInfoViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KYOrderInfoTVCellIdentifier, for: indexPath) as! KYOrderInfoTVCell
         if let array = orderInfoModel?.goods_list {
+            if let pay_status = orderInfoModel?.pay_status {
+                if let confirm_time = orderInfoModel?.confirm_time {
+                    if pay_status == 1 && confirm_time == 0 {
+                        cell.isHideReturnBtn = false
+                    }
+                }
+            }
             cell.model = array[indexPath.row]
+            
 //            cell.returnBtn.isHidden = orderInfoModel?.return_btn == 1 ? true : false
             cell.returnResult {
+                //退货
                 let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
                 let submitReturnVC = storyboard.instantiateViewController(withIdentifier: "SubmitReturnVC") as! KYSubmitReturnViewController
                 let goodModel = array[indexPath.row]

@@ -43,7 +43,7 @@ class MainTabBarViewController: UITabBarController {
 extension MainTabBarViewController:UITabBarControllerDelegate{
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        if viewController.tabBarItem.title == "购物车" || viewController.tabBarItem.title == "我的" {
+        if viewController.tabBarItem.title == "购物车" || viewController.tabBarItem.title == "个人中心" {
             if SingleManager.instance.isLogin {
                 return true
             }

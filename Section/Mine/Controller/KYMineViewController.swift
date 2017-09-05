@@ -22,7 +22,7 @@ class KYMineViewController: BaseViewController {
     @IBOutlet weak var bonusL: UILabel!
     @IBOutlet weak var userTypeL: UILabel!
     @IBOutlet weak var pendingLabel: UILabel!
-    
+    @IBOutlet weak var tgfyLabel: UILabel!
     var userInfoModel:KYUserInfoModel?{
         didSet {
             dataMenu()
@@ -42,6 +42,9 @@ class KYMineViewController: BaseViewController {
             }
             if let text = userInfoModel?.user_money {
                 usermoneyL.text = "¥\(text)"
+            }
+            if let text = userInfoModel?.bonus1 {
+                tgfyLabel.text = "¥\(text)"
             }
             if let text = userInfoModel?.total_sell {
                 if let text2 = userInfoModel?.total_bonus1 {
@@ -65,9 +68,12 @@ class KYMineViewController: BaseViewController {
                     recommendL.text = "会员ID:\(text)"
                 }
             }
-            if let text = userInfoModel?.sell_status {
-                userTypeL.text = (text == 0 ? "预备会员" : "开心果")
+            if let text = userInfoModel?.level_name {
+                userTypeL.text = text
             }
+//            if let text = userInfoModel?.sell_status {
+//                userTypeL.text = (text == 0 ? "预备会员" : "开心果")
+//            }
         }
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -113,6 +119,11 @@ class KYMineViewController: BaseViewController {
             let vc = segue.destination as! KYBonusToMoneyViewController
             vc.bonus = userInfoModel?.bonus
 
+        }
+        if segue.identifier == "M_tgfyToMoney_SegudID" {
+            let vc = segue.destination as! KYTgfyToMoneyViewController
+            vc.bonus1 = userInfoModel?.bonus1
+            
         }
         if segue.identifier == "M_recharge_SegudID" {
             let vc = segue.destination as! KYRechargeViewController
@@ -310,6 +321,9 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 break
             case 3:
                 self.performSegue(withIdentifier: "M_bonusToMoney_SegudID", sender: "")
+                break
+            case 4:
+                self.performSegue(withIdentifier: "M_tgfyToMoney_SegudID", sender: "")
                 break
             default:
                 break

@@ -1,0 +1,63 @@
+@import "global";
+@import "login";
+.mainTop{
+  width: 100%; background:url("../images/default/uTop.jpg") center 0;
+  background-size: 100%;
+  padding-bottom: 80px;border-bottom: 1px solid #e6e6e6;
+  text-align:center; position: relative; height: 200px;
+}
+.avatar{ width: 60px; height: 60px;}
+.imgBorder{ border-radius: 100px; margin-top: 60px; background: rgba(255,255,255,0.3);  width: 66px; height: 66px; padding: 3px; display: inline-block;}
+.myNav{ z-index: 99}
+.icon-shezhi{ margin-right: 15px;}
+.myNav{ top:10px}
+.myNav .mui-icon-back{
+  //border-color: #fff;
+  //background:rgba(0,0,0,0.3);
+  //color: #fff!important;
+  //margin-left:10px;
+  border:none;
+  color: #fff!important;
+  margin-left:5px; font-size: 24px;
+}
+.myNav .icon-shezhi {
+  display: inline-block;
+  font-size: 20px;
+  margin-right:5px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  //background:rgba(0,0,0,0.3);
+  color: #fff !important;
+}
+.myTable:before,.myTable .mui-table-view-cell:after{ background: #e0e0e0!important;}
+.myTable .mui-table-view-cell{ padding:13px 15px;}
+.myTable .mui-table-view-cell a{ margin: -13px -15px;}
+.myTable .mui-table-view-cell em{ width: 23px; height: 23px; line-height: 23px; margin-top: -1px; text-align: center; margin-right: 10px; float: left; color: #fff; border-radius: 8px;}
+.myTable .mui-table-view-cell em i{ font-size: 15px;}
+.home{ color: #929292!important;}
+.setAvatar img{ width: 32px; height: 32px; display: block}
+.myTable .mui-pull-right{ margin-right: 20px;}
+.myTable .mui-pull-right.mui-ellipsis{ width: 70%; text-align: right}
+
+//µ×²¿µ¯´°
+.sendBox{
+  position: fixed;
+  bottom: 0;
+  padding:15px;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  display: none;
+  //box-shadow: 1px 0 10px rgba(0,0,0,0.3);
+}
+.textarea,.complain-text{ border: 1px solid #e6e6e6; margin-bottom: 0; font-size: 15px;}
+.mui-backdrop{ display: none}
+
+.btnGroup{ font-size: 14px; padding-top: 10px;text-align: right}
+.btnGroup a{ padding: 5px 12px; border-radius: 3px; margin-left: 5px;}
+.btnGroup .cancelBtn{ color: #999; background: #f2f2f2;}
+.btnGroup .sendBtn{ color: #fff; background: #ff5555;}
+
+.text-ll-lg{ font-size: 33px!important;}

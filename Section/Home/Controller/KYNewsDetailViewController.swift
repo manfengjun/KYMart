@@ -30,6 +30,16 @@ class KYNewsDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(webView)
+        if !isPush {
+            setBackButtonInNav()
+        }
+        else
+        {
+            setLeftButtonInNav(imageUrl: "nav_del.png", action: #selector(dismissVC))
+        }
+    }
+    func dismissVC() {
+        self.dismiss(animated: true, completion: nil)
     }
     /// 请求数据
     func dataRequest() {
@@ -39,22 +49,41 @@ class KYNewsDetailViewController: BaseViewController {
             if status == 1 {
                 let model = response as! KYNewsListModel
                 let time = String(model.create_time).timeStampToString()
-                let html:NSMutableString = "<html><head><meta charset=\"UTF-8\"></head><body><div style=\"text-align: center;color: #333333;font-size: 17px;\"><h3>\(model.title!)</h3></div><div style=\"color: #999999;font-size: 12px;\">\(time)</div><div style=\"color: #666666;font-size: 15px;\">\(model.content!)</div></body></html>" as! NSMutableString
-                
-                for i in 0..<html.length{
-                    let character = html.substring(with: NSMakeRange(i, 1))
-                    if character == "\\"
-                    {
-                        html.deleteCharacters(in: NSMakeRange(i, 1))
+                var html = ""
+                if self.type == "1"
+                {
+                    if let text = model.title {
+                        html += "<h2 class=\"contTitle\">\(text)</h2>"
                     }
+                    html += "<div class=\"subTitle\"><span class=\"text-mini text-gray m-l-sm\">\(time)</span>"
+                    
+                    html += "</div><div class=\"content\">"
+                    if let text = model.content {
+                        html += "<div><p>\(text)</p></div>"
+                    }
+                    html += "</div></div>"
                 }
-                self.webView.loadHTMLString(html as String, baseURL: nil)
-                self.navigationItem.title = model.title
+                else
+                {
+                    html += "</div><div class=\"content\">"
+                    if let text = model.content {
+                        html += "<div><p>\(text)</p></div>"
+                    }
+                    html += "</div></div>"
+                
+                }
+                // 从本地加载网页模板，替换新闻主页
+                let templatePath = Bundle.main.path(forResource: "template/details.html", ofType: nil)!
+                let template = (try! String(contentsOfFile: templatePath, encoding: String.Encoding.utf8)) as NSString
+                html = template.replacingOccurrences(of: "<p>mainnews</p>", with: html, options: NSString.CompareOptions.caseInsensitive, range: template.range(of: "<p>mainnews</p>"))
+                let baseURL = URL(fileURLWithPath: templatePath)
+                //        print("========="+html)
+                self.webView.loadHTMLString(self.filterHTML(html), baseURL: baseURL)
             }
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

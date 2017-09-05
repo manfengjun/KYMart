@@ -17,6 +17,11 @@ class KYNewsListTVCell: UITableViewCell {
             if let text = model?.title {
                 titleL.text = text
             }
+            else{
+                if let text = model?.content {
+                    titleL.text = text
+                }
+            }
             if let text = model?.create_time {
                 timeL.text = String(text).timeStampToString()
             }

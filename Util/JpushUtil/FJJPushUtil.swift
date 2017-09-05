@@ -18,21 +18,49 @@ class FJJPushUtil: NSObject {
     /// 前台收到通知
     ///
     /// - Parameter userInfo: userInfo description
-    func jpushMessageManagerForeground(userInfo: [AnyHashable : Any],appdelegate:AppDelegate){
+    class func jpushMessageManagerForeground(userInfo: [AnyHashable : Any],appdelegate:AppDelegate){
         let model = FJJPushModel.yy_model(with: userInfo)
         let currentController = appdelegate.window?.rootViewController
         self.jpushAlert(target: currentController!, content: (model?.aps.alert)!, sure: {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = storyboard.instantiateViewController(withIdentifier: "kYNewsDetailVC") as! KYNewsDetailViewController
+            let nav = BaseNavViewController(rootViewController: vc)
+            if let type = model?.type
+            {
+                if let id = model?.id
+                {
+                    vc.type = type
+                    vc.id = Int(id)
+                    vc.isPush = true
+                    currentController?.present(nav, animated: true, completion: nil)
+                }
+            }
+            
         }) {
-
+            
         }
     }
     
     /// 后台收到通知
     ///
     /// - Parameter userInfo: userInfo description
-    func jpushMessageManagerBackground(userInfo: [AnyHashable : Any],appdelegate:AppDelegate){
+    class func jpushMessageManagerBackground(userInfo: [AnyHashable : Any],appdelegate:AppDelegate){
         let model = FJJPushModel.yy_model(with: userInfo)
-        var currentController = appdelegate.window?.rootViewController
+        let currentController = appdelegate.window?.rootViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vc = storyboard.instantiateViewController(withIdentifier: "kYNewsDetailVC") as! KYNewsDetailViewController
+        let nav = BaseNavViewController(rootViewController: vc)
+        if let type = model?.type
+        {
+            if let id = model?.id
+            {
+                vc.type = type
+                vc.id = Int(id)
+                vc.isPush = true
+                currentController?.present(nav, animated: true, completion: nil)
+            }
+        }
+
 
     }
     
@@ -42,7 +70,7 @@ class FJJPushUtil: NSObject {
     ///   - content: content description
     ///   - sure: sure description
     ///   - cancel: cancel description
-    func jpushAlert(target:UIViewController,content:String,sure:@escaping () -> Void,cancel:@escaping () -> Void) {
+    class func jpushAlert(target:UIViewController,content:String,sure:@escaping () -> Void,cancel:@escaping () -> Void) {
         // Prepare the popup
         let title = "通  知"
         // Create the dialog

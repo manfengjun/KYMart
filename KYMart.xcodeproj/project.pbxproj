@@ -28,7 +28,6 @@
 		BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AFD1EF4E8D2001538A9 /* UIView+Frame.m */; };
 		BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */; };
 		BF24EBAB1EF3BC570099FEDF /* KYAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */; };
-		BF2B88FA1F5E94FA0048760F /* KYOrderNewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B88F91F5E94FA0048760F /* KYOrderNewsListViewController.swift */; };
 		BF2B88FC1F5E96C40048760F /* KYNewsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B88FB1F5E96C40048760F /* KYNewsListModel.swift */; };
 		BF3797D21F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */; };
 		BF3797D41F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */; };
@@ -87,6 +86,8 @@
 		BF8903551EE4176D004A0FF7 /* FJView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8903541EE4176D004A0FF7 /* FJView+Extension.swift */; };
 		BF89036B1EE43288004A0FF7 /* HorizontalPageFlowlayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BF89036A1EE43288004A0FF7 /* HorizontalPageFlowlayout.m */; };
 		BF8DF2871F01F2EF00A23921 /* KYMineOtherTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8DF2861F01F2EF00A23921 /* KYMineOtherTVCell.swift */; };
+		BF96E7731F5EC43700384AAA /* template in Resources */ = {isa = PBXBuildFile; fileRef = BF96E7721F5EC43700384AAA /* template */; };
+		BF96E7751F5ED0F000384AAA /* KYTgfyToMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF96E7741F5ED0F000384AAA /* KYTgfyToMoneyViewController.swift */; };
 		BF9B49AA1F08E2E100982EBA /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9B49A91F08E2E100982EBA /* PooCodeView.m */; };
 		BF9B49AC1F09070900982EBA /* KYQrCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B49AB1F09070900982EBA /* KYQrCodeViewController.swift */; };
 		BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9B74B61EE782FC00322E2C /* KYProductMenuView.swift */; };
@@ -318,7 +319,6 @@
 		BF194B001EF4E9F3001538A9 /* CitiesDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDataTool.h; sourceTree = "<group>"; };
 		BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesDataTool.m; sourceTree = "<group>"; };
 		BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddressModel.swift; sourceTree = "<group>"; };
-		BF2B88F91F5E94FA0048760F /* KYOrderNewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderNewsListViewController.swift; sourceTree = "<group>"; };
 		BF2B88FB1F5E96C40048760F /* KYNewsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYNewsListModel.swift; path = Section/Home/Controller/KYNewsListModel.swift; sourceTree = SOURCE_ROOT; };
 		BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeTVCell.swift; sourceTree = "<group>"; };
 		BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYBonusToMoneyViewController.swift; sourceTree = "<group>"; };
@@ -392,6 +392,8 @@
 		BF8903691EE43288004A0FF7 /* HorizontalPageFlowlayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalPageFlowlayout.h; sourceTree = "<group>"; };
 		BF89036A1EE43288004A0FF7 /* HorizontalPageFlowlayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalPageFlowlayout.m; sourceTree = "<group>"; };
 		BF8DF2861F01F2EF00A23921 /* KYMineOtherTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYMineOtherTVCell.swift; sourceTree = "<group>"; };
+		BF96E7721F5EC43700384AAA /* template */ = {isa = PBXFileReference; lastKnownFileType = folder; path = template; sourceTree = "<group>"; };
+		BF96E7741F5ED0F000384AAA /* KYTgfyToMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYTgfyToMoneyViewController.swift; sourceTree = "<group>"; };
 		BF9B49A81F08E2E100982EBA /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
 		BF9B49A91F08E2E100982EBA /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
 		BF9B49AB1F09070900982EBA /* KYQrCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeViewController.swift; sourceTree = "<group>"; };
@@ -864,7 +866,6 @@
 				BF89034A1EE3D672004A0FF7 /* KYHomeLayout.swift */,
 				BF664C1C1F5E7C84003DC480 /* KYNewsMenuViewController.swift */,
 				BF664C181F5E793E003DC480 /* KYNewsListViewController.swift */,
-				BF2B88F91F5E94FA0048760F /* KYOrderNewsListViewController.swift */,
 				BF664C1A1F5E794E003DC480 /* KYNewsDetailViewController.swift */,
 			);
 			path = Controller;
@@ -949,6 +950,7 @@
 				BF9F0B791EFF4B9700BA4DEE /* KYSellListViewController.swift */,
 				BF9F0B7B1EFF4BB800BA4DEE /* KYBonusListViewController.swift */,
 				BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */,
+				BF96E7741F5ED0F000384AAA /* KYTgfyToMoneyViewController.swift */,
 				BFD6FAA41F051E5600E6BDA2 /* KYWithdrawListViewController.swift */,
 				BF9B49AB1F09070900982EBA /* KYQrCodeViewController.swift */,
 				BF73F2EF1F0BCC9E00BAE922 /* KYMemberViewController.swift */,
@@ -1335,6 +1337,7 @@
 		BFC017611EDF9AB1005D66B0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				BF96E7721F5EC43700384AAA /* template */,
 				BFD7B4E21F0BDE730082EAFF /* user_pla.jpg */,
 				BFE7BB121EF6B5D200A84B9F /* 2.jpg */,
 				BFE46DFC1EF12DEA00F65FED /* user.jpg */,
@@ -1620,7 +1623,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = R89T2LLRX5;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1701,6 +1704,7 @@
 				BF9DD9571F1C44F9002379A0 /* KYProductScrollCVCell.xib in Resources */,
 				BFE46DFB1EF12D7600F65FED /* celan.jpg in Resources */,
 				BFE46DF91EF12D2400F65FED /* com_info_bg.png in Resources */,
+				BF96E7731F5EC43700384AAA /* template in Resources */,
 				BFFE0E6C1EE83B9B00621CB0 /* KYProductPropertyView.xib in Resources */,
 				BF8903531EE40879004A0FF7 /* goods_thumb_1_400_400.jpeg in Resources */,
 				BF9DD9531F1C44F9002379A0 /* KYHomeSallHeadView.xib in Resources */,
@@ -1838,7 +1842,6 @@
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
 				BF880B981F5257FE004A81BA /* KYSubmitReturnTVCell.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
-				BF2B88FA1F5E94FA0048760F /* KYOrderNewsListViewController.swift in Sources */,
 				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
 				BF9F0B7A1EFF4B9700BA4DEE /* KYSellListViewController.swift in Sources */,
 				BF876C391F46972F001F32C6 /* KYQrCodeModel.swift in Sources */,
@@ -1848,6 +1851,7 @@
 				BF73F2F61F0BD37E00BAE922 /* KYMemberModel.swift in Sources */,
 				BF61B73E1F45CC1B003C1258 /* KYRechargeViewController.swift in Sources */,
 				BF8903291EE3A4E1004A0FF7 /* MainTabBarViewController.swift in Sources */,
+				BF96E7751F5ED0F000384AAA /* KYTgfyToMoneyViewController.swift in Sources */,
 				BFB6D0B11EE63C1600F2C61F /* SJBRequestUrl.swift in Sources */,
 				BFC017361EDF9875005D66B0 /* ViewController.swift in Sources */,
 				BF9B74B71EE782FC00322E2C /* KYProductMenuView.swift in Sources */,
@@ -2123,8 +2127,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KYMart/KYMart.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ZhanLi Rao (RUH353X85P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2176,8 +2180,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "869d16cc-f219-4fb4-a51e-4357b93e2fb1";
+				PROVISIONING_PROFILE_SPECIFIER = dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -2192,8 +2196,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KYMart/KYMart.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ZhanLi Rao (RUH353X85P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2245,8 +2249,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "869d16cc-f219-4fb4-a51e-4357b93e2fb1";
+				PROVISIONING_PROFILE_SPECIFIER = dis;
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

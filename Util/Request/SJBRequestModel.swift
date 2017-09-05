@@ -847,6 +847,17 @@ class SJBRequestModel: NSObject {
             self.dataToModel(type: .BonusToMoney, response: response, status: status, completion: completion)
         }
     }
+    /// 奖金转金额
+    ///
+    /// - Parameters:
+    ///   - params: params description
+    ///   - completion: completion description
+    class func push_fetchTgfyToMoneyData(params:[String:AnyObject],completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Post(url: SJBRequestUrl.returnTgfyToMoneyUrl(), params: params) { (response, status) in
+            self.dataToModel(type: .BonusToMoney, response: response, status: status, completion: completion)
+        }
+    }
+
 
     // MARK: ------ 二维码
 

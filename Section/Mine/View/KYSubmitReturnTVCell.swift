@@ -41,7 +41,7 @@ class KYSubmitReturnTVCell: UITableViewCell {
             if let text = model?.spec_key_name {
                 productPropertyL.text = text
             }
-            collectionView.reloadData()
+//            collectionView.reloadData()
         }
     }
 

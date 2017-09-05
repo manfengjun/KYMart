@@ -1,0 +1,154 @@
+@import "global";
+.helpNav ~ .mui-content{ padding-top: 84px!important;}
+.helpNav{ background: #f8f8f8; position: fixed!important; top:44px; z-index: 9}
+.helpNav .mui-control-item{ border-bottom: 1px solid #e6e6e6!important;}
+.helpNav .mui-control-item.mui-active{ border-bottom: 2px solid #f85959!important; color: #f85959!important;}
+.fbBtn{
+   vertical-align: middle;
+  height: 30px; line-height: 30px;
+  font-size: 14px;
+  color: #888;
+  background: #fff;
+  width: 96%;
+  border-radius: 50px;
+  margin: 7px auto 0 auto;
+  border:1px solid #e6e6e6; text-indent: 10px;
+}
+.mui-bar-tab{ height: 45px;}
+.fbBtn .icon-fankui1{position: relative; top: 1px;}
+#msg-list {
+  height: 100%;
+  overflow: auto;padding: 5px;
+  -webkit-overflow-scrolling: touch;
+}
+.msg-item {
+  padding: 8px;
+  clear: both;
+}
+.msg-item .mui-item-clear {
+  clear: both;
+}
+.msg-item .msg-user {
+  width: 38px;
+  height: 38px;
+  border: solid 1px #e6e6e6;
+  display: inline-block;
+  background: #fff;
+  border-radius: 100%;
+  vertical-align: top;
+  text-align: center;
+  float: left;
+  padding: 3px;
+  color: #ddd;
+}
+
+.msg-item .msg-user-img{
+  width: 38px;
+  height: 38px;
+  display: inline-block;
+  border-radius: 100%;
+  vertical-align: top;
+  text-align: center;
+  float: left;
+  color: #ddd;
+}
+
+.msg-item .msg-content {
+  display: inline-block;
+  border-radius: 5px;
+  border: solid 1px #e6e6e6;
+  background-color: #FFFFFF;
+  color: #333;
+  padding: 8px;
+  vertical-align: top;
+  font-size: 15px;
+  position: relative;
+  margin: 0px 8px;
+  max-width: 75%;
+  min-width: 35px;
+  float: left;
+}
+.msg-item .msg-content img{ display: block}
+.msg-item .msg-content .msg-content-inner {
+  overflow-x: hidden;
+}
+.msg-item .msg-content .msg-content-arrow {
+  position: absolute;
+  border: solid 1px #e6e6e6;
+  border-right: none;
+  border-top: none;
+  background-color: #FFFFFF;
+  width: 10px;
+  height: 10px;
+  left: -5px;
+  top: 12px;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+.msg-item-self .msg-user,.msg-item-self .msg-user-img,
+.msg-item-self .msg-content {
+  float: right!important;
+}
+.msg-item-self .msg-content .msg-content-arrow {
+  left: auto;
+  right: -5px;
+  -webkit-transform: rotateZ(225deg);
+  transform: rotateZ(225deg);
+}
+.msg-item-self .msg-content,
+.msg-item-self .msg-content .msg-content-arrow {
+  background-color: #F1F8FC;
+  border-color: #D6EAF8;
+}
+
+//feedback
+.feedback body {
+  background-color: #EFEFF4;
+}
+.feedback input,
+.feedback textarea {
+  border: none !important;
+}
+.feedback textarea {
+  height: 100px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.feedback .row {
+  width: 100%;
+  background-color: #fff;
+}
+.feedback p {
+  padding: 10px 15px 0;
+}
+/*.feedback button#submit {
+	width: 90%;
+	height: 46px;
+	left: 50%;
+	-webkit-transform: translate(-50%);
+}*/
+
+input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{
+  font-size: 14px;
+}
+
+.feedback .hidden {
+  display: none;
+}
+.feedback .image-list {
+  width: 100%;
+  background-size: cover; padding: 10px 0 5px;
+  overflow: hidden;
+}
+.mui-btn-link{ color: #333!important;}
+.image-list #choose{display:none}
+.image-list{ padding-bottom: 8px;}
+.image-list .img-list{margin:0; padding:0 0 0 8px;}
+.image-list .img-list li{float:left;width:76px;height:76px;border:1px solid #e6e6e6;margin:0 5px 8px 5px;border-radius:5px}
+.image-list #upload{text-align:center;line-height:76px}
+.image-list #upload span{font-size:50px;color:#cecece;-webkit-text-stroke-width:0}
+.image-list .img-list li{background-size:cover;position:relative}
+.image-list .progress{position:absolute;width:100%;height:20px;line-height:20px;bottom:0;left:0;background-color:rgba(0,0,0,0.3)}
+.image-list .progress span{display:block;width:0;height:100%;background-color:#1abc9c;text-align:center;color:#FFF;font-size:13px}
+.image-list .img-list li .close{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background-color:rgba(0,0,0,0.5);border-radius:10px;color:#fff;text-align:center;line-height:19px !important}
+.image-list .img-list li .close .iconfont{font-size:12px !important}

@@ -57,15 +57,7 @@ class KYWithdrawHeadView: UIView {
         saveBtn.layer.masksToBounds = true
         saveBtn.layer.cornerRadius = 5.0
     }
-    @IBAction func selectAction(_ sender: UITapGestureRecognizer) {
-        balanceBtn.image = sender.view?.tag == 1 ? UIImage(named: "cart_select_yes.png") : UIImage(named: "cart_select_no.png")
-        bonusBtn.image = sender.view?.tag == 2 ? UIImage(named: "cart_select_yes.png") : UIImage(named: "cart_select_no.png")
-        if let text = sender.view?.tag {
-            info?.changetype = String(text)
-        }
-
-    }
-    
+        
     @IBAction func saveAction(_ sender: UIButton) {
         if (moneyT.text?.isEmpty)! {
             Toast(content: "金额不能为空")
@@ -87,6 +79,7 @@ class KYWithdrawHeadView: UIView {
         info?.bank_card = bankCardT.text
         info?.realname = realNameT.text
         info?.money = moneyT.text
+        info?.changetype = String(1)
         let codeText = NSString(string: codeT.text!)
         let codeStr = NSString(string: codeView.changeString)
         let params = ["changetype":info?.changetype,"money":info?.money,"bank_name":info?.bank_name,"bank_card":info?.bank_card,"realname":info?.realname]

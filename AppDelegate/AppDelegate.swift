@@ -78,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
             JPUSHService.register(forRemoteNotificationTypes: type, categories: nil)
         }
         //推送初始化
-        JPUSHService.setup(withOption: launchOptions, appKey: "d9055d012c5556b5ac97a95b", channel: "App Store", apsForProduction: false)
+        JPUSHService.setup(withOption: launchOptions, appKey: "d9055d012c5556b5ac97a95b", channel: "App Store", apsForProduction: true)
         // 获取推送消息
         let remote = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? Dictionary<String,Any>;
         // 如果remote不为空，就代表应用在未打开的时候收到了推送消息
@@ -183,6 +183,8 @@ extension AppDelegate:JPUSHRegisterDelegate{
         print(userinfo)
         if (response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()))! {
             JPUSHService.handleRemoteNotification(userinfo)
+            UIApplication.shared.applicationIconBadgeNumber -= 1
+            FJJPushUtil.jpushMessageManagerBackground(userInfo: userinfo, appdelegate: self)
         }
         completionHandler()
     }
@@ -193,6 +195,7 @@ extension AppDelegate:JPUSHRegisterDelegate{
         print(userinfo)
         if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()))! {
             JPUSHService.handleRemoteNotification(userinfo)
+            FJJPushUtil.jpushMessageManagerForeground(userInfo: userinfo, appdelegate: self)
         }
         completionHandler(Int(UNNotificationPresentationOptions.alert.rawValue))
         
@@ -208,9 +211,15 @@ extension AppDelegate:JPUSHRegisterDelegate{
             // 程序在运行过程中受到推送通知
             print("前台")
             
+            FJJPushUtil.jpushMessageManagerForeground(userInfo: userInfo, appdelegate: self)
+
+            
         } else {
             //在background状态受到推送通知
             print("后台")
+            UIApplication.shared.applicationIconBadgeNumber -= 1
+            FJJPushUtil.jpushMessageManagerBackground(userInfo: userInfo, appdelegate: self)
+
             
         }
 
@@ -222,10 +231,15 @@ extension AppDelegate:JPUSHRegisterDelegate{
         if ( application.applicationState == .active) {
             // 程序在运行过程中受到推送通知
             print("前台")
+            FJJPushUtil.jpushMessageManagerForeground(userInfo: userInfo, appdelegate: self)
+
             
         } else {
             //在background状态受到推送通知
             print("后台")
+            UIApplication.shared.applicationIconBadgeNumber -= 1
+            FJJPushUtil.jpushMessageManagerBackground(userInfo: userInfo, appdelegate: self)
+
             
         }
     }

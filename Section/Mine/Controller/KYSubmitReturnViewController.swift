@@ -76,7 +76,16 @@ extension KYSubmitReturnViewController:UITableViewDelegate,UITableViewDataSource
             self.model?.reason = cell.descriT.text
             SJBRequest.UpLoadImages(url: SJBRequestUrl.returnReturnUrl(), model: self.model!, images: self.imageArray) { (response, status) in
                 if status == 1{
-                    
+                    DispatchQueue.main.async {
+                        self.Toast(content: response as! String)
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                }
+                else
+                {
+                    DispatchQueue.main.async {
+                        self.Toast(content: response as! String)
+                    }
                 }
             }
         }
