@@ -94,19 +94,19 @@ class Gallery :NSObject{
     var image_url: String!
     
 }
-class Data :NSObject{
+class Datas :NSObject{
     var title: String!
     var content: String!
     
 }
 class Activity :NSObject{
     var prom_type: Int = 0
-    var data: [Data]!
+    var data: [Datas]!
     var prom_start_time: Int = 0
     var prom_price: Int = 0
     var prom_end_time: Int = 0
     class func modelContainerPropertyGenericClass() -> NSDictionary {
-        return ["data" : Data.classForCoder()]
+        return ["data" : Datas.classForCoder()]
     }
 }
 

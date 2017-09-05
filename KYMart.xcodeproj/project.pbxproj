@@ -37,6 +37,11 @@
 		BF61B73E1F45CC1B003C1258 /* KYRechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61B73D1F45CC1B003C1258 /* KYRechargeViewController.swift */; };
 		BF61B7431F45D96C003C1258 /* AlertRechargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */; };
 		BF61B7441F45D96C003C1258 /* AlertRechargeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */; };
+		BF664C081F5E35A7003DC480 /* jcore-ios-1.1.5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C051F5E35A7003DC480 /* jcore-ios-1.1.5.a */; };
+		BF664C091F5E35A7003DC480 /* jpush-ios-3.0.6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C061F5E35A7003DC480 /* jpush-ios-3.0.6.a */; };
+		BF664C0B1F5E35EA003DC480 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C0A1F5E35EA003DC480 /* CoreFoundation.framework */; };
+		BF664C0D1F5E3611003DC480 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C0C1F5E3611003DC480 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BF664C0F1F5E361C003DC480 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C0E1F5E361C003DC480 /* libresolv.tbd */; };
 		BF6D1D3E1F145CAD00587056 /* KYPageOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */; };
 		BF6D1D471F145CCF00587056 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D411F145CCF00587056 /* NinaBaseView.m */; };
 		BF6D1D481F145CCF00587056 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D431F145CCF00587056 /* NinaPagerView.m */; };
@@ -314,6 +319,13 @@
 		BF61B73D1F45CC1B003C1258 /* KYRechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYRechargeViewController.swift; sourceTree = "<group>"; };
 		BF61B7411F45D96C003C1258 /* AlertRechargeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertRechargeViewController.swift; sourceTree = "<group>"; };
 		BF61B7421F45D96C003C1258 /* AlertRechargeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertRechargeViewController.xib; sourceTree = "<group>"; };
+		BF664C051F5E35A7003DC480 /* jcore-ios-1.1.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jcore-ios-1.1.5.a"; sourceTree = "<group>"; };
+		BF664C061F5E35A7003DC480 /* jpush-ios-3.0.6.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-3.0.6.a"; sourceTree = "<group>"; };
+		BF664C071F5E35A7003DC480 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		BF664C0A1F5E35EA003DC480 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		BF664C0C1F5E3611003DC480 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		BF664C0E1F5E361C003DC480 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		BF664C101F5E401B003DC480 /* KYMart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KYMart.entitlements; sourceTree = "<group>"; };
 		BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPageOrderViewController.swift; sourceTree = "<group>"; };
 		BF6D1D401F145CCF00587056 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
 		BF6D1D411F145CCF00587056 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = "<group>"; };
@@ -567,17 +579,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF664C0F1F5E361C003DC480 /* libresolv.tbd in Frameworks */,
+				BF664C0D1F5E3611003DC480 /* UserNotifications.framework in Frameworks */,
+				BF664C0B1F5E35EA003DC480 /* CoreFoundation.framework in Frameworks */,
 				BFE7F7F41F12244E00432994 /* CoreMotion.framework in Frameworks */,
 				BFE7F7F21F12244400432994 /* Foundation.framework in Frameworks */,
 				BFE7F7F01F12243D00432994 /* UIKit.framework in Frameworks */,
 				BFE7F7EE1F12243500432994 /* CoreGraphics.framework in Frameworks */,
 				BFE7F7EC1F12242C00432994 /* CoreText.framework in Frameworks */,
 				BFE7F7EA1F12242300432994 /* QuartzCore.framework in Frameworks */,
+				BF664C091F5E35A7003DC480 /* jpush-ios-3.0.6.a in Frameworks */,
 				BFE7F7E81F12241500432994 /* SystemConfiguration.framework in Frameworks */,
 				BFC018171EDF9C3D005D66B0 /* libz.tbd in Frameworks */,
 				BFE7F7E61F12240700432994 /* libc++.tbd in Frameworks */,
 				BFC332C41F1208D500FEABE0 /* CoreTelephony.framework in Frameworks */,
 				BFE7F7E41F12238300432994 /* AlipaySDK.framework in Frameworks */,
+				BF664C081F5E35A7003DC480 /* jcore-ios-1.1.5.a in Frameworks */,
 				BFC332C21F11FAEC00FEABE0 /* libstdc++.tbd in Frameworks */,
 				BFC332C01F11FAE300FEABE0 /* CFNetwork.framework in Frameworks */,
 				BFC018151EDF9C06005D66B0 /* libsqlite3.0.tbd in Frameworks */,
@@ -606,6 +623,9 @@
 		357C7D29D9B4C0B5522B7D49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF664C0E1F5E361C003DC480 /* libresolv.tbd */,
+				BF664C0C1F5E3611003DC480 /* UserNotifications.framework */,
+				BF664C0A1F5E35EA003DC480 /* CoreFoundation.framework */,
 				BFE7F7F31F12244E00432994 /* CoreMotion.framework */,
 				BFE7F7F11F12244400432994 /* Foundation.framework */,
 				BFE7F7EF1F12243D00432994 /* UIKit.framework */,
@@ -694,6 +714,16 @@
 				BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		BF664C041F5E35A7003DC480 /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				BF664C051F5E35A7003DC480 /* jcore-ios-1.1.5.a */,
+				BF664C061F5E35A7003DC480 /* jpush-ios-3.0.6.a */,
+				BF664C071F5E35A7003DC480 /* JPUSHService.h */,
+			);
+			path = JPush;
 			sourceTree = "<group>";
 		};
 		BF6D1D3F1F145CCF00587056 /* NinaPagerView */ = {
@@ -1243,6 +1273,7 @@
 		BFC017321EDF9875005D66B0 /* KYMart */ = {
 			isa = PBXGroup;
 			children = (
+				BF664C101F5E401B003DC480 /* KYMart.entitlements */,
 				BFC017351EDF9875005D66B0 /* ViewController.swift */,
 				BFC017371EDF9875005D66B0 /* Main.storyboard */,
 				BFC0173A1EDF9875005D66B0 /* Assets.xcassets */,
@@ -1300,6 +1331,7 @@
 		BFC017631EDF9AB1005D66B0 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				BF664C041F5E35A7003DC480 /* JPush */,
 				BF6D1D3F1F145CCF00587056 /* NinaPagerView */,
 				BFE7F7E01F12237500432994 /* Alipay */,
 				BFC332B71F11FABD00FEABE0 /* OpenSDK1.7.8 */,
@@ -1557,6 +1589,11 @@
 						DevelopmentTeam = R89T2LLRX5;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BFC017431EDF9875005D66B0 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -2045,10 +2082,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				CODE_SIGN_ENTITLEMENTS = KYMart/KYMart.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ZhanLi Rao (RUH353X85P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
@@ -2060,6 +2098,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/OpenSDK1.7.8",
+					"$(PROJECT_DIR)/Vender/JPush",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -2112,10 +2151,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				CODE_SIGN_ENTITLEMENTS = KYMart/KYMart.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ZhanLi Rao (RUH353X85P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R89T2LLRX5;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
@@ -2127,6 +2167,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/OpenSDK1.7.8",
+					"$(PROJECT_DIR)/Vender/JPush",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

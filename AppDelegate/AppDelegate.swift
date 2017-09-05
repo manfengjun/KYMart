@@ -59,7 +59,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         setupIQKeyboardManager()
         //友盟分享
         FJUmSocialUtil.instance.setup()
-
+        //极光推送
+        if #available(iOS 10.0, *){
+            let entiity = JPUSHRegisterEntity()
+            entiity.types = Int(UNAuthorizationOptions.alert.rawValue |
+                UNAuthorizationOptions.badge.rawValue |
+                UNAuthorizationOptions.sound.rawValue)
+            JPUSHService.register(forRemoteNotificationConfig: entiity, delegate: self)
+        } else if #available(iOS 8.0, *) {
+            let types = UIUserNotificationType.badge.rawValue |
+                UIUserNotificationType.sound.rawValue |
+                UIUserNotificationType.alert.rawValue
+            JPUSHService.register(forRemoteNotificationTypes: types, categories: nil)
+        }else {
+            let type = UIRemoteNotificationType.badge.rawValue |
+                UIRemoteNotificationType.sound.rawValue |
+                UIRemoteNotificationType.alert.rawValue
+            JPUSHService.register(forRemoteNotificationTypes: type, categories: nil)
+        }
+        //推送初始化
+        JPUSHService.setup(withOption: launchOptions, appKey: "d9055d012c5556b5ac97a95b", channel: "App Store", apsForProduction: false)
+        // 获取推送消息
+        let remote = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? Dictionary<String,Any>;
+        // 如果remote不为空，就代表应用在未打开的时候收到了推送消息
+        if remote != nil {
+            // 收到推送消息实现的方法
+            self.perform(#selector(receivePush), with: remote, afterDelay: 1.0);
+        }
         return true
     }
     /// 微信支付
@@ -141,4 +167,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
 
 
 }
+extension AppDelegate:JPUSHRegisterDelegate{
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        JPUSHService.registerDeviceToken(deviceToken)
+        print("Notification token: ", NSString(data:deviceToken ,encoding: String.Encoding.utf8.rawValue) ?? "1234")
+    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("did Fail To Register For Remote Notifications With Error: %@", error);
+        
+    }
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, didReceive response: UNNotificationResponse!, withCompletionHandler completionHandler: (() -> Void)!) {
+        //iOS10后台打开消息
+        let userinfo = response.notification.request.content.userInfo
+        print(userinfo)
+        if (response.notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()))! {
+            JPUSHService.handleRemoteNotification(userinfo)
+        }
+        completionHandler()
+    }
+    @available(iOS 10.0, *)
+    func jpushNotificationCenter(_ center: UNUserNotificationCenter!, willPresent notification: UNNotification!, withCompletionHandler completionHandler: ((Int) -> Void)!) {
+        //iOS10前台收到消息
+        let userinfo = notification.request.content.userInfo
+        print(userinfo)
+        if (notification.request.trigger?.isKind(of: UNPushNotificationTrigger.classForCoder()))! {
+            JPUSHService.handleRemoteNotification(userinfo)
+        }
+        completionHandler(Int(UNNotificationPresentationOptions.alert.rawValue))
+        
+    }
+    //iOS7及以上系统，收到通知
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        //前台收到消息执行，后台消息点击执行
+        JPUSHService.handleRemoteNotification(userInfo);
+        print(userInfo);
+        
+        if ( application.applicationState == .active) {
+            // 程序在运行过程中受到推送通知
+            print("前台")
+            
+        } else {
+            //在background状态受到推送通知
+            print("后台")
+            
+        }
 
+        completionHandler(UIBackgroundFetchResult.newData);
+    }
+    //iOS6及以下系统，收到通知
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        JPUSHService.handleRemoteNotification(userInfo);
+    }
+    // 接收到推送实现的方法
+    func receivePush(_ userInfo : Dictionary<String,Any>) {
+        print("收到推送")
+        // 角标变0
+        //        UIApplication.shared.applicationIconBadgeNumber = 0;
+        //        // 剩下的根据需要自定义
+        //        self.tabBarVC?.selectedIndex = 0;
+        //        NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationName_ReceivePush), object: NotificationObject_Sueecess, userInfo: userInfo)
+    }
+
+}
