@@ -46,7 +46,25 @@ class SJBRequestUrl: NSObject {
     class func returnHomePageProductUrl(page:Int) -> String {
         return "\(basePath)m=api&c=Index&a=favourite&p=\(page)"
     }
-    
+    // MARK: ------ 消息
+    /// 系统公告列表(1:公告,2:订单)
+    ///
+    /// - Returns: return value description
+    class func returnSystemNoticeListUrl(page:Int,type:String) -> String {
+        if type == "1" {
+            return "\(basePath)m=api&c=user&a=push_system&p=\(page)&token=\(access_token())"
+        }
+        return "\(basePath)m=api&c=user&a=push_user&p=\(page)&token=\(access_token())"
+    }
+    /// 系统公告单条(1:公告,2:订单)
+    ///
+    /// - Returns: return value description
+    class func returnSystemNoticeDetailUrl(id:Int,type:String) -> String {
+        if type == "1" {
+            return "\(basePath)m=api&c=user&a=push_system&id=\(id)&token=\(access_token())"
+        }
+        return "\(basePath)m=api&c=user&a=push_user&id=\(id)&token=\(access_token())"
+    }
     // MARK: ------ 菜单
     /// 获取一级分类列表
     ///

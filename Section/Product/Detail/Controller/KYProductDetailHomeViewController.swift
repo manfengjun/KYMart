@@ -165,4 +165,5 @@ extension KYProductDetailHomeViewController:UITableViewDelegate,UITableViewDataS
         return UITableViewAutomaticDimension
     }
     
+    
 }

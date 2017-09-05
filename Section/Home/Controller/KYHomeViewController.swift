@@ -22,7 +22,7 @@ fileprivate let KYPoductIdentifier = "kYProductCVCell"
 fileprivate let KYPoductHeadViewIdentifier = "kYProductHeadView"
 
 private let headerIdentifier = "header"
-class KYHomeViewController: UIViewController {
+class KYHomeViewController: BaseViewController {
     let  menuTitles:[String] = ["家用电器","手机数码","家居生活","潮流服饰","鞋靴箱包","礼品首饰","食品生鲜","母婴专区","美妆个护","运动户外","汽车用品","生活出行","店铺街","品牌街","我的订单","限时优惠"]
     let menuIDs:[String] = ["1","2","4","5","6","7","8","9","10","11","12","399"]
     var sectionCount:Int = 0
@@ -108,6 +108,7 @@ class KYHomeViewController: UIViewController {
     
     /// 初始化UI
     func setupUI() {
+        setRightButtonInNav(imageUrl: "home_news.png", action: #selector(newsAction));
         navigationController?.navigationBar.barTintColor = HOME_BAR_TINTCOLOR
         automaticallyAdjustsScrollViewInsets = true
         view.addSubview(collectionView)
@@ -170,7 +171,11 @@ extension KYHomeViewController {
         page += 1
         dataProductRequest()
     }
-
+    
+    /// 消息列表
+    func newsAction() {
+        self.performSegue(withIdentifier: "H_newsmenu_SegueID", sender: nil)
+    }
 }
 // MARK: ------ 轮播图片、响应事件
 extension KYHomeViewController:SDCycleScrollViewDelegate{

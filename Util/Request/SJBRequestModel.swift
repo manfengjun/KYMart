@@ -13,6 +13,9 @@ enum ModelType {
     case Section//一级分类
     case SubSection//二三级分类
     
+    case SystemNoticeList//系统公告列表
+    case SystemNoticeDetail//系统公告详情
+    
     case ProductList//商品列表
     case ProductNoSortList//无排序商品列表
     case ProductInfo//商品详情
@@ -91,6 +94,12 @@ class SJBRequestModel: NSObject {
                 break
             case .ProductInfo:
                 let temmodel = KYGoodInfoModel.yy_model(with: response as! [AnyHashable : Any])
+                if let model = temmodel {
+                    completion(model,status)
+                }
+                break
+            case .SystemNoticeDetail:
+                let temmodel = KYNewsListModel.yy_model(with: response as! [AnyHashable : Any])
                 if let model = temmodel {
                     completion(model,status)
                 }
@@ -251,6 +260,15 @@ class SJBRequestModel: NSObject {
                     }
                 }
                 break
+            case .SystemNoticeList:
+                for item in response as! NSArray {
+                    let temmodel = KYNewsListModel.yy_model(with: item as! [AnyHashable : Any])
+                    if let model = temmodel {
+                        dataArray.add(model)
+                    }
+                }
+                break
+
             case .ProductSectionMoreList:
                 for item in response as! NSArray {
                     let temmodel = Goods_list.yy_model(with: item as! [AnyHashable : Any])
@@ -338,6 +356,24 @@ class SJBRequestModel: NSObject {
             self.dataArrayToModel(type: .HomePageProduct, response: response, status: status, completion: completion)
         }
     }
+    // MARK: ------ 消息
+    /// 系统公告列表(1:公告,2:订单)
+    ///
+    /// - Returns: return value description
+    class func pull_fetchSystemNoticeListData(type:String,page:Int, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSystemNoticeListUrl(page: page,type: type)) { (response, status) in
+            self.dataArrayToModel(type: .SystemNoticeList, response: response, status: status, completion: completion)
+        }
+    }
+    /// 系统公告单条(1:公告,2:订单)
+    ///
+    /// - Returns: return value description
+    class func pull_fetchSystemNoticeDetailData(type:String,id:Int, completion:@escaping (AnyObject,Int) -> Void) {
+        SJBRequest.Get(url: SJBRequestUrl.returnSystemNoticeDetailUrl(id: id,type: type)) { (response, status) in
+            self.dataToModel(type: .SystemNoticeDetail, response: response, status: status, completion: completion)
+        }
+    }
+    
     // MARK: ------ 分类
     /// 一级分类
     ///

@@ -28,6 +28,8 @@
 		BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194AFD1EF4E8D2001538A9 /* UIView+Frame.m */; };
 		BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */; };
 		BF24EBAB1EF3BC570099FEDF /* KYAddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */; };
+		BF2B88FA1F5E94FA0048760F /* KYOrderNewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B88F91F5E94FA0048760F /* KYOrderNewsListViewController.swift */; };
+		BF2B88FC1F5E96C40048760F /* KYNewsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2B88FB1F5E96C40048760F /* KYNewsListModel.swift */; };
 		BF3797D21F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */; };
 		BF3797D41F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */; };
 		BF3DA80E1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DA80D1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift */; };
@@ -42,6 +44,12 @@
 		BF664C0B1F5E35EA003DC480 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C0A1F5E35EA003DC480 /* CoreFoundation.framework */; };
 		BF664C0D1F5E3611003DC480 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C0C1F5E3611003DC480 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BF664C0F1F5E361C003DC480 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BF664C0E1F5E361C003DC480 /* libresolv.tbd */; };
+		BF664C151F5E6F93003DC480 /* FJJPushUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF664C141F5E6F93003DC480 /* FJJPushUtil.swift */; };
+		BF664C171F5E76A8003DC480 /* FJJPushModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF664C161F5E76A8003DC480 /* FJJPushModel.swift */; };
+		BF664C191F5E793E003DC480 /* KYNewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF664C181F5E793E003DC480 /* KYNewsListViewController.swift */; };
+		BF664C1B1F5E794E003DC480 /* KYNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF664C1A1F5E794E003DC480 /* KYNewsDetailViewController.swift */; };
+		BF664C1D1F5E7C84003DC480 /* KYNewsMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF664C1C1F5E7C84003DC480 /* KYNewsMenuViewController.swift */; };
+		BF664C1F1F5E8B72003DC480 /* KYNewsListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF664C1E1F5E8B72003DC480 /* KYNewsListTVCell.swift */; };
 		BF6D1D3E1F145CAD00587056 /* KYPageOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */; };
 		BF6D1D471F145CCF00587056 /* NinaBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D411F145CCF00587056 /* NinaBaseView.m */; };
 		BF6D1D481F145CCF00587056 /* NinaPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6D1D431F145CCF00587056 /* NinaPagerView.m */; };
@@ -310,6 +318,8 @@
 		BF194B001EF4E9F3001538A9 /* CitiesDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitiesDataTool.h; sourceTree = "<group>"; };
 		BF194B011EF4E9F3001538A9 /* CitiesDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitiesDataTool.m; sourceTree = "<group>"; };
 		BF24EBAA1EF3BC570099FEDF /* KYAddressModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYAddressModel.swift; sourceTree = "<group>"; };
+		BF2B88F91F5E94FA0048760F /* KYOrderNewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYOrderNewsListViewController.swift; sourceTree = "<group>"; };
+		BF2B88FB1F5E96C40048760F /* KYNewsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KYNewsListModel.swift; path = Section/Home/Controller/KYNewsListModel.swift; sourceTree = SOURCE_ROOT; };
 		BF3797D11F0A6FB100F6D7B4 /* KYQrCodeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYQrCodeTVCell.swift; sourceTree = "<group>"; };
 		BF3797D31F0A778A00F6D7B4 /* KYBonusToMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYBonusToMoneyViewController.swift; sourceTree = "<group>"; };
 		BF3DA80D1EF7A3BC0041BE6C /* KYSearchProductListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYSearchProductListViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +336,12 @@
 		BF664C0C1F5E3611003DC480 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		BF664C0E1F5E361C003DC480 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		BF664C101F5E401B003DC480 /* KYMart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KYMart.entitlements; sourceTree = "<group>"; };
+		BF664C141F5E6F93003DC480 /* FJJPushUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJJPushUtil.swift; sourceTree = "<group>"; };
+		BF664C161F5E76A8003DC480 /* FJJPushModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FJJPushModel.swift; sourceTree = "<group>"; };
+		BF664C181F5E793E003DC480 /* KYNewsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYNewsListViewController.swift; sourceTree = "<group>"; };
+		BF664C1A1F5E794E003DC480 /* KYNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYNewsDetailViewController.swift; sourceTree = "<group>"; };
+		BF664C1C1F5E7C84003DC480 /* KYNewsMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYNewsMenuViewController.swift; sourceTree = "<group>"; };
+		BF664C1E1F5E8B72003DC480 /* KYNewsListTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYNewsListTVCell.swift; sourceTree = "<group>"; };
 		BF6D1D3D1F145CAD00587056 /* KYPageOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYPageOrderViewController.swift; sourceTree = "<group>"; };
 		BF6D1D401F145CCF00587056 /* NinaBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NinaBaseView.h; sourceTree = "<group>"; };
 		BF6D1D411F145CCF00587056 /* NinaBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NinaBaseView.m; sourceTree = "<group>"; };
@@ -726,6 +742,15 @@
 			path = JPush;
 			sourceTree = "<group>";
 		};
+		BF664C131F5E6F93003DC480 /* JpushUtil */ = {
+			isa = PBXGroup;
+			children = (
+				BF664C141F5E6F93003DC480 /* FJJPushUtil.swift */,
+				BF664C161F5E76A8003DC480 /* FJJPushModel.swift */,
+			);
+			path = JpushUtil;
+			sourceTree = "<group>";
+		};
 		BF6D1D3F1F145CCF00587056 /* NinaPagerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -837,6 +862,10 @@
 				BF89032E1EE3A520004A0FF7 /* KYHomeViewController.swift */,
 				BF3DA80F1EF7B6090041BE6C /* NoneViewController.swift */,
 				BF89034A1EE3D672004A0FF7 /* KYHomeLayout.swift */,
+				BF664C1C1F5E7C84003DC480 /* KYNewsMenuViewController.swift */,
+				BF664C181F5E793E003DC480 /* KYNewsListViewController.swift */,
+				BF2B88F91F5E94FA0048760F /* KYOrderNewsListViewController.swift */,
+				BF664C1A1F5E794E003DC480 /* KYNewsDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -845,6 +874,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB6D0B21EE63CE200F2C61F /* KYHomeModel.swift */,
+				BF2B88FB1F5E96C40048760F /* KYNewsListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -852,6 +882,7 @@
 		BF8903131EE3A3D0004A0FF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BF664C1E1F5E8B72003DC480 /* KYNewsListTVCell.swift */,
 				BF9DD9321F1C44F9002379A0 /* KYHomeFootView.swift */,
 				BF9DD9331F1C44F9002379A0 /* KYHomeFootView.xib */,
 				BF9DD95A1F1C66CA002379A0 /* Ad */,
@@ -1321,6 +1352,7 @@
 			children = (
 				BF876C341F468D20001F32C6 /* FJUmSocialUtil.swift */,
 				BFB5C84B1EEA661F00BFFDE5 /* SJBCountDown.swift */,
+				BF664C131F5E6F93003DC480 /* JpushUtil */,
 				BF194AD51EF4E8BD001538A9 /* ChooseLocation */,
 				BFEA60381EEBDF9300885737 /* KeychainItemWraper */,
 				BFB6D0AB1EE63C1600F2C61F /* Request */,
@@ -1769,6 +1801,7 @@
 				BFD6FAA71F05203200E6BDA2 /* KYWithdrawHeadView.swift in Sources */,
 				BFEFA9991F01479B00419995 /* KYMoneyManagerView.swift in Sources */,
 				BFD6FAB01F053EB600E6BDA2 /* KYWithDrawListTVCell.swift in Sources */,
+				BF664C1B1F5E794E003DC480 /* KYNewsDetailViewController.swift in Sources */,
 				BFEA603D1EEBDF9300885737 /* SSKeychain.m in Sources */,
 				BFF2554C1F4C5E2B00DCB18E /* KYAfterServiceViewController.swift in Sources */,
 				BFBF04871F0D2D030032AEDA /* KYOrderViewController.swift in Sources */,
@@ -1805,6 +1838,7 @@
 				BFBAB47B1EF17C5F0038B95E /* KYShopAddressTVCell.swift in Sources */,
 				BF880B981F5257FE004A81BA /* KYSubmitReturnTVCell.swift in Sources */,
 				BFB5C8481EEA625E00BFFDE5 /* SJBLoginViewController.swift in Sources */,
+				BF2B88FA1F5E94FA0048760F /* KYOrderNewsListViewController.swift in Sources */,
 				BF194AFE1EF4E8D2001538A9 /* UIView+Frame.m in Sources */,
 				BF9F0B7A1EFF4B9700BA4DEE /* KYSellListViewController.swift in Sources */,
 				BF876C391F46972F001F32C6 /* KYQrCodeModel.swift in Sources */,
@@ -1881,6 +1915,7 @@
 				BFB6D0CE1EE6965300F2C61F /* FJLeftMenuTVCell.swift in Sources */,
 				BFE896A71F13B35900C1C32A /* KYOrderListHeadView.swift in Sources */,
 				BF194AF81EF4E8C4001538A9 /* FMResultSet.m in Sources */,
+				BF664C191F5E793E003DC480 /* KYNewsListViewController.swift in Sources */,
 				BFB6D0AF1EE63C1600F2C61F /* SJBRequest.swift in Sources */,
 				BFF05C7D1EEC384800D18D43 /* KYCartViewController.swift in Sources */,
 				BFC0176C1EDF9AC1005D66B0 /* FJObject+Extension.swift in Sources */,
@@ -1889,6 +1924,7 @@
 				BF73F2F01F0BCC9E00BAE922 /* KYMemberViewController.swift in Sources */,
 				BFDCB40D1EE905BD0040A09B /* KYGoodInfoModel.swift in Sources */,
 				BF8903091EE3A1EC004A0FF7 /* SDCollectionViewCell.m in Sources */,
+				BF664C151F5E6F93003DC480 /* FJJPushUtil.swift in Sources */,
 				BFE46DF11EF0DEDD00F65FED /* CartUtil.swift in Sources */,
 				BFFF01F71F14D244008CC160 /* KYOrderInfoSectionHeadView.swift in Sources */,
 				BFEA60441EEBE63700885737 /* KYLoginInfoModel.swift in Sources */,
@@ -1901,12 +1937,14 @@
 				BF194B021EF4E9F3001538A9 /* CitiesDataTool.m in Sources */,
 				BFC0176A1EDF9AC1005D66B0 /* FJColor+Extension.swift in Sources */,
 				BFC7E3601F1CBC6F00A67306 /* KYProductListNoSortModel.swift in Sources */,
+				BF664C1D1F5E7C84003DC480 /* KYNewsMenuViewController.swift in Sources */,
 				BFC017FE1EDF9BD6005D66B0 /* XHToast.swift in Sources */,
 				BF9DD9541F1C44F9002379A0 /* KYHomeSecKillCVCell.swift in Sources */,
 				BFB6D0D41EE6965300F2C61F /* FJSectionTitleCVCellCell.swift in Sources */,
 				BF7DA4091EF60EB8003D761B /* KYUserInfoViewController.swift in Sources */,
 				BFBF048A1F0D2D6C0032AEDA /* KYOrderTVCell.swift in Sources */,
 				BFC332B21F11D48400FEABE0 /* KYOrderPayViewController.swift in Sources */,
+				BF2B88FC1F5E96C40048760F /* KYNewsListModel.swift in Sources */,
 				BFE896AF1F13B43D00C1C32A /* KYShopAddressViewController.swift in Sources */,
 				BFB5C8471EEA625E00BFFDE5 /* SJBForgetViewController.swift in Sources */,
 				BF9DD9501F1C44F9002379A0 /* KYProductHeadView.swift in Sources */,
@@ -1925,6 +1963,8 @@
 				BF194AF71EF4E8C4001538A9 /* FMDatabaseQueue.m in Sources */,
 				BFB6D0D01EE6965300F2C61F /* FJSectionHeadView.swift in Sources */,
 				BFBAB4761EF161DA0038B95E /* KYUserInfoModel.swift in Sources */,
+				BF664C171F5E76A8003DC480 /* FJJPushModel.swift in Sources */,
+				BF664C1F1F5E8B72003DC480 /* KYNewsListTVCell.swift in Sources */,
 				BF8903551EE4176D004A0FF7 /* FJView+Extension.swift in Sources */,
 				BF194AE41EF4E8BD001538A9 /* AddressView.m in Sources */,
 				BF8903061EE3A1EC004A0FF7 /* TAAnimatedDotView.m in Sources */,

@@ -202,7 +202,8 @@ extension AppDelegate:JPUSHRegisterDelegate{
         //前台收到消息执行，后台消息点击执行
         JPUSHService.handleRemoteNotification(userInfo);
         print(userInfo);
-        
+        let dic = userInfo as NSDictionary
+        print(dic.yy_modelToJSONString() ?? "")
         if ( application.applicationState == .active) {
             // 程序在运行过程中受到推送通知
             print("前台")
@@ -218,6 +219,15 @@ extension AppDelegate:JPUSHRegisterDelegate{
     //iOS6及以下系统，收到通知
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
         JPUSHService.handleRemoteNotification(userInfo);
+        if ( application.applicationState == .active) {
+            // 程序在运行过程中受到推送通知
+            print("前台")
+            
+        } else {
+            //在background状态受到推送通知
+            print("后台")
+            
+        }
     }
     // 接收到推送实现的方法
     func receivePush(_ userInfo : Dictionary<String,Any>) {
