@@ -7,12 +7,12 @@
 //
 
 import UIKit
-let basePath = "https://test.kymart.cn/index.php?"
-let baseHref = "https://test.kymart.cn"
-let imgPath = "https://test.kymart.cn"
-//let basePath = "http://api.kymart.cn/index.php?"
-//let baseHref = "http://api.kymart.cn"
-//let imgPath = "http://api.kymart.cn"
+//let basePath = "https://test.kymart.cn/index.php?"
+//let baseHref = "https://test.kymart.cn"
+//let imgPath = "https://test.kymart.cn"
+let basePath = "http://api.kymart.cn/index.php?"
+let baseHref = "http://api.kymart.cn"
+let imgPath = "http://api.kymart.cn"
 class SJBRequestUrl: NSObject {
     
     /// access_token
@@ -197,7 +197,7 @@ class SJBRequestUrl: NSObject {
     ///
     /// - Returns: return value description
     class func returnAfterServiceUrl() -> String {
-        return "\(basePath)m=api&c=order&a=return_goods_index&token=\(access_token())"
+        return "\(basePath)m=api&c=order&a=return_goods_list&token=\(access_token())"
 //        return "\(basePath)api/Order/return_goods_list.html&token=\(access_token())"
     }
     /// 申请退货
