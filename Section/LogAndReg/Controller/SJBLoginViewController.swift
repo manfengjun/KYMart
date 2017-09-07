@@ -39,7 +39,7 @@ class SJBLoginViewController: BaseViewController {
     
     func setupUI() {
         self.title = "登录"
-        setLeftButtonInNav(imageUrl: "nav_del.png", action: #selector(goback))
+        setLeftButtonInNav(imageUrl: "nav_del.png", action: #selector(dismissLogin))
         loginBtn.layer.masksToBounds = true
         loginBtn.layer.cornerRadius = 5
         
@@ -49,13 +49,22 @@ class SJBLoginViewController: BaseViewController {
         menuView.layer.masksToBounds = true
         menuView.layer.cornerRadius = 5
     }
+    func dismissLogin() {
+        self.dismiss(animated: true, completion: nil)
+    }
     func loginHandle() {
         SJBRequestModel.pull_fetchVerifyCodeData { (response, status) in
             if status == 1 {
                 let verifycode = response as! String
                 let account = self.accountT.text
                 let password = self.passwordT.text
-                let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":""]
+                var registrationID = ""
+                if UserDefaults.standard.object(forKey: "registrationID") != nil
+                {
+                    registrationID = UserDefaults.standard.object(forKey: "registrationID") as! String
+                }
+
+                let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":registrationID]
                 SJBRequestModel.push_fetchLoginData(params: params as [String : AnyObject], completion: { (response, status) in
                     if status == 1{
                         SingleManager.instance.loginInfo = response as? KYLoginInfoModel

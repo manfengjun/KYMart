@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class KYBonusToMoneyViewController: BaseViewController {
 
@@ -32,10 +33,12 @@ class KYBonusToMoneyViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 0
+        IQKeyboardManager.sharedManager().enable = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 1
+        IQKeyboardManager.sharedManager().enable = false
         
     }
     override func viewDidLoad() {
@@ -62,6 +65,7 @@ class KYBonusToMoneyViewController: BaseViewController {
         let codeText = NSString(string: codeT.text!)
         let codeStr = NSString(string: codeView.changeString)
         let params = ["money":amountT.text!]
+        
         if codeText.caseInsensitiveCompare(codeStr as String).rawValue == 0 {
             SJBRequestModel.push_fetchBonusToMoneyData(params: params as [String : AnyObject], completion: { (response, status) in
                 if status == 1{

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import IQKeyboardManagerSwift
 class KYTgfyToMoneyViewController: BaseViewController {
     
     @IBOutlet weak var codeBgView: UIView!
@@ -32,10 +32,12 @@ class KYTgfyToMoneyViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 0
+        IQKeyboardManager.sharedManager().enable = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.subviews[0].alpha = 1
+        IQKeyboardManager.sharedManager().enable = false
         
     }
     override func viewDidLoad() {

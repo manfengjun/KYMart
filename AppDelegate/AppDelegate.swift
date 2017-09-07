@@ -36,7 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
                     let verifycode = response as! String
                     let account = SingleManager.instance.loginInfo?.mobile
                     let password = SingleManager.instance.loginInfo?.password
-                    let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":""]
+                    var registrationID = ""
+                    if UserDefaults.standard.object(forKey: "registrationID") != nil
+                    {
+                        registrationID = UserDefaults.standard.object(forKey: "registrationID") as! String
+                    }
+
+                    let params = ["username":account!, "password":password!, "unique_id":SingleManager.getUUID(), "capache":verifycode, "push_id":registrationID]
                     SJBRequestModel.push_fetchLoginData(params: params as [String : AnyObject], completion: { (response, status) in
                         if status == 1{
                             SingleManager.instance.loginInfo = response as? KYLoginInfoModel
@@ -79,6 +85,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate,WXApiDelegate {
         }
         //推送初始化
         JPUSHService.setup(withOption: launchOptions, appKey: "d9055d012c5556b5ac97a95b", channel: "App Store", apsForProduction: true)
+        JPUSHService.registrationIDCompletionHandler { (resCode, registrationID) in
+            if resCode == 0{
+                //获取registrationID成功
+                UserDefaults.standard.setValue(registrationID, forKey: "registrationID")
+            }
+            else
+            {
+                //获取registrationID失败
+
+            }
+        }
         // 获取推送消息
         let remote = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? Dictionary<String,Any>;
         // 如果remote不为空，就代表应用在未打开的时候收到了推送消息

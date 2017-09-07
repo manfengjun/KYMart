@@ -1623,7 +1623,7 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = R89T2LLRX5;
 						LastSwiftMigration = 0830;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -2127,10 +2127,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KYMart/KYMart.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ZhanLi Rao (RUH353X85P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = R89T2LLRX5;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
@@ -2180,8 +2180,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869d16cc-f219-4fb4-a51e-4357b93e2fb1";
-				PROVISIONING_PROFILE_SPECIFIER = dis;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -2196,10 +2196,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = KYMart/KYMart.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shenzhen Qianhai Kaiyuan Electronic Commerce Co., Ltd. (R89T2LLRX5)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ZhanLi Rao (RUH353X85P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = NO;
-				DEVELOPMENT_TEAM = R89T2LLRX5;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Vender/YYKit/YYWebImage/Image",
@@ -2249,8 +2249,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kymart.shop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "869d16cc-f219-4fb4-a51e-4357b93e2fb1";
-				PROVISIONING_PROFILE_SPECIFIER = dis;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "AppDelegate/KYMart-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
