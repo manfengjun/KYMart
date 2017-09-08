@@ -986,7 +986,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p0X-wA-SmN" customClass="BaseNavViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的小店" image="home_gray" selectedImage="home_red" id="KCc-Ho-DDn"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Pd5-dk-6NS">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pd5-dk-6NS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1005,7 +1005,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SRT-dg-p4v" customClass="BaseNavViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="分类" image="section_gray" selectedImage="section_red" id="r7R-XF-tJA"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="2Ij-ej-NIt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ij-ej-NIt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1024,7 +1024,7 @@
                 <navigationController storyboardIdentifier="cartNav" automaticallyAdjustsScrollViewInsets="NO" id="V9C-Hx-RfB" customClass="BaseNavViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="购物车" image="cart_gray" selectedImage="cart_red" id="IUM-qT-464"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="NIc-eW-LIe">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NIc-eW-LIe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1043,7 +1043,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EvB-xV-xvf" customClass="BaseNavViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="个人中心" image="mine_gray" selectedImage="mine_red" id="ZAr-lH-Qfh"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1eN-r7-8ds">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1eN-r7-8ds">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2969,7 +2969,7 @@
             <objects>
                 <navigationController storyboardIdentifier="loginNav" automaticallyAdjustsScrollViewInsets="NO" id="igw-55-8lp" customClass="BaseNavViewController" customModule="KYMart" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="e7l-Zs-KUv">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e7l-Zs-KUv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
