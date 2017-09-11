@@ -29,23 +29,7 @@ class KYProductListCVCell: UICollectionViewCell {
                 priceL.text = text
             }
             if let text = model?.ky_type {
-                switch text {
-                case 0:
-                    productTypeIV.image = UIImage(named: "product_type_0.png")
-                    break
-                case 1:
-                    productTypeIV.image = UIImage(named: "product_type_1.png")
-                    
-                    break
-                    
-                case 3:
-                    productTypeIV.image = UIImage(named: "product_type_3.png")
-                    
-                    break
-                    
-                default:
-                    break
-                }
+                productTypeIV.sd_setImage(with: URL(string: "http://www.kymart.cn/public/app/goods/\(text).png"))
             }
         }
     }

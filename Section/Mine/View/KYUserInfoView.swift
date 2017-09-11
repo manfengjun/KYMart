@@ -21,6 +21,7 @@ class KYUserInfoView: UIView {
     @IBOutlet weak var titleL: UILabel!
     @IBOutlet weak var pendingLabel: UILabel!
     @IBOutlet weak var tgfyLabel: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
     
     var userModel:KYUserInfoModel?{
         didSet {
@@ -41,6 +42,9 @@ class KYUserInfoView: UIView {
             }
             if let text = userModel?.bonus1 {
                 tgfyLabel.text = "¥\(text)"
+            }
+            if let text = userModel?.pay_points {
+                pointLabel.text = "\(text)"
             }
 //            if let text = userModel?.sell_status {
 //                userTypeL.text = (text == 0 ? "预备会员" : "开心果")

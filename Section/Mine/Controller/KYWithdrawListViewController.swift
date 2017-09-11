@@ -24,7 +24,7 @@ class KYWithdrawListViewController: BaseViewController {
         return tableView
     }()
     fileprivate lazy var tableViewHeadView : KYUserInfoView = {
-        let tableViewHeadView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51))
+        let tableViewHeadView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51 + 51))
         tableViewHeadView.userModel = SingleManager.instance.userInfo
         tableViewHeadView.titleL.text = "提现信息"
         return tableViewHeadView

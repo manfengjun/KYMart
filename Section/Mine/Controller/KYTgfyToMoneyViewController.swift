@@ -23,7 +23,7 @@ class KYTgfyToMoneyViewController: BaseViewController {
         return codeView!
     }()
     fileprivate lazy var headView : KYUserInfoView = {
-        let headView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51))
+        let headView = KYUserInfoView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5 + 51 + 51))
         headView.userModel = SingleManager.instance.userInfo
         return headView
     }()

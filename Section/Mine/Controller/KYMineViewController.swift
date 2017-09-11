@@ -23,6 +23,9 @@ class KYMineViewController: BaseViewController {
     @IBOutlet weak var userTypeL: UILabel!
     @IBOutlet weak var pendingLabel: UILabel!
     @IBOutlet weak var tgfyLabel: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
+    
+    
     var userInfoModel:KYUserInfoModel?{
         didSet {
             dataMenu()
@@ -45,6 +48,9 @@ class KYMineViewController: BaseViewController {
             }
             if let text = userInfoModel?.bonus1 {
                 tgfyLabel.text = "¥\(text)"
+            }
+            if let text = userInfoModel?.pay_points {
+                pointLabel.text = "\(text)"
             }
             if let text = userInfoModel?.total_sell {
                 if let text2 = userInfoModel?.total_bonus1 {
@@ -101,7 +107,7 @@ class KYMineViewController: BaseViewController {
         portraitBgV.layer.cornerRadius = SCREEN_WIDTH/12
         portraitIV.layer.masksToBounds = true
         portraitIV.layer.cornerRadius = (SCREEN_WIDTH*1/6 - 6)/2
-        headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*3/5)
+        headView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: SCREEN_WIDTH*4/5)
         tableView.tableHeaderView = headView
         navigationController?.navigationBar.isTranslucent = true
         tableView.backgroundColor = UIColor.hexStringColor(hex: "#F2F2F2")
@@ -123,6 +129,11 @@ class KYMineViewController: BaseViewController {
         if segue.identifier == "M_tgfyToMoney_SegudID" {
             let vc = segue.destination as! KYTgfyToMoneyViewController
             vc.bonus1 = userInfoModel?.bonus1
+            
+        }
+        if segue.identifier == "M_pendToPoint_SegudID" {
+            let vc = segue.destination as! KYPendToPointViewController
+            vc.pay_points = userInfoModel?.pay_points
             
         }
         if segue.identifier == "M_recharge_SegudID" {
@@ -324,6 +335,9 @@ extension KYMineViewController:UITableViewDelegate,UITableViewDataSource{
                 break
             case 4:
                 self.performSegue(withIdentifier: "M_tgfyToMoney_SegudID", sender: "")
+                break
+            case 5:
+                self.performSegue(withIdentifier: "M_pendToPoint_SegudID", sender: "")
                 break
             default:
                 break
