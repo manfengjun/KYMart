@@ -138,23 +138,36 @@ class KYProductDetailViewController: BaseViewController {
     func shareAction() {
         
         FJUmSocialUtil.setupShareMenu(completion: { (platformType, userInfo) in
-            switch platformType {
-            case .wechatTimeLine,.wechatSession,.QQ:
-
-                SJBRequestModel.pull_fetchQrCodeData { (response, status) in
-                    if status == 1{
-                        let model = response as! KYQrCodeModel
-                        FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: model.title, descr: model.content, thumImage: "\(imgPath)\(model.url!)" as AnyObject, url: model.share_url)
-                        
+            if let model = self.productInfoVC.productInfoModel{
+                switch platformType {
+                case .wechatTimeLine,.wechatSession,.QQ:
+                    if SingleManager.instance.loginInfo?.user_id != nil{
+                        let url = "http://api.kymart.cn/index.php?m=Mobile&c=Goods&a=goodsInfo&id=\(model.goods.goods_id)&first_leader=\((SingleManager.instance.loginInfo?.user_id)!)"
+                        FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: model.goods.goods_name, descr: "开心购物，快乐分享", thumImage: imageUrl(goods_id: model.goods.goods_id) as AnyObject, url: url)
                     }
                     else
                     {
-                        self.Toast(content: "获取二维码失败")
+                        let url = "http://api.kymart.cn/index.php?m=Mobile&c=Goods&a=goodsInfo&id=\(model.goods.goods_id)"
+
+                        FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: model.goods.goods_name, descr: "开心购物，快乐分享", thumImage: imageUrl(goods_id: model.goods.goods_id) as AnyObject, url: url)
+                        
                     }
+//                    SJBRequestModel.pull_fetchQrCodeData { (response, status) in
+//                        if status == 1{
+//                            let model = response as! KYQrCodeModel
+//                            FJUmSocialUtil.shareWebPageToPlatformType(platformType: platformType, title: model.title, descr: model.content, thumImage: "\(imgPath)\(model.url!)" as AnyObject, url: model.share_url)
+//                            
+//                        }
+//                        else
+//                        {
+//                            self.Toast(content: "获取二维码失败")
+//                        }
+//                    }
+                    break
+                default:
+                    break
                 }
-                break
-            default:
-                break
+
             }
         })
 
