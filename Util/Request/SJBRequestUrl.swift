@@ -378,6 +378,12 @@ class SJBRequestUrl: NSObject {
     class func returnTgfyToMoneyUrl() -> String {
         return "\(basePath)m=api&c=User&a=changebonus1&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
     }
+    /// 待发放转积分
+    ///
+    /// - Returns: return value description
+    class func returnPendToPointUrl() -> String {
+        return "\(basePath)m=api&c=User&a=changepoint&unique_id=\(SingleManager.getUUID())&token=\(access_token())"
+    }
     // MARK: ------ 分享二维码
     /// 二维码
     ///
