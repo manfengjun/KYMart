@@ -102,6 +102,7 @@ class SJBRequest: NSObject {
                         else
                         {
                             completion(responseDic["msg"] as AnyObject,status as! Int)
+                            XHToast.showBottomWithText(responseDic["msg"] as! String,duration:1)
 
                         }
                     }
