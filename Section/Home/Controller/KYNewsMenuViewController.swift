@@ -47,7 +47,8 @@ class KYNewsMenuViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        segmentControl.frame = CGRect(x: SCREEN_WIDTH/2 - SCREEN_WIDTH/4, y: 29, width: SCREEN_WIDTH/2, height: 26)
+        let segY:CGFloat = isIphoneX() ? 53 : 29
+        segmentControl.frame = CGRect(x: SCREEN_WIDTH/2 - SCREEN_WIDTH/4, y: segY, width: SCREEN_WIDTH/2, height: 26)
         navigationController?.view.addSubview(segmentControl)
     }
     override func viewWillDisappear(_ animated: Bool) {

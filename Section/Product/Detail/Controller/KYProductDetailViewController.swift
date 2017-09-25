@@ -17,7 +17,8 @@ class KYProductDetailViewController: BaseViewController {
     var isSearch:Bool = false
     /// 新闻滚动菜单
     fileprivate lazy var segmentControl : HMSegmentedControl = {
-        let segmentControl = HMSegmentedControl(frame: CGRect(x: 100, y: 20, width: SCREEN_WIDTH/2, height: 44))
+        var segY:CGFloat = isIphoneX() ? 44 : 20
+        let segmentControl = HMSegmentedControl(frame: CGRect(x: 100, y: segY, width: SCREEN_WIDTH/2, height: 44))
         segmentControl.sectionTitles = ["商品","详情"]
         segmentControl.backgroundColor = UIColor.clear
         segmentControl.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.hexStringColor(hex: "#666666"),NSFontAttributeName:UIFont.systemFont(ofSize: 12)]

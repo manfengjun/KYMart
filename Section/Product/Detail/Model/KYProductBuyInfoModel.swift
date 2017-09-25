@@ -20,6 +20,9 @@ class KYProductBuyInfoModel: NSObject {
     /// 排序
     func sortByItem_id() -> [Good_Buy_Property]{
         /// 按ID排序
+        if good_buy_propertys.count <= 0 {
+            return [];
+        }
         let array = good_buy_propertys as! NSMutableArray
         return array.sortedArray(options: .stable, usingComparator: { (object1, object2) -> ComparisonResult in
             let good_Buy_Property1 = object1 as! Good_Buy_Property
@@ -50,15 +53,18 @@ class KYProductBuyInfoModel: NSObject {
         }
         /// 根据选择查询价格
         let predicate = NSPredicate(format: "key = %@", key)
-        let array = spec_goods_prices as! NSMutableArray
-        let result = array.filtered(using: predicate)
-        if result.count > 0{
-            let spec_goods_price = result[0] as! Spec_goods_price
-            if let text = spec_goods_price.price {
-                good_buy_price = text
-                good_buy_store_count = spec_goods_price.store_count
+        let array = spec_goods_prices as? NSMutableArray
+        let result = array?.filtered(using: predicate)
+        if let dataA = result {
+            if dataA.count > 0{
+                let spec_goods_price = dataA[0] as! Spec_goods_price
+                if let text = spec_goods_price.price {
+                    good_buy_price = text
+                    good_buy_store_count = spec_goods_price.store_count
+                }
             }
         }
+        
     }
     func createGoodSelectInfo(propertys:[Good_Buy_Property]) {
         var select_str:String = ""

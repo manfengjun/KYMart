@@ -38,7 +38,16 @@ func imageUrl(goods_id:Int) -> URL {
     let url = URL(string: "\(baseHref)/index.php?m=api&c=goods&a=goodsThumImages&goods_id=\(goods_id))&width=400&height=400")
     return url!
 }
-
+/// 判断iPhoneX
+///
+/// - Returns:
+func isIphoneX() -> Bool {
+    if UIScreen.main.bounds.height == 812 {
+        return true
+    }
+    
+    return false
+}
 
 
 /// 通知名称

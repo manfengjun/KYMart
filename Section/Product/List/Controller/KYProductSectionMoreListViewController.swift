@@ -169,6 +169,8 @@ extension KYProductSectionMoreListViewController:UICollectionViewDelegate,UIColl
         let detailVC = KYProductDetailViewController()
         let model = dataArray[indexPath.row] as? Goods_list
         detailVC.id = model?.goods_id
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 }

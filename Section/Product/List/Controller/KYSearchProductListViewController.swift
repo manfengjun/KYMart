@@ -243,6 +243,8 @@ extension KYSearchProductListViewController:UICollectionViewDelegate,UICollectio
         let model = dataArray[indexPath.row] as? Goods_list
         detailVC.isSearch = true
         detailVC.id = model?.goods_id
+        self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailVC, animated: true)
+        self.hidesBottomBarWhenPushed = false
     }
 }

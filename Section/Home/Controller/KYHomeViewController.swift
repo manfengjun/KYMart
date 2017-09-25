@@ -310,7 +310,9 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
                 let detailVC = KYProductDetailViewController()
                 let model = models?[index]
                 detailVC.id = model?.goods_id
+                self.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(detailVC, animated: true)
+                self.hidesBottomBarWhenPushed = false
             })
             return cell
         }
@@ -416,7 +418,9 @@ extension KYHomeViewController:UICollectionViewDelegate,UICollectionViewDataSour
             let detailVC = KYProductDetailViewController()
             let model = productArray[indexPath.row]
             detailVC.id = model.goods_id
+            self.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailVC, animated: true)
+            self.hidesBottomBarWhenPushed = false
 
         }
 //        let detailVC = KYProductDetailViewController()
